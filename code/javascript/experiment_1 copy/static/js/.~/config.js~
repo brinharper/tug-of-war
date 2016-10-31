@@ -13,7 +13,7 @@ var Config = function (condition, counterbalance) {
 
     // condition is which one is first
     this.condition = condition;
-    // counterbalance is whether or not to show the two at the same time
+    // counterbalance is wether or not to show the two at the same time
     this.counterbalance = counterbalance;
 
     // Whether debug information should be printed out
@@ -21,7 +21,7 @@ var Config = function (condition, counterbalance) {
     // The amount of time to fade HTML elements in/out
     this.fade = 200;
     // List of trial information object for each experiment phase
-    this.scenarios = new Object();
+    this.trials = new Object();
 
     // Canvas width and height
     this.canvas_width = 300;
@@ -36,22 +36,25 @@ var Config = function (condition, counterbalance) {
     // The list of all the HTML pages that need to be loaded
     this.pages = [
         "trial.html", 
-        "submit.html"];
+        "submit.html"
+    ];
 
     // Parse the JSON object that we've requested and load it into the
     // configuration
     this.parse_config = function (data) {
-        this.scenarios = shuffle(data["scenarios"]); //shuffles the array 
-        this.questions = data["questions"] ;
+        this.trials = _.shuffle(data["stim"]);
+        this.agent_names = data["names"] ;
+        this.intend_words = data["intend_words"] ;
+        this.main_agents = data["main_agents"] ;
+        this.side_agents = data["side_agents"] ; 
     };
 
     // Load the experiment configuration from the server
     this.load_config = function () {
         var that = this;
-        var jsonpath = "/static/json/games.json"
         $.ajax({
             dataType: "json",
-            url: jsonpath,
+            url: "/static/json/stim.json",
             async: false,
             success: function (data) { 
                 if (that.debug) {

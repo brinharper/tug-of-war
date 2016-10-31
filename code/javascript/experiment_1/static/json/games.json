@@ -1,0 +1,48 @@
+{
+	"scenarios": [
+		{
+			"id": 0,
+			"games": [
+				{
+					"team1": ["Patrick"],
+					"team2": ["Mary"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		}, {
+			"id": 1,
+			"games": [
+				{
+					"team1": ["Patrick", "David"],
+					"team2": ["Collin", "Curtis"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Curtis"]
+		}, {
+			"id": 2,
+			"games": [
+				{
+					"team1": ["Patrick", "David", "Mary"],
+					"team2": ["Curtis", "Collin", "Matt"],
+					"winner": 1
+				}, {
+					"team1": ["Curtis", "David", "Matt"],
+					"team2": ["Mary", "Patrick", "Collin"],
+					"winner": 2
+				}
+			],
+			"comments": ["Patrick knew the game was a throwaway, so he wasn't even trying.", "Matt is very good, but Curtis is dragging him down."],
+			"questions": [0, 0],
+			"subjects": ["David", "Matt"]
+		}
+	],
+	"questions": [
+		"{{player}} is a skilled player."
+	]
+}

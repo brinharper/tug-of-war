@@ -46,7 +46,7 @@ var TestPhase = function() {
 	/* Instance variables */
 	
 	// Information about the current trial
-	this.scenario;    
+	this.trialinfo;    
 	// The response they gave
 	this.response;
 	// The number they've gotten correct, so far
@@ -59,17 +59,17 @@ var TestPhase = function() {
 
 		// If there are no more trials left, then we are at the end of
 		// this phase
-		if (STATE.index >= $c.scenarios.length) { //change here for debugging
+		if (STATE.index >= $c.trials.length) { //change here for debugging
 			this.finish();
 			return false;
 		}
 
 		
 		// Load the new trialinfo
-		this.scenario = $c.scenarios[STATE.index];
+		this.trialinfo = $c.trials[STATE.index];
 
 		// Update progress bar
-		update_progress(STATE.index, $c.scenarios.length);
+		update_progress(STATE.index, $c.trials.length);
 
 		return true;
 	}; 
@@ -79,61 +79,107 @@ var TestPhase = function() {
 			debug("Show STIMULUS");
 			// Show stimuli
 
-			//show games 
-			var games = that.scenario["games"];
-			var html = "";
-			for (var i = 0; i < games.length; i++) {
-				var team1 = games[i]["team1"];
-				var team2 = games[i]["team2"];
-				var winner = games[i]["winner"];
+			var voters = [];
+			for (var i=0; i<that.trialinfo.focus.length; i++) {
+				if (that.trialinfo.focus[i] == 1){
+					voters.push(that.trialinfo.names[i]);
+				}
+			}
+			//hacky way to make sure that there are always at least 2 voters ...
+			voters.push("NA");
 
-				html += "<p>";
-				if (winner == 1) {
-					html += "<b>WINNER</b> ";
-				}
-				html += "<i>Team 1</i> -> ";
-				for (var j = 0; j < team1.length; j++) {
-					html += team1[j];
-					if (j != team1.length - 1) html += ", ";
-				}
-				html += " vs. ";
-				for (var j = 0; j < team2.length; j++) {
-					html += team2[j];
-					if (j != team2.length - 1) html += ", ";
-				}
-				html += " <- <i>Team2</i>";
-				if (winner == 2) {
-					html += " <b>WINNER</b>";
-				}
-				html += "</p>";
+			// Replace the name with the piece from the template
+			// select a random name from the choices
+			var view = {
+				'voter1': voters[0],
+				'voter2': voters[1],
+				'outcome': that.trialinfo.outcome
+			} ;
+			// debugger;
+
+
+			var color = 'blue'
+			if (that.trialinfo.support == "Republican"){
+				color = 'red'
 			}
 
-			$('#games').html(html);
+			$('#prompt-text').html(Mustache.render($c.prompt, view));
+			$('.stim_text').html(Mustache.render($c.text, view));
 
-			//show comments
-			html = "";
-			var comments = that.scenario["comments"];
-			for (var i = 0; i < comments.length; i++) {
-				html += "<p>" + comments[i] + "</p>";
-			}
 
-			$('#commentary').html(html);
+			//policy information
+			var policy_number = Math.floor(Math.random()*999999) + 100000;
+			$('#policy_text').html('<p><b>Number</b>: #' + policy_number + '</p>');
+			$('#policy_support').html('<p><b>Supported by</b>: <font color = "' + color + '"> The ' + that.trialinfo.support + ' party</font></p>');
+			
+			$('#voters').html('<p><b>Number of people in the committee</b>: ' + that.trialinfo.names.length + '</p>');
+
+			$('#vote_rule').html('<p><b>Number of votes in favor of policy required</b>: ' + that.trialinfo.rule + '</p>');
 			
 
-			html = "<p><b>Please rate how strongly you agree with each of the following statements:</b></p>";
-			var scenarioQuestions = that.scenario["questions"];
-			var scenarioSubjects = that.scenario["subjects"];
-			var view = {"player": ""};
-			for (var i = 0; i < scenarioQuestions.length; i++) {
-				view["player"] = scenarioSubjects[i];
-				var q = (Mustache.render($c.questions[scenarioQuestions[i]], view));
-				html += '<p class=".question">' + q +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
+			//table for actual votes 
+			html = ""
+			html = '<tr><th></th><th>Party affiliation</th><th>Vote (&#10004 = for, &#10008 = against)</th>'
+			for (var i=0; i<that.trialinfo.names.length; i++) {
+				var voter_name = that.trialinfo.names[i];
+				var voter_vote = that.trialinfo.vote[i];
+				var vote 
+				if (voter_vote == 1){
+					vote = '&#10004';    
+				}else{
+					vote = '&#10008';    
+				}
+
+				var party = that.trialinfo.party[i];
+				if (that.trialinfo.support == 'Democratic'){
+						if (party == 0){
+							party = 'Republican';
+						}else{
+							party = 'Democrat';
+						}
+					}else{
+						if (party == 0){
+							party = 'Democrat';
+						}else{
+							party = 'Republican';
+						}
+					}
+
+				var color;
+				if (party == 'Republican'){
+					color = "red";
+				}else{color = "blue";}
+				html += '<tr><td>'+voter_name+'</td><td><font color = "'+ color + '">' + party+'</font></td><td>' + vote + '</td></tr>';
+				// debugger;
+			}
+			
+			$('#table_vote').html(html);
+
+			var votes_for = that.trialinfo.vote.reduce(function(a, b) {
+				return a + b;
+			});
+
+			//number of votes required
+			var votes_required = '';
+			if (this.trialinfo.rule > 1){
+			votes_required = this.trialinfo.rule + ' votes were';
+			}else{
+				votes_required = this.trialinfo.rule + ' vote was';
 			}
 
-			$('#questions').html(html) ;
+			$('#vote_outcome').html('<p style="font-size:20px"><b>Outcome</b>: The policy was <b>' + that.trialinfo.outcome + '</b>.</p><p style="font-size:18px">' + votes_for + ' out of '+ that.trialinfo.names.length + ' committee members voted in favor of the policy and '+ votes_required + ' required for the policy to pass.</p>')
 
-			// Build the sliders for each question
-			for (var i=0; i<scenarioQuestions.length; i++) {
+			// Create the HTML for the question and slider.
+			var html = "" ; 
+			for (var i=0; i<voters.length-1; i++) {
+				var q = Mustache.render($c.questions[i].q, view);
+				// html += '<p class=".question">' + (i+1) + '. ' + q +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
+				html += '<p class=".question">' + q +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
+			}
+			$('#choices').html(html) ;
+
+			// Bulid the sliders for each question
+			for (var i=0; i<voters.length-1; i++) {
 				// Create the sliders
 				$('.s-'+i).slider().on("slidestart", function( event, ui ) {
 					// Show the handle
@@ -141,23 +187,22 @@ var TestPhase = function() {
 
 					// Sum is the number of sliders that have been clicked
 					var sum = 0 ;
-					for (var j=0; j<scenarioQuestions.length; j++) {
+					for (var j=0; j<voters.length-1; j++) {
 						if ($('.s-'+j).find('.ui-slider-handle').is(":visible")) {
 							sum++ ;
 						}
 					}
 					// If the number of sliders clicked is equal to the number of sliders
 					// the user can continue. 
-					if (sum == scenarioQuestions.length) {
+					if (sum == voters.length-1) {
 						$('#trial_next').prop('disabled', false) ;
 					}
 				});
-
-				// Put labels on the sliders
-				$('.l-'+i).append("<label style='width: 33%'><i>Disagree Completely</i></label>") ; 
-				$('.l-'+i).append("<label style='width: 33%'></label>") ; 
-				$('.l-'+i).append("<label style='width: 33%'><i>Agree Completely</i></label>");
 									   
+				// Put labels on the sliders
+				$('.l-'+i).append("<label style='width: 33%'>"+ Mustache.render($c.questions[0].l[0], view) +"</label>") ; 
+				$('.l-'+i).append("<label style='width: 33%'>"+ Mustache.render($c.questions[0].l[1], view) +"</label>") ; 
+				$('.l-'+i).append("<label style='width: 33%'>"+ Mustache.render($c.questions[0].l[2], view) +"</label>");
 			}
 
 			// Hide all the slider handles 
@@ -166,14 +211,24 @@ var TestPhase = function() {
 			// Disable button which will be enabled once the sliders are clicked
 			$('#trial_next').prop('disabled', true);
 
-
 			debug(that.trialinfo);
 		}        
 	};
 
 	//records response 
 	this.record_response = function() {        
+		var response = ['NA','NA','NA','NA','NA'] ;
+		saveid = this.trialinfo.ID ;
 		
+		var slidernr = 0    
+		for (var i=0; i<this.trialinfo.focus.length; i++) {
+			if (this.trialinfo.focus[i] == 1){
+			response[i] =  $('.s-'+slidernr).slider('value')   
+			slidernr = slidernr+1;
+			}
+		}
+		debug(response)
+		psiTurk.recordTrialData(["trial_".concat(saveid), "judgments", response, "party", this.trialinfo.party, "vote", this.trialinfo.vote, "support", this.trialinfo.support, "rule", this.trialinfo.rule, "outcome", this.trialinfo.outcome])
 
 		STATE.set_index(STATE.index + 1);
 		

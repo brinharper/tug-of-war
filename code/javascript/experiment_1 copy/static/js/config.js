@@ -21,7 +21,7 @@ var Config = function (condition, counterbalance) {
     // The amount of time to fade HTML elements in/out
     this.fade = 200;
     // List of trial information object for each experiment phase
-    this.scenarios = new Object();
+    this.trials = new Object();
 
     // Canvas width and height
     this.canvas_width = 300;
@@ -41,14 +41,16 @@ var Config = function (condition, counterbalance) {
     // Parse the JSON object that we've requested and load it into the
     // configuration
     this.parse_config = function (data) {
-        this.scenarios = shuffle(data["scenarios"]); //shuffles the array 
+        this.trials = shuffle(data["stim"]); //shuffles the array 
+        this.prompt = data["prompt"] ;
+        this.text = data["text"] ;
         this.questions = data["questions"] ;
     };
 
     // Load the experiment configuration from the server
     this.load_config = function () {
         var that = this;
-        var jsonpath = "/static/json/games.json"
+        var jsonpath = "/static/json/stim.json"
         $.ajax({
             dataType: "json",
             url: jsonpath,
