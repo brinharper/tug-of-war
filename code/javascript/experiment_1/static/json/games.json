@@ -38,11 +38,32 @@
 				}
 			],
 			"comments": ["Patrick knew the game was a throwaway, so he wasn't even trying.", "Matt is very good, but Curtis is dragging him down."],
-			"questions": [0, 0],
+			"questions": [0, 1],
 			"subjects": ["David", "Matt"]
+		}, {
+			"id": 3,
+			"games": [
+				{
+					"team1": ["Patrick"],
+					"team2": ["Curtis", "Collin", "Mary", "Matt", "David", "Brandon"],
+					"winner": 1
+				}, {
+					"team1": ["Curtis", "Collin", "Mary"],
+					"team2": ["Matt", "David", "Brandon"],
+					"winner": 2
+				}, {
+					"team1": ["Patrick", "David", "Brandon", "Mary"],
+					"team2": ["Matt", "Curtis", "Collin"],
+					"winner": 2
+				}
+			],
+			"comments": ["Matt was seen carrying a bottle of DROWSINESS-INDUCING ALLERGY MEDICINE near Patrick's locker prior to the third match."],
+			"questions": [0, 0, 1],
+			"subjects": ["Mary", "Patrick", "Matt"]
 		}
 	],
 	"questions": [
-		"{{player}} is a skilled player."
+		"{{player}} is a skilled player.",
+		"{{player}} is trying very hard."
 	]
 }

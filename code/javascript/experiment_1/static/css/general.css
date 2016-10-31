@@ -5,7 +5,7 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: Georgia, serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     line-height: 1.25em;
 }
@@ -39,17 +39,26 @@ hr {
 
 button, .next {
     background-color: white;
-    box-shadow: 1px 1px 3px;
     border: 1px solid black;
     margin: 1%;
-    padding: 1% 2% 1% 2%;
-    font-family: Georgia, serif; 
+    padding: 1% 2% 1% 2%; 
     font-size: 1em;
+    border-radius: 7px;
 }
 
-button:active, .next:active {
-    background-color: #c9c9c9;
-    box-shadow: 0px 0px 3px;
+button:enabled:hover, .next:enabled:hover {
+    background-color: lightblue;
+    -webkit-transition: background-color 100ms;
+    -moz-transition: background-color 100ms;
+    -o-transition: background-color 100ms;
+    -ms-transition: background-color 100ms;
+    transition: background-color 100ms;
+    cursor:pointer;
+}
+
+button:enabled:active, .next:enabled:active {
+    background-color: rgb(58, 72, 77);
+    box-shadow: none;
 }
 
 /********************************************************************/
@@ -77,6 +86,7 @@ div.slide {
    margin-left: auto;
     margin-right: auto;
     width: 50%;
+    
 }
 
 
@@ -89,11 +99,44 @@ div.slide {
     
 }
 
-#vote_outcome{
-    margin-top: 1em;
-    margin-bottom: 1em;
+#games {
     text-align: center;
-    width: 100%;
+}
+
+.game {
+    list-style-type:none;
+    padding:0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.team {
+    list-style-type:none;
+    margin:0;
+    padding: 10px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px;
+
+}
+
+.game li {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.game img {
+    height: 45px;
+    width: 75px;
+}
+
+.team li {
+    display: block;
 }
 
 .stim_text {
@@ -294,7 +337,6 @@ span.consent {
 label{
   display: inline-block;
   text-align:center;
-  padding-top: 0.5cm;
 }
 label:first-child{
   text-align:left;

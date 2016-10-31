@@ -80,39 +80,46 @@ var TestPhase = function() {
 			// Show stimuli
 
 			//show games 
-			var games = that.scenario["games"];
+			var games = that.scenario.games;
 			var html = "";
 			for (var i = 0; i < games.length; i++) {
-				var team1 = games[i]["team1"];
-				var team2 = games[i]["team2"];
-				var winner = games[i]["winner"];
+				var team1 = games[i].team1;
+				var team2 = games[i].team2;
+				var winner = games[i].winner;
 
-				html += "<p>";
+				html += "<ul class='game'>";
 				if (winner == 1) {
-					html += "<b>WINNER</b> ";
+					html += "<li><img src='static/images/crown.png' alt='crown'/></li>";
+				} else {
+					html += "<li><img src='static/images/nocrown.png' alt='crown'/></li>";
 				}
-				html += "<i>Team 1</i> -> ";
+				html += "<li><ul class='team' style='border-color:blue'>";
 				for (var j = 0; j < team1.length; j++) {
-					html += team1[j];
-					if (j != team1.length - 1) html += ", ";
+					html += "<li>"+team1[j]+"</li>";
 				}
-				html += " vs. ";
+				html += "</ul></li><li> VS. </li><li><ul class='team' style='border-color:red'>";
 				for (var j = 0; j < team2.length; j++) {
-					html += team2[j];
-					if (j != team2.length - 1) html += ", ";
+					html += "<li>"+team2[j]+"</li>";
 				}
-				html += " <- <i>Team2</i>";
+				html += "</ul></li>"
 				if (winner == 2) {
-					html += " <b>WINNER</b>";
+					html += "<li><img src='static/images/crown.png' alt='crown'/></li>";
+				} else {
+					html += "<li><img src='static/images/nocrown.png' alt='crown'/></li>";
 				}
-				html += "</p>";
+
+				html += "</ul>";
+
+				if (i != games.length - 1) {
+					html += "<hr style='width:75%'/>";
+				}
 			}
 
 			$('#games').html(html);
 
 			//show comments
 			html = "";
-			var comments = that.scenario["comments"];
+			var comments = that.scenario.comments;
 			for (var i = 0; i < comments.length; i++) {
 				html += "<p>" + comments[i] + "</p>";
 			}
@@ -121,8 +128,8 @@ var TestPhase = function() {
 			
 
 			html = "<p><b>Please rate how strongly you agree with each of the following statements:</b></p>";
-			var scenarioQuestions = that.scenario["questions"];
-			var scenarioSubjects = that.scenario["subjects"];
+			var scenarioQuestions = that.scenario.questions
+			var scenarioSubjects = that.scenario.subjects;
 			var view = {"player": ""};
 			for (var i = 0; i < scenarioQuestions.length; i++) {
 				view["player"] = scenarioSubjects[i];
@@ -174,6 +181,15 @@ var TestPhase = function() {
 	//records response 
 	this.record_response = function() {        
 		
+		var response = [] ;
+		saveid = this.scenario.id;
+		   
+		for (var i=0; i<this.scenario.questions.length; i++) {
+			response.push($('.s-'+i).slider('value'));  
+		}
+		debug(response)
+		psiTurk.recordTrialData(["trial_".concat(saveid), "judgments", response]);
+
 
 		STATE.set_index(STATE.index + 1);
 		
