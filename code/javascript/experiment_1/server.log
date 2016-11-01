@@ -5823,3 +5823,2209 @@
 [2016-11-01 11:15:16 -0400] [25132] [INFO] Parent changed, shutting down: <Worker 25132>
 [2016-11-01 11:15:16 -0400] [25132] [INFO] Worker exiting (pid: 25132)
 >>>>>>> 6e9ae75dc6d829ec8fa81eccc3f957c407c486cf
+[2016-11-01 13:36:50 -0400] [3869] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x1038790c8>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x103872d70>
+  pre_fork: <function pre_fork at 0x103872ed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 17
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x103872c08>
+  pre_exec: <function pre_exec at 0x103879668>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x103879230>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x1038d1b18>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1038797d0>
+  post_request: <function post_request at 0x1038798c0>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x103879398>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x103879a28>
+  chdir: /Users/patrick/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x103872aa0>
+  worker_abort: <function worker_abort at 0x103879500>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x103879b90>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-11-01 13:36:50 -0400] [3869] [INFO] Starting gunicorn 19.4.5
+[2016-11-01 13:36:50 -0400] [3869] [DEBUG] Arbiter booted
+[2016-11-01 13:36:50 -0400] [3869] [INFO] Listening at: http://0.0.0.0:22362 (3869)
+[2016-11-01 13:36:50 -0400] [3869] [INFO] Using worker: sync
+[2016-11-01 13:36:50 -0400] [3874] [INFO] Booting worker with pid: 3874
+[2016-11-01 13:36:50 -0400] [3876] [INFO] Booting worker with pid: 3876
+[2016-11-01 13:36:50 -0400] [3877] [INFO] Booting worker with pid: 3877
+[2016-11-01 13:36:50 -0400] [3878] [INFO] Booting worker with pid: 3878
+2016-11-01 13:36:50,442 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,443 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,444 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:50 -0400] [3879] [INFO] Booting worker with pid: 3879
+2016-11-01 13:36:50,519 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,519 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,521 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 13:36:50,586 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,587 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,588 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:50 -0400] [3880] [INFO] Booting worker with pid: 3880
+[2016-11-01 13:36:50 -0400] [3881] [INFO] Booting worker with pid: 3881
+2016-11-01 13:36:50,633 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,633 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,635 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:50 -0400] [3882] [INFO] Booting worker with pid: 3882
+2016-11-01 13:36:50,701 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,701 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,703 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:50 -0400] [3883] [INFO] Booting worker with pid: 3883
+2016-11-01 13:36:50,809 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,810 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,811 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 13:36:50,817 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,817 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-11-01 13:36:50 -0400] [3884] [INFO] Booting worker with pid: 3884
+2016-11-01 13:36:50,819 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 13:36:50,880 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,880 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,882 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:50 -0400] [3885] [INFO] Booting worker with pid: 3885
+2016-11-01 13:36:50,936 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:50,936 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:50,938 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:50 -0400] [3886] [INFO] Booting worker with pid: 3886
+2016-11-01 13:36:51,021 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,021 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,023 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:51 -0400] [3887] [INFO] Booting worker with pid: 3887
+2016-11-01 13:36:51,100 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,100 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,102 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:51 -0400] [3888] [INFO] Booting worker with pid: 3888
+2016-11-01 13:36:51,182 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,182 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,184 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:51 -0400] [3889] [INFO] Booting worker with pid: 3889
+[2016-11-01 13:36:51 -0400] [3890] [INFO] Booting worker with pid: 3890
+[2016-11-01 13:36:51 -0400] [3891] [INFO] Booting worker with pid: 3891
+2016-11-01 13:36:51,295 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,295 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,298 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 13:36:51,329 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,329 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,331 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:51 -0400] [3869] [DEBUG] 17 workers
+2016-11-01 13:36:51,435 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,435 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,437 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 13:36:51,483 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,483 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,485 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 13:36:51,500 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 13:36:51,500 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 13:36:51,502 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 13:36:51 -0400] [3891] [DEBUG] Closing connection. 
+[2016-11-01 13:36:55 -0400] [3874] [DEBUG] Closing connection. 
+[2016-11-01 13:36:55 -0400] [3883] [DEBUG] Closing connection. 
+[2016-11-01 13:36:55 -0400] [3886] [DEBUG] Closing connection. 
+[2016-11-01 13:36:56 -0400] [3884] [DEBUG] GET /ad
+[2016-11-01 13:36:57 -0400] [3883] [DEBUG] GET /consent
+[2016-11-01 13:36:57 -0400] [3881] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:36:57 -0400] [3889] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:36:58 -0400] [3886] [DEBUG] GET /exp
+2016-11-01 13:36:58,267 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+2016-11-01 13:36:58,272 given Counter({(0, 0): 1}) chose (0, 0)
+[2016-11-01 13:36:58 -0400] [3879] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:36:58 -0400] [3883] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:36:58 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:36:58 -0400] [3882] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:36:58 -0400] [3881] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:36:58 -0400] [3886] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:36:58 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:36:58 -0400] [3882] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:36:58 -0400] [3879] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:36:58 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:36:58 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:36:58 -0400] [3879] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:36:58,455 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:36:58 -0400] [3888] [DEBUG] GET /trial.html
+[2016-11-01 13:36:58 -0400] [3888] [DEBUG] GET /submit.html
+[2016-11-01 13:37:00 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:37:00 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:37:00 -0400] [3878] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:37:00 -0400] [3891] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:37:03 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:37:03 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:37:20 -0400] [3878] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:37:20 -0400] [3876] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:37:20 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.map
+[2016-11-01 13:39:58 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 13:39:58 -0400] [3889] [DEBUG] GET /favicon.ico
+[2016-11-01 13:39:59 -0400] [3891] [DEBUG] GET /consent
+[2016-11-01 13:39:59 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:39:59 -0400] [3884] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:39:59 -0400] [3880] [DEBUG] GET /exp
+2016-11-01 13:39:59,962 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:39:59 -0400] [3880] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:39:59 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:39:59 -0400] [3884] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:39:59 -0400] [3883] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:39:59 -0400] [3881] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:39:59 -0400] [3878] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:39:59 -0400] [3884] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:39:59 -0400] [3883] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:39:59 -0400] [3881] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:39:59 -0400] [3886] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:40:00 -0400] [3881] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:40:00 -0400] [3881] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:40:00,088 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:40:00 -0400] [3880] [DEBUG] GET /trial.html
+[2016-11-01 13:40:00 -0400] [3884] [DEBUG] GET /submit.html
+[2016-11-01 13:40:01 -0400] [3881] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:40:01 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:40:01 -0400] [3874] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:40:01 -0400] [3883] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:40:03 -0400] [3881] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:40:04 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:40:39 -0400] [3877] [DEBUG] GET /ad
+[2016-11-01 13:40:39 -0400] [3887] [DEBUG] GET /favicon.ico
+[2016-11-01 13:40:40 -0400] [3891] [DEBUG] GET /consent
+[2016-11-01 13:40:40 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:40:40 -0400] [3886] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:40:41 -0400] [3880] [DEBUG] GET /exp
+2016-11-01 13:40:41,024 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:40:41 -0400] [3891] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:40:41 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:40:41 -0400] [3877] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:40:41 -0400] [3881] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:40:41 -0400] [3879] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:40:41 -0400] [3888] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:40:41 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:40:41 -0400] [3881] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:40:41 -0400] [3891] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:40:41 -0400] [3887] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:40:41 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:40:41 -0400] [3880] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:40:41,145 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:40:41 -0400] [3885] [DEBUG] GET /trial.html
+[2016-11-01 13:40:41 -0400] [3889] [DEBUG] GET /submit.html
+[2016-11-01 13:40:45 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:40:45 -0400] [3874] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:40:45 -0400] [3880] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:40:45 -0400] [3888] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:40:48 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:40:48 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:41:50 -0400] [3889] [DEBUG] GET /ad
+[2016-11-01 13:41:50 -0400] [3874] [DEBUG] GET /favicon.ico
+[2016-11-01 13:41:51 -0400] [3883] [DEBUG] GET /consent
+[2016-11-01 13:41:51 -0400] [3885] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:41:51 -0400] [3879] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:41:52 -0400] [3884] [DEBUG] GET /exp
+2016-11-01 13:41:52,344 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:41:52 -0400] [3883] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:41:52 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:41:52 -0400] [3880] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:41:52 -0400] [3882] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:41:52 -0400] [3886] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:41:52 -0400] [3888] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:41:52 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:41:52 -0400] [3881] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:41:52 -0400] [3882] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:41:52 -0400] [3887] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:41:52 -0400] [3891] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:41:52 -0400] [3888] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:41:52,504 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:41:52 -0400] [3874] [DEBUG] GET /trial.html
+[2016-11-01 13:41:52 -0400] [3881] [DEBUG] GET /submit.html
+[2016-11-01 13:41:53 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:41:53 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:41:53 -0400] [3880] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:41:53 -0400] [3890] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:41:55 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:41:55 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:42:12 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:42:12 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:43:15 -0400] [3882] [DEBUG] GET /ad
+[2016-11-01 13:43:15 -0400] [3890] [DEBUG] GET /favicon.ico
+[2016-11-01 13:43:16 -0400] [3876] [DEBUG] GET /consent
+[2016-11-01 13:43:16 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:43:16 -0400] [3874] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:43:17 -0400] [3879] [DEBUG] GET /exp
+2016-11-01 13:43:17,373 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:43:17 -0400] [3874] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:43:17 -0400] [3882] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:43:17 -0400] [3887] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:43:17 -0400] [3889] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:43:17 -0400] [3885] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:43:17 -0400] [3878] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:43:17 -0400] [3885] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:43:17 -0400] [3889] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:43:17 -0400] [3874] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:43:17 -0400] [3882] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:43:17 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:43:17 -0400] [3888] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:43:17,490 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:43:17 -0400] [3878] [DEBUG] GET /trial.html
+[2016-11-01 13:43:17 -0400] [3882] [DEBUG] GET /submit.html
+[2016-11-01 13:43:19 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:43:19 -0400] [3880] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:43:19 -0400] [3890] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:43:19 -0400] [3888] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:43:21 -0400] [3889] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:43:21 -0400] [3891] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:45:08 -0400] [3890] [DEBUG] GET /ad
+[2016-11-01 13:45:08 -0400] [3883] [DEBUG] GET /favicon.ico
+[2016-11-01 13:45:09 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 13:45:09 -0400] [3874] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:45:09 -0400] [3876] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:45:10 -0400] [3885] [DEBUG] GET /exp
+2016-11-01 13:45:10,430 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:45:10 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:45:10 -0400] [3877] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:45:10 -0400] [3882] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:45:10 -0400] [3891] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:45:10 -0400] [3876] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:45:10 -0400] [3890] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:45:10 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:45:10 -0400] [3890] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:45:10 -0400] [3887] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:45:10 -0400] [3876] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:45:10 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:45:10 -0400] [3878] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:45:10,607 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:45:10 -0400] [3877] [DEBUG] GET /trial.html
+[2016-11-01 13:45:10 -0400] [3885] [DEBUG] GET /submit.html
+[2016-11-01 13:45:12 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:45:12 -0400] [3891] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:45:12 -0400] [3884] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:45:12 -0400] [3885] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:45:18 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:45:18 -0400] [3880] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:46:34 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 13:46:34 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:46:34 -0400] [3883] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:46:35 -0400] [3881] [DEBUG] GET /exp
+2016-11-01 13:46:35,402 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:46:35 -0400] [3891] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:46:35 -0400] [3874] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:46:35 -0400] [3885] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:46:35 -0400] [3884] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:46:35 -0400] [3886] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:46:35 -0400] [3887] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:46:35 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:46:35 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:46:35 -0400] [3885] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:46:35 -0400] [3878] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:46:35 -0400] [3884] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:46:35 -0400] [3879] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:46:35,580 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:46:35 -0400] [3885] [DEBUG] GET /trial.html
+[2016-11-01 13:46:35 -0400] [3889] [DEBUG] GET /submit.html
+[2016-11-01 13:46:36 -0400] [3887] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:46:36 -0400] [3885] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:47:10 -0400] [3874] [DEBUG] GET /ad
+[2016-11-01 13:47:10 -0400] [3888] [DEBUG] GET /favicon.ico
+[2016-11-01 13:47:11 -0400] [3885] [DEBUG] GET /consent
+[2016-11-01 13:47:11 -0400] [3882] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:47:11 -0400] [3884] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:47:12 -0400] [3890] [DEBUG] GET /exp
+2016-11-01 13:47:12,079 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:47:12 -0400] [3890] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:47:12 -0400] [3884] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:47:12 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:47:12 -0400] [3888] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:47:12 -0400] [3885] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:47:12 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:47:12 -0400] [3879] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:47:12 -0400] [3877] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:47:12 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:47:12 -0400] [3883] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:47:12 -0400] [3886] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:47:12 -0400] [3882] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:47:12,199 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:47:12 -0400] [3886] [DEBUG] GET /trial.html
+[2016-11-01 13:47:12 -0400] [3884] [DEBUG] GET /submit.html
+[2016-11-01 13:47:13 -0400] [3878] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:47:13 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:47:13 -0400] [3888] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:47:13 -0400] [3886] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:47:22 -0400] [3883] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:47:22 -0400] [3881] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:48:04 -0400] [3890] [DEBUG] GET /ad
+[2016-11-01 13:48:04 -0400] [3874] [DEBUG] GET /favicon.ico
+[2016-11-01 13:48:05 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 13:48:05 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:48:05 -0400] [3880] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:48:06 -0400] [3888] [DEBUG] GET /exp
+2016-11-01 13:48:06,106 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:48:06 -0400] [3877] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:48:06 -0400] [3881] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:48:06 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:48:06 -0400] [3884] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:48:06 -0400] [3878] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:48:06 -0400] [3874] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:48:06 -0400] [3874] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:48:06 -0400] [3878] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:48:06 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:48:06 -0400] [3891] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:48:06 -0400] [3886] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:48:06 -0400] [3886] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:48:06,227 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:48:06 -0400] [3877] [DEBUG] GET /trial.html
+[2016-11-01 13:48:06 -0400] [3880] [DEBUG] GET /submit.html
+[2016-11-01 13:48:07 -0400] [3878] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:48:07 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:48:07 -0400] [3880] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:48:07 -0400] [3886] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:48:20 -0400] [3884] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:48:20 -0400] [3881] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:50:40 -0400] [3874] [DEBUG] GET /ad
+[2016-11-01 13:50:40 -0400] [3889] [DEBUG] GET /favicon.ico
+[2016-11-01 13:50:41 -0400] [3888] [DEBUG] GET /consent
+[2016-11-01 13:50:41 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:50:41 -0400] [3880] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:50:42 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 13:50:42,048 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:50:42 -0400] [3874] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:50:42 -0400] [3888] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:50:42 -0400] [3891] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:50:42 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:50:42 -0400] [3889] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:50:42 -0400] [3879] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:50:42 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:50:42 -0400] [3890] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:50:42 -0400] [3889] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:50:42 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:50:42 -0400] [3890] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:50:42 -0400] [3887] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:50:42,176 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:50:42 -0400] [3874] [DEBUG] GET /trial.html
+[2016-11-01 13:50:42 -0400] [3884] [DEBUG] GET /submit.html
+[2016-11-01 13:50:43 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:50:43 -0400] [3891] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:50:43 -0400] [3874] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:50:43 -0400] [3887] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:50:54 -0400] [3881] [DEBUG] GET /ad
+[2016-11-01 13:50:54 -0400] [3887] [DEBUG] GET /favicon.ico
+[2016-11-01 13:50:55 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 13:50:55 -0400] [3886] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:50:55 -0400] [3880] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:50:56 -0400] [3885] [DEBUG] GET /exp
+2016-11-01 13:50:56,345 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:50:56 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:50:56 -0400] [3880] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:50:56 -0400] [3886] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:50:56 -0400] [3878] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:50:56 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:50:56 -0400] [3887] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:50:56 -0400] [3880] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:50:56 -0400] [3878] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:50:56 -0400] [3891] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:50:56 -0400] [3880] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:50:56 -0400] [3891] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:50:56 -0400] [3884] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:50:56,430 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:50:56 -0400] [3880] [DEBUG] GET /trial.html
+[2016-11-01 13:50:56 -0400] [3888] [DEBUG] GET /submit.html
+[2016-11-01 13:50:57 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:50:57 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:50:57 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:50:57 -0400] [3879] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:51:17 -0400] [3877] [DEBUG] GET /ad
+[2016-11-01 13:51:17 -0400] [3880] [DEBUG] GET /favicon.ico
+[2016-11-01 13:51:18 -0400] [3885] [DEBUG] GET /consent
+[2016-11-01 13:51:18 -0400] [3878] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:51:18 -0400] [3881] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:51:18 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 13:51:18,852 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:51:18 -0400] [3887] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:51:18 -0400] [3885] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:51:18 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:51:18 -0400] [3880] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:51:18 -0400] [3881] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:51:18 -0400] [3877] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:51:18 -0400] [3885] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:51:18 -0400] [3880] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:51:18 -0400] [3881] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:51:18 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:51:18 -0400] [3880] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:51:18 -0400] [3890] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:51:18,967 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:51:18 -0400] [3874] [DEBUG] GET /trial.html
+[2016-11-01 13:51:18 -0400] [3874] [DEBUG] GET /submit.html
+[2016-11-01 13:51:20 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:51:20 -0400] [3874] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:51:20 -0400] [3891] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:51:20 -0400] [3884] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:53:33 -0400] [3879] [DEBUG] GET /ad
+[2016-11-01 13:53:33 -0400] [3884] [DEBUG] GET /favicon.ico
+[2016-11-01 13:53:34 -0400] [3882] [DEBUG] GET /consent
+[2016-11-01 13:53:34 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:53:34 -0400] [3881] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:53:35 -0400] [3878] [DEBUG] GET /exp
+2016-11-01 13:53:35,568 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:53:35 -0400] [3878] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:53:35 -0400] [3881] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:53:35 -0400] [3880] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:53:35 -0400] [3883] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:53:35 -0400] [3877] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:53:35 -0400] [3889] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:53:35 -0400] [3889] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:53:35 -0400] [3877] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:53:35 -0400] [3888] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:53:35 -0400] [3880] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:53:35 -0400] [3884] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:53:35 -0400] [3881] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:53:35,682 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:53:35 -0400] [3886] [DEBUG] GET /trial.html
+[2016-11-01 13:53:35 -0400] [3888] [DEBUG] GET /submit.html
+[2016-11-01 13:53:37 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:53:37 -0400] [3889] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:53:37 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:53:37 -0400] [3878] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:55:30 -0400] [3890] [DEBUG] GET /ad
+[2016-11-01 13:55:30 -0400] [3884] [DEBUG] GET /favicon.ico
+[2016-11-01 13:55:31 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 13:55:31 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:55:31 -0400] [3889] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:55:32 -0400] [3881] [DEBUG] GET /exp
+2016-11-01 13:55:32,248 Accessing /exp: debugZE9DK1 debugEICK0A debugGTVG2T 
+[2016-11-01 13:55:32 -0400] [3878] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:55:32 -0400] [3877] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:55:32 -0400] [3890] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:55:32 -0400] [3887] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:55:32 -0400] [3885] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:55:32 -0400] [3881] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:55:32 -0400] [3890] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:55:32 -0400] [3877] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:55:32 -0400] [3885] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:55:32 -0400] [3878] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:55:32 -0400] [3881] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:55:32 -0400] [3886] [DEBUG] GET /sync/debugGTVG2T%3AdebugEICK0A
+2016-11-01 13:55:32,363 GET /sync route with id: debugGTVG2T:debugEICK0A
+[2016-11-01 13:55:32 -0400] [3886] [DEBUG] GET /trial.html
+[2016-11-01 13:55:32 -0400] [3883] [DEBUG] GET /submit.html
+[2016-11-01 13:55:33 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:55:33 -0400] [3884] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:55:33 -0400] [3880] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:55:33 -0400] [3883] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:55:42 -0400] [3890] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:55:42 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 13:56:04 -0400] [3891] [DEBUG] Closing connection. 
+[2016-11-01 13:56:07 -0400] [3877] [DEBUG] Closing connection. 
+[2016-11-01 13:56:09 -0400] [3882] [DEBUG] Closing connection. 
+[2016-11-01 13:56:09 -0400] [3886] [DEBUG] Closing connection. 
+[2016-11-01 13:56:09 -0400] [3886] [DEBUG] Closing connection. 
+[2016-11-01 13:56:09 -0400] [3880] [DEBUG] GET /ad
+[2016-11-01 13:56:11 -0400] [3874] [DEBUG] GET /consent
+[2016-11-01 13:56:11 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 13:56:11 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 13:56:11 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 13:56:11,959 Accessing /exp: debug8RITR1 debugF20UIP debug7O3JPU 
+2016-11-01 13:56:11,963 given Counter({(0, 0): 2}) chose (0, 0)
+[2016-11-01 13:56:11 -0400] [3884] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 13:56:11 -0400] [3882] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 13:56:11 -0400] [3888] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 13:56:11 -0400] [3890] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 13:56:11 -0400] [3877] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 13:56:11 -0400] [3883] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 13:56:11 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 13:56:11 -0400] [3877] [DEBUG] GET /static/js/config.js
+[2016-11-01 13:56:11 -0400] [3874] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 13:56:11 -0400] [3878] [DEBUG] GET /static/js/task.js
+[2016-11-01 13:56:12 -0400] [3883] [DEBUG] GET /static/json/games.json
+[2016-11-01 13:56:12 -0400] [3882] [DEBUG] GET /sync/debug7O3JPU%3AdebugF20UIP
+2016-11-01 13:56:12,094 GET /sync route with id: debug7O3JPU:debugF20UIP
+[2016-11-01 13:56:12 -0400] [3874] [DEBUG] GET /trial.html
+[2016-11-01 13:56:12 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 13:56:14 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 13:56:14 -0400] [3884] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 13:56:14 -0400] [3883] [DEBUG] GET /static/images/crown.png
+[2016-11-01 13:56:14 -0400] [3880] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 13:56:21 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 13:56:21 -0400] [3874] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 14:06:07 -0400] [3885] [DEBUG] Closing connection. 
+[2016-11-01 14:06:07 -0400] [3885] [DEBUG] Closing connection. 
+[2016-11-01 14:06:07 -0400] [3878] [DEBUG] Closing connection. 
+[2016-11-01 14:06:07 -0400] [3876] [DEBUG] GET /ad
+[2016-11-01 14:06:08 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 14:06:08 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:06:08 -0400] [3879] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:06:09 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 14:06:09,157 Accessing /exp: debug16VLX4 debugZBQISV debug7W0X5M 
+2016-11-01 14:06:09,160 given Counter({(0, 0): 3}) chose (0, 0)
+[2016-11-01 14:06:09 -0400] [3881] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:06:09 -0400] [3877] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:06:09 -0400] [3888] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:06:09 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:06:09 -0400] [3881] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:06:09 -0400] [3888] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:06:09 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:06:09 -0400] [3889] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:06:09 -0400] [3888] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:06:09 -0400] [3880] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:06:09 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:06:09 -0400] [3880] [DEBUG] GET /sync/debug7W0X5M%3AdebugZBQISV
+2016-11-01 14:06:09,331 GET /sync route with id: debug7W0X5M:debugZBQISV
+[2016-11-01 14:06:09 -0400] [3881] [DEBUG] GET /trial.html
+[2016-11-01 14:06:09 -0400] [3889] [DEBUG] GET /submit.html
+[2016-11-01 14:06:10 -0400] [3880] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:06:10 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:06:10 -0400] [3878] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:06:10 -0400] [3889] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:06:15 -0400] [3874] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 14:06:15 -0400] [3884] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 14:18:28 -0400] [3882] [DEBUG] Closing connection. 
+[2016-11-01 14:18:28 -0400] [3891] [DEBUG] Closing connection. 
+[2016-11-01 14:18:28 -0400] [3889] [DEBUG] Closing connection. 
+[2016-11-01 14:18:29 -0400] [3889] [DEBUG] GET /ad
+[2016-11-01 14:18:30 -0400] [3881] [DEBUG] GET /consent
+[2016-11-01 14:18:30 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:18:30 -0400] [3878] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:18:31 -0400] [3891] [DEBUG] GET /exp
+2016-11-01 14:18:31,122 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+2016-11-01 14:18:31,128 given Counter({(0, 0): 4}) chose (0, 0)
+[2016-11-01 14:18:31 -0400] [3882] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:18:31 -0400] [3891] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:18:31 -0400] [3879] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:18:31 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:18:31 -0400] [3887] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:18:31 -0400] [3882] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:18:31 -0400] [3879] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:18:31 -0400] [3891] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:18:31 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:18:31 -0400] [3887] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:18:31 -0400] [3886] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:18:31 -0400] [3879] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:18:31,269 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:18:31 -0400] [3876] [DEBUG] GET /trial.html
+[2016-11-01 14:18:31 -0400] [3877] [DEBUG] GET /submit.html
+[2016-11-01 14:18:33 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:18:33 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:18:33 -0400] [3891] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:18:33 -0400] [3882] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:18:52 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:18:52 -0400] [3874] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:18:52 -0400] [3884] [DEBUG] GET /static/lib/underscore-min.map
+[2016-11-01 14:21:02 -0400] [3880] [DEBUG] GET /ad
+[2016-11-01 14:21:02 -0400] [3877] [DEBUG] GET /favicon.ico
+[2016-11-01 14:21:03 -0400] [3885] [DEBUG] GET /consent
+[2016-11-01 14:21:03 -0400] [3888] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:21:03 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:21:03 -0400] [3884] [DEBUG] GET /exp
+2016-11-01 14:21:03,930 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:21:03 -0400] [3883] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:21:03 -0400] [3876] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:21:03 -0400] [3879] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:21:03 -0400] [3891] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:21:03 -0400] [3884] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:21:03 -0400] [3886] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:21:03 -0400] [3876] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:21:03 -0400] [3884] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:21:03 -0400] [3886] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:21:03 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:21:04 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:21:04 -0400] [3877] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:21:04,053 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:21:04 -0400] [3884] [DEBUG] GET /trial.html
+[2016-11-01 14:21:04 -0400] [3876] [DEBUG] GET /submit.html
+[2016-11-01 14:21:05 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:21:05 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:21:05 -0400] [3886] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:21:05 -0400] [3885] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:21:45 -0400] [3876] [DEBUG] GET /consent
+[2016-11-01 14:21:45 -0400] [3880] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:21:45 -0400] [3886] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:21:46 -0400] [3888] [DEBUG] GET /exp
+2016-11-01 14:21:46,348 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:21:46 -0400] [3885] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:21:46 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:21:46 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:21:46 -0400] [3884] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:21:46 -0400] [3887] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:21:46 -0400] [3874] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:21:46 -0400] [3887] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:21:46 -0400] [3884] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:21:46 -0400] [3879] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:21:46 -0400] [3886] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:21:46 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:21:46 -0400] [3878] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:21:46,466 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:21:46 -0400] [3887] [DEBUG] GET /trial.html
+[2016-11-01 14:21:46 -0400] [3879] [DEBUG] GET /submit.html
+[2016-11-01 14:21:48 -0400] [3886] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:21:48 -0400] [3880] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:21:57 -0400] [3874] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:21:57 -0400] [3885] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:26:38 -0400] [3884] [DEBUG] GET /ad
+[2016-11-01 14:26:38 -0400] [3881] [DEBUG] GET /favicon.ico
+[2016-11-01 14:26:38 -0400] [3889] [DEBUG] GET /consent
+[2016-11-01 14:26:38 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:26:39 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:26:39 -0400] [3888] [DEBUG] GET /exp
+2016-11-01 14:26:39,802 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:26:39 -0400] [3889] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:26:39 -0400] [3890] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:26:39 -0400] [3884] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:26:39 -0400] [3883] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:26:39 -0400] [3877] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:26:39 -0400] [3884] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:26:39 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:26:39 -0400] [3883] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:26:39 -0400] [3874] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:26:39 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:26:39 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:26:39 -0400] [3887] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:26:39,916 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:26:39 -0400] [3878] [DEBUG] GET /trial.html
+[2016-11-01 14:26:39 -0400] [3878] [DEBUG] GET /submit.html
+[2016-11-01 14:26:41 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:26:41 -0400] [3874] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:26:41 -0400] [3880] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:26:41 -0400] [3891] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:29:51 -0400] [3891] [DEBUG] GET /ad
+[2016-11-01 14:29:51 -0400] [3879] [DEBUG] GET /favicon.ico
+[2016-11-01 14:29:52 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 14:29:52 -0400] [3876] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:29:52 -0400] [3882] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:29:53 -0400] [3888] [DEBUG] GET /exp
+2016-11-01 14:29:53,222 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:29:53 -0400] [3888] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:29:53 -0400] [3882] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:29:53 -0400] [3876] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:29:53 -0400] [3881] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:29:53 -0400] [3880] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:29:53 -0400] [3885] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:29:53 -0400] [3881] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:29:53 -0400] [3876] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:29:53 -0400] [3880] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:29:53 -0400] [3885] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:29:53 -0400] [3888] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:29:53 -0400] [3874] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:29:53,342 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:29:53 -0400] [3880] [DEBUG] GET /trial.html
+[2016-11-01 14:29:53 -0400] [3874] [DEBUG] GET /submit.html
+[2016-11-01 14:29:55 -0400] [3890] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:29:55 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:29:55 -0400] [3891] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:29:55 -0400] [3880] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:30:05 -0400] [3880] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:30:05 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:33:33 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 14:33:33 -0400] [3891] [DEBUG] GET /favicon.ico
+[2016-11-01 14:33:33 -0400] [3879] [DEBUG] GET /consent
+[2016-11-01 14:33:33 -0400] [3878] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:33:34 -0400] [3889] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:33:34 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 14:33:34,699 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:33:34 -0400] [3887] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:33:34 -0400] [3889] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:33:34 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:33:34 -0400] [3891] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:33:34 -0400] [3876] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:33:34 -0400] [3885] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:33:34 -0400] [3889] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:33:34 -0400] [3878] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:33:34 -0400] [3877] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:33:34 -0400] [3878] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:33:34 -0400] [3884] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:33:34 -0400] [3889] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:33:34,808 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:33:34 -0400] [3882] [DEBUG] GET /trial.html
+[2016-11-01 14:33:34 -0400] [3887] [DEBUG] GET /submit.html
+[2016-11-01 14:33:36 -0400] [3874] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:33:36 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:33:36 -0400] [3879] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:33:36 -0400] [3878] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:49:18 -0400] [3869] [CRITICAL] WORKER TIMEOUT (pid:3874)
+[2016-11-01 14:49:18 -0400] [3869] [CRITICAL] WORKER TIMEOUT (pid:3880)
+[2016-11-01 14:49:18 -0400] [3869] [CRITICAL] WORKER TIMEOUT (pid:3881)
+[2016-11-01 14:49:18 -0400] [3869] [CRITICAL] WORKER TIMEOUT (pid:3884)
+[2016-11-01 14:49:18 -0400] [3874] [INFO] Worker exiting (pid: 3874)
+[2016-11-01 14:49:18 -0400] [3880] [INFO] Worker exiting (pid: 3880)
+[2016-11-01 14:49:18 -0400] [3884] [INFO] Worker exiting (pid: 3884)
+[2016-11-01 14:49:18 -0400] [3881] [INFO] Worker exiting (pid: 3881)
+[2016-11-01 14:49:18 -0400] [4086] [INFO] Booting worker with pid: 4086
+[2016-11-01 14:49:18 -0400] [3869] [DEBUG] 14 workers
+[2016-11-01 14:49:18 -0400] [4087] [INFO] Booting worker with pid: 4087
+[2016-11-01 14:49:18 -0400] [4088] [INFO] Booting worker with pid: 4088
+[2016-11-01 14:49:18 -0400] [4089] [INFO] Booting worker with pid: 4089
+[2016-11-01 14:49:18 -0400] [3869] [DEBUG] 17 workers
+2016-11-01 14:49:18,398 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 14:49:18,399 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 14:49:18,401 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 14:49:18,403 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 14:49:18,404 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 14:49:18,406 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 14:49:18,425 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 14:49:18,425 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 14:49:18,427 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 14:49:18,431 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-11-01 14:49:18,432 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-11-01 14:49:18,434 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 14:53:24 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 14:53:24 -0400] [3882] [DEBUG] GET /favicon.ico
+[2016-11-01 14:53:24 -0400] [4086] [DEBUG] GET /consent
+[2016-11-01 14:53:24 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:53:24 -0400] [3876] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:53:25 -0400] [3885] [DEBUG] GET /exp
+2016-11-01 14:53:25,556 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:53:25 -0400] [3876] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:53:25 -0400] [3877] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:53:25 -0400] [4086] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:53:25 -0400] [3882] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:53:25 -0400] [3886] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:53:25 -0400] [3879] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:53:25 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:53:25 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:53:25 -0400] [3877] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:53:25 -0400] [3886] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:53:25 -0400] [3882] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:53:25 -0400] [3883] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:53:25,665 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:53:25 -0400] [3887] [DEBUG] GET /trial.html
+[2016-11-01 14:53:25 -0400] [3878] [DEBUG] GET /submit.html
+[2016-11-01 14:53:27 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:53:27 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:53:27 -0400] [3889] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 14:53:27 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:55:01 -0400] [3889] [DEBUG] GET /ad
+[2016-11-01 14:55:01 -0400] [3879] [DEBUG] GET /favicon.ico
+[2016-11-01 14:55:02 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 14:55:02 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 14:55:02 -0400] [3877] [DEBUG] GET /static/css/general.css
+[2016-11-01 14:55:03 -0400] [4086] [DEBUG] GET /exp
+2016-11-01 14:55:03,396 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 14:55:03 -0400] [3889] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 14:55:03 -0400] [3876] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 14:55:03 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 14:55:03 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 14:55:03 -0400] [4088] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 14:55:03 -0400] [3889] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 14:55:03 -0400] [3889] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 14:55:03 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 14:55:03 -0400] [3876] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 14:55:03 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 14:55:03 -0400] [4087] [DEBUG] GET /static/json/games.json
+[2016-11-01 14:55:03 -0400] [3876] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 14:55:03,529 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 14:55:03 -0400] [4087] [DEBUG] GET /trial.html
+[2016-11-01 14:55:03 -0400] [3885] [DEBUG] GET /submit.html
+[2016-11-01 14:55:05 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 14:55:05 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 14:55:05 -0400] [3878] [DEBUG] GET /static/images/crown.png
+[2016-11-01 14:55:05 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:06:01 -0400] [3879] [DEBUG] GET /ad
+[2016-11-01 15:06:01 -0400] [3878] [DEBUG] GET /favicon.ico
+[2016-11-01 15:06:01 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 15:06:01 -0400] [4088] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:06:01 -0400] [3877] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:06:02 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 15:06:02,603 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:06:02 -0400] [4088] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:06:02 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:06:02 -0400] [3879] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:06:02 -0400] [3878] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:06:02 -0400] [3877] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:06:02 -0400] [3879] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:06:02 -0400] [4088] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:06:02 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:06:02 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:06:02 -0400] [3889] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:06:02 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:06:02 -0400] [3879] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:06:02,713 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:06:02 -0400] [4087] [DEBUG] GET /trial.html
+[2016-11-01 15:06:02 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 15:06:04 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:06:04 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:06:04 -0400] [3891] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:06:04 -0400] [3889] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:08:02 -0400] [4089] [DEBUG] GET /consent
+[2016-11-01 15:08:02 -0400] [4089] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:08:02 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:08:03 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 15:08:03,912 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:08:03 -0400] [3887] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:08:03 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:08:03 -0400] [3879] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:08:03 -0400] [3877] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:08:03 -0400] [4086] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:08:03 -0400] [3883] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:08:03 -0400] [4086] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:08:03 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:08:03 -0400] [3889] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:08:03 -0400] [4089] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:08:04 -0400] [3886] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:08:04 -0400] [4089] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:08:04,035 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:08:04 -0400] [3888] [DEBUG] GET /trial.html
+[2016-11-01 15:08:04 -0400] [3886] [DEBUG] GET /submit.html
+[2016-11-01 15:08:05 -0400] [3889] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:08:05 -0400] [3886] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:12:05 -0400] [3879] [DEBUG] GET /consent
+[2016-11-01 15:12:05 -0400] [3888] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:12:05 -0400] [3877] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:12:06 -0400] [3876] [DEBUG] GET /exp
+2016-11-01 15:12:06,223 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:12:06 -0400] [4088] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:12:06 -0400] [3888] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:12:06 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:12:06 -0400] [3882] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:12:06 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:12:06 -0400] [3889] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:12:06 -0400] [3889] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:12:06 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:12:06 -0400] [3888] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:12:06 -0400] [4086] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:12:06 -0400] [3882] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:12:06 -0400] [3877] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:12:06,345 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:12:06 -0400] [4088] [DEBUG] GET /trial.html
+[2016-11-01 15:12:06 -0400] [3888] [DEBUG] GET /submit.html
+[2016-11-01 15:12:08 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:12:08 -0400] [3879] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:12:48 -0400] [4088] [DEBUG] GET /ad
+[2016-11-01 15:12:48 -0400] [3890] [DEBUG] GET /favicon.ico
+[2016-11-01 15:12:49 -0400] [3891] [DEBUG] GET /consent
+[2016-11-01 15:12:49 -0400] [3882] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:12:49 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:12:50 -0400] [3888] [DEBUG] GET /exp
+2016-11-01 15:12:50,816 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:12:50 -0400] [3887] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:12:50 -0400] [3888] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:12:50 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:12:50 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:12:50 -0400] [4088] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:12:50 -0400] [3878] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:12:50 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:12:50 -0400] [4086] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:12:50 -0400] [4089] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:12:50 -0400] [3885] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:12:50 -0400] [3888] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:12:50 -0400] [3883] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:12:50,930 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:12:50 -0400] [3882] [DEBUG] GET /trial.html
+[2016-11-01 15:12:50 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 15:12:52 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:12:52 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:12:52 -0400] [3886] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:12:52 -0400] [3891] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:14:06 -0400] [3885] [DEBUG] GET /ad
+[2016-11-01 15:14:07 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 15:14:07 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 15:14:07 -0400] [3879] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:14:07 -0400] [4086] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:14:08 -0400] [3883] [DEBUG] GET /exp
+2016-11-01 15:14:08,494 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:14:08 -0400] [3876] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:14:08 -0400] [3877] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:14:08 -0400] [3879] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:14:08 -0400] [4087] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:14:08 -0400] [3887] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:14:08 -0400] [3890] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:14:08 -0400] [4087] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:14:08 -0400] [3890] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:14:08 -0400] [3886] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:14:08 -0400] [3883] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:14:08 -0400] [3876] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:14:08 -0400] [3887] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:14:08,608 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:14:08 -0400] [3889] [DEBUG] GET /trial.html
+[2016-11-01 15:14:08 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 15:14:10 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:14:10 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:14:10 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:14:10 -0400] [3889] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:24:28 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 15:24:28 -0400] [3882] [DEBUG] GET /favicon.ico
+[2016-11-01 15:24:29 -0400] [4086] [DEBUG] GET /consent
+[2016-11-01 15:24:29 -0400] [3885] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:24:29 -0400] [3877] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:24:30 -0400] [3883] [DEBUG] GET /exp
+2016-11-01 15:24:30,413 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:24:30 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:24:30 -0400] [3886] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:24:30 -0400] [4086] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:24:30 -0400] [4087] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:24:30 -0400] [3878] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:24:30 -0400] [4089] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:24:30 -0400] [3878] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:24:30 -0400] [4086] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:24:30 -0400] [3891] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:24:30 -0400] [4086] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:24:30 -0400] [3882] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:24:30 -0400] [3879] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:24:30,560 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:24:30 -0400] [3890] [DEBUG] GET /trial.html
+[2016-11-01 15:24:30 -0400] [4088] [DEBUG] GET /submit.html
+[2016-11-01 15:24:32 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:24:32 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:24:32 -0400] [3887] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:24:32 -0400] [3890] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:26:07 -0400] [3876] [DEBUG] GET /ad
+[2016-11-01 15:26:07 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 15:26:08 -0400] [3883] [DEBUG] GET /consent
+[2016-11-01 15:26:08 -0400] [3888] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:26:08 -0400] [3886] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:26:09 -0400] [3890] [DEBUG] GET /exp
+2016-11-01 15:26:09,603 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:26:09 -0400] [3888] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:26:09 -0400] [3883] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:26:09 -0400] [3876] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:26:09 -0400] [3882] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:26:09 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:26:09 -0400] [4087] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:26:09 -0400] [4087] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:26:09 -0400] [3889] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:26:09 -0400] [3883] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:26:09 -0400] [3882] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:26:09 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:26:09 -0400] [4089] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:26:09,721 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:26:09 -0400] [3887] [DEBUG] GET /trial.html
+[2016-11-01 15:26:09 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 15:26:11 -0400] [4088] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:26:11 -0400] [3891] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:26:11 -0400] [3886] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:26:11 -0400] [3883] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:32:02 -0400] [4088] [DEBUG] GET /consent
+[2016-11-01 15:32:02 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:32:02 -0400] [4088] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:32:03 -0400] [4088] [DEBUG] GET /exp
+2016-11-01 15:32:03,922 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:32:03 -0400] [3876] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:32:03 -0400] [4088] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:32:03 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:32:03 -0400] [4089] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:32:03 -0400] [3883] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:32:03 -0400] [3891] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:32:03 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:32:03 -0400] [4089] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:32:03 -0400] [3886] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:32:03 -0400] [3883] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:32:04 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:32:04 -0400] [4086] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:32:04,111 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:32:04 -0400] [3882] [DEBUG] GET /trial.html
+[2016-11-01 15:32:04 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 15:32:05 -0400] [3878] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:32:05 -0400] [3885] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:36:08 -0400] [3888] [DEBUG] GET /ad
+[2016-11-01 15:36:08 -0400] [3887] [DEBUG] GET /favicon.ico
+[2016-11-01 15:36:12 -0400] [3889] [DEBUG] GET /consent
+[2016-11-01 15:36:12 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:36:12 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:36:13 -0400] [3891] [DEBUG] GET /exp
+2016-11-01 15:36:13,076 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:36:13 -0400] [3883] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:36:13 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:36:13 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:36:13 -0400] [3887] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:36:13 -0400] [3888] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:36:13 -0400] [4086] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:36:13 -0400] [3889] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:36:13 -0400] [3883] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:36:13 -0400] [4086] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:36:13 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:36:13 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:36:13 -0400] [3889] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:36:13,195 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:36:13 -0400] [4086] [DEBUG] GET /trial.html
+[2016-11-01 15:36:13 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 15:36:14 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:36:14 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:36:14 -0400] [4088] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:36:14 -0400] [3891] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:38:06 -0400] [4088] [DEBUG] GET /ad
+[2016-11-01 15:38:06 -0400] [3879] [DEBUG] GET /favicon.ico
+[2016-11-01 15:38:07 -0400] [3887] [DEBUG] GET /consent
+[2016-11-01 15:38:07 -0400] [3878] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:38:07 -0400] [4087] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:38:08 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 15:38:08,057 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:38:08 -0400] [3882] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:38:08 -0400] [3878] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:38:08 -0400] [3887] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:38:08 -0400] [3891] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:38:08 -0400] [4088] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:38:08 -0400] [4089] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:38:08 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:38:08 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:38:08 -0400] [3878] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:38:08 -0400] [4088] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:38:08 -0400] [3891] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:38:08 -0400] [3883] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:38:08,178 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:38:08 -0400] [3890] [DEBUG] GET /trial.html
+[2016-11-01 15:38:08 -0400] [3883] [DEBUG] GET /submit.html
+[2016-11-01 15:38:09 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:38:09 -0400] [3890] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:38:09 -0400] [3887] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:38:09 -0400] [4086] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:38:18 -0400] [4089] [DEBUG] GET /consent
+[2016-11-01 15:38:18 -0400] [4089] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:38:18 -0400] [3879] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:38:18 -0400] [4088] [DEBUG] GET /exp
+2016-11-01 15:38:18,883 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:38:18 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:38:18 -0400] [4088] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:38:18 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:38:18 -0400] [3886] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:38:18 -0400] [3879] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:38:18 -0400] [3887] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:38:18 -0400] [4088] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:38:18 -0400] [3886] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:38:18 -0400] [3887] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:38:18 -0400] [3879] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:38:18 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:38:19 -0400] [3879] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:38:19,001 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:38:19 -0400] [3879] [DEBUG] GET /trial.html
+[2016-11-01 15:38:19 -0400] [3876] [DEBUG] GET /submit.html
+[2016-11-01 15:38:20 -0400] [3878] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:38:20 -0400] [3876] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:39:53 -0400] [3876] [DEBUG] GET /ad
+[2016-11-01 15:39:54 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 15:39:54 -0400] [3889] [DEBUG] GET /consent
+[2016-11-01 15:39:54 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:39:54 -0400] [3885] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:39:55 -0400] [3877] [DEBUG] GET /exp
+2016-11-01 15:39:55,653 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:39:55 -0400] [3877] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:39:55 -0400] [3885] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:39:55 -0400] [3887] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:39:55 -0400] [3876] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:39:55 -0400] [3889] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:39:55 -0400] [3886] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:39:55 -0400] [3885] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:39:55 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:39:55 -0400] [4086] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:39:55 -0400] [3889] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:39:55 -0400] [3876] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:39:55 -0400] [4086] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:39:55,776 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:39:55 -0400] [3888] [DEBUG] GET /trial.html
+[2016-11-01 15:39:55 -0400] [3885] [DEBUG] GET /submit.html
+[2016-11-01 15:39:57 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:39:57 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:39:57 -0400] [4089] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:39:57 -0400] [3885] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:40:53 -0400] [3885] [DEBUG] GET /ad
+[2016-11-01 15:40:53 -0400] [4086] [DEBUG] GET /favicon.ico
+[2016-11-01 15:40:54 -0400] [3882] [DEBUG] GET /consent
+[2016-11-01 15:40:54 -0400] [3888] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:40:54 -0400] [3878] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:40:54 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 15:40:54,872 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:40:54 -0400] [4086] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:40:54 -0400] [4087] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:40:54 -0400] [3888] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:40:54 -0400] [3883] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:40:54 -0400] [3878] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:40:54 -0400] [4086] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:40:54 -0400] [3883] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:40:54 -0400] [3886] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:40:54 -0400] [3878] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:40:54 -0400] [3885] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:40:54 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:40:54 -0400] [4087] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:40:54,985 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:40:54 -0400] [3888] [DEBUG] GET /trial.html
+[2016-11-01 15:40:55 -0400] [3888] [DEBUG] GET /submit.html
+[2016-11-01 15:40:56 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:40:56 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:40:56 -0400] [4088] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:40:56 -0400] [3889] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:41:20 -0400] [4087] [DEBUG] GET /ad
+[2016-11-01 15:41:20 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 15:41:21 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 15:41:21 -0400] [3889] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:41:21 -0400] [3879] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:41:22 -0400] [3883] [DEBUG] GET /exp
+2016-11-01 15:41:22,203 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:41:22 -0400] [3883] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:41:22 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:41:22 -0400] [3879] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:41:22 -0400] [3878] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:41:22 -0400] [4088] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:41:22 -0400] [3877] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:41:22 -0400] [3878] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:41:22 -0400] [3889] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:41:22 -0400] [3876] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:41:22 -0400] [4088] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:41:22 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:41:22 -0400] [3885] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:41:22,317 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:41:22 -0400] [4088] [DEBUG] GET /trial.html
+[2016-11-01 15:41:22 -0400] [4088] [DEBUG] GET /submit.html
+[2016-11-01 15:41:23 -0400] [3891] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:41:23 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:41:23 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:41:23 -0400] [3889] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:42:04 -0400] [3889] [DEBUG] GET /ad
+[2016-11-01 15:42:04 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 15:42:08 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 15:42:08 -0400] [3882] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:42:08 -0400] [4087] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:42:09 -0400] [4089] [DEBUG] GET /exp
+2016-11-01 15:42:09,792 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:42:09 -0400] [4087] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:42:09 -0400] [4089] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:42:09 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:42:09 -0400] [3877] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:42:09 -0400] [3887] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:42:09 -0400] [3883] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:42:09 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:42:09 -0400] [3882] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:42:09 -0400] [4087] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:42:09 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:42:09 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:42:09 -0400] [3877] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:42:09,944 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:42:09 -0400] [3891] [DEBUG] GET /trial.html
+[2016-11-01 15:42:09 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 15:42:11 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:42:11 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:42:11 -0400] [3888] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:42:11 -0400] [4089] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:42:41 -0400] [3888] [DEBUG] GET /ad
+[2016-11-01 15:42:41 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 15:42:42 -0400] [4087] [DEBUG] GET /consent
+[2016-11-01 15:42:42 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:42:42 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:42:42 -0400] [3885] [DEBUG] GET /exp
+2016-11-01 15:42:42,781 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:42:42 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:42:42 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:42:42 -0400] [3883] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:42:42 -0400] [4087] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:42:42 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:42:42 -0400] [3888] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:42:42 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:42:42 -0400] [4086] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:42:42 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:42:42 -0400] [3883] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:42:42 -0400] [4087] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:42:42 -0400] [4087] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:42:42,890 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:42:42 -0400] [3882] [DEBUG] GET /trial.html
+[2016-11-01 15:42:42 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 15:42:44 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:42:44 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:42:44 -0400] [3887] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:42:44 -0400] [4089] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:43:46 -0400] [3887] [DEBUG] GET /ad
+[2016-11-01 15:43:46 -0400] [3885] [DEBUG] GET /favicon.ico
+[2016-11-01 15:43:46 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 15:43:46 -0400] [3876] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:43:46 -0400] [3878] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:43:47 -0400] [4089] [DEBUG] GET /exp
+2016-11-01 15:43:47,740 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:43:47 -0400] [3878] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:43:47 -0400] [4089] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:43:47 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:43:47 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:43:47 -0400] [4087] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:43:47 -0400] [3877] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:43:47 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:43:47 -0400] [4087] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:43:47 -0400] [3882] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:43:47 -0400] [3885] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:43:47 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:43:47 -0400] [3877] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:43:47,849 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:43:47 -0400] [3878] [DEBUG] GET /trial.html
+[2016-11-01 15:43:47 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 15:43:49 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:43:49 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:43:49 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:43:49 -0400] [4089] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:46:02 -0400] [3888] [DEBUG] GET /ad
+[2016-11-01 15:46:02 -0400] [4086] [DEBUG] GET /favicon.ico
+[2016-11-01 15:46:03 -0400] [4089] [DEBUG] GET /consent
+[2016-11-01 15:46:03 -0400] [3885] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:46:03 -0400] [3878] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:46:04 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 15:46:04,445 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:46:04 -0400] [3882] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:46:04 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:46:04 -0400] [3883] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:46:04 -0400] [4087] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:46:04 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:46:04 -0400] [3889] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:46:04 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:46:04 -0400] [3883] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:46:04 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:46:04 -0400] [3886] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:46:04 -0400] [4089] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:46:04 -0400] [4088] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:46:04,563 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:46:04 -0400] [3878] [DEBUG] GET /trial.html
+[2016-11-01 15:46:04 -0400] [4087] [DEBUG] GET /submit.html
+[2016-11-01 15:46:06 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:46:06 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:46:06 -0400] [3883] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:46:06 -0400] [3888] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:47:17 -0400] [3888] [DEBUG] GET /ad
+[2016-11-01 15:47:17 -0400] [3877] [DEBUG] GET /favicon.ico
+[2016-11-01 15:47:18 -0400] [3876] [DEBUG] GET /consent
+[2016-11-01 15:47:18 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:47:18 -0400] [3882] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:47:19 -0400] [4086] [DEBUG] GET /exp
+2016-11-01 15:47:19,944 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:47:19 -0400] [4086] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:47:19 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:47:19 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:47:19 -0400] [3878] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:47:19 -0400] [4087] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:47:19 -0400] [3885] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:47:19 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:47:19 -0400] [4087] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:47:19 -0400] [3877] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:47:19 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:47:20 -0400] [3885] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:47:20 -0400] [3885] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:47:20,071 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:47:20 -0400] [3885] [DEBUG] GET /trial.html
+[2016-11-01 15:47:20 -0400] [3889] [DEBUG] GET /submit.html
+[2016-11-01 15:47:21 -0400] [3889] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:47:21 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:47:21 -0400] [3887] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:47:21 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:49:45 -0400] [3888] [DEBUG] GET /ad
+[2016-11-01 15:49:45 -0400] [3889] [DEBUG] GET /favicon.ico
+[2016-11-01 15:49:46 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 15:49:46 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:49:46 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:49:47 -0400] [4089] [DEBUG] GET /exp
+2016-11-01 15:49:47,375 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:49:47 -0400] [3883] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:49:47 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:49:47 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:49:47 -0400] [3886] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:49:47 -0400] [4088] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:49:47 -0400] [3891] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:49:47 -0400] [4088] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:49:47 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:49:47 -0400] [4087] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:49:47 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:49:47 -0400] [3878] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:49:47 -0400] [3883] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:49:47,486 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:49:47 -0400] [3882] [DEBUG] GET /trial.html
+[2016-11-01 15:49:47 -0400] [3876] [DEBUG] GET /submit.html
+[2016-11-01 15:49:48 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:49:48 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:49:48 -0400] [3879] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:49:48 -0400] [3882] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:50:30 -0400] [3877] [DEBUG] GET /ad
+[2016-11-01 15:50:30 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 15:50:30 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 15:50:30 -0400] [3882] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:50:30 -0400] [3876] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:50:31 -0400] [4086] [DEBUG] GET /exp
+2016-11-01 15:50:31,779 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:50:31 -0400] [4086] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:50:31 -0400] [3876] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:50:31 -0400] [3886] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:50:31 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:50:31 -0400] [4089] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:50:31 -0400] [3878] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:50:31 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:50:31 -0400] [4087] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:50:31 -0400] [3876] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:50:31 -0400] [4086] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:50:31 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:50:31 -0400] [4089] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:50:31,893 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:50:31 -0400] [3889] [DEBUG] GET /trial.html
+[2016-11-01 15:50:31 -0400] [3889] [DEBUG] GET /submit.html
+[2016-11-01 15:50:33 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:50:33 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:50:33 -0400] [4089] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:50:33 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:51:41 -0400] [4088] [DEBUG] GET /ad
+[2016-11-01 15:51:41 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 15:51:42 -0400] [3887] [DEBUG] GET /consent
+[2016-11-01 15:51:42 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:51:42 -0400] [3885] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:51:43 -0400] [3878] [DEBUG] GET /exp
+2016-11-01 15:51:43,073 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:51:43 -0400] [3878] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:51:43 -0400] [3882] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:51:43 -0400] [3885] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:51:43 -0400] [4089] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:51:43 -0400] [4088] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:51:43 -0400] [3883] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:51:43 -0400] [4088] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:51:43 -0400] [3885] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:51:43 -0400] [3889] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:51:43 -0400] [3887] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:51:43 -0400] [4089] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:51:43 -0400] [3887] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:51:43,184 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:51:43 -0400] [3883] [DEBUG] GET /trial.html
+[2016-11-01 15:51:43 -0400] [3876] [DEBUG] GET /submit.html
+[2016-11-01 15:51:44 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:51:44 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:51:44 -0400] [4088] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:51:44 -0400] [3891] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:52:02 -0400] [4088] [DEBUG] GET /ad
+[2016-11-01 15:52:02 -0400] [3879] [DEBUG] GET /favicon.ico
+[2016-11-01 15:52:03 -0400] [3876] [DEBUG] GET /consent
+[2016-11-01 15:52:03 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:52:03 -0400] [4087] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:52:04 -0400] [3877] [DEBUG] GET /exp
+2016-11-01 15:52:04,032 Accessing /exp: debug0AVRPF debugOBRJG9 debugYVLAS0 
+[2016-11-01 15:52:04 -0400] [3879] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:52:04 -0400] [4089] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:52:04 -0400] [3888] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:52:04 -0400] [3889] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:52:04 -0400] [4086] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:52:04 -0400] [3886] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:52:04 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:52:04 -0400] [3876] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:52:04 -0400] [4086] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:52:04 -0400] [3885] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:52:04 -0400] [3886] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:52:04 -0400] [3890] [DEBUG] GET /sync/debugYVLAS0%3AdebugOBRJG9
+2016-11-01 15:52:04,145 GET /sync route with id: debugYVLAS0:debugOBRJG9
+[2016-11-01 15:52:04 -0400] [3890] [DEBUG] GET /trial.html
+[2016-11-01 15:52:04 -0400] [3882] [DEBUG] GET /submit.html
+[2016-11-01 15:52:05 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:52:05 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:52:05 -0400] [4086] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:52:05 -0400] [3876] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:53:16 -0400] [3882] [DEBUG] Closing connection. 
+[2016-11-01 15:53:16 -0400] [3883] [DEBUG] Closing connection. 
+[2016-11-01 15:53:16 -0400] [4088] [DEBUG] Closing connection. 
+[2016-11-01 15:53:16 -0400] [3879] [DEBUG] GET /ad
+[2016-11-01 15:53:17 -0400] [4088] [DEBUG] GET /consent
+[2016-11-01 15:53:17 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:53:17 -0400] [3878] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:53:18 -0400] [3885] [DEBUG] GET /exp
+2016-11-01 15:53:18,291 Accessing /exp: debugIJSLVX debug3IJH9R debugZPSTYW 
+2016-11-01 15:53:18,294 given Counter({(0, 0): 1}) chose (0, 0)
+[2016-11-01 15:53:18 -0400] [3887] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:53:18 -0400] [4088] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:53:18 -0400] [4086] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:53:18 -0400] [3879] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:53:18 -0400] [3890] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:53:18 -0400] [3887] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:53:18 -0400] [3885] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:53:18 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:53:18 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:53:18 -0400] [3876] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:53:18 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:53:18 -0400] [4089] [DEBUG] GET /sync/debugZPSTYW%3Adebug3IJH9R
+2016-11-01 15:53:18,463 GET /sync route with id: debugZPSTYW:debug3IJH9R
+[2016-11-01 15:53:18 -0400] [3882] [DEBUG] GET /trial.html
+[2016-11-01 15:53:18 -0400] [4089] [DEBUG] GET /submit.html
+[2016-11-01 15:53:19 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:53:19 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:53:19 -0400] [3888] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:53:19 -0400] [3890] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:53:27 -0400] [4089] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 15:53:27 -0400] [3889] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 15:56:38 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 15:56:38 -0400] [3876] [DEBUG] GET /favicon.ico
+[2016-11-01 15:56:39 -0400] [4089] [DEBUG] GET /consent
+[2016-11-01 15:56:39 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:56:39 -0400] [4088] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:56:40 -0400] [4087] [DEBUG] GET /exp
+2016-11-01 15:56:40,320 Accessing /exp: debugIJSLVX debug3IJH9R debugZPSTYW 
+[2016-11-01 15:56:40 -0400] [3890] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:56:40 -0400] [4087] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:56:40 -0400] [4089] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:56:40 -0400] [3876] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:56:40 -0400] [3887] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:56:40 -0400] [3885] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:56:40 -0400] [3885] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:56:40 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:56:40 -0400] [3883] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:56:40 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:56:40 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:56:40 -0400] [3879] [DEBUG] GET /sync/debugZPSTYW%3Adebug3IJH9R
+2016-11-01 15:56:40,433 GET /sync route with id: debugZPSTYW:debug3IJH9R
+[2016-11-01 15:56:40 -0400] [3877] [DEBUG] GET /trial.html
+[2016-11-01 15:56:40 -0400] [3888] [DEBUG] GET /submit.html
+[2016-11-01 15:56:41 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:56:41 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:56:41 -0400] [3882] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:56:41 -0400] [4086] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:57:14 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 15:57:15 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 15:57:20 -0400] [3882] [DEBUG] Closing connection. 
+[2016-11-01 15:57:20 -0400] [3888] [DEBUG] Closing connection. 
+[2016-11-01 15:57:20 -0400] [4087] [DEBUG] Closing connection. 
+[2016-11-01 15:57:20 -0400] [4086] [DEBUG] GET /ad
+[2016-11-01 15:57:21 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 15:57:21 -0400] [3888] [DEBUG] GET /static/js/utils.js
+[2016-11-01 15:57:21 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 15:57:21 -0400] [3876] [DEBUG] GET /exp
+2016-11-01 15:57:21,978 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+2016-11-01 15:57:21,981 given Counter({(0, 0): 2}) chose (0, 0)
+[2016-11-01 15:57:21 -0400] [3891] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 15:57:22 -0400] [3887] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 15:57:22 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 15:57:22 -0400] [3888] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 15:57:22 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 15:57:22 -0400] [3887] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 15:57:22 -0400] [3888] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 15:57:22 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 15:57:22 -0400] [3876] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 15:57:22 -0400] [4089] [DEBUG] GET /static/js/task.js
+[2016-11-01 15:57:22 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 15:57:22 -0400] [3882] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 15:57:22,146 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 15:57:22 -0400] [4086] [DEBUG] GET /trial.html
+[2016-11-01 15:57:22 -0400] [3878] [DEBUG] GET /submit.html
+[2016-11-01 15:57:23 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 15:57:23 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 15:57:23 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 15:57:23 -0400] [4086] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 15:57:35 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 15:57:35 -0400] [3889] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 16:09:19 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 16:09:19 -0400] [3890] [DEBUG] GET /favicon.ico
+[2016-11-01 16:09:20 -0400] [3883] [DEBUG] GET /consent
+[2016-11-01 16:09:20 -0400] [4086] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:09:20 -0400] [3891] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:09:21 -0400] [3878] [DEBUG] GET /exp
+2016-11-01 16:09:21,196 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:09:21 -0400] [3878] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:09:21 -0400] [3889] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:09:21 -0400] [3885] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:09:21 -0400] [3888] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:09:21 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:09:21 -0400] [3878] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:09:21 -0400] [3878] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:09:21 -0400] [3890] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:09:21 -0400] [3888] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:09:21 -0400] [4089] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:09:21 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:09:21 -0400] [4087] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:09:21,360 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:09:21 -0400] [3883] [DEBUG] GET /trial.html
+[2016-11-01 16:09:21 -0400] [3883] [DEBUG] GET /submit.html
+[2016-11-01 16:09:21 -0400] [4089] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:09:22 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:09:22 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:09:22 -0400] [3883] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:09:22 -0400] [4089] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:10:13 -0400] [3878] [DEBUG] GET /ad
+[2016-11-01 16:10:14 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 16:10:14 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 16:10:14 -0400] [4087] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:10:14 -0400] [3876] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:10:15 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 16:10:15,320 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:10:15 -0400] [3882] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:10:15 -0400] [3891] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:10:15 -0400] [4086] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:10:15 -0400] [4087] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:10:15 -0400] [4089] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:10:15 -0400] [3877] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:10:15 -0400] [4086] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:10:15 -0400] [3890] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:10:15 -0400] [3877] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:10:15 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:10:15 -0400] [3878] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:10:15 -0400] [3882] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:10:15,431 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:10:15 -0400] [3890] [DEBUG] GET /trial.html
+[2016-11-01 16:10:15 -0400] [3890] [DEBUG] GET /submit.html
+[2016-11-01 16:10:15 -0400] [3891] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:10:16 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:10:16 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:10:16 -0400] [3878] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:10:16 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:11:37 -0400] [3885] [DEBUG] GET /ad
+[2016-11-01 16:11:37 -0400] [3876] [DEBUG] GET /favicon.ico
+[2016-11-01 16:11:38 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 16:11:38 -0400] [3882] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:11:38 -0400] [3886] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:11:39 -0400] [4089] [DEBUG] GET /exp
+2016-11-01 16:11:39,364 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:11:39 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:11:39 -0400] [4089] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:11:39 -0400] [4088] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:11:39 -0400] [3877] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:11:39 -0400] [3888] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:11:39 -0400] [3889] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:11:39 -0400] [3889] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:11:39 -0400] [3878] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:11:39 -0400] [3888] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:11:39 -0400] [3882] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:11:39 -0400] [3890] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:11:39 -0400] [3888] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:11:39,482 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:11:39 -0400] [3879] [DEBUG] GET /trial.html
+[2016-11-01 16:11:39 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 16:11:39 -0400] [4088] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:11:40 -0400] [3890] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:11:40 -0400] [4088] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:11:40 -0400] [4087] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:11:40 -0400] [3885] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:12:15 -0400] [4089] [DEBUG] GET /ad
+[2016-11-01 16:12:15 -0400] [3886] [DEBUG] GET /favicon.ico
+[2016-11-01 16:12:16 -0400] [3879] [DEBUG] GET /consent
+[2016-11-01 16:12:16 -0400] [3891] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:12:16 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:12:17 -0400] [3876] [DEBUG] GET /exp
+2016-11-01 16:12:17,104 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:12:17 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:12:17 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:12:17 -0400] [3876] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:12:17 -0400] [3887] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:12:17 -0400] [3888] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:12:17 -0400] [3877] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:12:17 -0400] [3887] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:12:17 -0400] [3888] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:12:17 -0400] [3877] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:12:17 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:12:17 -0400] [3876] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:12:17 -0400] [3876] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:12:17,219 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:12:17 -0400] [3883] [DEBUG] GET /trial.html
+[2016-11-01 16:12:17 -0400] [3876] [DEBUG] GET /submit.html
+[2016-11-01 16:12:17 -0400] [4088] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:12:19 -0400] [4089] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:12:19 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:12:19 -0400] [3886] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:12:19 -0400] [3876] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:12:27 -0400] [4089] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:12:27 -0400] [4088] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:12:46 -0400] [4089] [DEBUG] GET /ad
+[2016-11-01 16:12:46 -0400] [3888] [DEBUG] GET /favicon.ico
+[2016-11-01 16:12:46 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 16:12:46 -0400] [3883] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:12:46 -0400] [4088] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:12:47 -0400] [4086] [DEBUG] GET /exp
+2016-11-01 16:12:47,831 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:12:47 -0400] [4086] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:12:47 -0400] [3883] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:12:47 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:12:47 -0400] [3877] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:12:47 -0400] [3876] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:12:47 -0400] [4088] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:12:47 -0400] [3883] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:12:47 -0400] [3885] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:12:47 -0400] [3889] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:12:47 -0400] [4087] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:12:47 -0400] [3883] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:12:47 -0400] [4088] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:12:47,944 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:12:47 -0400] [3885] [DEBUG] GET /trial.html
+[2016-11-01 16:12:47 -0400] [4087] [DEBUG] GET /submit.html
+[2016-11-01 16:12:47 -0400] [3887] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:12:49 -0400] [3889] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:12:49 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:12:49 -0400] [3879] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:12:49 -0400] [3882] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:15:25 -0400] [3879] [DEBUG] GET /ad
+[2016-11-01 16:15:25 -0400] [3889] [DEBUG] GET /favicon.ico
+[2016-11-01 16:15:27 -0400] [3890] [DEBUG] GET /consent
+[2016-11-01 16:15:27 -0400] [3876] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:15:27 -0400] [4086] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:15:27 -0400] [4088] [DEBUG] GET /exp
+2016-11-01 16:15:27,901 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:15:27 -0400] [3876] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:15:27 -0400] [3890] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:15:27 -0400] [4087] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:15:27 -0400] [4089] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:15:27 -0400] [3878] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:15:27 -0400] [3876] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:15:27 -0400] [3878] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:15:27 -0400] [4089] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:15:27 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:15:27 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:15:28 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:15:28 -0400] [3876] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:15:28,019 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:15:28 -0400] [3888] [DEBUG] GET /trial.html
+[2016-11-01 16:15:28 -0400] [3886] [DEBUG] GET /submit.html
+[2016-11-01 16:15:28 -0400] [4089] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:15:29 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:15:29 -0400] [3878] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:15:29 -0400] [4087] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:15:29 -0400] [3888] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:16:00 -0400] [3888] [DEBUG] GET /ad
+[2016-11-01 16:16:00 -0400] [3883] [DEBUG] GET /favicon.ico
+[2016-11-01 16:16:01 -0400] [3887] [DEBUG] GET /consent
+[2016-11-01 16:16:01 -0400] [3876] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:16:01 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:16:02 -0400] [3886] [DEBUG] GET /exp
+2016-11-01 16:16:02,067 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:16:02 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:16:02 -0400] [3877] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:16:02 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:16:02 -0400] [3885] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:16:02 -0400] [3890] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:16:02 -0400] [3879] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:16:02 -0400] [3878] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:16:02 -0400] [4087] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:16:02 -0400] [3877] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:16:02 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:16:02 -0400] [4087] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:16:02 -0400] [3889] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:16:02,179 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:16:02 -0400] [4087] [DEBUG] GET /trial.html
+[2016-11-01 16:16:02 -0400] [3883] [DEBUG] GET /submit.html
+[2016-11-01 16:16:02 -0400] [3883] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:16:03 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:16:03 -0400] [4088] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:16:03 -0400] [3877] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:16:03 -0400] [3878] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:16:30 -0400] [4088] [DEBUG] GET /ad
+[2016-11-01 16:16:30 -0400] [3888] [DEBUG] GET /favicon.ico
+[2016-11-01 16:16:30 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 16:16:30 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:16:30 -0400] [4086] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:16:31 -0400] [3891] [DEBUG] GET /exp
+2016-11-01 16:16:31,638 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:16:31 -0400] [4086] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:16:31 -0400] [3879] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:16:31 -0400] [3883] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:16:31 -0400] [3878] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:16:31 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:16:31 -0400] [4087] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:16:31 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:16:31 -0400] [3882] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:16:31 -0400] [3878] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:16:31 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:16:31 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:16:31 -0400] [3890] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:16:31,759 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:16:31 -0400] [3890] [DEBUG] GET /trial.html
+[2016-11-01 16:16:31 -0400] [3890] [DEBUG] GET /submit.html
+[2016-11-01 16:16:31 -0400] [4086] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:16:33 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:16:33 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:16:33 -0400] [3877] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:16:33 -0400] [3883] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:16:41 -0400] [3882] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:16:41 -0400] [4086] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:18:44 -0400] [3890] [DEBUG] GET /ad
+[2016-11-01 16:18:45 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 16:18:45 -0400] [4086] [DEBUG] GET /consent
+[2016-11-01 16:18:45 -0400] [3889] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:18:45 -0400] [3882] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:18:46 -0400] [3886] [DEBUG] GET /exp
+2016-11-01 16:18:46,467 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:18:46 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:18:46 -0400] [3882] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:18:46 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:18:46 -0400] [4086] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:18:46 -0400] [3876] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:18:46 -0400] [3883] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:18:46 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:18:46 -0400] [3886] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:18:46 -0400] [4086] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:18:46 -0400] [3883] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:18:46 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:18:46 -0400] [3885] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:18:46,584 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:18:46 -0400] [3883] [DEBUG] GET /trial.html
+[2016-11-01 16:18:46 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 16:18:46 -0400] [3891] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:18:47 -0400] [3878] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:18:47 -0400] [4087] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:18:47 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:18:47 -0400] [3890] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:19:10 -0400] [4087] [DEBUG] GET /ad
+[2016-11-01 16:19:10 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 16:19:11 -0400] [3888] [DEBUG] GET /consent
+[2016-11-01 16:19:11 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:19:11 -0400] [3885] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:19:12 -0400] [3878] [DEBUG] GET /exp
+2016-11-01 16:19:12,133 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:19:12 -0400] [4088] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:19:12 -0400] [3889] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:19:12 -0400] [4087] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:19:12 -0400] [3891] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:19:12 -0400] [4088] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:19:12 -0400] [4089] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:19:12 -0400] [3890] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:19:12 -0400] [3889] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:19:12 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:19:12 -0400] [3887] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:19:12 -0400] [3878] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:19:12 -0400] [3876] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:19:12,250 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:19:12 -0400] [4087] [DEBUG] GET /trial.html
+[2016-11-01 16:19:12 -0400] [4088] [DEBUG] GET /submit.html
+[2016-11-01 16:19:12 -0400] [3887] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:19:13 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:19:13 -0400] [3887] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:19:13 -0400] [3890] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:19:13 -0400] [3882] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:21:19 -0400] [3887] [DEBUG] GET /ad
+[2016-11-01 16:21:19 -0400] [4087] [DEBUG] GET /favicon.ico
+[2016-11-01 16:21:19 -0400] [3890] [DEBUG] GET /consent
+[2016-11-01 16:21:19 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:21:19 -0400] [4086] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:21:20 -0400] [3885] [DEBUG] GET /exp
+2016-11-01 16:21:20,922 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:21:20 -0400] [3885] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:21:20 -0400] [4086] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:21:20 -0400] [3877] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:21:20 -0400] [3878] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:21:20 -0400] [3879] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:21:20 -0400] [3882] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:21:20 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:21:20 -0400] [4086] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:21:20 -0400] [3889] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:21:20 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:21:21 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:21:21 -0400] [4087] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:21:21,029 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:21:21 -0400] [3876] [DEBUG] GET /trial.html
+[2016-11-01 16:21:21 -0400] [3883] [DEBUG] GET /submit.html
+[2016-11-01 16:21:21 -0400] [3876] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:21:22 -0400] [3878] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:21:22 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:21:22 -0400] [3890] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:21:22 -0400] [3883] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:21:31 -0400] [3877] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:21:31 -0400] [4088] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:24:08 -0400] [3891] [DEBUG] GET /ad
+[2016-11-01 16:24:08 -0400] [3886] [DEBUG] GET /favicon.ico
+[2016-11-01 16:24:09 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 16:24:09 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:24:09 -0400] [3890] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:24:10 -0400] [3876] [DEBUG] GET /exp
+2016-11-01 16:24:10,657 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:24:10 -0400] [3890] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:24:10 -0400] [3891] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:24:10 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:24:10 -0400] [3887] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:24:10 -0400] [3889] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:24:10 -0400] [3876] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:24:10 -0400] [3890] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:24:10 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:24:10 -0400] [3882] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:24:10 -0400] [3876] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:24:10 -0400] [4087] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:24:10 -0400] [4086] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:24:10,773 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:24:10 -0400] [3886] [DEBUG] GET /trial.html
+[2016-11-01 16:24:10 -0400] [3886] [DEBUG] GET /submit.html
+[2016-11-01 16:24:10 -0400] [3889] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:24:11 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:24:11 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:24:11 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:24:11 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:24:54 -0400] [3878] [DEBUG] GET /ad
+[2016-11-01 16:24:54 -0400] [3887] [DEBUG] GET /favicon.ico
+[2016-11-01 16:24:55 -0400] [3883] [DEBUG] GET /consent
+[2016-11-01 16:24:55 -0400] [3886] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:24:55 -0400] [3891] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:24:56 -0400] [4088] [DEBUG] GET /exp
+2016-11-01 16:24:56,221 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:24:56 -0400] [3891] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:24:56 -0400] [3883] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:24:56 -0400] [3877] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:24:56 -0400] [4088] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:24:56 -0400] [4086] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:24:56 -0400] [3890] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:24:56 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:24:56 -0400] [4088] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:24:56 -0400] [3883] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:24:56 -0400] [3879] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:24:56 -0400] [4088] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:24:56 -0400] [3889] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:24:56,338 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:24:56 -0400] [4087] [DEBUG] GET /trial.html
+[2016-11-01 16:24:56 -0400] [4088] [DEBUG] GET /submit.html
+[2016-11-01 16:24:56 -0400] [3879] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:24:57 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:24:57 -0400] [4088] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:24:57 -0400] [3879] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:24:57 -0400] [3890] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:26:32 -0400] [3890] [DEBUG] GET /ad
+[2016-11-01 16:26:32 -0400] [4087] [DEBUG] GET /favicon.ico
+[2016-11-01 16:26:33 -0400] [3888] [DEBUG] GET /consent
+[2016-11-01 16:26:33 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:26:33 -0400] [3886] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:26:34 -0400] [3891] [DEBUG] GET /exp
+2016-11-01 16:26:34,335 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:26:34 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:26:34 -0400] [3891] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:26:34 -0400] [3887] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:26:34 -0400] [3889] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:26:34 -0400] [3882] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:26:34 -0400] [3883] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:26:34 -0400] [3886] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:26:34 -0400] [3889] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:26:34 -0400] [3891] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:26:34 -0400] [3882] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:26:34 -0400] [3883] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:26:34 -0400] [3889] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:26:34,449 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:26:34 -0400] [3879] [DEBUG] GET /trial.html
+[2016-11-01 16:26:34 -0400] [4088] [DEBUG] GET /submit.html
+[2016-11-01 16:26:34 -0400] [3885] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:26:35 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:26:35 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:26:35 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:26:35 -0400] [4089] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:26:38 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 16:26:38 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 16:27:39 -0400] [3889] [DEBUG] GET /consent
+[2016-11-01 16:27:39 -0400] [3876] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:27:39 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:27:40 -0400] [4087] [DEBUG] GET /exp
+2016-11-01 16:27:40,455 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:27:40 -0400] [4087] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:27:40 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:27:40 -0400] [4088] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:27:40 -0400] [3890] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:27:40 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:27:40 -0400] [3878] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:27:40 -0400] [4088] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:27:40 -0400] [3878] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:27:40 -0400] [3886] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:27:40 -0400] [3890] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:27:40 -0400] [3878] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:27:40 -0400] [4086] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:27:40,570 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:27:40 -0400] [4086] [DEBUG] GET /trial.html
+[2016-11-01 16:27:40 -0400] [3887] [DEBUG] GET /submit.html
+[2016-11-01 16:27:40 -0400] [4088] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:27:42 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:27:42 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:28:42 -0400] [3877] [DEBUG] GET /ad
+[2016-11-01 16:28:43 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 16:28:43 -0400] [4086] [DEBUG] GET /consent
+[2016-11-01 16:28:43 -0400] [3885] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:28:43 -0400] [3883] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:28:44 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 16:28:44,321 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:28:44 -0400] [4088] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:28:44 -0400] [3883] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:28:44 -0400] [4087] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:28:44 -0400] [3886] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:28:44 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:28:44 -0400] [3882] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:28:44 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:28:44 -0400] [3886] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:28:44 -0400] [4086] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:28:44 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:28:44 -0400] [3887] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:28:44 -0400] [4089] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:28:44,439 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:28:44 -0400] [3883] [DEBUG] GET /trial.html
+[2016-11-01 16:28:44 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 16:28:44 -0400] [3879] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:28:46 -0400] [3886] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:28:46 -0400] [4087] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:28:46 -0400] [4087] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:28:46 -0400] [3879] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:28:53 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 16:28:53 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 16:29:16 -0400] [3878] [DEBUG] GET /consent
+[2016-11-01 16:29:16 -0400] [3891] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:29:16 -0400] [3883] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:29:17 -0400] [3890] [DEBUG] GET /exp
+2016-11-01 16:29:17,083 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:29:17 -0400] [3886] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:29:17 -0400] [3885] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:29:17 -0400] [3876] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:29:17 -0400] [3882] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:29:17 -0400] [3877] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:29:17 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:29:17 -0400] [3877] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:29:17 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:29:17 -0400] [3876] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:29:17 -0400] [3891] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:29:17 -0400] [4086] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:29:17 -0400] [3888] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:29:17,200 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:29:17 -0400] [3887] [DEBUG] GET /trial.html
+[2016-11-01 16:29:17 -0400] [3879] [DEBUG] GET /submit.html
+[2016-11-01 16:29:17 -0400] [3887] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:29:18 -0400] [4089] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:29:18 -0400] [3888] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:33:13 -0400] [4086] [DEBUG] GET /ad
+[2016-11-01 16:33:13 -0400] [3888] [DEBUG] GET /favicon.ico
+[2016-11-01 16:33:14 -0400] [3882] [DEBUG] GET /consent
+[2016-11-01 16:33:14 -0400] [4088] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:33:14 -0400] [3879] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:33:14 -0400] [3887] [DEBUG] GET /exp
+2016-11-01 16:33:14,946 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:33:14 -0400] [3887] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:33:14 -0400] [3879] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:33:14 -0400] [3878] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:33:14 -0400] [3889] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:33:14 -0400] [3886] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:33:14 -0400] [3885] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:33:14 -0400] [3879] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:33:14 -0400] [3888] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:33:14 -0400] [3876] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:33:14 -0400] [3882] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:33:15 -0400] [3889] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:33:15 -0400] [3877] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:33:15,062 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:33:15 -0400] [3876] [DEBUG] GET /trial.html
+[2016-11-01 16:33:15 -0400] [3891] [DEBUG] GET /submit.html
+[2016-11-01 16:33:15 -0400] [3877] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:33:16 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:33:16 -0400] [3879] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:33:16 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:33:16 -0400] [3877] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:33:41 -0400] [3878] [DEBUG] GET /ad
+[2016-11-01 16:33:41 -0400] [3882] [DEBUG] GET /favicon.ico
+[2016-11-01 16:33:42 -0400] [3886] [DEBUG] GET /consent
+[2016-11-01 16:33:42 -0400] [3877] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:33:42 -0400] [3876] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:33:43 -0400] [3879] [DEBUG] GET /exp
+2016-11-01 16:33:43,268 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:33:43 -0400] [3886] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:33:43 -0400] [3877] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:33:43 -0400] [3882] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:33:43 -0400] [3878] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:33:43 -0400] [3891] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:33:43 -0400] [3876] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:33:43 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:33:43 -0400] [3885] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:33:43 -0400] [3878] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:33:43 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:33:43 -0400] [3888] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:33:43 -0400] [4087] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:33:43,382 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:33:43 -0400] [3886] [DEBUG] GET /trial.html
+[2016-11-01 16:33:43 -0400] [4089] [DEBUG] GET /submit.html
+[2016-11-01 16:33:43 -0400] [4089] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:33:45 -0400] [3876] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:33:45 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:33:45 -0400] [3876] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:33:45 -0400] [3890] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:34:47 -0400] [3887] [DEBUG] GET /ad
+[2016-11-01 16:34:47 -0400] [3891] [DEBUG] GET /favicon.ico
+[2016-11-01 16:34:48 -0400] [3877] [DEBUG] GET /consent
+[2016-11-01 16:34:48 -0400] [3888] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:34:48 -0400] [3885] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:34:48 -0400] [3889] [DEBUG] GET /exp
+2016-11-01 16:34:48,951 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:34:48 -0400] [3891] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:34:48 -0400] [3888] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:34:48 -0400] [3877] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:34:48 -0400] [4086] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:34:48 -0400] [4089] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:34:48 -0400] [3887] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:34:48 -0400] [4086] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:34:48 -0400] [3891] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:34:48 -0400] [3888] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:34:48 -0400] [3877] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:34:49 -0400] [4089] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:34:49 -0400] [4088] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:34:49,066 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:34:49 -0400] [3887] [DEBUG] GET /trial.html
+[2016-11-01 16:34:49 -0400] [3878] [DEBUG] GET /submit.html
+[2016-11-01 16:34:49 -0400] [3877] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:34:50 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:34:50 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:34:50 -0400] [3885] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:34:50 -0400] [3883] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:35:21 -0400] [3876] [DEBUG] GET /ad
+[2016-11-01 16:35:21 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 16:35:23 -0400] [3882] [DEBUG] GET /consent
+[2016-11-01 16:35:23 -0400] [3887] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:35:23 -0400] [4086] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:35:24 -0400] [3877] [DEBUG] GET /exp
+2016-11-01 16:35:24,110 Accessing /exp: debug4GNL9M debug90OEXA debugVDUNIP 
+[2016-11-01 16:35:24 -0400] [3877] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:35:24 -0400] [4086] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:35:24 -0400] [4088] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:35:24 -0400] [3879] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:35:24 -0400] [3889] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:35:24 -0400] [3890] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:35:24 -0400] [3877] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:35:24 -0400] [3879] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:35:24 -0400] [3889] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:35:24 -0400] [3883] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:35:24 -0400] [3877] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:35:24 -0400] [4088] [DEBUG] GET /sync/debugVDUNIP%3Adebug90OEXA
+2016-11-01 16:35:24,227 GET /sync route with id: debugVDUNIP:debug90OEXA
+[2016-11-01 16:35:24 -0400] [3879] [DEBUG] GET /trial.html
+[2016-11-01 16:35:24 -0400] [4086] [DEBUG] GET /submit.html
+[2016-11-01 16:35:24 -0400] [3882] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:35:26 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:35:26 -0400] [3888] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:35:26 -0400] [4087] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:35:26 -0400] [3890] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:35:35 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-11-01 16:35:35 -0400] [4089] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-11-01 16:37:42 -0400] [3878] [DEBUG] Closing connection. 
+[2016-11-01 16:37:42 -0400] [3878] [DEBUG] Closing connection. 
+[2016-11-01 16:37:42 -0400] [4087] [DEBUG] Closing connection. 
+[2016-11-01 16:37:43 -0400] [3886] [DEBUG] GET /ad
+[2016-11-01 16:37:44 -0400] [3891] [DEBUG] GET /consent
+[2016-11-01 16:37:44 -0400] [3890] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:37:44 -0400] [3887] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:37:44 -0400] [4088] [DEBUG] GET /exp
+2016-11-01 16:37:44,795 Accessing /exp: debug9O1CV8 debug8F9YH6 debugM7B268 
+2016-11-01 16:37:44,798 given Counter({(0, 0): 3}) chose (0, 0)
+[2016-11-01 16:37:44 -0400] [3882] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:37:44 -0400] [3891] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:37:44 -0400] [3887] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:37:44 -0400] [4087] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:37:44 -0400] [3882] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:37:44 -0400] [3876] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:37:44 -0400] [3882] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:37:44 -0400] [3887] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:37:44 -0400] [4088] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:37:44 -0400] [4089] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:37:44 -0400] [3879] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:37:44 -0400] [4087] [DEBUG] GET /sync/debugM7B268%3Adebug8F9YH6
+2016-11-01 16:37:44,969 GET /sync route with id: debugM7B268:debug8F9YH6
+[2016-11-01 16:37:44 -0400] [4089] [DEBUG] GET /trial.html
+[2016-11-01 16:37:44 -0400] [3886] [DEBUG] GET /submit.html
+[2016-11-01 16:37:45 -0400] [3891] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:37:46 -0400] [3877] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:37:46 -0400] [4088] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:37:46 -0400] [4089] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:37:46 -0400] [3877] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:38:38 -0400] [3885] [DEBUG] GET /ad
+[2016-11-01 16:38:38 -0400] [4088] [DEBUG] GET /favicon.ico
+[2016-11-01 16:38:38 -0400] [3888] [DEBUG] GET /consent
+[2016-11-01 16:38:38 -0400] [4086] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:38:38 -0400] [3891] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:38:39 -0400] [3882] [DEBUG] GET /exp
+2016-11-01 16:38:39,614 Accessing /exp: debug9O1CV8 debug8F9YH6 debugM7B268 
+[2016-11-01 16:38:39 -0400] [3891] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:38:39 -0400] [3882] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:38:39 -0400] [3888] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:38:39 -0400] [4088] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:38:39 -0400] [4086] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:38:39 -0400] [3890] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:38:39 -0400] [3891] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:38:39 -0400] [4086] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:38:39 -0400] [3890] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:38:39 -0400] [3888] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:38:39 -0400] [3886] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:38:39 -0400] [3886] [DEBUG] GET /sync/debugM7B268%3Adebug8F9YH6
+2016-11-01 16:38:39,733 GET /sync route with id: debugM7B268:debug8F9YH6
+[2016-11-01 16:38:39 -0400] [4087] [DEBUG] GET /trial.html
+[2016-11-01 16:38:39 -0400] [4087] [DEBUG] GET /submit.html
+[2016-11-01 16:38:39 -0400] [3889] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:38:41 -0400] [3885] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:38:41 -0400] [4086] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:38:41 -0400] [3886] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:38:41 -0400] [4088] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:39:04 -0400] [4087] [DEBUG] GET /ad
+[2016-11-01 16:39:04 -0400] [4089] [DEBUG] GET /favicon.ico
+[2016-11-01 16:39:05 -0400] [4086] [DEBUG] GET /consent
+[2016-11-01 16:39:05 -0400] [3889] [DEBUG] GET /static/js/utils.js
+[2016-11-01 16:39:05 -0400] [4088] [DEBUG] GET /static/css/general.css
+[2016-11-01 16:39:06 -0400] [3878] [DEBUG] GET /exp
+2016-11-01 16:39:06,766 Accessing /exp: debug9O1CV8 debug8F9YH6 debugM7B268 
+[2016-11-01 16:39:06 -0400] [4086] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 16:39:06 -0400] [3889] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 16:39:06 -0400] [4089] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 16:39:06 -0400] [4088] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 16:39:06 -0400] [4087] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 16:39:06 -0400] [3891] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 16:39:06 -0400] [4087] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 16:39:06 -0400] [4086] [DEBUG] GET /static/js/config.js
+[2016-11-01 16:39:06 -0400] [3891] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 16:39:06 -0400] [4088] [DEBUG] GET /static/js/task.js
+[2016-11-01 16:39:06 -0400] [4089] [DEBUG] GET /static/json/games.json
+[2016-11-01 16:39:06 -0400] [4088] [DEBUG] GET /sync/debugM7B268%3Adebug8F9YH6
+2016-11-01 16:39:06,878 GET /sync route with id: debugM7B268:debug8F9YH6
+[2016-11-01 16:39:06 -0400] [3889] [DEBUG] GET /trial.html
+[2016-11-01 16:39:06 -0400] [3878] [DEBUG] GET /submit.html
+[2016-11-01 16:39:06 -0400] [4089] [DEBUG] GET /static/images/commentator.png
+[2016-11-01 16:39:08 -0400] [3883] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 16:39:08 -0400] [3882] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 16:39:08 -0400] [3883] [DEBUG] GET /static/images/crown.png
+[2016-11-01 16:39:08 -0400] [3891] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 16:39:34 -0400] [3876] [DEBUG] Closing connection. 
+[2016-11-01 16:39:35 -0400] [3878] [DEBUG] Closing connection. 
+[2016-11-01 16:39:35 -0400] [3886] [DEBUG] Closing connection. 
+[2016-11-01 16:39:35 -0400] [3878] [DEBUG] GET /ppid
+[2016-11-01 16:39:35 -0400] [3878] [INFO] Parent changed, shutting down: <Worker 3878>
+[2016-11-01 16:39:35 -0400] [3882] [INFO] Parent changed, shutting down: <Worker 3882>
+[2016-11-01 16:39:35 -0400] [4088] [INFO] Parent changed, shutting down: <Worker 4088>
+[2016-11-01 16:39:35 -0400] [3890] [INFO] Parent changed, shutting down: <Worker 3890>
+[2016-11-01 16:39:35 -0400] [4086] [DEBUG] Closing connection. 
+[2016-11-01 16:39:35 -0400] [3889] [INFO] Parent changed, shutting down: <Worker 3889>
+[2016-11-01 16:39:35 -0400] [4087] [INFO] Parent changed, shutting down: <Worker 4087>
+[2016-11-01 16:39:35 -0400] [3878] [INFO] Worker exiting (pid: 3878)
+[2016-11-01 16:39:35 -0400] [3887] [INFO] Parent changed, shutting down: <Worker 3887>
+[2016-11-01 16:39:35 -0400] [3882] [INFO] Worker exiting (pid: 3882)
+[2016-11-01 16:39:35 -0400] [4088] [INFO] Worker exiting (pid: 4088)
+[2016-11-01 16:39:35 -0400] [3890] [INFO] Worker exiting (pid: 3890)
+[2016-11-01 16:39:35 -0400] [3889] [INFO] Worker exiting (pid: 3889)
+[2016-11-01 16:39:35 -0400] [4086] [INFO] Parent changed, shutting down: <Worker 4086>
+[2016-11-01 16:39:35 -0400] [4087] [INFO] Worker exiting (pid: 4087)
+[2016-11-01 16:39:35 -0400] [3887] [INFO] Worker exiting (pid: 3887)
+[2016-11-01 16:39:35 -0400] [4086] [INFO] Worker exiting (pid: 4086)
+[2016-11-01 16:39:36 -0400] [3877] [INFO] Parent changed, shutting down: <Worker 3877>
+[2016-11-01 16:39:36 -0400] [3885] [DEBUG] Closing connection. 
+[2016-11-01 16:39:36 -0400] [3888] [INFO] Parent changed, shutting down: <Worker 3888>
+[2016-11-01 16:39:36 -0400] [4089] [INFO] Parent changed, shutting down: <Worker 4089>
+[2016-11-01 16:39:36 -0400] [3877] [INFO] Worker exiting (pid: 3877)
+[2016-11-01 16:39:36 -0400] [3886] [INFO] Parent changed, shutting down: <Worker 3886>
+[2016-11-01 16:39:36 -0400] [3876] [INFO] Parent changed, shutting down: <Worker 3876>
+[2016-11-01 16:39:36 -0400] [4089] [INFO] Worker exiting (pid: 4089)
+[2016-11-01 16:39:36 -0400] [3888] [INFO] Worker exiting (pid: 3888)
+[2016-11-01 16:39:36 -0400] [3885] [INFO] Parent changed, shutting down: <Worker 3885>
+[2016-11-01 16:39:36 -0400] [3886] [INFO] Worker exiting (pid: 3886)
+[2016-11-01 16:39:36 -0400] [3876] [INFO] Worker exiting (pid: 3876)
+[2016-11-01 16:39:36 -0400] [3885] [INFO] Worker exiting (pid: 3885)
+[2016-11-01 16:39:36 -0400] [3883] [INFO] Parent changed, shutting down: <Worker 3883>
+[2016-11-01 16:39:36 -0400] [3891] [INFO] Parent changed, shutting down: <Worker 3891>
+[2016-11-01 16:39:36 -0400] [3879] [DEBUG] Closing connection. 
+[2016-11-01 16:39:36 -0400] [3883] [INFO] Worker exiting (pid: 3883)
+[2016-11-01 16:39:36 -0400] [3891] [INFO] Worker exiting (pid: 3891)
+[2016-11-01 16:39:36 -0400] [3879] [INFO] Parent changed, shutting down: <Worker 3879>
+[2016-11-01 16:39:36 -0400] [3879] [INFO] Worker exiting (pid: 3879)

@@ -88,7 +88,7 @@ var TestPhase = function() {
 				var team2 = games[i].team2;
 				var winner = games[i].winner;
 
-				html += "<ul class='game'>";
+				html += "<h3>Game " + (i+1) + "</h3><ul class='game'>";
 				if (winner == 1) {
 					html += "<li><img src='static/images/crown.png' alt='crown'/></li>";
 				} else {
@@ -118,27 +118,41 @@ var TestPhase = function() {
 
 			$('#games').html(html);
 
+			var nameify = function(str) {
+				var newstr = str;
+				for (var key in colors) {
+					newstr = newstr.replace(key, "<span style='background-color:" + colors[key] + "' class='name-in-text'>" + key + "</span>");
+				}
+				return newstr;
+			};
+
 			//show comments
 			html = "";
 			var comments = that.scenario.comments;
 			for (var i = 0; i < comments.length; i++) {
-				html += "<p>" + comments[i] + "</p>";
+				html += "<p>" + nameify(comments[i]) + "</p>";
 			}
 
 			$('#commentary').html(html);
+
+			if (comments.length > 0) {
+				$("#right_table").show();
+			} else {
+				$("#right_table").hide();
+			}
 			
 
-			html = "<p><b>Please rate how strongly you agree with each of the following statements:</b></p>";
+			html = "<h4>Please rate how strongly you agree with each of the following statements:</h4>";
 			var scenarioQuestions = that.scenario.questions
 			var scenarioSubjects = that.scenario.subjects;
 			var view = {"player": ""};
 			for (var i = 0; i < scenarioQuestions.length; i++) {
 				view["player"] = scenarioSubjects[i];
 				var q = (Mustache.render($c.questions[scenarioQuestions[i]], view));
-				html += '<p class=".question">' + q +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
+				html += '<p class="question">' + nameify(q) +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
 			}
 
-			$('#questions').html(html) ;
+			$('#questions').html(html);
 
 			// Build the sliders for each question
 			for (var i=0; i<scenarioQuestions.length; i++) {
@@ -168,9 +182,11 @@ var TestPhase = function() {
 									   
 			}
 
-			$(".team li").hover(function() {
+
+
+			$(".team li, .name-in-text").hover(function() {
 				var that = $(this);
-				$(".team li").each(function() {
+				$(".team li, .name-in-text").each(function() {
 					if ($(this).text() == that.text()) {
 						$(this).css({
 							"border": "2px solid black",
@@ -180,7 +196,7 @@ var TestPhase = function() {
 				});
 			}, function() {
 				var that = $(this);
-				$(".team li").each(function() {
+				$(".team li, .name-in-text").each(function() {
 					if ($(this).text() == that.text()) {
 						$(this).css({
 							"border": "2px solid white",
@@ -190,12 +206,46 @@ var TestPhase = function() {
 				});
 			});
 
+
+			$(".team li, .name-in-text").click(function(e) {
+				e.stopPropagation();
+				var pos = $(this).position();
+				var name = $(this).text();
+				var color = colors[name];
+				var gamesIn = [];
+
+				var popup = $(".player-popup");
+				popup.hide();
+				popup.css({
+					"top": pos.top + "px",
+					"left": pos.left + "px",
+					"background-color": color
+				});
+
+				for (var i = 0; i < games.length; i++) {
+					if (games[i].team1.indexOf(name) > -1 || games[i].team2.indexOf(name) > -1) {
+						gamesIn.push(i + 1);
+					}
+				}
+				var bHtml = "<p><strong>" + name + "</strong></p><p><i>was in:</i></p>";
+				for (var i = 0; i < gamesIn.length; i++) {
+					bHtml += "<p>Game " + gamesIn[i] + "</p>";
+				}
+				popup.html(bHtml);
+				popup.slideDown(150);
+			});
+
+			$(document).click(function() {
+				$(".player-popup").hide();
+			});
+
 			// Hide all the slider handles 
 			$('.ui-slider-handle').hide() ;
 
 			// Disable button which will be enabled once the sliders are clicked
 			$('#trial_next').prop('disabled', true);
 
+			$(document).scrollTop(0);
 
 			debug(that.trialinfo);
 		}        
@@ -230,6 +280,7 @@ var TestPhase = function() {
 
 	// Load the trial html page
 	$(".slide").hide();
+	$(".player-popup").hide();
 
 	// Show the slide
 	var that = this; 
