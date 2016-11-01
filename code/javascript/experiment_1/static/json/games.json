@@ -65,5 +65,14 @@
 	"questions": [
 		"{{player}} is a skilled player.",
 		"{{player}} is trying very hard."
-	]
+	],
+	"colors": {
+		"Patrick": "#00FF7F",
+		"Mary": "#00FFFF",
+		"David": "#7FFFD4",
+		"Curtis": "#FFC0CB",
+		"Collin": "#D8BFD8",
+		"Matt": "#FFE4B5",
+		"Brandon": "#DDA0DD"
+	}
 }

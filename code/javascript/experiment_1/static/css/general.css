@@ -137,6 +137,11 @@ div.slide {
 
 .team li {
     display: block;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .stim_text {

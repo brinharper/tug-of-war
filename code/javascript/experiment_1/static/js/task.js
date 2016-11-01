@@ -81,6 +81,7 @@ var TestPhase = function() {
 
 			//show games 
 			var games = that.scenario.games;
+			var colors = $c.colors;
 			var html = "";
 			for (var i = 0; i < games.length; i++) {
 				var team1 = games[i].team1;
@@ -95,11 +96,11 @@ var TestPhase = function() {
 				}
 				html += "<li><ul class='team' style='border-color:blue'>";
 				for (var j = 0; j < team1.length; j++) {
-					html += "<li>"+team1[j]+"</li>";
+					html += "<li style='background-color:" + colors[team1[j]] + "'>"+team1[j]+"</li>";
 				}
 				html += "</ul></li><li> VS. </li><li><ul class='team' style='border-color:red'>";
 				for (var j = 0; j < team2.length; j++) {
-					html += "<li>"+team2[j]+"</li>";
+					html += "<li style='background-color:" + colors[team2[j]] + "'>"+team2[j]+"</li>";
 				}
 				html += "</ul></li>"
 				if (winner == 2) {
@@ -167,6 +168,28 @@ var TestPhase = function() {
 									   
 			}
 
+			$(".team li").hover(function() {
+				var that = $(this);
+				$(".team li").each(function() {
+					if ($(this).text() == that.text()) {
+						$(this).css({
+							"border": "2px solid black",
+							"font-weight": "bold"
+						});
+					}
+				});
+			}, function() {
+				var that = $(this);
+				$(".team li").each(function() {
+					if ($(this).text() == that.text()) {
+						$(this).css({
+							"border": "2px solid white",
+							"font-weight": "normal"
+						});
+					}
+				});
+			});
+
 			// Hide all the slider handles 
 			$('.ui-slider-handle').hide() ;
 
@@ -177,6 +200,7 @@ var TestPhase = function() {
 			debug(that.trialinfo);
 		}        
 	};
+
 
 	//records response 
 	this.record_response = function() {        
