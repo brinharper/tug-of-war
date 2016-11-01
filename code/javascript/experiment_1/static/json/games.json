@@ -45,14 +45,14 @@
 			"games": [
 				{
 					"team1": ["Patrick"],
-					"team2": ["Curtis", "Collin", "Mary", "Matt", "David", "Brandon"],
+					"team2": ["Curtis", "Collin", "Mary"],
 					"winner": 1
 				}, {
 					"team1": ["Curtis", "Collin", "Mary"],
 					"team2": ["Matt", "David", "Brandon"],
 					"winner": 2
 				}, {
-					"team1": ["Patrick", "David", "Brandon", "Mary"],
+					"team1": ["Patrick", "David", "Mary"],
 					"team2": ["Matt", "Curtis", "Collin"],
 					"winner": 2
 				}

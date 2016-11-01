@@ -86,6 +86,7 @@ div.slide {
    margin-left: auto;
     margin-right: auto;
     width: 50%;
+
     
 }
 
@@ -96,6 +97,7 @@ div.slide {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
     
 }
 
@@ -138,6 +140,13 @@ div.slide {
 .team li {
     display: block;
     padding: 7px;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.name-in-text {
     border-radius: 5px;
     border: 2px solid white;
     margin-top: 3px;
@@ -264,8 +273,22 @@ span.consent {
 .question {
     /*font-size: 1.2em;*/
     text-align: center;
-    text-align: left;
     font-weight: bold;
+}
+
+.player-popup {
+    background-color: blue;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 100000;
+    text-align: center;
+}
+
+#questions {
+    width: 600px;
+    margin: 0 auto;
 }
 
 #choices {
