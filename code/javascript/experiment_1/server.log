@@ -5823,3 +5823,166 @@
 [2016-11-01 11:15:16 -0400] [25132] [INFO] Parent changed, shutting down: <Worker 25132>
 [2016-11-01 11:15:16 -0400] [25132] [INFO] Worker exiting (pid: 25132)
 >>>>>>> 6e9ae75dc6d829ec8fa81eccc3f957c407c486cf
+[2016-11-01 12:45:23 -0400] [27955] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x11025d0c8>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x110254d70>
+  pre_fork: <function pre_fork at 0x110254ed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 9
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x110254c08>
+  pre_exec: <function pre_exec at 0x11025d668>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x11025d230>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x11025dcf8>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x11025d7d0>
+  post_request: <function post_request at 0x11025d8c0>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x11025d398>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x11025da28>
+  chdir: /Users/tobi/Documents/work/projects_git/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x110254aa0>
+  worker_abort: <function worker_abort at 0x11025d500>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x11025db90>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-11-01 12:45:23 -0400] [27955] [INFO] Starting gunicorn 19.4.5
+[2016-11-01 12:45:23 -0400] [27955] [DEBUG] Arbiter booted
+[2016-11-01 12:45:23 -0400] [27955] [INFO] Listening at: http://0.0.0.0:22362 (27955)
+[2016-11-01 12:45:23 -0400] [27955] [INFO] Using worker: sync
+[2016-11-01 12:45:23 -0400] [27959] [INFO] Booting worker with pid: 27959
+[2016-11-01 12:45:23 -0400] [27960] [INFO] Booting worker with pid: 27960
+[2016-11-01 12:45:23 -0400] [27961] [INFO] Booting worker with pid: 27961
+[2016-11-01 12:45:24 -0400] [27962] [INFO] Booting worker with pid: 27962
+[2016-11-01 12:45:24 -0400] [27963] [INFO] Booting worker with pid: 27963
+[2016-11-01 12:45:24 -0400] [27964] [INFO] Booting worker with pid: 27964
+[2016-11-01 12:45:24 -0400] [27965] [INFO] Booting worker with pid: 27965
+[2016-11-01 12:45:24 -0400] [27966] [INFO] Booting worker with pid: 27966
+[2016-11-01 12:45:24 -0400] [27967] [INFO] Booting worker with pid: 27967
+[2016-11-01 12:45:24 -0400] [27955] [DEBUG] 9 workers
+2016-11-01 12:45:24,740 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:24,750 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:24,830 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:24,835 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:25,037 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,041 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 12:45:25 -0400] [27960] [DEBUG] Closing connection. 
+2016-11-01 12:45:25,384 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,389 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:25,475 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,480 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:25,483 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,486 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,488 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:25,490 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:25,513 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,517 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-11-01 12:45:25,520 Hmm... it seems no custom code (custom.py) associated                     with this project.
+2016-11-01 12:45:25,523 /Users/tobi/psiturk/psiturkvn/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-11-01 12:45:26 -0400] [27955] [INFO] Handling signal: winch
+[2016-11-01 12:45:26 -0400] [27955] [DEBUG] SIGWINCH ignored. Not daemonized
+[2016-11-01 12:45:27 -0400] [27965] [DEBUG] Closing connection. 
+[2016-11-01 12:45:27 -0400] [27965] [DEBUG] Closing connection. 
+[2016-11-01 12:45:28 -0400] [27959] [DEBUG] Closing connection. 
+[2016-11-01 12:45:28 -0400] [27965] [DEBUG] GET /ad
+[2016-11-01 12:45:30 -0400] [27961] [DEBUG] GET /consent
+[2016-11-01 12:45:30 -0400] [27964] [DEBUG] GET /static/css/general.css
+[2016-11-01 12:45:30 -0400] [27967] [DEBUG] GET /static/js/utils.js
+[2016-11-01 12:45:30 -0400] [27966] [DEBUG] GET /ad
+[2016-11-01 12:45:32 -0400] [27962] [DEBUG] GET /exp
+2016-11-01 12:45:32,298 Accessing /exp: debugK431RU debugOYTFHP debugZK1HU2 
+2016-11-01 12:45:32,307 given Counter({(0, 0): 2}) chose (0, 0)
+[2016-11-01 12:45:32 -0400] [27962] [DEBUG] GET /static/lib/seedrandom.js
+[2016-11-01 12:45:32 -0400] [27966] [DEBUG] GET /static/lib/jquery.min.js
+[2016-11-01 12:45:32 -0400] [27959] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-11-01 12:45:32 -0400] [27963] [DEBUG] GET /static/lib/underscore-min.js
+[2016-11-01 12:45:32 -0400] [27960] [DEBUG] GET /static/lib/backbone-min.js
+[2016-11-01 12:45:32 -0400] [27965] [DEBUG] GET /static/lib/mustache.js
+[2016-11-01 12:45:32 -0400] [27966] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-11-01 12:45:32 -0400] [27962] [DEBUG] GET /static/js/config.js
+[2016-11-01 12:45:32 -0400] [27967] [DEBUG] GET /static/js/psiturk.js
+[2016-11-01 12:45:32 -0400] [27964] [DEBUG] GET /static/js/task.js
+[2016-11-01 12:45:32 -0400] [27962] [DEBUG] GET /static/json/games.json
+[2016-11-01 12:45:32 -0400] [27962] [DEBUG] GET /sync/debugZK1HU2%3AdebugOYTFHP
+2016-11-01 12:45:32,811 GET /sync route with id: debugZK1HU2:debugOYTFHP
+[2016-11-01 12:45:32 -0400] [27967] [DEBUG] GET /trial.html
+[2016-11-01 12:45:32 -0400] [27961] [DEBUG] GET /submit.html
+[2016-11-01 12:45:34 -0400] [27961] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-11-01 12:45:34 -0400] [27967] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-11-01 12:45:34 -0400] [27964] [DEBUG] GET /static/images/crown.png
+[2016-11-01 12:45:34 -0400] [27962] [DEBUG] GET /static/images/nocrown.png
+[2016-11-01 12:52:46 -0400] [27962] [DEBUG] Closing connection. 
+[2016-11-01 12:52:47 -0400] [27963] [DEBUG] Closing connection. 
+[2016-11-01 12:52:47 -0400] [27962] [DEBUG] Closing connection. 
+[2016-11-01 12:52:47 -0400] [27962] [DEBUG] GET /ppid
+[2016-11-01 12:52:47 -0400] [27963] [INFO] Parent changed, shutting down: <Worker 27963>
+[2016-11-01 12:52:47 -0400] [27961] [INFO] Parent changed, shutting down: <Worker 27961>
+[2016-11-01 12:52:47 -0400] [27962] [INFO] Parent changed, shutting down: <Worker 27962>
+[2016-11-01 12:52:47 -0400] [27967] [DEBUG] Closing connection. 
+[2016-11-01 12:52:47 -0400] [27961] [INFO] Worker exiting (pid: 27961)
+[2016-11-01 12:52:47 -0400] [27962] [INFO] Worker exiting (pid: 27962)
+[2016-11-01 12:52:47 -0400] [27967] [INFO] Parent changed, shutting down: <Worker 27967>
+[2016-11-01 12:52:47 -0400] [27963] [INFO] Worker exiting (pid: 27963)
+[2016-11-01 12:52:47 -0400] [27967] [INFO] Worker exiting (pid: 27967)
+[2016-11-01 12:52:47 -0400] [27965] [INFO] Parent changed, shutting down: <Worker 27965>
+[2016-11-01 12:52:47 -0400] [27965] [INFO] Worker exiting (pid: 27965)
+[2016-11-01 12:52:47 -0400] [27966] [INFO] Parent changed, shutting down: <Worker 27966>
+[2016-11-01 12:52:47 -0400] [27959] [INFO] Parent changed, shutting down: <Worker 27959>
+[2016-11-01 12:52:47 -0400] [27960] [INFO] Parent changed, shutting down: <Worker 27960>
+[2016-11-01 12:52:47 -0400] [27964] [DEBUG] Closing connection. 
+[2016-11-01 12:52:47 -0400] [27966] [INFO] Worker exiting (pid: 27966)
+[2016-11-01 12:52:47 -0400] [27960] [INFO] Worker exiting (pid: 27960)
+[2016-11-01 12:52:47 -0400] [27959] [INFO] Worker exiting (pid: 27959)
+[2016-11-01 12:52:47 -0400] [27964] [INFO] Parent changed, shutting down: <Worker 27964>
+[2016-11-01 12:52:47 -0400] [27964] [INFO] Worker exiting (pid: 27964)
