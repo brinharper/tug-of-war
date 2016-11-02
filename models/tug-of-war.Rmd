@@ -1,0 +1,98 @@
+---
+title: "tug-of-war"
+author: "M. H. Tessler"
+date: "November 1, 2016"
+output: html_document
+---
+
+```{r}
+library(knitr)
+knitr::opts_chunk$set(fig.crop = F,echo=T, 
+                      warning=F, cache=F, 
+                      message=F, sanitize = T)
+
+library(rwebppl)
+library(dplyr)
+library(coda)
+estimate_mode <- function(s) {
+  d <- density(s)
+  return(d$x[which.max(d$y)])
+}
+hdi_upper<- function(s){
+  m <- HPDinterval(mcmc(s))
+  return(m["var1","upper"])
+}
+hdi_lower<- function(s){
+  m <- HPDinterval(mcmc(s))
+  return(m["var1","lower"])
+}
+```
+
+## Basic tug of war model
+
+```{r towCogModel}
+towModel <- '
+var tugOfWarModel = function(){
+
+    var strength = mem(function(person){
+      return gaussian(10, 3)
+    })
+
+    var lazy = function(person){
+      return flip(lazinessPrior)
+    }
+    var pulling = function(person) {
+      return lazy(person) ?
+              strength(person) * lazyPulling :
+              strength(person)
+    }
+    var totalPulling = function(team){return sum(map(pulling, team)) }
+  
+    var winner = function(team1, team2){
+      totalPulling(team1) > totalPulling(team2) ? team1 : team2
+    }
+
+    var beat = function(team1,team2){winner(team1,team2) == team1}
+
+    condition(beat(matchInfo.winner1, matchInfo.loser1))
+
+    matchInfo.winner2 ? 
+        condition(beat(matchInfo.winner2, matchInfo.loser2)) : null
+    matchInfo.winner3 ? 
+        condition(beat(matchInfo.winner3, matchInfo.loser3)): null
+
+    return strength("A")
+}
+'
+```
+
+```{r}
+match_info <- '
+var matchInfo = {
+    outcome: "win",
+    pattern: "round robin",
+    tournament: "double",
+    winner1: ["A", "B"],
+    loser1: ["C", "D"],
+    winner2: ["A", "C"],
+    loser2: ["B", "D"],
+    winner3: ["A", "D"],
+    loser3: ["B", "C"]
+}
+'
+
+parameters <- '
+var lazinessPrior = 0.3;
+var lazyPulling = 0.5;
+'
+
+rs <- webppl(
+  paste(parameters, match_info, towModel, sep = '\n'),
+  model_var = "tugOfWarModel",
+  inference_opts = list(method = 'rejection', samples = 10000),
+  output_format = "samples"
+)
+
+qplot(rs$support)
+```
+
