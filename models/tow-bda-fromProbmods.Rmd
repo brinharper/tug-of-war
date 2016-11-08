@@ -12,7 +12,10 @@ knitr::opts_chunk$set(fig.crop = F,echo=T,
 
 library(rwebppl)
 library(dplyr)
+library(tidyr)
 library(coda)
+library(ggplot2)
+
 estimate_mode <- function(s) {
   d <- density(s)
   return(d$x[which.max(d$y)])
@@ -643,8 +646,8 @@ posterior <- webppl(fullModel,
        model_var = "dataAnalysisModel",
        output_format = "webppl")
 
-save(posterior, 
-     file = "~/Documents/learning/probmods2/assets/data/enumerateToW1.RData")
+# save(posterior, 
+#      file = "~/Documents/learning/probmods2/assets/data/enumerateToW1.RData")
 ```
 
 Examine parameters.
