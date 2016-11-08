@@ -13,6 +13,8 @@ knitr::opts_chunk$set(fig.crop = F,echo=T,
 
 library(rwebppl)
 library(dplyr)
+library(tidyr)
+library(ggplot2)
 library(coda)
 
 # to get the maximum a posteriori value [MAP] (from samples)
