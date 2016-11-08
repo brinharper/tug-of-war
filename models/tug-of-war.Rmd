@@ -5,7 +5,7 @@ date: "November 1, 2016"
 output: html_document
 ---
 
-```{r}
+```{r helpers, echo = F}
 library(knitr)
 knitr::opts_chunk$set(fig.crop = F,echo=T, 
                       warning=F, cache=F, 
@@ -14,85 +14,135 @@ knitr::opts_chunk$set(fig.crop = F,echo=T,
 library(rwebppl)
 library(dplyr)
 library(coda)
+
+# to get the maximum a posteriori value [MAP] (from samples)
 estimate_mode <- function(s) {
   d <- density(s)
   return(d$x[which.max(d$y)])
 }
+# upper bound of 95% credible interval
 hdi_upper<- function(s){
   m <- HPDinterval(mcmc(s))
   return(m["var1","upper"])
 }
+# lower bound of 95% credible interval
 hdi_lower<- function(s){
   m <- HPDinterval(mcmc(s))
   return(m["var1","lower"])
 }
 ```
 
-## Basic tug of war model
+## Tug of war model
 
-```{r towCogModel}
+Possible questions: 
+
+1. "What is the strength of A?"
+2. "Was A being lazy in match N?"
+3. "Who will win: A vs. B?""
+
+```{r towModel}
 towModel <- '
+// unpack data from R
+var lazinessPrior = datafromR["lazinessPrior"][0]
+var lazyPulling = datafromR["lazyPulling"][0]
+var matchInfo = datafromR["matchInfo"]
+
 var tugOfWarModel = function(){
 
     var strength = mem(function(person){
       return gaussian(10, 3)
     })
 
-    var lazy = function(person){
+    // laziness is a memoized function of a person and match
+    // so we can later ask if a person was lazy on a particular match
+    var lazy = mem(function(person, match){
       return flip(lazinessPrior)
-    }
-    var pulling = function(person) {
-      return lazy(person) ?
+    })
+
+    var pulling = function(person, match) {
+      return lazy(person, match) ?
               strength(person) * lazyPulling :
               strength(person)
     }
-    var totalPulling = function(team){return sum(map(pulling, team)) }
+
+    var totalPulling = function(team, match){
+      return sum(map(pulling, team)) 
+    }
   
-    var winner = function(team1, team2){
-      totalPulling(team1) > totalPulling(team2) ? team1 : team2
+    var winner = function(team1, team2, match){
+      return totalPulling(team1, match) > totalPulling(team2, match) ? team1 : team2
     }
 
-    var beat = function(team1,team2){winner(team1,team2) == team1}
+    var beat = function(team1,team2, match){
+      return winner(team1,team2, match) == team1
+    }
 
-    condition(beat(matchInfo.winner1, matchInfo.loser1))
+    condition(beat(matchInfo.match1.winner, 
+                   matchInfo.match1.loser,
+                    matchInfo.match1.match))
 
-    matchInfo.winner2 ? 
-        condition(beat(matchInfo.winner2, matchInfo.loser2)) : null
-    matchInfo.winner3 ? 
-        condition(beat(matchInfo.winner3, matchInfo.loser3)): null
+    matchInfo.match2 ? 
+        condition(beat(matchInfo.match2.winner, 
+                       matchInfo.match2.loser, 
+                       matchInfo.match2.match)) : null
+    matchInfo.match3 ? 
+        condition(beat(matchInfo.match3.winner, 
+                       matchInfo.match3.loser, 
+                       matchInfo.match3.match)) : null
 
-    return strength("A")
+    // example return statements
+    // you can return a JSON object of whatever you want
+    return {
+      lazy: lazy("A", 1),
+      strength: strength("A"),
+      winner: beat(["A", "E"], ["B","C"])
+    }
 }
 '
 ```
 
-```{r}
-match_info <- '
-var matchInfo = {
-    outcome: "win",
-    pattern: "round robin",
-    tournament: "double",
-    winner1: ["A", "B"],
-    loser1: ["C", "D"],
-    winner2: ["A", "C"],
-    loser2: ["B", "D"],
-    winner3: ["A", "D"],
-    loser3: ["B", "C"]
-}
-'
+Define match information (the only information that's used in the model above is the winner/loser information, though the other information would be used in data analysis models).
 
-parameters <- '
-var lazinessPrior = 0.3;
-var lazyPulling = 0.5;
-'
+Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
-rs <- webppl(
-  paste(parameters, match_info, towModel, sep = '\n'),
-  model_var = "tugOfWarModel",
-  inference_opts = list(method = 'rejection', samples = 10000),
+```{r runTowModel}
+matchInfo = list(
+  outcome = "win",
+  pattern = "round robin",
+  tournament = "double",
+  match1 = list(
+    winner = c("A", "B"),
+    loser = c("C", "D"),
+    match = 1
+  ),
+  match2 = list(
+    winner = c("A", "C"),
+    loser = c("B", "D"),
+    match = 2
+  ),
+  match3 = list(
+    winner = c("A", "D"),
+    loser = c("B", "C"),
+    match = 3
+  )
+)
+
+dataToWebPPL = list(lazinessPrior = 0.3, 
+                    lazyPulling = 0.5,
+                    matchInfo = matchInfo)
+
+rs <- webppl(program_code = towModel, 
+             model_var = "tugOfWarModel",
+  inference_opts = list(method = 'rejection', samples = 1000),
+  data = dataToWebPPL,
+  data_var = "datafromR",
   output_format = "samples"
 )
 
-qplot(rs$support)
-```
+rs.tidy <- rs %>%
+  gather(key, val)
 
+ggplot(rs.tidy, aes( x = val ))+
+  geom_histogram() +
+  facet_wrap(~key, scales = 'free')
+```
