@@ -95,9 +95,9 @@ var tugOfWarModel = function(){
     // example return statements
     // you can return a JSON object of whatever you want
     return {
-      lazy: lazy("A", 1),
-      strength: strength("A"),
-      winner: beat(["A", "E"], ["B","C"])
+      lazy: lazy(matchInfo.query.lazy),
+      strength: strength(matchInfo.query.strength),
+      winner: beat(matchInfo.query.team1, matchInfo.query.team2)
     }
 }
 '
@@ -126,7 +126,13 @@ matchInfo = list(
     winner = c("A", "D"),
     loser = c("B", "C"),
     match = 3
-  )
+  ),
+  query = list( 
+    lazy = c("A",1),
+    strength = "C",
+    team1 = c("A","E"),
+    team2 = c("B","C")
+    )
 )
 
 dataToWebPPL = list(lazinessPrior = 0.3, 
@@ -141,6 +147,7 @@ rs <- webppl(program_code = towModel,
   output_format = "samples"
 )
 
+# Plotting the results
 rs.tidy <- rs %>%
   gather(key, val)
 
