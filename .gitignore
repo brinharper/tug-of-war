@@ -2,3 +2,5 @@
 *.log
 *.db
 
+.Rproj.user
+models/*.html
