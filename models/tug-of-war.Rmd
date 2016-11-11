@@ -17,21 +17,21 @@ library(tidyr)
 library(ggplot2)
 library(coda)
 
-# to get the maximum a posteriori value [MAP] (from samples)
-estimate_mode <- function(s) {
-  d <- density(s)
-  return(d$x[which.max(d$y)])
-}
-# upper bound of 95% credible interval
-hdi_upper<- function(s){
-  m <- HPDinterval(mcmc(s))
-  return(m["var1","upper"])
-}
-# lower bound of 95% credible interval
-hdi_lower<- function(s){
-  m <- HPDinterval(mcmc(s))
-  return(m["var1","lower"])
-}
+# # to get the maximum a posteriori value [MAP] (from samples)
+# estimate_mode <- function(s) {
+#   d <- density(s)
+#   return(d$x[which.max(d$y)])
+# }
+# # upper bound of 95% credible interval
+# hdi_upper<- function(s){
+#   m <- HPDinterval(mcmc(s))
+#   return(m["var1","upper"])
+# }
+# # lower bound of 95% credible interval
+# hdi_lower<- function(s){
+#   m <- HPDinterval(mcmc(s))
+#   return(m["var1","lower"])
+# }
 ```
 
 ## Tug of war model
