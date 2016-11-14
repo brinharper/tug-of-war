@@ -109,24 +109,24 @@ Also, define the lazinessPrior and lazyPulling variables, package them up into `
 
 ```{r runTowModel}
 matchInfo = list(
-  outcome = "win",
-  pattern = "round robin",
-  tournament = "double",
+  # outcome = "win",
+  # pattern = "round robin",
+  # tournament = "double",
   match1 = list(
-    winner = c("A", "B"),
-    loser = c("C", "D"),
+    winner = c("A"),
+    loser = c("C"),
     match = 1
   ),
   match2 = list(
-    winner = c("A", "C"),
-    loser = c("B", "D"),
+    winner = c("A"),
+    loser = c("C"),
     match = 2
   ),
-  match3 = list(
-    winner = c("A", "D"),
-    loser = c("B", "C"),
-    match = 3
-  ),
+  # match3 = list(
+  #   winner = c("A", "D"),
+  #   loser = c("B", "C"),
+  #   match = 3
+  # ),
   query = list( 
     lazy = c("A",1),
     strength = "C",
