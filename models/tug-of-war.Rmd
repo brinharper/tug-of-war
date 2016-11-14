@@ -79,25 +79,25 @@ var tugOfWarModel = function(){
       return winner(team1,team2, match) == team1
     }
 
-    condition(beat(matchInfo.match1.winner, 
-                   matchInfo.match1.loser,
-                    matchInfo.match1.match))
+    var conditions = function(i, len) {
+      if (i < len) {
+        condition(beat(matchInfo.matches[i].winner,
+                        matchInfo.matches[i].loser,
+                        matchInfo.matches[i].match));
+        conditions(i + 1, len);
+      }
+    }
 
-    matchInfo.match2 ? 
-        condition(beat(matchInfo.match2.winner, 
-                       matchInfo.match2.loser, 
-                       matchInfo.match2.match)) : null
-    matchInfo.match3 ? 
-        condition(beat(matchInfo.match3.winner, 
-                       matchInfo.match3.loser, 
-                       matchInfo.match3.match)) : null
+    conditions(0, matchInfo.matches.length);
+
+  
 
     // example return statements
     // you can return a JSON object of whatever you want
     return {
-      lazy: lazy("A", 1),
       strength: strength("A"),
-      winner: beat(["A", "E"], ["B","C"])
+      lazy1: lazy("A", 1),
+      lazy2: lazy("A", 2)
     }
 }
 '
@@ -112,7 +112,7 @@ matchInfo = list(
   outcome = "win",
   pattern = "round robin",
   tournament = "double",
-  match1 = list(
+  match = list(
     winner = c("A", "B"),
     loser = c("C", "D"),
     match = 1
@@ -129,9 +129,33 @@ matchInfo = list(
   )
 )
 
+matchInfo2 = list(
+  outcome = "win",
+  pattern = "round robin",
+  tournament = "double",
+  matches = list(
+    list(
+      winner = c("A"),
+      loser = c("C"),
+      match = 1
+    ),
+    list(
+      winner = c("C"),
+      loser = c("A"),
+      match = 2
+    ), 
+    list(
+      winner = c("A"),
+      loser = c("C"),
+      match = 3
+    )
+    
+  )
+)
+
 dataToWebPPL = list(lazinessPrior = 0.3, 
                     lazyPulling = 0.5,
-                    matchInfo = matchInfo)
+                    matchInfo = matchInfo2)
 
 rs <- webppl(program_code = towModel, 
              model_var = "tugOfWarModel",
