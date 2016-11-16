@@ -68,7 +68,9 @@ var tugOfWarModel = function(){
     }
 
     var totalPulling = function(team, match){
-      return sum(map(pulling, team)) 
+      return sum(map(function(person){
+        return pulling(person, match)
+      }, team)) 
     }
   
     var winner = function(team1, team2, match){
@@ -118,8 +120,8 @@ matchInfo = list(
     match = 1
   ),
   match2 = list(
-    winner = c("A"),
-    loser = c("C"),
+    winner = c("C"),
+    loser = c("A"),
     match = 2
   ),
   # match3 = list(
