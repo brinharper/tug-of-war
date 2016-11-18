@@ -18,21 +18,21 @@ library(ggplot2)
 library(coda)
 library(rjson)
 
-# to get the maximum a posteriori value [MAP] (from samples)
-estimate_mode <- function(s) {
-  d <- density(s)
-  return(d$x[which.max(d$y)])
-}
-# upper bound of 95% credible interval
-hdi_upper<- function(s){
-  m <- HPDinterval(mcmc(s))
-  return(m["var1","upper"])
-}
-# lower bound of 95% credible interval
-hdi_lower<- function(s){
-  m <- HPDinterval(mcmc(s))
-  return(m["var1","lower"])
-}
+# # to get the maximum a posteriori value [MAP] (from samples)
+# estimate_mode <- function(s) {
+#   d <- density(s)
+#   return(d$x[which.max(d$y)])
+# }
+# # upper bound of 95% credible interval
+# hdi_upper<- function(s){
+#   m <- HPDinterval(mcmc(s))
+#   return(m["var1","upper"])
+# }
+# # lower bound of 95% credible interval
+# hdi_lower<- function(s){
+#   m <- HPDinterval(mcmc(s))
+#   return(m["var1","lower"])
+# }
 ```
 
 ## Tug of war model
@@ -105,24 +105,30 @@ stim <- fromJSON(file=jsonFile)
 scene = stim$scenarios[[1]]
 
 matchInfo = list(
-  outcome = "win",
-  pattern = "round robin",
-  tournament = "double",
-  match = list(
-    winner = c("A", "B"),
-    loser = c("C", "D"),
+  # outcome = "win",
+  # pattern = "round robin",
+  # tournament = "double",
+  match1 = list(
+    winner = c("A"),
+    loser = c("C"),
     match = 1
   ),
   match2 = list(
-    winner = c("A", "C"),
-    loser = c("B", "D"),
+    winner = c("C"),
+    loser = c("A"),
     match = 2
   ),
-  match3 = list(
-    winner = c("A", "D"),
-    loser = c("B", "C"),
-    match = 3
-  )
+  # match3 = list(
+  #   winner = c("A", "D"),
+  #   loser = c("B", "C"),
+  #   match = 3
+  # ),
+  query = list( 
+    lazy = c("A",1),
+    strength = "C",
+    team1 = c("A","E"),
+    team2 = c("B","C")
+    )
 )
 
 matchInfo2 = list(
@@ -195,6 +201,7 @@ rs <- webppl(program_code = towModel,
   output_format = "samples"
 )
 
+# Plotting the results
 rs.tidy <- rs %>%
   gather(key, val)
 
