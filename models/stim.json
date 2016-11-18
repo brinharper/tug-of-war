@@ -1,0 +1,35 @@
+{
+	"scenarios": [
+		{
+			"id": 0,
+			"games": [
+				{
+					"team1": ["Jim"],
+					"team2": ["Patrick"],
+					"winner": 2
+				},
+				{
+					"team1": ["Jim"],
+					"team2": ["Mary"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0, 1],
+			"subjects": ["Patrick", ["Jim", 2]]
+		}
+	],
+	"questions": [
+		"{{player}} is a skilled player.",
+		"{{player}} is lazy in match {{m}}."
+	],
+	"colors": {
+		"Patrick": "#00FF7F",
+		"Mary": "#00FFFF",
+		"David": "#7FFFD4",
+		"Curtis": "#FFC0CB",
+		"Collin": "#D8BFD8",
+		"Matt": "#FFE4B5",
+		"Brandon": "#DDA0DD"
+	}
+}

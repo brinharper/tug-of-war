@@ -16,6 +16,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(coda)
+library(rjson)
 
 # to get the maximum a posteriori value [MAP] (from samples)
 estimate_mode <- function(s) {
@@ -52,7 +53,7 @@ var matchInfo = datafromR["matchInfo"]
 var tugOfWarModel = function(){
 
     var strength = mem(function(person){
-      return gaussian(10, 3)
+      return gaussian(10, 8)
     })
 
     // laziness is a memoized function of a person and match
@@ -68,7 +69,9 @@ var tugOfWarModel = function(){
     }
 
     var totalPulling = function(team, match){
-      return sum(map(pulling, team)) 
+      return sum(map(function(person){
+        return pulling(person, match)
+      }, team))
     }
   
     var winner = function(team1, team2, match){
@@ -88,19 +91,7 @@ var tugOfWarModel = function(){
       }
     }
 
-    conditions(0, matchInfo.matches.length);
-
-  
-
-    // example return statements
-    // you can return a JSON object of whatever you want
-    return {
-      strength: strength("A"),
-      lazy1: lazy("A", 1),
-      lazy2: lazy("A", 2)
-    }
-}
-'
+    conditions(0, matchInfo.matches.length);'
 ```
 
 Define match information (the only information that's used in the model above is the winner/loser information, though the other information would be used in data analysis models).
@@ -108,6 +99,11 @@ Define match information (the only information that's used in the model above is
 Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
 ```{r runTowModel}
+
+jsonFile = "stim.json"
+stim <- fromJSON(file=jsonFile)
+scene = stim$scenarios[[1]]
+
 matchInfo = list(
   outcome = "win",
   pattern = "round robin",
@@ -135,27 +131,61 @@ matchInfo2 = list(
   tournament = "double",
   matches = list(
     list(
-      winner = c("A"),
+      winner = c("A", "B"),
       loser = c("C"),
       match = 1
-    ),
-    list(
-      winner = c("C"),
-      loser = c("A"),
-      match = 2
-    ), 
-    list(
-      winner = c("A"),
-      loser = c("C"),
-      match = 3
     )
     
   )
 )
 
+games <- list()
+i = 1
+for (game in scene$games) {
+  if (game$winner == 1) {
+    wi <- game$team1
+    lo <- game$team2
+  } else {
+    wi <- game$team2
+    lo <- game$team2
+  }
+  LL <- list(
+    winner = wi,
+    loser = lo,
+    match = i
+  )
+  games <- c(games, LL)
+  i <- i + 1
+}
+
+matchInfo3 = list(
+  matches = games
+)
+
+retObject = 'return { '
+
+for (i in 1:length(scene$questions)) {
+  elementToAdd = ""
+  if (scene$questions[i] == 0) {
+    elementToAdd = paste0("strength", scene$subjects[[i]], ": strength('", scene$subjects[[i]], "')")
+  } else if (scene$questions[i] == 1) {
+    elementToAdd = paste0("laziness", scene$subjects[[i]][[1]], ": lazy('", scene$subjects[[i]][[1]], "', ", scene$subjects[[i]][[2]], ")")
+  }
+  
+  if (i < length(scene$questions)) {
+    elementToAdd = paste0(elementToAdd, ", ")
+  }
+  print(elementToAdd)
+  retObject = paste0(retObject, elementToAdd)
+}
+
+retObject = paste0(retObject, "}}")
+
+towModel = paste0(towModel, retObject)
+
 dataToWebPPL = list(lazinessPrior = 0.3, 
                     lazyPulling = 0.5,
-                    matchInfo = matchInfo2)
+                    matchInfo = matchInfo3)
 
 rs <- webppl(program_code = towModel, 
              model_var = "tugOfWarModel",
