@@ -10,18 +10,230 @@
 				},
 				{
 					"team1": ["Jim"],
-					"team2": ["Mary"],
+					"team2": ["Patrick"],
+					"winner": 2
+				},
+				{
+					"team1": ["Patrick"],
+					"team2": ["Jim"],
 					"winner": 1
 				}
 			],
 			"comments": [],
-			"questions": [0, 1],
-			"subjects": ["Patrick", ["Jim", 2]]
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 1,
+			"games": [
+				{
+					"team1": ["Patrick"],
+					"team2": ["Mary"],
+					"winner": 1
+				},
+				{
+					"team1": ["Mary"],
+					"team2": ["Jim"],
+					"winner": 1
+				},
+				{
+					"team1": ["Mary"],
+					"team2": ["Alice"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 2,
+			"games": [
+				{
+					"team1": ["Patrick"],
+					"team2": ["Mary"],
+					"winner": 1
+				},
+				{
+					"team1": ["Mary"],
+					"team2": ["Jim"],
+					"winner": 2
+				},
+				{
+					"team1": ["Mary"],
+					"team2": ["Alice"],
+					"winner": 2
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 3,
+			"games": [
+				{
+					"team1": ["Patrick"],
+					"team2": ["Mary"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick"],
+					"team2": ["Jim"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick"],
+					"team2": ["Alice"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 4,
+			"games": [
+				{
+					"team1": ["Patrick", "Mary"],
+					"team2": ["Jim", "Alice"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "Mary"],
+					"team2": ["David", "Curtis"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "Mary"],
+					"team2": ["Grace", "Collin"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 5,
+			"games": [
+				{
+					"team1": ["Patrick", "Mary"],
+					"team2": ["Jim", "Alice"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "Curtis"],
+					"team2": ["Jim", "Grace"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "David"],
+					"team2": ["Jim", "Collin"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 6,
+			"games": [
+				{
+					"team1": ["Patrick", "Jim"],
+					"team2": ["Mary", "Grace"],
+					"winner": 1
+				},
+				{
+					"team1": ["Mary", "Grace"],
+					"team2": ["Jim", "Collin"],
+					"winner": 1
+				},
+				{
+					"team1": ["Mary", "Grace"],
+					"team2": ["Jim", "Rose"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 7,
+			"games": [
+				{
+					"team1": ["Patrick", "Jim"],
+					"team2": ["Mary", "Grace"],
+					"winner": 1
+				},
+				{
+					"team1": ["Mary", "Grace"],
+					"team2": ["Jim", "Collin"],
+					"winner": 2
+				},
+				{
+					"team1": ["Mary", "Grace"],
+					"team2": ["Jim", "Rose"],
+					"winner": 2
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 8,
+			"games": [
+				{
+					"team1": ["Patrick", "Mary"],
+					"team2": ["Collin", "Grace"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "David"],
+					"team2": ["Jim", "Alice"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "Curtis"],
+					"team2": ["Brandon", "Rose"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
+		},
+		{
+			"id": 9,
+			"games": [
+				{
+					"team1": ["Patrick", "Mary"],
+					"team2": ["David", "Curtis"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "David"],
+					"team2": ["Mary", "Curtis"],
+					"winner": 1
+				},
+				{
+					"team1": ["Patrick", "Curtis"],
+					"team2": ["Mary", "David"],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [0],
+			"subjects": ["Patrick"]
 		}
 	],
 	"questions": [
 		"{{player}} is a skilled player.",
-		"{{player}} is lazy in match {{m}}."
+		"{{player}} was lazy in match {{match}}."
 	],
 	"colors": {
 		"Patrick": "#00FF7F",
@@ -29,7 +241,10 @@
 		"David": "#7FFFD4",
 		"Curtis": "#FFC0CB",
 		"Collin": "#D8BFD8",
-		"Matt": "#FFE4B5",
-		"Brandon": "#DDA0DD"
+		"Grace": "#FFE4B5",
+		"Alice": "#DDA0DD",
+		"Jim": "#FFB4EE",
+		"Brandon": "#CFFFEC",
+		"Rose": "#BDEBFF"
 	}
 }
