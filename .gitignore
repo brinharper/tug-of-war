@@ -1,3 +1,9 @@
 .psiturk_history
 *.log
 *.db
+<<<<<<< HEAD
+=======
+
+.Rproj.user
+models/*.html
+>>>>>>> master

@@ -1,0 +1,170 @@
+---
+title: "tug-of-war"
+author: "M. H. Tessler"
+date: "November 1, 2016"
+output: html_document
+---
+
+```{r helpers, echo = F}
+library(knitr)
+knitr::opts_chunk$set(fig.crop = F,echo=T, 
+                      warning=F, cache=F, 
+                      message=F, sanitize = T)
+
+library(rwebppl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(coda)
+library(rjson)
+
+# # to get the maximum a posteriori value [MAP] (from samples)
+# estimate_mode <- function(s) {
+#   d <- density(s)
+#   return(d$x[which.max(d$y)])
+# }
+# # upper bound of 95% credible interval
+# hdi_upper<- function(s){
+#   m <- HPDinterval(mcmc(s))
+#   return(m["var1","upper"])
+# }
+# # lower bound of 95% credible interval
+# hdi_lower<- function(s){
+#   m <- HPDinterval(mcmc(s))
+#   return(m["var1","lower"])
+# }
+```
+
+## Tug of war model
+
+Possible questions: 
+
+1. "What is the strength of A?"
+2. "Was A being lazy in match N?"
+3. "Who will win: A vs. B?""
+
+```{r towModel}
+towModel <- '
+// unpack data from R
+var lazinessPrior = datafromR["lazinessPrior"][0]
+var lazyPulling = datafromR["lazyPulling"][0]
+var matchInfo = datafromR["matchInfo"]
+
+var tugOfWarModel = function(){
+
+    var strength = mem(function(person){
+      return gaussian(50, 5)
+    })
+
+    // laziness is a memoized function of a person and match
+    // so we can later ask if a person was lazy on a particular match
+    var lazy = mem(function(person, match){
+      return flip(lazinessPrior)
+    })
+
+    var pulling = function(person, match) {
+      return lazy(person, match) ?
+              strength(person) * lazyPulling :
+              strength(person)
+    }
+
+    var totalPulling = function(team, match){
+      return sum(map(function(person){
+        return pulling(person, match)
+      }, team))
+    }
+  
+    var winner = function(team1, team2, match){
+      return totalPulling(team1, match) > totalPulling(team2, match) ? team1 : team2
+    }
+
+    var beat = function(team1,team2, match){
+      return winner(team1,team2, match) == team1
+    }
+
+    var conditions = function(i, len) {
+      if (i < len) {
+        condition(beat(matchInfo.matches[i].winner,
+                        matchInfo.matches[i].loser,
+                        matchInfo.matches[i].match));
+        conditions(i + 1, len);
+      }
+    }
+
+    conditions(0, matchInfo.matches.length);'
+```
+
+Define match information (the only information that's used in the model above is the winner/loser information, though the other information would be used in data analysis models).
+
+Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
+
+```{r runTowModel}
+
+jsonFile = "stim.json"
+stim <- fromJSON(file=jsonFile)
+scene = stim$scenarios[[10]]
+
+games <- list()
+i = 1
+for (game in scene$games) {
+  if (game$winner == 1) {
+    wi <- game$team1
+    lo <- game$team2
+  } else {
+    wi <- game$team2
+    lo <- game$team1
+  }
+  LL <- list(
+    winner = wi,
+    loser = lo,
+    match = i
+  )
+  games[[length(games) + 1]] <- LL
+  i <- i + 1
+}
+
+matchInfo = list(
+  matches = games
+)
+
+retObject = 'return { '
+
+for (i in 1:length(scene$questions)) {
+  elementToAdd = ""
+  if (scene$questions[i] == 0) {
+    elementToAdd = paste0("strength", scene$subjects[[i]], ": strength('", scene$subjects[[i]], "')")
+  } else if (scene$questions[i] == 1) {
+    elementToAdd = paste0("laziness", scene$subjects[[i]][[1]], ": lazy('", scene$subjects[[i]][[1]], "', ", scene$subjects[[i]][[2]], ")")
+  }
+  
+  if (i < length(scene$questions)) {
+    elementToAdd = paste0(elementToAdd, ", ")
+  }
+  print(elementToAdd)
+  retObject = paste0(retObject, elementToAdd)
+}
+
+retObject = paste0(retObject, "}}")
+
+towModel = paste0(towModel, retObject)
+
+dataToWebPPL = list(lazinessPrior = 0.3, 
+                    lazyPulling = 0.5,
+                    matchInfo = matchInfo)
+
+rs <- webppl(program_code = towModel, 
+             model_var = "tugOfWarModel",
+  inference_opts = list(method = 'rejection', samples = 1000),
+  data = dataToWebPPL,
+  data_var = "datafromR",
+  output_format = "samples"
+)
+
+# Plotting the results
+rs.tidy <- rs %>%
+  gather(key, val)
+
+ggplot(rs.tidy, aes( x = val ))+
+  geom_histogram() +
+  facet_wrap(~key, scales = 'free')
+```
