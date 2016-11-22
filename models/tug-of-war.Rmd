@@ -64,7 +64,7 @@ var tugOfWarModel = function(){
 
     var pulling = function(person, match) {
       return lazy(person, match) ?
-              strength(person) * lazyPulling :
+              strength(person) * 0.5 :
               strength(person)
     }
 
@@ -82,6 +82,7 @@ var tugOfWarModel = function(){
       return winner(team1,team2, match) == team1
     }
 
+
     var conditions = function(i, len) {
       if (i < len) {
         condition(beat(matchInfo.matches[i].winner,
@@ -91,7 +92,9 @@ var tugOfWarModel = function(){
       }
     }
 
-    conditions(0, matchInfo.matches.length);'
+conditions(0, 1);
+
+'
 ```
 
 Define match information (the only information that's used in the model above is the winner/loser information, though the other information would be used in data analysis models).
@@ -102,7 +105,7 @@ Also, define the lazinessPrior and lazyPulling variables, package them up into `
 
 jsonFile = "stim.json"
 stim <- fromJSON(file=jsonFile)
-scene = stim$scenarios[[10]]
+scene = stim$scenarios[[11]]
 
 games <- list()
 i = 1
@@ -132,11 +135,11 @@ retObject = 'return { '
 for (i in 1:length(scene$questions)) {
   elementToAdd = ""
   if (scene$questions[i] == 0) {
-    elementToAdd = paste0("strength", scene$subjects[[i]], ": strength('", scene$subjects[[i]], "')")
+    elementToAdd = paste0("'strength", scene$subjects[[i]], "': strength('", scene$subjects[[i]], "')")
   } else if (scene$questions[i] == 1) {
-    elementToAdd = paste0("laziness", scene$subjects[[i]][[1]], ": lazy('", scene$subjects[[i]][[1]], "', ", scene$subjects[[i]][[2]], ")")
+    elementToAdd = paste0("'laziness", scene$subjects[[i]][[1]], scene$subjects[[i]][[2]], "': lazy('", scene$subjects[[i]][[1]], "', ", scene$subjects[[i]][[2]], ")")
   }
-  
+
   if (i < length(scene$questions)) {
     elementToAdd = paste0(elementToAdd, ", ")
   }
@@ -163,6 +166,8 @@ rs <- webppl(program_code = towModel,
 # Plotting the results
 rs.tidy <- rs %>%
   gather(key, val)
+
+rs.tidy$val <- as.double(rs.tidy$val)
 
 ggplot(rs.tidy, aes( x = val ))+
   geom_histogram() +
