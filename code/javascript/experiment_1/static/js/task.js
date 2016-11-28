@@ -147,14 +147,8 @@ var TestPhase = function() {
 			html = "<h4>Please rate how strongly you agree with each of the following statements:</h4>";
 			var scenarioQuestions = that.scenario.questions
 			var scenarioSubjects = that.scenario.subjects;
-			var view = {"player": "", "match": ""};
 			for (var i = 0; i < scenarioQuestions.length; i++) {
-				if (scenarioQuestions[i] == 0) {
-					view["player"] = scenarioSubjects[i];
-				} else if (scenarioQuestions[i] == 1) {
-					view["player"] = scenarioSubjects[i][0];
-					view["match"] = scenarioSubjects[i][1];
-				}
+				var view = scenarioSubjects[i];
 				var q = (Mustache.render($c.questions[scenarioQuestions[i]], view));
 				html += '<p class="question">' + nameify(q) +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
 			}

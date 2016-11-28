@@ -20,8 +20,8 @@
 				}
 			],
 			"comments": [],
-			"questions": [0, 1],
-			"subjects": ["Patrick", ["Jim", 2]]
+			"questions": [0],
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 1,
@@ -44,7 +44,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 2,
@@ -67,7 +67,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 3,
@@ -89,8 +89,8 @@
 				}
 			],
 			"comments": [],
-			"questions": [0, 1],
-			"subjects": ["Patrick", ["Alice", 3]]
+			"questions": [0],
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 4,
@@ -113,7 +113,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 5,
@@ -136,7 +136,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 6,
@@ -159,7 +159,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 7,
@@ -180,9 +180,9 @@
 					"winner": 2
 				}
 			],
-			"comments": ["Example comment, please ignore this example comment it is to demonstrate the layout.", "Please also ignore this example comment."],
+			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 8,
@@ -205,7 +205,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 9,
@@ -228,7 +228,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		}
 	],
 	"questions": [

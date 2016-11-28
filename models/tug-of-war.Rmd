@@ -16,7 +16,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(coda)
-library(rjson)
+library(jsonlite)
 
 # # to get the maximum a posteriori value [MAP] (from samples)
 # estimate_mode <- function(s) {
@@ -48,51 +48,53 @@ towModel <- '
 // unpack data from R
 var lazinessPrior = datafromR["lazinessPrior"][0]
 var lazyPulling = datafromR["lazyPulling"][0]
-var matchInfo = datafromR["matchInfo"]
+var matchInfo = datafromR["matchInfo"][0]
 
 var tugOfWarModel = function(){
 
-    var strength = mem(function(person){
-      return gaussian(50, 5)
+    var strength = mem(function(person) {
+      return gaussian(50, 3)
     })
-
-    // laziness is a memoized function of a person and match
-    // so we can later ask if a person was lazy on a particular match
-    var lazy = mem(function(person, match){
+    
+    var lazy = mem(function(person, match) {
       return flip(lazinessPrior)
     })
-
+    
     var pulling = function(person, match) {
-      return lazy(person, match) ?
-              strength(person) * 0.5 :
-              strength(person)
+      return lazy(person, match) ? strength(person) * 0.5 : strength(person)
     }
-
-    var totalPulling = function(team, match){
-      return sum(map(function(person){
+    
+    var totalPulling = function(team, match) {
+      return sum(map(function(person) {
         return pulling(person, match)
       }, team))
     }
-  
-    var winner = function(team1, team2, match){
+    
+    var winner = function(team1, team2, match) {
       return totalPulling(team1, match) > totalPulling(team2, match) ? team1 : team2
     }
-
+    
     var beat = function(team1,team2, match){
       return winner(team1,team2, match) == team1
     }
-
-
+    
     var conditions = function(i, len) {
       if (i < len) {
-        condition(beat(matchInfo.matches[i].winner,
-                        matchInfo.matches[i].loser,
-                        matchInfo.matches[i].match));
+        if (matchInfo.games[i].winner == 1) {
+          condition(beat(matchInfo.games[i].team1,
+                        matchInfo.games[i].team2,
+                        i + 1));
+        } else if (matchInfo.games[i].winner == 2) {
+          condition(beat(matchInfo.games[i].team2,
+                        matchInfo.games[i].team1,
+                        i + 1));
+        }
         conditions(i + 1, len);
       }
     }
 
-conditions(0, 1);
+    conditions(0, matchInfo.games.length);
+
 
 '
 ```
@@ -104,46 +106,22 @@ Also, define the lazinessPrior and lazyPulling variables, package them up into `
 ```{r runTowModel}
 
 jsonFile = "stim.json"
-stim <- fromJSON(file=jsonFile)
-scene = stim$scenarios[[11]]
-
-games <- list()
-i = 1
-for (game in scene$games) {
-  if (game$winner == 1) {
-    wi <- game$team1
-    lo <- game$team2
-  } else {
-    wi <- game$team2
-    lo <- game$team1
-  }
-  LL <- list(
-    winner = wi,
-    loser = lo,
-    match = i
-  )
-  games[[length(games) + 1]] <- LL
-  i <- i + 1
-}
-
-matchInfo = list(
-  matches = games
-)
+stim <- fromJSON("stim.json")
+scene = stim$scenarios[11,]
 
 retObject = 'return { '
 
-for (i in 1:length(scene$questions)) {
+for (i in 1:length(scene$questions[[1]])) {
   elementToAdd = ""
-  if (scene$questions[i] == 0) {
-    elementToAdd = paste0("'strength", scene$subjects[[i]], "': strength('", scene$subjects[[i]], "')")
-  } else if (scene$questions[i] == 1) {
-    elementToAdd = paste0("'laziness", scene$subjects[[i]][[1]], scene$subjects[[i]][[2]], "': lazy('", scene$subjects[[i]][[1]], "', ", scene$subjects[[i]][[2]], ")")
+  if (scene$questions[[1]][i] == 0) {
+    elementToAdd = paste0("'strength", scene$subjects[[1]][i, 1], "': strength('", scene$subjects[[1]][i, 1], "')")
+  } else if (scene$questions[[1]][i] == 1) {
+    elementToAdd = paste0("'laziness", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': lazy('", scene$subjects[[1]][i, 1], "', ", scene$subjects[[1]][i, 2], ")")
   }
 
-  if (i < length(scene$questions)) {
+  if (i < length(scene$questions[[1]])) {
     elementToAdd = paste0(elementToAdd, ", ")
   }
-  print(elementToAdd)
   retObject = paste0(retObject, elementToAdd)
 }
 
@@ -153,7 +131,7 @@ towModel = paste0(towModel, retObject)
 
 dataToWebPPL = list(lazinessPrior = 0.3, 
                     lazyPulling = 0.5,
-                    matchInfo = matchInfo)
+                    matchInfo = scene)
 
 rs <- webppl(program_code = towModel, 
              model_var = "tugOfWarModel",

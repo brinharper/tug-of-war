@@ -21,7 +21,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 1,
@@ -44,7 +44,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 2,
@@ -67,7 +67,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 3,
@@ -90,7 +90,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 4,
@@ -113,7 +113,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 5,
@@ -136,7 +136,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 6,
@@ -159,7 +159,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 7,
@@ -182,7 +182,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 8,
@@ -205,7 +205,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 9,
@@ -228,7 +228,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": ["Patrick"]
+			"subjects": [{"player": "Patrick"}]
 		},
 		{
 			"id": 10,
@@ -250,8 +250,8 @@
 				}
 			],
 			"comments": [],
-			"questions": [0, 0, 1, 1, 1, 1, 1, 1],
-			"subjects": ["Patrick", "David", ["Patrick", 1], ["Patrick", 2], ["Patrick", 3], ["David", 1], ["David", 2], ["David", 3]]
+			"questions": [1, 0],
+			"subjects": [{"player": "Patrick", "match": 3}, {"player": "Patrick"}]
 		}
 	],
 	"questions": [
