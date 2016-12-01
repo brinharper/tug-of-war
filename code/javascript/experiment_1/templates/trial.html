@@ -2,31 +2,39 @@
 <div class="slide" id="instructions-training-1">
 	<h1>Instructions</h1>
 	<div class="blue">
-		<p>Your task in this experiment is to determine based on the information given to you likely statistics about players in hypothetical tug-of-war games.</p>
+		<p>Your task in this experiment is to infer, based on the information given to you, information about players in hypothetical tug-of-war games.</p>
 		<p>In each scenario, you will see the outcomes of a number of such games. The members of each team in a game will be shown in boxes. A crown will appear next to the team that
 		won each game. You can hover over a player to highlight his or her appearances in the scenario, and you can click on the player to display the games in which he or she participated.</p>
-		<p>You may receive additional information from a commentator on the matches, which will appear to the side of them. Always take this information to be true.</p>
+		<p>You may receive additional information about the matches from a commentator, which will appear on the side of the screen. Always take this information to be true.</p>
 		<p>You will be asked to answer questions about players' strength and laziness. Strength can be thought of as a number. If the sum of the strengths of Team Blue are greater than the sum of the strengths of Team Red, then Team Blue wins. A player's strength remains the same throughout each scenario (but not necessarily across scenarios).</p>
-		<p>If a player is lazy in a certain game, then he or she only tries half as hard and therefore his or her strenght is decreased by half. However, a player can be lazy in one game and then try hard in the next.</p>
+		<p>If a player is lazy in a certain game, then he or she only tries half as hard and therefore his or her strength is decreased by half. However, a player can be lazy in one game and then try hard in the next.</p>
 		<hr />
-		<div class = "intro_tables">
-			<div class="intro_table">
-				<h3>Policy information</h3>
-				<p><b>Number</b>:  #123187 </p>
-				<p><b>Supported by</b>: <font color = "red"> The Republican party</font></p>
-				<p><b>Number of people in the committee</b>: 4</p>
-				<p><b>Number of votes in favor of policy required</b>: 2</p>
-		</div>
-
-		<div class="intro_table">
-			<h3>Votes</h3>
-			<table>
-				<tr><th></th><th>Party affiliation</th><th>Vote (&#10004 = for, &#10008 = against)</th>
-					<tr><td>John</td><td><font color = "red"> Republican </font></td><td> &#10004 </td></tr>
-					<tr><td>Bill</td><td><font color = "red"> Republican </font></td><td> &#10004 </td></tr>
-					<tr><td>Steve</td><td><font color = "blue"> Democrat </font></td><td> &#10008 </td></tr>
-					<tr><td>Robert</td><td><font color = "blue"> Democrat </font></td><td> &#10004 </td></tr>
-				</table>
+		<div id = "table_container">
+			 <div id = "left_table"> 
+				<h2>Games</h2>
+				<div><ul class='game' style='text-align:center'>
+					<li><img src='static/images/crown.png' alt='crown'/></li>
+					<li><ul class='team' style='border-color:blue'>
+						<li style='background-color:lightblue'>Patrick</li>
+						<li style='background-color:lightgreen'>Mary</li>
+					</ul></li><li> VS. </li><li><ul class='team' style='border-color:red'>
+						<li style='background-color:lightpink'>Jim</li>
+						<li style='background-color:lightyellow'>Alice</li>
+					</ul></li>
+					<li><img src='static/images/nocrown.png' alt='crown'/></li>
+				</ul></div>
+			</div>
+			<div id = "right_table">
+				<div id="top-row" style="display:inline-block; width:100%">
+					<h2 style="display: table-cell; float:left">Commentary</h2>
+					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>
+				</div>
+				<hr/>
+				<div id="commentary">
+					<p>Mary is a strong player.</p>
+					<p>Mary was lazy during the match.</p>
+					<p>Jim is a strong player.</p>
+				</div>
 			</div>
 		</div>
 		<div class="spacer"></div>
