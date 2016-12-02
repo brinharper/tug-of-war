@@ -90,6 +90,13 @@ div.slide {
     
 }
 
+.left_table2{
+    float:left;
+   margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
 
 .right_table{
     /*text-align: center;*/
@@ -99,6 +106,13 @@ div.slide {
     width: 40%;
 
     
+}
+
+.right_table2{
+    float:right;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 #games {

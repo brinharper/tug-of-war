@@ -20,6 +20,7 @@ psiTurk.preloadPages($c.pages);
 // Objects to keep track of the current phase and state
 var CURRENTVIEW;
 var STATE;
+var counter = 0;
 
 /*************************
  * INSTRUCTIONS         
@@ -61,20 +62,21 @@ var TestPhase = function() {
 
 		// If there are no more trials left, then we are at the end of
 		// this phase
-		if (STATE.index >= $c.scenarios.length) { //change here for debugging
+		if (counter >= $c.scenarios.length) { //change here for debugging
 			this.finish();
 			return false;
 		}
 
-		if (STATE.index < 0) {
-			this.scenario = $c.tests[STATE.index + $c.tests.length];
+		if (counter < 0) {
+			this.scenario = $c.tests[counter + $c.tests.length];
+
 		} else {
 
 			// Load the new trialinfo
-			this.scenario = $c.scenarios[STATE.index];
+			this.scenario = $c.scenarios[counter];
 
 			// Update progress bar
-			update_progress(STATE.index, $c.scenarios.length);
+			update_progress(counter, $c.scenarios.length);
 
 		}
 
@@ -86,6 +88,12 @@ var TestPhase = function() {
 		if (that.init_trial()) {
 			debug("Show STIMULUS");
 			// Show stimuli
+
+			if (counter < 0) {
+				$("#prompt-text").text("TEST QUESTIONS");
+			} else {
+				$("#prompt-text").text("");
+			}
 
 			//show games 
 			var games = that.scenario.games;
@@ -151,7 +159,7 @@ var TestPhase = function() {
 				$(".left_table").css("width", "100%");
 			}
 			
-			if (STATE.index >= 0) {
+			if (counter >= 0) {
 
 				html = "<h4>Please rate how strongly you agree with each of the following statements:</h4>";
 				var scenarioQuestions = that.scenario.questions
@@ -196,36 +204,41 @@ var TestPhase = function() {
 			} else {
 
 				html = "<h4>Please answer the following question based on the above match:</h4>";
-				if (STATE.index == -2) {
+				if (counter == -2) {
 					html += '<p class="question">Who won the above game?</p>';
-					html += '<ul><li><button class="next test" id="t_buttonPatrick">Patrick</button></li><li><button class="next test" id="t_buttonAlice">Alice</button></li></ul>';
-					$("#t_buttonPatrick").click(function() {
-						alert("Incorrect response. Please read the instructions again.");
-						STATE.set_index(-$c.tests.length);
-						CURRENTVIEW = new Instructions();
-					});
-					$("#t_buttonAlice").click(function() {
-						STATE.set_index(STATE.index + 1);
-						this.display_stim(this);
-					});
-				} else if (STATE.index == -1) {
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonPatrick">Patrick</button></li><li><button id="t_buttonAlice">Alice</button></li></ul>';
+				} else if (counter == -1) {
 					html += '<p class="question">Which of the following must be true about this game?</p>';
-					html += '<ul><li><button class="next test" id="t_buttonWeak">Mary is a weaker player than Jim</button></li><li><button class="next test" id="t_buttonLazy">Mary was lazy during the match</button></li><li><button class="next test" id="t_buttonSick">Mary was sick during the match</button></li></ul>';
-					$("#t_buttonSick, #t_buttonWeak").click(function() {
-						alert("Incorrect response. Please read the instructions again.");
-						STATE.set_index(-$c.tests.length);
-						CURRENTVIEW = new Instructions();
-					});
-					$("#t_buttonLazy").click(function() {
-						STATE.set_index(STATE.index + 1);
-						this.display_stim(this);
-					});
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonWeak">Mary is a weaker player than Jim</button></li><li><button id="t_buttonLazy">Mary was lazy during the match</button></li><li><button id="t_buttonSick">Mary was sick during the match</button></li></ul>';
 				}
 
 				$('#questions').html(html);
+				$('#questions').css("text-align", "center");
 
 			}	
 
+
+			$("#t_buttonPatrick").click(function() {
+				$("#dialog").dialog("open");
+				counter = -$c.tests.length;
+				CURRENTVIEW = new Instructions();
+			});
+			$("#t_buttonAlice").click(function() {
+				counter = counter + 1;
+				CURRENTVIEW = new TestPhase();
+			});
+
+			$("#t_buttonSick, #t_buttonWeak").click(function() {
+				$("#dialog").dialog("open");
+				counter = -$c.tests.length;
+				CURRENTVIEW = new Instructions();
+			});
+			$("#t_buttonLazy").click(function() {
+				$("#dialog").text("You have passed the test questions. The experiment will now begin.");
+				$("#dialog").dialog("open");
+				counter = 0;
+				CURRENTVIEW = new TestPhase();
+			});
 
 
 			$(".team li, .name-in-text").hover(function() {
@@ -286,6 +299,12 @@ var TestPhase = function() {
 			// Hide all the slider handles 
 			$('.ui-slider-handle').hide() ;
 
+			if (counter < 0) {
+				$("#trial_next").hide();
+			} else {
+				$("#trial_next").show();
+			}
+
 			// Disable button which will be enabled once the sliders are clicked
 			$('#trial_next').prop('disabled', true);
 
@@ -299,7 +318,7 @@ var TestPhase = function() {
 	//records response 
 	this.record_response = function() {        
 		
-		var response = [] ;
+		var response = [];
 		saveid = this.scenario.id;
 		   
 		for (var i=0; i<this.scenario.questions.length; i++) {
@@ -308,8 +327,7 @@ var TestPhase = function() {
 		debug(response)
 		psiTurk.recordTrialData(["trial_".concat(saveid), "judgments", response]);
 
-
-		STATE.set_index(STATE.index + 1);
+		counter += 1;
 		
 		// Update the page with the current phase/trial
 		this.display_stim(this);
@@ -329,7 +347,25 @@ var TestPhase = function() {
 	// Show the slide
 	var that = this; 
 	$("#trial").fadeIn($c.fade);
-	$('#trial_next.next').click(function () {
+
+	$(function() {
+		$( "#dialog" ).dialog({
+		  autoOpen : false,
+	      resizable: false,
+	      height: "auto",
+	      width: 400,
+	      modal: true,
+	      buttons: {
+	        "OK": function() {
+	          $( this ).dialog( "close" );
+	        }
+	      }
+	    });
+	})
+
+
+	$('#trial_next').unbind();
+	$('#trial_next').click(function (e) {
 		that.record_response();
 	});
 
@@ -337,7 +373,7 @@ var TestPhase = function() {
 	// Initialize the current trial
 	if (this.init_trial()) {
 		// Start the test
-		//this.display_stim(this) ;
+		this.display_stim(this);
 	};
 };
 
@@ -437,7 +473,7 @@ $(document).ready(function() {
 
 	// Start the experiment
 	STATE = new State();
-	//STATE.set_index(-$c.tests.length);
+	counter = -2;
 	// Begin the experiment phase
 	if (STATE.instructions) {
 		CURRENTVIEW = new Instructions();

@@ -10,7 +10,7 @@
 		<p>If a player is lazy in a certain game, then he or she only tries half as hard and therefore his or her strength is decreased by half. However, a player can be lazy in one game and then try hard in the next.</p>
 		<hr />
 		<div class = "table_container">
-			 <div class = "left_table"> 
+			 <div class = "left_table2"> 
 				<h2>Games</h2>
 				<div><ul class='game' style='text-align:center'>
 					<li><img src='static/images/crown.png' alt='crown'/></li>
@@ -24,13 +24,13 @@
 					<li><img src='static/images/nocrown.png' alt='crown'/></li>
 				</ul></div>
 			</div>
-			<div class = "right_table">
+			<div class = "right_table2">
 				<div id="top-row" style="display:inline-block; width:100%">
 					<h2 style="display: table-cell; float:left">Commentary</h2>
 					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>
 				</div>
 				<hr/>
-				<div id="commentary">
+				<div>
 					<p>Mary is a strong player.</p>
 					<p>Mary was lazy during the match.</p>
 					<p>Jim is a strong player.</p>
@@ -38,12 +38,15 @@
 			</div>
 		</div>
 		<div class="spacer"></div>
+		<hr/>
 		<p>In the above example, Mary and Patrick are on a team which beat Jim and Alice's team. The commentator provides additional information about the match.</p>
 		<p>Continue to the next set of questions to test your understanding of the rules.</p>
 	<div class="continue">
 		<button type="button" class="next">Start</button>
 	</div>
 	
+</div>
+
 </div>
 
 <!-- TASK -->
@@ -83,6 +86,9 @@
 		<button type="button" id="trial_next" class="next">Continue</button>
 	</div>
 	<div class='player-popup'></div>
+	<div id="dialog">
+		Incorrect response. Please read the instructions again.
+	</div>
 </div>
 
 <!-- DEMOGRAPHICS -->
@@ -115,5 +121,6 @@
 		<button type="button" class="next" id="trial_finish">Finish</button>
 	</div>
 </div>
+
 
 
