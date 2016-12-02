@@ -31884,3 +31884,1958 @@
 [2016-12-01 16:55:22 -0500] [10589] [INFO] Worker exiting (pid: 10589)
 [2016-12-01 16:55:22 -0500] [10593] [INFO] Parent changed, shutting down: <Worker 10593>
 [2016-12-01 16:55:22 -0500] [10593] [INFO] Worker exiting (pid: 10593)
+[2016-12-01 17:10:17 -0500] [10953] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x101f420c8>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x101f3bd70>
+  pre_fork: <function pre_fork at 0x101f3bed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 17
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x101f3bc08>
+  pre_exec: <function pre_exec at 0x101f42668>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x101f42230>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x101f9ab18>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x101f427d0>
+  post_request: <function post_request at 0x101f428c0>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x101f42398>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x101f42a28>
+  chdir: /Users/patrick/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x101f3baa0>
+  worker_abort: <function worker_abort at 0x101f42500>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x101f42b90>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-12-01 17:10:17 -0500] [10953] [INFO] Starting gunicorn 19.4.5
+[2016-12-01 17:10:17 -0500] [10953] [DEBUG] Arbiter booted
+[2016-12-01 17:10:17 -0500] [10953] [INFO] Listening at: http://0.0.0.0:22362 (10953)
+[2016-12-01 17:10:17 -0500] [10953] [INFO] Using worker: sync
+[2016-12-01 17:10:17 -0500] [10958] [INFO] Booting worker with pid: 10958
+[2016-12-01 17:10:17 -0500] [10960] [INFO] Booting worker with pid: 10960
+[2016-12-01 17:10:17 -0500] [10961] [INFO] Booting worker with pid: 10961
+[2016-12-01 17:10:18 -0500] [10962] [INFO] Booting worker with pid: 10962
+2016-12-01 17:10:18,084 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,084 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,086 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10963] [INFO] Booting worker with pid: 10963
+2016-12-01 17:10:18,125 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,125 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,127 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10964] [INFO] Booting worker with pid: 10964
+2016-12-01 17:10:18,163 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,163 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,165 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10965] [INFO] Booting worker with pid: 10965
+[2016-12-01 17:10:18 -0500] [10966] [INFO] Booting worker with pid: 10966
+2016-12-01 17:10:18,254 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,255 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,257 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10967] [INFO] Booting worker with pid: 10967
+[2016-12-01 17:10:18 -0500] [10968] [INFO] Booting worker with pid: 10968
+[2016-12-01 17:10:18 -0500] [10969] [INFO] Booting worker with pid: 10969
+2016-12-01 17:10:18,326 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,327 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,329 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10970] [INFO] Booting worker with pid: 10970
+[2016-12-01 17:10:18 -0500] [10971] [INFO] Booting worker with pid: 10971
+2016-12-01 17:10:18,426 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,426 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,428 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,499 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,499 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,501 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10972] [INFO] Booting worker with pid: 10972
+2016-12-01 17:10:18,537 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,538 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,540 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,591 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,591 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-01 17:10:18 -0500] [10973] [INFO] Booting worker with pid: 10973
+2016-12-01 17:10:18,593 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,595 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,595 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,597 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,601 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,601 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,603 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,645 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,645 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,647 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10974] [INFO] Booting worker with pid: 10974
+2016-12-01 17:10:18,708 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,708 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,709 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10975] [INFO] Booting worker with pid: 10975
+2016-12-01 17:10:18,740 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,740 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,742 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,799 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,800 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,801 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:18 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:10:18,868 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,868 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,870 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:10:18,930 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:10:18,930 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:10:18,932 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:10:19 -0500] [10969] [DEBUG] Closing connection. 
+[2016-12-01 17:10:20 -0500] [10961] [DEBUG] Closing connection. 
+[2016-12-01 17:10:20 -0500] [10961] [DEBUG] Closing connection. 
+[2016-12-01 17:10:21 -0500] [10963] [DEBUG] Closing connection. 
+[2016-12-01 17:10:21 -0500] [10969] [DEBUG] GET /ad
+[2016-12-01 17:10:22 -0500] [10972] [DEBUG] GET /consent
+[2016-12-01 17:10:22 -0500] [10973] [DEBUG] GET /static/js/utils.js
+[2016-12-01 17:10:22 -0500] [10962] [DEBUG] GET /static/css/general.css
+[2016-12-01 17:10:23 -0500] [10961] [DEBUG] GET /exp
+2016-12-01 17:10:23,001 Accessing /exp: debug7YCSI4 debug319FYB debugFDCFI6 
+2016-12-01 17:10:23,006 given Counter({(0, 0): 4}) chose (0, 0)
+[2016-12-01 17:10:23 -0500] [10961] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 17:10:23 -0500] [10974] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 17:10:23 -0500] [10964] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 17:10:23 -0500] [10962] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 17:10:23 -0500] [10958] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 17:10:23 -0500] [10970] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 17:10:23 -0500] [10970] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 17:10:23 -0500] [10958] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 17:10:23 -0500] [10961] [DEBUG] GET /static/js/config.js
+[2016-12-01 17:10:23 -0500] [10971] [DEBUG] GET /static/js/task.js
+[2016-12-01 17:10:23 -0500] [10963] [DEBUG] GET /static/json/games.json
+[2016-12-01 17:10:23 -0500] [10974] [DEBUG] GET /sync/debugFDCFI6%3Adebug319FYB
+2016-12-01 17:10:23,228 GET /sync route with id: debugFDCFI6:debug319FYB
+[2016-12-01 17:10:23 -0500] [10974] [DEBUG] GET /trial.html
+[2016-12-01 17:10:23 -0500] [10975] [DEBUG] GET /submit.html
+[2016-12-01 17:10:23 -0500] [10975] [DEBUG] GET /static/images/crown.png
+[2016-12-01 17:10:23 -0500] [10974] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 17:10:23 -0500] [10964] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 17:10:25 -0500] [10975] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 17:10:25 -0500] [10963] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 17:11:30 -0500] [10970] [DEBUG] Closing connection. 
+[2016-12-01 17:11:30 -0500] [10969] [DEBUG] Closing connection. 
+[2016-12-01 17:11:30 -0500] [10969] [DEBUG] Closing connection. 
+[2016-12-01 17:11:30 -0500] [10971] [DEBUG] GET /ad
+[2016-12-01 17:11:32 -0500] [10975] [DEBUG] GET /consent
+[2016-12-01 17:11:32 -0500] [10974] [DEBUG] GET /static/js/utils.js
+[2016-12-01 17:11:32 -0500] [10962] [DEBUG] GET /static/css/general.css
+[2016-12-01 17:11:33 -0500] [10973] [DEBUG] GET /exp
+2016-12-01 17:11:33,207 Accessing /exp: debugRV7Z2E debugQXM1YG debugD0AG1W 
+2016-12-01 17:11:33,213 given Counter({(0, 0): 5}) chose (0, 0)
+[2016-12-01 17:11:33 -0500] [10973] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 17:11:33 -0500] [10966] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 17:11:33 -0500] [10974] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 17:11:33 -0500] [10972] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 17:11:33 -0500] [10960] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 17:11:33 -0500] [10974] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 17:11:33 -0500] [10965] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 17:11:33 -0500] [10971] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 17:11:33 -0500] [10974] [DEBUG] GET /static/js/config.js
+[2016-12-01 17:11:33 -0500] [10973] [DEBUG] GET /static/js/task.js
+[2016-12-01 17:11:33 -0500] [10970] [DEBUG] GET /static/json/games.json
+[2016-12-01 17:11:33 -0500] [10972] [DEBUG] GET /sync/debugD0AG1W%3AdebugQXM1YG
+2016-12-01 17:11:33,417 GET /sync route with id: debugD0AG1W:debugQXM1YG
+[2016-12-01 17:11:33 -0500] [10972] [DEBUG] GET /trial.html
+[2016-12-01 17:11:33 -0500] [10974] [DEBUG] GET /submit.html
+[2016-12-01 17:11:33 -0500] [10961] [DEBUG] GET /static/images/crown.png
+[2016-12-01 17:11:33 -0500] [10975] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 17:11:33 -0500] [10974] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 17:11:35 -0500] [10963] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 17:11:35 -0500] [10971] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 17:19:30 -0500] [10971] [DEBUG] Closing connection. 
+[2016-12-01 17:19:30 -0500] [10964] [DEBUG] Closing connection. 
+[2016-12-01 17:19:30 -0500] [10968] [DEBUG] Closing connection. 
+[2016-12-01 17:19:30 -0500] [10963] [DEBUG] GET /ad
+[2016-12-01 17:19:32 -0500] [10964] [DEBUG] GET /consent
+[2016-12-01 17:19:32 -0500] [10961] [DEBUG] GET /static/js/utils.js
+[2016-12-01 17:19:32 -0500] [10969] [DEBUG] GET /static/css/general.css
+[2016-12-01 17:19:33 -0500] [10966] [DEBUG] GET /exp
+2016-12-01 17:19:33,560 Accessing /exp: debugQEL8M7 debugYY7NGI debug9E328W 
+2016-12-01 17:19:33,565 given Counter({(0, 0): 6}) chose (0, 0)
+[2016-12-01 17:19:33 -0500] [10970] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 17:19:33 -0500] [10969] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 17:19:33 -0500] [10971] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 17:19:33 -0500] [10966] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 17:19:33 -0500] [10961] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 17:19:33 -0500] [10973] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 17:19:33 -0500] [10970] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 17:19:33 -0500] [10969] [DEBUG] GET /static/js/config.js
+[2016-12-01 17:19:33 -0500] [10966] [DEBUG] GET /static/js/task.js
+[2016-12-01 17:19:33 -0500] [10967] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 17:19:33 -0500] [10969] [DEBUG] GET /static/json/games.json
+[2016-12-01 17:19:33 -0500] [10969] [DEBUG] GET /sync/debug9E328W%3AdebugYY7NGI
+2016-12-01 17:19:33,760 GET /sync route with id: debug9E328W:debugYY7NGI
+[2016-12-01 17:19:33 -0500] [10964] [DEBUG] GET /trial.html
+[2016-12-01 17:19:33 -0500] [10958] [DEBUG] GET /submit.html
+[2016-12-01 17:19:33 -0500] [10970] [DEBUG] GET /static/images/crown.png
+[2016-12-01 17:19:33 -0500] [10962] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 17:19:33 -0500] [10975] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 17:19:39 -0500] [10969] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 17:19:39 -0500] [10966] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 17:19:43 -0500] [10968] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-12-01 17:19:43 -0500] [10960] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10958)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10960)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10961)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10963)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10964)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10965)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10966)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10968)
+[2016-12-01 17:40:07 -0500] [10963] [INFO] Worker exiting (pid: 10963)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10969)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10970)
+[2016-12-01 17:40:07 -0500] [10965] [INFO] Worker exiting (pid: 10965)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10971)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10972)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10973)
+[2016-12-01 17:40:07 -0500] [10968] [INFO] Worker exiting (pid: 10968)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10974)
+[2016-12-01 17:40:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10975)
+[2016-12-01 17:40:07 -0500] [10975] [INFO] Worker exiting (pid: 10975)
+[2016-12-01 17:40:07 -0500] [10974] [INFO] Worker exiting (pid: 10974)
+[2016-12-01 17:40:07 -0500] [10958] [INFO] Worker exiting (pid: 10958)
+[2016-12-01 17:40:07 -0500] [10961] [INFO] Worker exiting (pid: 10961)
+[2016-12-01 17:40:07 -0500] [10964] [INFO] Worker exiting (pid: 10964)
+[2016-12-01 17:40:07 -0500] [10966] [INFO] Worker exiting (pid: 10966)
+[2016-12-01 17:40:07 -0500] [10969] [INFO] Worker exiting (pid: 10969)
+[2016-12-01 17:40:07 -0500] [10971] [INFO] Worker exiting (pid: 10971)
+[2016-12-01 17:40:07 -0500] [10970] [INFO] Worker exiting (pid: 10970)
+[2016-12-01 17:40:07 -0500] [10972] [INFO] Worker exiting (pid: 10972)
+[2016-12-01 17:40:07 -0500] [10973] [INFO] Worker exiting (pid: 10973)
+[2016-12-01 17:40:07 -0500] [11057] [INFO] Booting worker with pid: 11057
+[2016-12-01 17:40:07 -0500] [11058] [INFO] Booting worker with pid: 11058
+[2016-12-01 17:40:07 -0500] [11059] [INFO] Booting worker with pid: 11059
+[2016-12-01 17:40:07 -0500] [11060] [INFO] Booting worker with pid: 11060
+[2016-12-01 17:40:07 -0500] [11061] [INFO] Booting worker with pid: 11061
+2016-12-01 17:40:07,324 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:07,324 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:07,326 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:40:07 -0500] [10953] [DEBUG] 8 workers
+[2016-12-01 17:40:07 -0500] [11062] [INFO] Booting worker with pid: 11062
+2016-12-01 17:40:07,337 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:07,338 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:07,339 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:07,343 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:07,344 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:07,345 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:40:07 -0500] [11063] [INFO] Booting worker with pid: 11063
+[2016-12-01 17:40:07 -0500] [11064] [INFO] Booting worker with pid: 11064
+2016-12-01 17:40:07,419 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:07,419 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:07,422 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:40:07 -0500] [11065] [INFO] Booting worker with pid: 11065
+2016-12-01 17:40:07,547 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:07,547 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:07,549 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:40:07 -0500] [11066] [INFO] Booting worker with pid: 11066
+[2016-12-01 17:40:08 -0500] [10960] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 119, in run
+    self.run_for_one(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 81, in run_for_one
+    self.wait(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 35, in wait
+    ret = select.select(self.sockets, [], self.PIPE, timeout)
+TypeError: argument must be an int, or have a fileno() method.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 119, in run
+    self.run_for_one(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 81, in run_for_one
+    self.wait(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 35, in wait
+    ret = select.select(self.sockets, [], self.PIPE, timeout)
+TypeError: argument must be an int, or have a fileno() method.
+[2016-12-01 17:40:08 -0500] [10960] [INFO] Worker exiting (pid: 10960)
+[2016-12-01 17:40:08 -0500] [11068] [INFO] Booting worker with pid: 11068
+[2016-12-01 17:40:08 -0500] [11069] [INFO] Booting worker with pid: 11069
+[2016-12-01 17:40:08 -0500] [11070] [INFO] Booting worker with pid: 11070
+2016-12-01 17:40:08,258 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,259 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,261 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:40:08 -0500] [11071] [INFO] Booting worker with pid: 11071
+[2016-12-01 17:40:08 -0500] [10953] [DEBUG] 16 workers
+[2016-12-01 17:40:08 -0500] [11072] [INFO] Booting worker with pid: 11072
+2016-12-01 17:40:08,332 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,333 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,341 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,347 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,348 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,350 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:40:08 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:40:08,409 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,410 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,428 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,614 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,615 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,617 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,626 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,627 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,629 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,653 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,653 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,656 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,679 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,679 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,680 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,680 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,681 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,683 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:40:08,687 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:40:08,687 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:40:08,689 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11058)
+[2016-12-01 17:41:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11057)
+[2016-12-01 17:41:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10962)
+[2016-12-01 17:41:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11059)
+[2016-12-01 17:41:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11060)
+[2016-12-01 17:41:07 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:10967)
+[2016-12-01 17:41:07 -0500] [11058] [INFO] Worker exiting (pid: 11058)
+[2016-12-01 17:41:07 -0500] [11057] [INFO] Worker exiting (pid: 11057)
+[2016-12-01 17:41:07 -0500] [10962] [INFO] Worker exiting (pid: 10962)
+[2016-12-01 17:41:07 -0500] [11059] [INFO] Worker exiting (pid: 11059)
+[2016-12-01 17:41:07 -0500] [11060] [INFO] Worker exiting (pid: 11060)
+[2016-12-01 17:41:07 -0500] [10967] [INFO] Worker exiting (pid: 10967)
+[2016-12-01 17:41:07 -0500] [11081] [INFO] Booting worker with pid: 11081
+[2016-12-01 17:41:07 -0500] [10953] [DEBUG] 14 workers
+[2016-12-01 17:41:07 -0500] [11082] [INFO] Booting worker with pid: 11082
+[2016-12-01 17:41:07 -0500] [11083] [INFO] Booting worker with pid: 11083
+[2016-12-01 17:41:07 -0500] [11084] [INFO] Booting worker with pid: 11084
+[2016-12-01 17:41:07 -0500] [11085] [INFO] Booting worker with pid: 11085
+2016-12-01 17:41:07,286 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:07,287 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:07,288 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:07,291 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:07,291 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:07,293 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:07 -0500] [11086] [INFO] Booting worker with pid: 11086
+2016-12-01 17:41:07,349 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:07,349 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:07,350 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:07,387 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:07,387 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:07,389 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:07 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:41:07,430 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:07,431 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:07,432 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:07,509 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:07,509 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:07,511 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11072)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11061)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11062)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11063)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11064)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11065)
+[2016-12-01 17:41:08 -0500] [11072] [INFO] Worker exiting (pid: 11072)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11066)
+[2016-12-01 17:41:08 -0500] [11061] [INFO] Worker exiting (pid: 11061)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11068)
+[2016-12-01 17:41:08 -0500] [11062] [INFO] Worker exiting (pid: 11062)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11069)
+[2016-12-01 17:41:08 -0500] [11063] [INFO] Worker exiting (pid: 11063)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11070)
+[2016-12-01 17:41:08 -0500] [11064] [INFO] Worker exiting (pid: 11064)
+[2016-12-01 17:41:08 -0500] [11065] [INFO] Worker exiting (pid: 11065)
+[2016-12-01 17:41:08 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11071)
+[2016-12-01 17:41:08 -0500] [11066] [INFO] Worker exiting (pid: 11066)
+[2016-12-01 17:41:08 -0500] [11068] [INFO] Worker exiting (pid: 11068)
+[2016-12-01 17:41:08 -0500] [11069] [INFO] Worker exiting (pid: 11069)
+[2016-12-01 17:41:08 -0500] [11071] [INFO] Worker exiting (pid: 11071)
+[2016-12-01 17:41:08 -0500] [11070] [INFO] Worker exiting (pid: 11070)
+[2016-12-01 17:41:08 -0500] [11088] [INFO] Booting worker with pid: 11088
+[2016-12-01 17:41:08 -0500] [10953] [DEBUG] 7 workers
+[2016-12-01 17:41:08 -0500] [11089] [INFO] Booting worker with pid: 11089
+[2016-12-01 17:41:08 -0500] [11090] [INFO] Booting worker with pid: 11090
+[2016-12-01 17:41:08 -0500] [11091] [INFO] Booting worker with pid: 11091
+[2016-12-01 17:41:08 -0500] [11092] [INFO] Booting worker with pid: 11092
+[2016-12-01 17:41:08 -0500] [11093] [INFO] Booting worker with pid: 11093
+[2016-12-01 17:41:08 -0500] [11094] [INFO] Booting worker with pid: 11094
+[2016-12-01 17:41:08 -0500] [11095] [INFO] Booting worker with pid: 11095
+2016-12-01 17:41:08,699 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,699 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,702 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:08,707 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,707 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,710 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:08,758 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,758 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,761 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:08 -0500] [11096] [INFO] Booting worker with pid: 11096
+2016-12-01 17:41:08,832 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,832 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,835 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:08,857 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,858 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,860 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:08 -0500] [11097] [INFO] Booting worker with pid: 11097
+2016-12-01 17:41:08,925 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,925 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,927 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:08,939 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,940 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,942 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:08 -0500] [11098] [INFO] Booting worker with pid: 11098
+2016-12-01 17:41:08,983 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:08,983 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:08,985 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:09,010 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:09,010 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:09,012 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:41:09 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:41:09,077 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:09,077 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:09,079 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:41:09,137 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:41:09,137 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:41:09,139 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11081)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11082)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11083)
+[2016-12-01 17:42:26 -0500] [11081] [INFO] Worker exiting (pid: 11081)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11084)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11085)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11086)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11088)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11089)
+[2016-12-01 17:42:26 -0500] [11082] [INFO] Worker exiting (pid: 11082)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11090)
+[2016-12-01 17:42:26 -0500] [11083] [INFO] Worker exiting (pid: 11083)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11091)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11092)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11093)
+[2016-12-01 17:42:26 -0500] [11084] [INFO] Worker exiting (pid: 11084)
+[2016-12-01 17:42:26 -0500] [11085] [INFO] Worker exiting (pid: 11085)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11094)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11095)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11096)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11097)
+[2016-12-01 17:42:26 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11098)
+[2016-12-01 17:42:26 -0500] [11086] [INFO] Worker exiting (pid: 11086)
+[2016-12-01 17:42:26 -0500] [11088] [INFO] Worker exiting (pid: 11088)
+[2016-12-01 17:42:26 -0500] [11089] [INFO] Worker exiting (pid: 11089)
+[2016-12-01 17:42:26 -0500] [11090] [INFO] Worker exiting (pid: 11090)
+[2016-12-01 17:42:26 -0500] [11091] [INFO] Worker exiting (pid: 11091)
+[2016-12-01 17:42:26 -0500] [11092] [INFO] Worker exiting (pid: 11092)
+[2016-12-01 17:42:26 -0500] [11095] [INFO] Worker exiting (pid: 11095)
+[2016-12-01 17:42:26 -0500] [11093] [INFO] Worker exiting (pid: 11093)
+[2016-12-01 17:42:26 -0500] [11096] [INFO] Worker exiting (pid: 11096)
+[2016-12-01 17:42:26 -0500] [11097] [INFO] Worker exiting (pid: 11097)
+[2016-12-01 17:42:26 -0500] [11098] [INFO] Worker exiting (pid: 11098)
+[2016-12-01 17:42:26 -0500] [11094] [INFO] Worker exiting (pid: 11094)
+[2016-12-01 17:42:26 -0500] [11102] [INFO] Booting worker with pid: 11102
+[2016-12-01 17:42:26 -0500] [11103] [INFO] Booting worker with pid: 11103
+[2016-12-01 17:42:26 -0500] [10953] [DEBUG] 2 workers
+[2016-12-01 17:42:27 -0500] [11106] [INFO] Booting worker with pid: 11106
+[2016-12-01 17:42:27 -0500] [11107] [INFO] Booting worker with pid: 11107
+[2016-12-01 17:42:27 -0500] [11108] [INFO] Booting worker with pid: 11108
+[2016-12-01 17:42:27 -0500] [11109] [INFO] Booting worker with pid: 11109
+2016-12-01 17:42:27,484 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,485 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,485 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,485 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,487 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:27,487 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:27,498 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,498 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,500 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:27 -0500] [11110] [INFO] Booting worker with pid: 11110
+[2016-12-01 17:42:27 -0500] [11111] [INFO] Booting worker with pid: 11111
+[2016-12-01 17:42:27 -0500] [11112] [INFO] Booting worker with pid: 11112
+2016-12-01 17:42:27,608 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,609 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,611 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:27 -0500] [11113] [INFO] Booting worker with pid: 11113
+2016-12-01 17:42:27,721 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,721 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,725 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:27 -0500] [11114] [INFO] Booting worker with pid: 11114
+2016-12-01 17:42:27,771 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,771 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,773 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:27,827 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,828 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,830 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:27 -0500] [11116] [INFO] Booting worker with pid: 11116
+2016-12-01 17:42:27,867 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,867 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,870 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:27 -0500] [11117] [INFO] Booting worker with pid: 11117
+2016-12-01 17:42:27,925 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:27,926 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:27,928 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:27 -0500] [11118] [INFO] Booting worker with pid: 11118
+2016-12-01 17:42:28,018 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,018 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,020 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:28,057 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,057 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,059 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:42:28 -0500] [11119] [INFO] Booting worker with pid: 11119
+[2016-12-01 17:42:28 -0500] [11120] [INFO] Booting worker with pid: 11120
+[2016-12-01 17:42:28 -0500] [11121] [INFO] Booting worker with pid: 11121
+[2016-12-01 17:42:28 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:42:28,124 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,124 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,126 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:28,211 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,211 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,213 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:28,293 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,293 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,296 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:28,318 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,318 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,320 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:28,321 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,321 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,323 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:42:28,349 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:42:28,349 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:42:28,350 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11102)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11103)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11106)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11107)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11108)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11109)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11110)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11111)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11112)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11113)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11114)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11116)
+[2016-12-01 17:44:18 -0500] [11103] [INFO] Worker exiting (pid: 11103)
+[2016-12-01 17:44:18 -0500] [11102] [INFO] Worker exiting (pid: 11102)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11117)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11118)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11119)
+[2016-12-01 17:44:18 -0500] [11107] [INFO] Worker exiting (pid: 11107)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11120)
+[2016-12-01 17:44:18 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11121)
+[2016-12-01 17:44:18 -0500] [11108] [INFO] Worker exiting (pid: 11108)
+[2016-12-01 17:44:18 -0500] [11110] [INFO] Worker exiting (pid: 11110)
+[2016-12-01 17:44:18 -0500] [11109] [INFO] Worker exiting (pid: 11109)
+[2016-12-01 17:44:18 -0500] [11111] [INFO] Worker exiting (pid: 11111)
+[2016-12-01 17:44:18 -0500] [11113] [INFO] Worker exiting (pid: 11113)
+[2016-12-01 17:44:18 -0500] [11112] [INFO] Worker exiting (pid: 11112)
+[2016-12-01 17:44:18 -0500] [11114] [INFO] Worker exiting (pid: 11114)
+[2016-12-01 17:44:18 -0500] [11116] [INFO] Worker exiting (pid: 11116)
+[2016-12-01 17:44:18 -0500] [11117] [INFO] Worker exiting (pid: 11117)
+[2016-12-01 17:44:18 -0500] [11106] [INFO] Worker exiting (pid: 11106)
+[2016-12-01 17:44:18 -0500] [11118] [INFO] Worker exiting (pid: 11118)
+[2016-12-01 17:44:18 -0500] [11119] [INFO] Worker exiting (pid: 11119)
+[2016-12-01 17:44:18 -0500] [11120] [INFO] Worker exiting (pid: 11120)
+[2016-12-01 17:44:18 -0500] [11121] [INFO] Worker exiting (pid: 11121)
+[2016-12-01 17:44:18 -0500] [11126] [INFO] Booting worker with pid: 11126
+[2016-12-01 17:44:18 -0500] [11127] [INFO] Booting worker with pid: 11127
+[2016-12-01 17:44:18 -0500] [11128] [INFO] Booting worker with pid: 11128
+[2016-12-01 17:44:18 -0500] [11129] [INFO] Booting worker with pid: 11129
+[2016-12-01 17:44:18 -0500] [11130] [INFO] Booting worker with pid: 11130
+2016-12-01 17:44:18,316 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,316 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,318 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:18,333 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,333 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,335 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [11131] [INFO] Booting worker with pid: 11131
+2016-12-01 17:44:18,350 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,350 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,352 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [10953] [DEBUG] 6 workers
+[2016-12-01 17:44:18 -0500] [11132] [INFO] Booting worker with pid: 11132
+[2016-12-01 17:44:18 -0500] [11134] [INFO] Booting worker with pid: 11134
+2016-12-01 17:44:18,455 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,455 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,458 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [11135] [INFO] Booting worker with pid: 11135
+2016-12-01 17:44:18,566 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,566 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,569 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [11136] [INFO] Booting worker with pid: 11136
+[2016-12-01 17:44:18 -0500] [11137] [INFO] Booting worker with pid: 11137
+2016-12-01 17:44:18,635 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,636 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,638 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [11138] [INFO] Booting worker with pid: 11138
+[2016-12-01 17:44:18 -0500] [11139] [INFO] Booting worker with pid: 11139
+[2016-12-01 17:44:18 -0500] [11140] [INFO] Booting worker with pid: 11140
+2016-12-01 17:44:18,715 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,715 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,717 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [11141] [INFO] Booting worker with pid: 11141
+2016-12-01 17:44:18,774 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,775 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:18,777 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:18,868 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,869 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-01 17:44:18 -0500] [11142] [INFO] Booting worker with pid: 11142
+2016-12-01 17:44:18,871 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:44:18 -0500] [11143] [INFO] Booting worker with pid: 11143
+2016-12-01 17:44:18,992 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,993 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-01 17:44:18 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:44:18,996 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:18,997 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:18,998 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,000 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:19,020 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:19,020 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,023 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:19,029 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:19,029 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,032 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:19,082 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:19,082 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,085 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:19,111 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:19,111 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,113 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:19,165 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:19,165 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,167 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:44:19,221 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:44:19,221 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:44:19,223 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11136)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11137)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11138)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11139)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11140)
+[2016-12-01 17:47:37 -0500] [11137] [INFO] Worker exiting (pid: 11137)
+[2016-12-01 17:47:37 -0500] [11136] [INFO] Worker exiting (pid: 11136)
+[2016-12-01 17:47:37 -0500] [11139] [INFO] Worker exiting (pid: 11139)
+[2016-12-01 17:47:37 -0500] [11138] [INFO] Worker exiting (pid: 11138)
+[2016-12-01 17:47:37 -0500] [11140] [INFO] Worker exiting (pid: 11140)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11141)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11142)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11143)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11126)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11127)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11128)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11129)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11130)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11131)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11132)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11134)
+[2016-12-01 17:47:37 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11135)
+[2016-12-01 17:47:37 -0500] [11141] [INFO] Worker exiting (pid: 11141)
+[2016-12-01 17:47:37 -0500] [11143] [INFO] Worker exiting (pid: 11143)
+[2016-12-01 17:47:37 -0500] [11126] [INFO] Worker exiting (pid: 11126)
+[2016-12-01 17:47:37 -0500] [11127] [INFO] Worker exiting (pid: 11127)
+[2016-12-01 17:47:37 -0500] [11128] [INFO] Worker exiting (pid: 11128)
+[2016-12-01 17:47:37 -0500] [11129] [INFO] Worker exiting (pid: 11129)
+[2016-12-01 17:47:37 -0500] [11130] [INFO] Worker exiting (pid: 11130)
+[2016-12-01 17:47:37 -0500] [11131] [INFO] Worker exiting (pid: 11131)
+[2016-12-01 17:47:37 -0500] [11142] [INFO] Worker exiting (pid: 11142)
+[2016-12-01 17:47:37 -0500] [11134] [INFO] Worker exiting (pid: 11134)
+[2016-12-01 17:47:37 -0500] [11132] [INFO] Worker exiting (pid: 11132)
+[2016-12-01 17:47:37 -0500] [11135] [INFO] Worker exiting (pid: 11135)
+[2016-12-01 17:47:37 -0500] [11159] [INFO] Booting worker with pid: 11159
+[2016-12-01 17:47:37 -0500] [11160] [INFO] Booting worker with pid: 11160
+[2016-12-01 17:47:37 -0500] [11161] [INFO] Booting worker with pid: 11161
+[2016-12-01 17:47:37 -0500] [11162] [INFO] Booting worker with pid: 11162
+[2016-12-01 17:47:37 -0500] [11163] [INFO] Booting worker with pid: 11163
+[2016-12-01 17:47:37 -0500] [11164] [INFO] Booting worker with pid: 11164
+[2016-12-01 17:47:37 -0500] [11165] [INFO] Booting worker with pid: 11165
+[2016-12-01 17:47:37 -0500] [11166] [INFO] Booting worker with pid: 11166
+[2016-12-01 17:47:37 -0500] [10953] [DEBUG] 8 workers
+[2016-12-01 17:47:37 -0500] [11167] [INFO] Booting worker with pid: 11167
+[2016-12-01 17:47:37 -0500] [11168] [INFO] Booting worker with pid: 11168
+2016-12-01 17:47:37,501 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,501 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,504 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:37,506 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,506 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,509 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:37,535 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,535 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,538 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:47:37 -0500] [11169] [INFO] Booting worker with pid: 11169
+[2016-12-01 17:47:37 -0500] [11170] [INFO] Booting worker with pid: 11170
+2016-12-01 17:47:37,624 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,624 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,626 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:47:37 -0500] [11171] [INFO] Booting worker with pid: 11171
+2016-12-01 17:47:37,662 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,663 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,666 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:47:37 -0500] [11172] [INFO] Booting worker with pid: 11172
+[2016-12-01 17:47:37 -0500] [11173] [INFO] Booting worker with pid: 11173
+[2016-12-01 17:47:37 -0500] [11174] [INFO] Booting worker with pid: 11174
+2016-12-01 17:47:37,860 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,860 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,863 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:47:37 -0500] [11175] [INFO] Booting worker with pid: 11175
+2016-12-01 17:47:37,888 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,889 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,891 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 17:47:37 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 17:47:37,939 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,940 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,942 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:37,977 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,978 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,980 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:37,993 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:37,994 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:37,995 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,031 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,032 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,034 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,048 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,050 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,058 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,089 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,089 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,092 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,097 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,098 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,099 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,113 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,114 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,115 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,118 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,118 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,120 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 17:47:38,180 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 17:47:38,180 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 17:47:38,182 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11159)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11160)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11161)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11162)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11163)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11164)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11165)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11166)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11167)
+[2016-12-01 18:42:46 -0500] [11160] [INFO] Worker exiting (pid: 11160)
+[2016-12-01 18:42:46 -0500] [11159] [INFO] Worker exiting (pid: 11159)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11168)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11169)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11170)
+[2016-12-01 18:42:46 -0500] [11161] [INFO] Worker exiting (pid: 11161)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11171)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11172)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11173)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11174)
+[2016-12-01 18:42:46 -0500] [11162] [INFO] Worker exiting (pid: 11162)
+[2016-12-01 18:42:46 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11175)
+[2016-12-01 18:42:46 -0500] [11163] [INFO] Worker exiting (pid: 11163)
+[2016-12-01 18:42:46 -0500] [11164] [INFO] Worker exiting (pid: 11164)
+[2016-12-01 18:42:46 -0500] [11165] [INFO] Worker exiting (pid: 11165)
+[2016-12-01 18:42:46 -0500] [11166] [INFO] Worker exiting (pid: 11166)
+[2016-12-01 18:42:46 -0500] [11167] [INFO] Worker exiting (pid: 11167)
+[2016-12-01 18:42:46 -0500] [11168] [INFO] Worker exiting (pid: 11168)
+[2016-12-01 18:42:46 -0500] [11169] [INFO] Worker exiting (pid: 11169)
+[2016-12-01 18:42:46 -0500] [11170] [INFO] Worker exiting (pid: 11170)
+[2016-12-01 18:42:46 -0500] [11171] [INFO] Worker exiting (pid: 11171)
+[2016-12-01 18:42:46 -0500] [11172] [INFO] Worker exiting (pid: 11172)
+[2016-12-01 18:42:46 -0500] [11173] [INFO] Worker exiting (pid: 11173)
+[2016-12-01 18:42:46 -0500] [11174] [INFO] Worker exiting (pid: 11174)
+[2016-12-01 18:42:46 -0500] [11175] [INFO] Worker exiting (pid: 11175)
+[2016-12-01 18:42:46 -0500] [10953] [DEBUG] 15 workers
+[2016-12-01 18:42:46 -0500] [11278] [INFO] Booting worker with pid: 11278
+[2016-12-01 18:42:46 -0500] [11279] [INFO] Booting worker with pid: 11279
+[2016-12-01 18:42:46 -0500] [11280] [INFO] Booting worker with pid: 11280
+[2016-12-01 18:42:46 -0500] [11281] [INFO] Booting worker with pid: 11281
+[2016-12-01 18:42:46 -0500] [11282] [INFO] Booting worker with pid: 11282
+[2016-12-01 18:42:46 -0500] [11283] [INFO] Booting worker with pid: 11283
+[2016-12-01 18:42:46 -0500] [11284] [INFO] Booting worker with pid: 11284
+[2016-12-01 18:42:46 -0500] [11285] [INFO] Booting worker with pid: 11285
+2016-12-01 18:42:46,387 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,388 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,391 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:46,403 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,404 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,406 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:46,411 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,411 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,414 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [10953] [DEBUG] 8 workers
+[2016-12-01 18:42:46 -0500] [11286] [INFO] Booting worker with pid: 11286
+2016-12-01 18:42:46,457 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,459 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,466 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [11288] [INFO] Booting worker with pid: 11288
+[2016-12-01 18:42:46 -0500] [11289] [INFO] Booting worker with pid: 11289
+2016-12-01 18:42:46,532 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,533 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,535 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:46,568 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,568 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,571 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [11291] [INFO] Booting worker with pid: 11291
+[2016-12-01 18:42:46 -0500] [11292] [INFO] Booting worker with pid: 11292
+2016-12-01 18:42:46,656 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,656 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,659 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:46,686 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,686 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,689 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [11293] [INFO] Booting worker with pid: 11293
+[2016-12-01 18:42:46 -0500] [11294] [INFO] Booting worker with pid: 11294
+2016-12-01 18:42:46,784 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,785 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,787 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [11295] [INFO] Booting worker with pid: 11295
+2016-12-01 18:42:46,844 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,845 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,847 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [11296] [INFO] Booting worker with pid: 11296
+2016-12-01 18:42:46,868 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,868 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,871 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:46,963 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:46,964 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:46,966 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:42:46 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 18:42:47,027 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:47,028 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:47,030 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:47,072 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:47,072 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:47,074 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:47,104 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:47,105 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:47,107 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:47,121 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:47,122 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:47,123 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:42:47,130 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:42:47,130 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:42:47,132 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11278)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11279)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11280)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11281)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11282)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11283)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11284)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11285)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11286)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11288)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11289)
+[2016-12-01 18:49:05 -0500] [11278] [INFO] Worker exiting (pid: 11278)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11291)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11292)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11293)
+[2016-12-01 18:49:05 -0500] [11279] [INFO] Worker exiting (pid: 11279)
+[2016-12-01 18:49:05 -0500] [11280] [INFO] Worker exiting (pid: 11280)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11294)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11295)
+[2016-12-01 18:49:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11296)
+[2016-12-01 18:49:05 -0500] [11281] [INFO] Worker exiting (pid: 11281)
+[2016-12-01 18:49:05 -0500] [11282] [INFO] Worker exiting (pid: 11282)
+[2016-12-01 18:49:05 -0500] [11283] [INFO] Worker exiting (pid: 11283)
+[2016-12-01 18:49:05 -0500] [11284] [INFO] Worker exiting (pid: 11284)
+[2016-12-01 18:49:05 -0500] [11285] [INFO] Worker exiting (pid: 11285)
+[2016-12-01 18:49:05 -0500] [11286] [INFO] Worker exiting (pid: 11286)
+[2016-12-01 18:49:05 -0500] [11288] [INFO] Worker exiting (pid: 11288)
+[2016-12-01 18:49:05 -0500] [11291] [INFO] Worker exiting (pid: 11291)
+[2016-12-01 18:49:05 -0500] [11289] [INFO] Worker exiting (pid: 11289)
+[2016-12-01 18:49:05 -0500] [11293] [INFO] Worker exiting (pid: 11293)
+[2016-12-01 18:49:05 -0500] [11292] [INFO] Worker exiting (pid: 11292)
+[2016-12-01 18:49:05 -0500] [11294] [INFO] Worker exiting (pid: 11294)
+[2016-12-01 18:49:05 -0500] [11295] [INFO] Worker exiting (pid: 11295)
+[2016-12-01 18:49:05 -0500] [11296] [INFO] Worker exiting (pid: 11296)
+[2016-12-01 18:49:05 -0500] [11303] [INFO] Booting worker with pid: 11303
+[2016-12-01 18:49:05 -0500] [10953] [DEBUG] 12 workers
+[2016-12-01 18:49:05 -0500] [11304] [INFO] Booting worker with pid: 11304
+[2016-12-01 18:49:05 -0500] [11305] [INFO] Booting worker with pid: 11305
+[2016-12-01 18:49:05 -0500] [11306] [INFO] Booting worker with pid: 11306
+[2016-12-01 18:49:05 -0500] [11307] [INFO] Booting worker with pid: 11307
+[2016-12-01 18:49:05 -0500] [11308] [INFO] Booting worker with pid: 11308
+[2016-12-01 18:49:05 -0500] [11309] [INFO] Booting worker with pid: 11309
+[2016-12-01 18:49:05 -0500] [10953] [DEBUG] 7 workers
+[2016-12-01 18:49:05 -0500] [11310] [INFO] Booting worker with pid: 11310
+[2016-12-01 18:49:05 -0500] [11311] [INFO] Booting worker with pid: 11311
+[2016-12-01 18:49:05 -0500] [11312] [INFO] Booting worker with pid: 11312
+2016-12-01 18:49:05,491 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,492 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,494 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,501 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,502 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,504 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [11313] [INFO] Booting worker with pid: 11313
+2016-12-01 18:49:05,515 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,516 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,518 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [11314] [INFO] Booting worker with pid: 11314
+2016-12-01 18:49:05,560 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,561 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,564 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [11315] [INFO] Booting worker with pid: 11315
+2016-12-01 18:49:05,611 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,612 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,614 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,631 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,632 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,635 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,654 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,655 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,657 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [11316] [INFO] Booting worker with pid: 11316
+[2016-12-01 18:49:05 -0500] [11317] [INFO] Booting worker with pid: 11317
+2016-12-01 18:49:05,738 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,739 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,741 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [11318] [INFO] Booting worker with pid: 11318
+2016-12-01 18:49:05,771 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,772 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,777 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,847 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,848 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,850 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 18:49:05 -0500] [11319] [INFO] Booting worker with pid: 11319
+2016-12-01 18:49:05,870 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,871 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,873 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,874 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,874 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:05,877 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,895 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,895 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-01 18:49:05 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 18:49:05,898 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:05,997 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:05,998 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:06,000 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:06,044 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:06,044 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:06,046 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:06,057 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:06,057 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:06,059 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 18:49:06,088 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 18:49:06,089 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 18:49:06,091 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11303)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11304)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11305)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11306)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11307)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11308)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11309)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11310)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11311)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11312)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11313)
+[2016-12-01 19:33:55 -0500] [11305] [INFO] Worker exiting (pid: 11305)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11314)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11315)
+[2016-12-01 19:33:55 -0500] [11304] [INFO] Worker exiting (pid: 11304)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11316)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11317)
+[2016-12-01 19:33:55 -0500] [11303] [INFO] Worker exiting (pid: 11303)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11318)
+[2016-12-01 19:33:55 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11319)
+[2016-12-01 19:33:55 -0500] [11307] [INFO] Worker exiting (pid: 11307)
+[2016-12-01 19:33:55 -0500] [11306] [INFO] Worker exiting (pid: 11306)
+[2016-12-01 19:33:55 -0500] [11309] [INFO] Worker exiting (pid: 11309)
+[2016-12-01 19:33:55 -0500] [11308] [INFO] Worker exiting (pid: 11308)
+[2016-12-01 19:33:55 -0500] [11310] [INFO] Worker exiting (pid: 11310)
+[2016-12-01 19:33:55 -0500] [11311] [INFO] Worker exiting (pid: 11311)
+[2016-12-01 19:33:55 -0500] [11312] [INFO] Worker exiting (pid: 11312)
+[2016-12-01 19:33:55 -0500] [11313] [INFO] Worker exiting (pid: 11313)
+[2016-12-01 19:33:55 -0500] [11315] [INFO] Worker exiting (pid: 11315)
+[2016-12-01 19:33:55 -0500] [11314] [INFO] Worker exiting (pid: 11314)
+[2016-12-01 19:33:55 -0500] [11316] [INFO] Worker exiting (pid: 11316)
+[2016-12-01 19:33:55 -0500] [11317] [INFO] Worker exiting (pid: 11317)
+[2016-12-01 19:33:55 -0500] [11318] [INFO] Worker exiting (pid: 11318)
+[2016-12-01 19:33:55 -0500] [11319] [INFO] Worker exiting (pid: 11319)
+[2016-12-01 19:33:55 -0500] [11381] [INFO] Booting worker with pid: 11381
+[2016-12-01 19:33:55 -0500] [11382] [INFO] Booting worker with pid: 11382
+[2016-12-01 19:33:55 -0500] [11383] [INFO] Booting worker with pid: 11383
+[2016-12-01 19:33:55 -0500] [11384] [INFO] Booting worker with pid: 11384
+[2016-12-01 19:33:55 -0500] [11385] [INFO] Booting worker with pid: 11385
+[2016-12-01 19:33:55 -0500] [11386] [INFO] Booting worker with pid: 11386
+[2016-12-01 19:33:55 -0500] [11387] [INFO] Booting worker with pid: 11387
+[2016-12-01 19:33:55 -0500] [11388] [INFO] Booting worker with pid: 11388
+[2016-12-01 19:33:55 -0500] [11389] [INFO] Booting worker with pid: 11389
+2016-12-01 19:33:55,387 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,388 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,390 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:55,395 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,395 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,397 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:33:55 -0500] [11390] [INFO] Booting worker with pid: 11390
+[2016-12-01 19:33:55 -0500] [11392] [INFO] Booting worker with pid: 11392
+[2016-12-01 19:33:55 -0500] [10953] [DEBUG] 11 workers
+[2016-12-01 19:33:55 -0500] [11393] [INFO] Booting worker with pid: 11393
+[2016-12-01 19:33:55 -0500] [11394] [INFO] Booting worker with pid: 11394
+[2016-12-01 19:33:55 -0500] [11395] [INFO] Booting worker with pid: 11395
+2016-12-01 19:33:55,695 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,696 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,700 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:33:55 -0500] [11396] [INFO] Booting worker with pid: 11396
+[2016-12-01 19:33:55 -0500] [11397] [INFO] Booting worker with pid: 11397
+2016-12-01 19:33:55,767 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,773 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,776 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:55,777 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,778 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,782 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:33:55 -0500] [11398] [INFO] Booting worker with pid: 11398
+[2016-12-01 19:33:55 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 19:33:55,945 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,946 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,948 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:55,975 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,976 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,978 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:55,989 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:55,989 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:55,992 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,034 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,034 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,037 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,076 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,077 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,079 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,089 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,089 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,092 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,132 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,132 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,136 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,160 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,160 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,163 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,165 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,166 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,168 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,181 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,181 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,182 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,185 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,186 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,188 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:33:56,188 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:33:56,188 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:33:56,190 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11392)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11393)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11394)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11395)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11396)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11397)
+[2016-12-01 19:53:05 -0500] [11392] [INFO] Worker exiting (pid: 11392)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11398)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11381)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11382)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11383)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11384)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11385)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11386)
+[2016-12-01 19:53:05 -0500] [11394] [INFO] Worker exiting (pid: 11394)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11387)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11388)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11389)
+[2016-12-01 19:53:05 -0500] [10953] [CRITICAL] WORKER TIMEOUT (pid:11390)
+[2016-12-01 19:53:05 -0500] [11395] [INFO] Worker exiting (pid: 11395)
+[2016-12-01 19:53:05 -0500] [11396] [INFO] Worker exiting (pid: 11396)
+[2016-12-01 19:53:05 -0500] [11393] [INFO] Worker exiting (pid: 11393)
+[2016-12-01 19:53:05 -0500] [11397] [INFO] Worker exiting (pid: 11397)
+[2016-12-01 19:53:05 -0500] [11398] [INFO] Worker exiting (pid: 11398)
+[2016-12-01 19:53:05 -0500] [11381] [INFO] Worker exiting (pid: 11381)
+[2016-12-01 19:53:05 -0500] [11382] [INFO] Worker exiting (pid: 11382)
+[2016-12-01 19:53:05 -0500] [11383] [INFO] Worker exiting (pid: 11383)
+[2016-12-01 19:53:05 -0500] [11384] [INFO] Worker exiting (pid: 11384)
+[2016-12-01 19:53:05 -0500] [11385] [INFO] Worker exiting (pid: 11385)
+[2016-12-01 19:53:05 -0500] [11386] [INFO] Worker exiting (pid: 11386)
+[2016-12-01 19:53:05 -0500] [11387] [INFO] Worker exiting (pid: 11387)
+[2016-12-01 19:53:05 -0500] [11388] [INFO] Worker exiting (pid: 11388)
+[2016-12-01 19:53:05 -0500] [11389] [INFO] Worker exiting (pid: 11389)
+[2016-12-01 19:53:05 -0500] [11390] [INFO] Worker exiting (pid: 11390)
+[2016-12-01 19:53:05 -0500] [11416] [INFO] Booting worker with pid: 11416
+[2016-12-01 19:53:05 -0500] [10953] [DEBUG] 11 workers
+[2016-12-01 19:53:05 -0500] [11417] [INFO] Booting worker with pid: 11417
+[2016-12-01 19:53:05 -0500] [11418] [INFO] Booting worker with pid: 11418
+[2016-12-01 19:53:05 -0500] [11419] [INFO] Booting worker with pid: 11419
+[2016-12-01 19:53:05 -0500] [11420] [INFO] Booting worker with pid: 11420
+[2016-12-01 19:53:05 -0500] [11421] [INFO] Booting worker with pid: 11421
+[2016-12-01 19:53:05 -0500] [11422] [INFO] Booting worker with pid: 11422
+[2016-12-01 19:53:05 -0500] [11423] [INFO] Booting worker with pid: 11423
+[2016-12-01 19:53:05 -0500] [10953] [DEBUG] 8 workers
+[2016-12-01 19:53:05 -0500] [11424] [INFO] Booting worker with pid: 11424
+[2016-12-01 19:53:05 -0500] [11425] [INFO] Booting worker with pid: 11425
+[2016-12-01 19:53:05 -0500] [11426] [INFO] Booting worker with pid: 11426
+[2016-12-01 19:53:05 -0500] [11427] [INFO] Booting worker with pid: 11427
+[2016-12-01 19:53:05 -0500] [11428] [INFO] Booting worker with pid: 11428
+2016-12-01 19:53:05,557 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,557 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,559 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,573 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,573 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-01 19:53:05 -0500] [11429] [INFO] Booting worker with pid: 11429
+2016-12-01 19:53:05,576 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,610 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,611 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,626 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,626 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,627 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,629 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,646 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,646 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,649 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:53:05 -0500] [11430] [INFO] Booting worker with pid: 11430
+2016-12-01 19:53:05,692 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,692 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,695 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,721 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,722 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,724 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:53:05 -0500] [11431] [INFO] Booting worker with pid: 11431
+2016-12-01 19:53:05,806 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,807 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,809 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:53:05 -0500] [11432] [INFO] Booting worker with pid: 11432
+2016-12-01 19:53:05,865 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,865 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,867 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,905 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,905 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,908 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,929 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,930 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,940 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,941 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,943 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 19:53:05 -0500] [10953] [DEBUG] 17 workers
+2016-12-01 19:53:05,974 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,975 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,976 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:05,976 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:05,977 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:05,978 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:06,005 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:06,013 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:06,013 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:06,015 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:06,092 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:06,092 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:06,094 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 19:53:06,115 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 19:53:06,116 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 19:53:06,117 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 20:13:25 -0500] [11426] [DEBUG] Closing connection. 
+[2016-12-01 20:13:25 -0500] [11426] [DEBUG] Closing connection. 
+[2016-12-01 20:13:26 -0500] [11422] [DEBUG] Closing connection. 
+[2016-12-01 20:13:26 -0500] [11428] [DEBUG] GET /ad
+[2016-12-01 20:13:28 -0500] [11419] [DEBUG] GET /consent
+[2016-12-01 20:13:28 -0500] [11431] [DEBUG] GET /static/js/utils.js
+[2016-12-01 20:13:28 -0500] [11430] [DEBUG] GET /static/css/general.css
+[2016-12-01 20:13:28 -0500] [11417] [DEBUG] GET /exp
+2016-12-01 20:13:28,912 Accessing /exp: debug6LZ0VZ debugXEU78A debug4MAY88 
+2016-12-01 20:13:28,917 given Counter({(0, 0): 1}) chose (0, 0)
+[2016-12-01 20:13:28 -0500] [11418] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 20:13:28 -0500] [11428] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 20:13:28 -0500] [11430] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 20:13:28 -0500] [11427] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 20:13:28 -0500] [11430] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 20:13:28 -0500] [11432] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 20:13:28 -0500] [11428] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 20:13:28 -0500] [11419] [DEBUG] GET /static/js/config.js
+[2016-12-01 20:13:28 -0500] [11427] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 20:13:28 -0500] [11416] [DEBUG] GET /static/js/task.js
+[2016-12-01 20:13:29 -0500] [11428] [DEBUG] GET /static/json/games.json
+[2016-12-01 20:13:29 -0500] [11426] [DEBUG] GET /sync/debug4MAY88%3AdebugXEU78A
+2016-12-01 20:13:29,095 GET /sync route with id: debug4MAY88:debugXEU78A
+[2016-12-01 20:13:29 -0500] [11428] [DEBUG] GET /trial.html
+[2016-12-01 20:13:29 -0500] [11428] [DEBUG] GET /submit.html
+[2016-12-01 20:13:29 -0500] [11426] [DEBUG] GET /static/images/crown.png
+[2016-12-01 20:13:29 -0500] [11429] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 20:13:29 -0500] [11424] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 20:17:03 -0500] [11426] [DEBUG] Closing connection. 
+[2016-12-01 20:17:03 -0500] [11429] [DEBUG] Closing connection. 
+[2016-12-01 20:17:03 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 20:17:03 -0500] [11417] [DEBUG] GET /ad
+[2016-12-01 20:17:05 -0500] [11424] [DEBUG] GET /consent
+[2016-12-01 20:17:05 -0500] [11431] [DEBUG] GET /static/js/utils.js
+[2016-12-01 20:17:05 -0500] [11420] [DEBUG] GET /static/css/general.css
+[2016-12-01 20:17:06 -0500] [11428] [DEBUG] GET /exp
+2016-12-01 20:17:06,603 Accessing /exp: debugS7QEU9 debugW4TX5M debug8NHZWJ 
+2016-12-01 20:17:06,607 given Counter({(0, 0): 2}) chose (0, 0)
+[2016-12-01 20:17:06 -0500] [11425] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 20:17:06 -0500] [11431] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 20:17:06 -0500] [11424] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 20:17:06 -0500] [11417] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 20:17:06 -0500] [11430] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 20:17:06 -0500] [11429] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 20:17:06 -0500] [11429] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 20:17:06 -0500] [11430] [DEBUG] GET /static/js/config.js
+[2016-12-01 20:17:06 -0500] [11424] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 20:17:06 -0500] [11431] [DEBUG] GET /static/js/task.js
+[2016-12-01 20:17:06 -0500] [11425] [DEBUG] GET /static/json/games.json
+[2016-12-01 20:17:06 -0500] [11418] [DEBUG] GET /sync/debug8NHZWJ%3AdebugW4TX5M
+2016-12-01 20:17:06,732 GET /sync route with id: debug8NHZWJ:debugW4TX5M
+[2016-12-01 20:17:06 -0500] [11429] [DEBUG] GET /trial.html
+[2016-12-01 20:17:06 -0500] [11417] [DEBUG] GET /submit.html
+[2016-12-01 20:17:06 -0500] [11422] [DEBUG] GET /static/images/crown.png
+[2016-12-01 20:17:06 -0500] [11418] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 20:17:06 -0500] [11429] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:20:38 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:20:38 -0500] [11418] [DEBUG] Closing connection. 
+[2016-12-01 21:20:39 -0500] [11431] [DEBUG] Closing connection. 
+[2016-12-01 21:20:39 -0500] [11418] [DEBUG] GET /ad
+[2016-12-01 21:20:41 -0500] [11416] [DEBUG] GET /consent
+[2016-12-01 21:20:41 -0500] [11431] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:20:41 -0500] [11432] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:20:42 -0500] [11423] [DEBUG] GET /exp
+2016-12-01 21:20:42,265 Accessing /exp: debugPCQ7A2 debugER9IT8 debugUJ0NHR 
+2016-12-01 21:20:42,271 given Counter({(0, 0): 1}) chose (0, 0)
+[2016-12-01 21:20:42 -0500] [11424] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:20:42 -0500] [11432] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:20:42 -0500] [11431] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:20:42 -0500] [11425] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:20:42 -0500] [11432] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:20:42 -0500] [11427] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:20:42 -0500] [11431] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:20:42 -0500] [11420] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:20:42 -0500] [11416] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:20:42 -0500] [11421] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:20:42 -0500] [11416] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:20:42 -0500] [11425] [DEBUG] GET /sync/debugUJ0NHR%3AdebugER9IT8
+2016-12-01 21:20:42,417 GET /sync route with id: debugUJ0NHR:debugER9IT8
+[2016-12-01 21:20:42 -0500] [11428] [DEBUG] GET /trial.html
+[2016-12-01 21:20:42 -0500] [11432] [DEBUG] GET /submit.html
+[2016-12-01 21:20:42 -0500] [11424] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:20:42 -0500] [11427] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:20:42 -0500] [11426] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:21:12 -0500] [11429] [DEBUG] GET /ad
+[2016-12-01 21:21:12 -0500] [11430] [DEBUG] GET /favicon.ico
+[2016-12-01 21:21:13 -0500] [11424] [DEBUG] GET /consent
+[2016-12-01 21:21:13 -0500] [11428] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:21:13 -0500] [11425] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:21:14 -0500] [11418] [DEBUG] GET /exp
+2016-12-01 21:21:14,697 Accessing /exp: debugPCQ7A2 debugER9IT8 debugUJ0NHR 
+[2016-12-01 21:21:14 -0500] [11418] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:21:14 -0500] [11425] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:21:14 -0500] [11430] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:21:14 -0500] [11419] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:21:14 -0500] [11416] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:21:14 -0500] [11417] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:21:14 -0500] [11430] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:21:14 -0500] [11419] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:21:14 -0500] [11418] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:21:14 -0500] [11419] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:21:14 -0500] [11426] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:21:14 -0500] [11417] [DEBUG] GET /sync/debugUJ0NHR%3AdebugER9IT8
+2016-12-01 21:21:14,859 GET /sync route with id: debugUJ0NHR:debugER9IT8
+[2016-12-01 21:21:14 -0500] [11427] [DEBUG] GET /trial.html
+[2016-12-01 21:21:14 -0500] [11426] [DEBUG] GET /submit.html
+[2016-12-01 21:21:14 -0500] [11429] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:21:14 -0500] [11425] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:21:14 -0500] [11416] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:21:50 -0500] [11419] [DEBUG] Closing connection. 
+[2016-12-01 21:21:50 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:21:50 -0500] [11426] [DEBUG] Closing connection. 
+[2016-12-01 21:21:50 -0500] [11430] [DEBUG] GET /ad
+[2016-12-01 21:21:51 -0500] [11429] [DEBUG] GET /consent
+[2016-12-01 21:21:51 -0500] [11424] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:21:51 -0500] [11420] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:21:52 -0500] [11428] [DEBUG] GET /exp
+2016-12-01 21:21:52,728 Accessing /exp: debugG8L2I7 debugVXEYUI debugC2BRCJ 
+2016-12-01 21:21:52,732 given Counter({(0, 0): 2}) chose (0, 0)
+[2016-12-01 21:21:52 -0500] [11422] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:21:52 -0500] [11417] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:21:52 -0500] [11416] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:21:52 -0500] [11429] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:21:52 -0500] [11422] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:21:52 -0500] [11426] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:21:52 -0500] [11416] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:21:52 -0500] [11417] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:21:52 -0500] [11418] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:21:52 -0500] [11431] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:21:52 -0500] [11421] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:21:52 -0500] [11432] [DEBUG] GET /sync/debugC2BRCJ%3AdebugVXEYUI
+2016-12-01 21:21:52,909 GET /sync route with id: debugC2BRCJ:debugVXEYUI
+[2016-12-01 21:21:52 -0500] [11421] [DEBUG] GET /trial.html
+[2016-12-01 21:21:52 -0500] [11425] [DEBUG] GET /submit.html
+[2016-12-01 21:21:52 -0500] [11430] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:21:52 -0500] [11421] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:21:52 -0500] [11422] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:21:58 -0500] [11422] [DEBUG] GET /static/lib/underscore-min.map
+[2016-12-01 21:22:18 -0500] [11421] [DEBUG] GET /ad
+[2016-12-01 21:22:18 -0500] [11432] [DEBUG] GET /favicon.ico
+[2016-12-01 21:22:18 -0500] [11422] [DEBUG] GET /consent
+[2016-12-01 21:22:18 -0500] [11431] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:22:19 -0500] [11423] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:22:19 -0500] [11417] [DEBUG] GET /exp
+2016-12-01 21:22:19,713 Accessing /exp: debugG8L2I7 debugVXEYUI debugC2BRCJ 
+[2016-12-01 21:22:19 -0500] [11423] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:22:19 -0500] [11431] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:22:19 -0500] [11429] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:22:19 -0500] [11420] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:22:19 -0500] [11426] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:22:19 -0500] [11424] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:22:19 -0500] [11426] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:22:19 -0500] [11428] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:22:19 -0500] [11424] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:22:19 -0500] [11418] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:22:19 -0500] [11429] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:22:19 -0500] [11418] [DEBUG] GET /sync/debugC2BRCJ%3AdebugVXEYUI
+2016-12-01 21:22:19,827 GET /sync route with id: debugC2BRCJ:debugVXEYUI
+[2016-12-01 21:22:19 -0500] [11432] [DEBUG] GET /trial.html
+[2016-12-01 21:22:19 -0500] [11417] [DEBUG] GET /submit.html
+[2016-12-01 21:22:19 -0500] [11424] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:22:19 -0500] [11428] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:22:19 -0500] [11418] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:24:25 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:24:25 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:24:25 -0500] [11416] [DEBUG] Closing connection. 
+[2016-12-01 21:24:26 -0500] [11426] [DEBUG] GET /ad
+[2016-12-01 21:24:28 -0500] [11429] [DEBUG] GET /consent
+[2016-12-01 21:24:28 -0500] [11432] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:24:28 -0500] [11422] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:24:28 -0500] [11421] [DEBUG] GET /exp
+2016-12-01 21:24:28,939 Accessing /exp: debug1IRJFF debugAPCZ2A debugPOFUT2 
+2016-12-01 21:24:28,942 given Counter({(0, 0): 3}) chose (0, 0)
+[2016-12-01 21:24:28 -0500] [11420] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:24:28 -0500] [11432] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:24:28 -0500] [11416] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:24:28 -0500] [11429] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:24:28 -0500] [11421] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:24:28 -0500] [11422] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:24:29 -0500] [11416] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:24:29 -0500] [11429] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:24:29 -0500] [11420] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:24:29 -0500] [11432] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:24:29 -0500] [11420] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:24:29 -0500] [11425] [DEBUG] GET /sync/debugPOFUT2%3AdebugAPCZ2A
+2016-12-01 21:24:29,117 GET /sync route with id: debugPOFUT2:debugAPCZ2A
+[2016-12-01 21:24:29 -0500] [11428] [DEBUG] GET /trial.html
+[2016-12-01 21:24:29 -0500] [11428] [DEBUG] GET /submit.html
+[2016-12-01 21:24:29 -0500] [11417] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:24:29 -0500] [11431] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:24:29 -0500] [11421] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:24:33 -0500] [11423] [DEBUG] GET /static/lib/underscore-min.map
+[2016-12-01 21:28:24 -0500] [11420] [DEBUG] GET /consent
+[2016-12-01 21:28:24 -0500] [11421] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:28:24 -0500] [11421] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:28:25 -0500] [11421] [DEBUG] GET /exp
+2016-12-01 21:28:25,448 Accessing /exp: debug1IRJFF debugAPCZ2A debugPOFUT2 
+[2016-12-01 21:28:25 -0500] [11421] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:28:25 -0500] [11417] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:28:25 -0500] [11426] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:28:25 -0500] [11427] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:28:25 -0500] [11428] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:28:25 -0500] [11432] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:28:25 -0500] [11428] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:28:25 -0500] [11425] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:28:25 -0500] [11417] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:28:25 -0500] [11431] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:28:25 -0500] [11431] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:28:25 -0500] [11431] [DEBUG] GET /sync/debugPOFUT2%3AdebugAPCZ2A
+2016-12-01 21:28:25,618 GET /sync route with id: debugPOFUT2:debugAPCZ2A
+[2016-12-01 21:28:25 -0500] [11425] [DEBUG] GET /trial.html
+[2016-12-01 21:28:25 -0500] [11420] [DEBUG] GET /submit.html
+[2016-12-01 21:28:25 -0500] [11428] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:28:25 -0500] [11425] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:28:25 -0500] [11422] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:30:46 -0500] [11418] [DEBUG] GET /ad
+[2016-12-01 21:30:46 -0500] [11422] [DEBUG] GET /favicon.ico
+[2016-12-01 21:30:47 -0500] [11431] [DEBUG] GET /consent
+[2016-12-01 21:30:47 -0500] [11419] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:30:47 -0500] [11421] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:30:47 -0500] [11425] [DEBUG] GET /exp
+2016-12-01 21:30:47,816 Accessing /exp: debug1IRJFF debugAPCZ2A debugPOFUT2 
+[2016-12-01 21:30:47 -0500] [11425] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:30:47 -0500] [11431] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:30:47 -0500] [11417] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:30:47 -0500] [11428] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:30:47 -0500] [11423] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:30:47 -0500] [11416] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:30:47 -0500] [11431] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:30:47 -0500] [11428] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:30:47 -0500] [11423] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:30:47 -0500] [11419] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:30:47 -0500] [11431] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:30:47 -0500] [11429] [DEBUG] GET /sync/debugPOFUT2%3AdebugAPCZ2A
+2016-12-01 21:30:47,932 GET /sync route with id: debugPOFUT2:debugAPCZ2A
+[2016-12-01 21:30:47 -0500] [11427] [DEBUG] GET /trial.html
+[2016-12-01 21:30:47 -0500] [11422] [DEBUG] GET /submit.html
+[2016-12-01 21:30:47 -0500] [11421] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:30:47 -0500] [11429] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:30:47 -0500] [11428] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:33:49 -0500] [11428] [DEBUG] GET /ad
+[2016-12-01 21:33:49 -0500] [11430] [DEBUG] GET /favicon.ico
+[2016-12-01 21:33:50 -0500] [11417] [DEBUG] GET /consent
+[2016-12-01 21:33:50 -0500] [11425] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:33:50 -0500] [11421] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:33:51 -0500] [11431] [DEBUG] GET /exp
+2016-12-01 21:33:51,177 Accessing /exp: debug1IRJFF debugAPCZ2A debugPOFUT2 
+[2016-12-01 21:33:51 -0500] [11431] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:33:51 -0500] [11425] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:33:51 -0500] [11426] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:33:51 -0500] [11421] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:33:51 -0500] [11427] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:33:51 -0500] [11429] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:33:51 -0500] [11425] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:33:51 -0500] [11427] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:33:51 -0500] [11420] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:33:51 -0500] [11428] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:33:51 -0500] [11422] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:33:51 -0500] [11428] [DEBUG] GET /sync/debugPOFUT2%3AdebugAPCZ2A
+2016-12-01 21:33:51,290 GET /sync route with id: debugPOFUT2:debugAPCZ2A
+[2016-12-01 21:33:51 -0500] [11427] [DEBUG] GET /trial.html
+[2016-12-01 21:33:51 -0500] [11428] [DEBUG] GET /submit.html
+[2016-12-01 21:33:51 -0500] [11425] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:33:51 -0500] [11423] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:33:51 -0500] [11427] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:35:55 -0500] [11418] [DEBUG] GET /ad
+[2016-12-01 21:35:55 -0500] [11419] [DEBUG] GET /favicon.ico
+[2016-12-01 21:35:55 -0500] [11417] [DEBUG] GET /consent
+[2016-12-01 21:35:55 -0500] [11422] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:35:55 -0500] [11416] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:35:56 -0500] [11421] [DEBUG] GET /exp
+2016-12-01 21:35:56,677 Accessing /exp: debug1IRJFF debugAPCZ2A debugPOFUT2 
+[2016-12-01 21:35:56 -0500] [11421] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:35:56 -0500] [11416] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:35:56 -0500] [11422] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:35:56 -0500] [11417] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:35:56 -0500] [11419] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:35:56 -0500] [11428] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:35:56 -0500] [11417] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:35:56 -0500] [11421] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:35:56 -0500] [11428] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:35:56 -0500] [11432] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:35:56 -0500] [11428] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:35:56 -0500] [11427] [DEBUG] GET /sync/debugPOFUT2%3AdebugAPCZ2A
+2016-12-01 21:35:56,796 GET /sync route with id: debugPOFUT2:debugAPCZ2A
+[2016-12-01 21:35:56 -0500] [11426] [DEBUG] GET /trial.html
+[2016-12-01 21:35:56 -0500] [11422] [DEBUG] GET /submit.html
+[2016-12-01 21:35:56 -0500] [11419] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:35:56 -0500] [11423] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:35:56 -0500] [11417] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:37:07 -0500] [11423] [DEBUG] GET /consent
+[2016-12-01 21:37:07 -0500] [11432] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:37:07 -0500] [11417] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:37:13 -0500] [11427] [DEBUG] GET /ad
+[2016-12-01 21:37:13 -0500] [11416] [DEBUG] GET /favicon.ico
+[2016-12-01 21:37:13 -0500] [11426] [DEBUG] GET /consent
+[2016-12-01 21:37:14 -0500] [11424] [DEBUG] GET /exp
+2016-12-01 21:37:14,591 Accessing /exp: debug1IRJFF debugAPCZ2A debugPOFUT2 
+[2016-12-01 21:37:14 -0500] [11428] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:37:14 -0500] [11429] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:37:14 -0500] [11424] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:37:14 -0500] [11416] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:37:14 -0500] [11427] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:37:14 -0500] [11426] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:37:14 -0500] [11428] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:37:14 -0500] [11429] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:37:14 -0500] [11427] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:37:14 -0500] [11426] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:37:14 -0500] [11424] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:37:14 -0500] [11420] [DEBUG] GET /sync/debugPOFUT2%3AdebugAPCZ2A
+2016-12-01 21:37:14,717 GET /sync route with id: debugPOFUT2:debugAPCZ2A
+[2016-12-01 21:37:14 -0500] [11423] [DEBUG] GET /trial.html
+[2016-12-01 21:37:14 -0500] [11420] [DEBUG] GET /submit.html
+[2016-12-01 21:37:14 -0500] [11432] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:37:14 -0500] [11419] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:37:14 -0500] [11428] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:37:16 -0500] [11423] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 21:37:16 -0500] [11420] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 21:37:23 -0500] [11420] [DEBUG] Closing connection. 
+[2016-12-01 21:37:23 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:37:23 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:37:23 -0500] [11418] [DEBUG] GET /ad
+[2016-12-01 21:37:24 -0500] [11427] [DEBUG] GET /consent
+[2016-12-01 21:37:24 -0500] [11431] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:37:24 -0500] [11416] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:37:25 -0500] [11432] [DEBUG] GET /exp
+2016-12-01 21:37:25,652 Accessing /exp: debugZ70KPF debug6CJD88 debugXUYVB4 
+2016-12-01 21:37:25,655 given Counter({(0, 0): 4}) chose (0, 0)
+[2016-12-01 21:37:25 -0500] [11417] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:37:25 -0500] [11416] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:37:25 -0500] [11431] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:37:25 -0500] [11423] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:37:25 -0500] [11432] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:37:25 -0500] [11427] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:37:25 -0500] [11431] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:37:25 -0500] [11427] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:37:25 -0500] [11423] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:37:25 -0500] [11426] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:37:25 -0500] [11431] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:37:25 -0500] [11428] [DEBUG] GET /sync/debugXUYVB4%3Adebug6CJD88
+2016-12-01 21:37:25,839 GET /sync route with id: debugXUYVB4:debug6CJD88
+[2016-12-01 21:37:25 -0500] [11430] [DEBUG] GET /trial.html
+[2016-12-01 21:37:25 -0500] [11430] [DEBUG] GET /submit.html
+[2016-12-01 21:37:25 -0500] [11429] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:37:25 -0500] [11421] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:37:25 -0500] [11424] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:37:28 -0500] [11428] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 21:37:28 -0500] [11421] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 21:39:15 -0500] [11428] [DEBUG] Closing connection. 
+[2016-12-01 21:39:15 -0500] [11420] [DEBUG] Closing connection. 
+[2016-12-01 21:39:16 -0500] [11422] [DEBUG] Closing connection. 
+[2016-12-01 21:39:16 -0500] [11419] [DEBUG] GET /ad
+[2016-12-01 21:39:18 -0500] [11417] [DEBUG] GET /consent
+[2016-12-01 21:39:18 -0500] [11416] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:39:18 -0500] [11422] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:39:19 -0500] [11424] [DEBUG] GET /exp
+2016-12-01 21:39:19,341 Accessing /exp: debugWU1YWF debugGEK0Z8 debugMXTAMR 
+2016-12-01 21:39:19,345 given Counter({(0, 0): 5}) chose (0, 0)
+[2016-12-01 21:39:19 -0500] [11423] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:39:19 -0500] [11416] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:39:19 -0500] [11422] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:39:19 -0500] [11425] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:39:19 -0500] [11424] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:39:19 -0500] [11423] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:39:19 -0500] [11428] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:39:19 -0500] [11425] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:39:19 -0500] [11417] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:39:19 -0500] [11429] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:39:19 -0500] [11422] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:39:19 -0500] [11428] [DEBUG] GET /sync/debugMXTAMR%3AdebugGEK0Z8
+2016-12-01 21:39:19,476 GET /sync route with id: debugMXTAMR:debugGEK0Z8
+[2016-12-01 21:39:19 -0500] [11419] [DEBUG] GET /trial.html
+[2016-12-01 21:39:19 -0500] [11419] [DEBUG] GET /submit.html
+[2016-12-01 21:39:19 -0500] [11429] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:39:19 -0500] [11427] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:39:19 -0500] [11420] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:40:30 -0500] [11422] [DEBUG] Closing connection. 
+[2016-12-01 21:40:30 -0500] [11421] [DEBUG] Closing connection. 
+[2016-12-01 21:40:30 -0500] [11421] [DEBUG] Closing connection. 
+[2016-12-01 21:40:31 -0500] [11424] [DEBUG] GET /ad
+[2016-12-01 21:40:32 -0500] [11432] [DEBUG] GET /consent
+[2016-12-01 21:40:32 -0500] [11420] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:40:32 -0500] [11423] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:40:32 -0500] [11417] [DEBUG] GET /exp
+2016-12-01 21:40:32,868 Accessing /exp: debugWLGRVC debugCE38YA debug73UUDA 
+2016-12-01 21:40:32,871 given Counter({(0, 0): 6}) chose (0, 0)
+[2016-12-01 21:40:32 -0500] [11416] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:40:32 -0500] [11417] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:40:32 -0500] [11423] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:40:32 -0500] [11421] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:40:32 -0500] [11426] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:40:32 -0500] [11428] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:40:32 -0500] [11416] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:40:32 -0500] [11416] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:40:32 -0500] [11428] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:40:32 -0500] [11429] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:40:32 -0500] [11421] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:40:32 -0500] [11425] [DEBUG] GET /sync/debug73UUDA%3AdebugCE38YA
+2016-12-01 21:40:32,990 GET /sync route with id: debug73UUDA:debugCE38YA
+[2016-12-01 21:40:32 -0500] [11427] [DEBUG] GET /trial.html
+[2016-12-01 21:40:33 -0500] [11420] [DEBUG] GET /submit.html
+[2016-12-01 21:40:33 -0500] [11422] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:40:33 -0500] [11426] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:40:33 -0500] [11427] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:40:34 -0500] [11429] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 21:40:34 -0500] [11424] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 21:40:37 -0500] [11429] [DEBUG] GET /consent
+[2016-12-01 21:40:38 -0500] [11427] [DEBUG] GET /exp
+2016-12-01 21:40:38,244 Accessing /exp: debugWLGRVC debugCE38YA debug73UUDA 
+[2016-12-01 21:40:38 -0500] [11427] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:40:38 -0500] [11432] [DEBUG] GET /sync/debug73UUDA%3AdebugCE38YA
+2016-12-01 21:40:38,307 GET /sync route with id: debug73UUDA:debugCE38YA
+[2016-12-01 21:40:38 -0500] [11424] [DEBUG] GET /trial.html
+[2016-12-01 21:40:38 -0500] [11430] [DEBUG] GET /submit.html
+[2016-12-01 21:41:37 -0500] [11426] [DEBUG] Closing connection. 
+[2016-12-01 21:41:37 -0500] [11431] [DEBUG] Closing connection. 
+[2016-12-01 21:41:37 -0500] [11417] [DEBUG] Closing connection. 
+[2016-12-01 21:41:37 -0500] [11427] [DEBUG] GET /ad
+[2016-12-01 21:41:39 -0500] [11426] [DEBUG] GET /consent
+[2016-12-01 21:41:39 -0500] [11428] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:41:39 -0500] [11422] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:41:40 -0500] [11429] [DEBUG] GET /exp
+2016-12-01 21:41:40,280 Accessing /exp: debugNHHLWK debugNJ4HVY debugBUVZ9Z 
+2016-12-01 21:41:40,284 given Counter({(0, 0): 7}) chose (0, 0)
+[2016-12-01 21:41:40 -0500] [11419] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:41:40 -0500] [11427] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:41:40 -0500] [11422] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:41:40 -0500] [11419] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:41:40 -0500] [11418] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:41:40 -0500] [11430] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:41:40 -0500] [11430] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:41:40 -0500] [11431] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:41:40 -0500] [11425] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:41:40 -0500] [11416] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:41:40 -0500] [11424] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:41:40 -0500] [11418] [DEBUG] GET /sync/debugBUVZ9Z%3AdebugNJ4HVY
+2016-12-01 21:41:40,457 GET /sync route with id: debugBUVZ9Z:debugNJ4HVY
+[2016-12-01 21:41:40 -0500] [11416] [DEBUG] GET /trial.html
+[2016-12-01 21:41:40 -0500] [11418] [DEBUG] GET /submit.html
+[2016-12-01 21:41:40 -0500] [11429] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:41:40 -0500] [11418] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:41:40 -0500] [11432] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:41:45 -0500] [11419] [DEBUG] GET /static/lib/underscore-min.map
+[2016-12-01 21:48:52 -0500] [11429] [DEBUG] Closing connection. 
+[2016-12-01 21:48:52 -0500] [11431] [DEBUG] Closing connection. 
+[2016-12-01 21:48:53 -0500] [11418] [DEBUG] Closing connection. 
+[2016-12-01 21:48:53 -0500] [11431] [DEBUG] GET /ad
+[2016-12-01 21:48:55 -0500] [11423] [DEBUG] GET /consent
+[2016-12-01 21:48:55 -0500] [11419] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:48:55 -0500] [11417] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:48:55 -0500] [11430] [DEBUG] GET /exp
+2016-12-01 21:48:55,953 Accessing /exp: debugFK09SO debug4Y1R0D debug23BKAZ 
+2016-12-01 21:48:55,957 given Counter({(0, 0): 8}) chose (0, 0)
+[2016-12-01 21:48:55 -0500] [11418] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:48:55 -0500] [11416] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:48:55 -0500] [11430] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:48:55 -0500] [11425] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:48:55 -0500] [11417] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:48:55 -0500] [11423] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:48:55 -0500] [11423] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:48:55 -0500] [11431] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:48:56 -0500] [11423] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:48:56 -0500] [11418] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:48:56 -0500] [11423] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:48:56 -0500] [11424] [DEBUG] GET /sync/debug23BKAZ%3Adebug4Y1R0D
+2016-12-01 21:48:56,118 GET /sync route with id: debug23BKAZ:debug4Y1R0D
+[2016-12-01 21:48:56 -0500] [11422] [DEBUG] GET /trial.html
+[2016-12-01 21:48:56 -0500] [11422] [DEBUG] GET /submit.html
+[2016-12-01 21:48:56 -0500] [11421] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:48:56 -0500] [11420] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:48:56 -0500] [11419] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:48:57 -0500] [11421] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-01 21:48:57 -0500] [11424] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-01 21:49:01 -0500] [11420] [DEBUG] GET /static/lib/underscore-min.map
+[2016-12-01 21:51:04 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:51:04 -0500] [11427] [DEBUG] Closing connection. 
+[2016-12-01 21:51:04 -0500] [11421] [DEBUG] Closing connection. 
+[2016-12-01 21:51:04 -0500] [11430] [DEBUG] GET /ad
+[2016-12-01 21:51:06 -0500] [11432] [DEBUG] GET /consent
+[2016-12-01 21:51:06 -0500] [11423] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:51:06 -0500] [11428] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:51:07 -0500] [11420] [DEBUG] GET /exp
+2016-12-01 21:51:07,727 Accessing /exp: debugTHJOV5 debugKZYDHX debug4NBZWQ 
+2016-12-01 21:51:07,730 given Counter({(0, 0): 9}) chose (0, 0)
+[2016-12-01 21:51:07 -0500] [11421] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:51:07 -0500] [11420] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:51:07 -0500] [11428] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:51:07 -0500] [11419] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:51:07 -0500] [11416] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:51:07 -0500] [11421] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:51:07 -0500] [11419] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:51:07 -0500] [11420] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:51:07 -0500] [11416] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:51:07 -0500] [11428] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:51:07 -0500] [11420] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:51:07 -0500] [11430] [DEBUG] GET /sync/debug4NBZWQ%3AdebugKZYDHX
+2016-12-01 21:51:07,922 GET /sync route with id: debug4NBZWQ:debugKZYDHX
+[2016-12-01 21:51:07 -0500] [11430] [DEBUG] GET /trial.html
+[2016-12-01 21:51:07 -0500] [11430] [DEBUG] GET /submit.html
+[2016-12-01 21:51:07 -0500] [11416] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:51:07 -0500] [11431] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:51:07 -0500] [11421] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:52:07 -0500] [11431] [DEBUG] Closing connection. 
+[2016-12-01 21:52:08 -0500] [11430] [DEBUG] Closing connection. 
+[2016-12-01 21:52:08 -0500] [11421] [DEBUG] Closing connection. 
+[2016-12-01 21:52:08 -0500] [11421] [DEBUG] GET /ppid
+[2016-12-01 21:52:08 -0500] [11430] [INFO] Parent changed, shutting down: <Worker 11430>
+[2016-12-01 21:52:08 -0500] [11431] [INFO] Parent changed, shutting down: <Worker 11431>
+[2016-12-01 21:52:08 -0500] [11416] [INFO] Parent changed, shutting down: <Worker 11416>
+[2016-12-01 21:52:08 -0500] [11428] [DEBUG] Closing connection. 
+[2016-12-01 21:52:08 -0500] [11422] [INFO] Parent changed, shutting down: <Worker 11422>
+[2016-12-01 21:52:08 -0500] [11421] [INFO] Parent changed, shutting down: <Worker 11421>
+[2016-12-01 21:52:08 -0500] [11417] [INFO] Parent changed, shutting down: <Worker 11417>
+[2016-12-01 21:52:08 -0500] [11418] [INFO] Parent changed, shutting down: <Worker 11418>
+[2016-12-01 21:52:08 -0500] [11430] [INFO] Worker exiting (pid: 11430)
+[2016-12-01 21:52:08 -0500] [11431] [INFO] Worker exiting (pid: 11431)
+[2016-12-01 21:52:08 -0500] [11416] [INFO] Worker exiting (pid: 11416)
+[2016-12-01 21:52:08 -0500] [11421] [INFO] Worker exiting (pid: 11421)
+[2016-12-01 21:52:08 -0500] [11422] [INFO] Worker exiting (pid: 11422)
+[2016-12-01 21:52:08 -0500] [11417] [INFO] Worker exiting (pid: 11417)
+[2016-12-01 21:52:08 -0500] [11418] [INFO] Worker exiting (pid: 11418)
+[2016-12-01 21:52:08 -0500] [11428] [INFO] Parent changed, shutting down: <Worker 11428>
+[2016-12-01 21:52:08 -0500] [11428] [INFO] Worker exiting (pid: 11428)
+[2016-12-01 21:52:09 -0500] [11429] [INFO] Parent changed, shutting down: <Worker 11429>
+[2016-12-01 21:52:09 -0500] [11424] [INFO] Parent changed, shutting down: <Worker 11424>
+[2016-12-01 21:52:09 -0500] [11426] [INFO] Parent changed, shutting down: <Worker 11426>
+[2016-12-01 21:52:09 -0500] [11427] [INFO] Parent changed, shutting down: <Worker 11427>
+[2016-12-01 21:52:09 -0500] [11420] [INFO] Parent changed, shutting down: <Worker 11420>
+[2016-12-01 21:52:09 -0500] [11423] [DEBUG] Closing connection. 
+[2016-12-01 21:52:09 -0500] [11419] [INFO] Parent changed, shutting down: <Worker 11419>
+[2016-12-01 21:52:09 -0500] [11429] [INFO] Worker exiting (pid: 11429)
+[2016-12-01 21:52:09 -0500] [11420] [INFO] Worker exiting (pid: 11420)
+[2016-12-01 21:52:09 -0500] [11426] [INFO] Worker exiting (pid: 11426)
+[2016-12-01 21:52:09 -0500] [11424] [INFO] Worker exiting (pid: 11424)
+[2016-12-01 21:52:09 -0500] [11419] [INFO] Worker exiting (pid: 11419)
+[2016-12-01 21:52:09 -0500] [11423] [INFO] Parent changed, shutting down: <Worker 11423>
+[2016-12-01 21:52:09 -0500] [11427] [INFO] Worker exiting (pid: 11427)
+[2016-12-01 21:52:09 -0500] [11423] [INFO] Worker exiting (pid: 11423)
+[2016-12-01 21:52:09 -0500] [11425] [DEBUG] Closing connection. 
+[2016-12-01 21:52:09 -0500] [11432] [INFO] Parent changed, shutting down: <Worker 11432>
+[2016-12-01 21:52:09 -0500] [11432] [INFO] Worker exiting (pid: 11432)
+[2016-12-01 21:52:09 -0500] [11425] [INFO] Parent changed, shutting down: <Worker 11425>
+[2016-12-01 21:52:09 -0500] [11425] [INFO] Worker exiting (pid: 11425)
+[2016-12-01 21:52:24 -0500] [11754] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x101e420c8>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x101e3bd70>
+  pre_fork: <function pre_fork at 0x101e3bed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 17
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x101e3bc08>
+  pre_exec: <function pre_exec at 0x101e42668>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x101e42230>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x101e9ab18>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x101e427d0>
+  post_request: <function post_request at 0x101e428c0>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x101e42398>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x101e42a28>
+  chdir: /Users/patrick/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x101e3baa0>
+  worker_abort: <function worker_abort at 0x101e42500>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x101e42b90>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-12-01 21:52:24 -0500] [11754] [INFO] Starting gunicorn 19.4.5
+[2016-12-01 21:52:24 -0500] [11754] [DEBUG] Arbiter booted
+[2016-12-01 21:52:24 -0500] [11754] [INFO] Listening at: http://0.0.0.0:22362 (11754)
+[2016-12-01 21:52:24 -0500] [11754] [INFO] Using worker: sync
+[2016-12-01 21:52:24 -0500] [11759] [INFO] Booting worker with pid: 11759
+[2016-12-01 21:52:24 -0500] [11760] [INFO] Booting worker with pid: 11760
+[2016-12-01 21:52:24 -0500] [11762] [INFO] Booting worker with pid: 11762
+[2016-12-01 21:52:24 -0500] [11763] [INFO] Booting worker with pid: 11763
+[2016-12-01 21:52:24 -0500] [11764] [INFO] Booting worker with pid: 11764
+[2016-12-01 21:52:24 -0500] [11765] [INFO] Booting worker with pid: 11765
+[2016-12-01 21:52:24 -0500] [11766] [INFO] Booting worker with pid: 11766
+[2016-12-01 21:52:24 -0500] [11767] [INFO] Booting worker with pid: 11767
+[2016-12-01 21:52:24 -0500] [11768] [INFO] Booting worker with pid: 11768
+[2016-12-01 21:52:25 -0500] [11769] [INFO] Booting worker with pid: 11769
+2016-12-01 21:52:25,042 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,043 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,045 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,048 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,048 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,051 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:25 -0500] [11770] [INFO] Booting worker with pid: 11770
+2016-12-01 21:52:25,166 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,167 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,170 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:25 -0500] [11771] [INFO] Booting worker with pid: 11771
+2016-12-01 21:52:25,233 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,233 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,236 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,278 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,278 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,281 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:25 -0500] [11772] [INFO] Booting worker with pid: 11772
+2016-12-01 21:52:25,333 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,333 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,335 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,338 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,338 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,340 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,343 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,344 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,346 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,352 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,352 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,354 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:25 -0500] [11773] [INFO] Booting worker with pid: 11773
+2016-12-01 21:52:25,383 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,383 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-01 21:52:25 -0500] [11774] [INFO] Booting worker with pid: 11774
+2016-12-01 21:52:25,385 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:25 -0500] [11775] [INFO] Booting worker with pid: 11775
+[2016-12-01 21:52:25 -0500] [11776] [INFO] Booting worker with pid: 11776
+2016-12-01 21:52:25,455 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,455 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,457 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:25 -0500] [11754] [DEBUG] 17 workers
+2016-12-01 21:52:25,534 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,534 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,536 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,620 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,620 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,622 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,651 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,651 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,653 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,655 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,656 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,657 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,682 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,683 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,684 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-01 21:52:25,698 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-01 21:52:25,699 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-01 21:52:25,701 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-01 21:52:26 -0500] [11776] [DEBUG] Closing connection. 
+[2016-12-01 21:52:28 -0500] [11775] [DEBUG] Closing connection. 
+[2016-12-01 21:52:28 -0500] [11772] [DEBUG] Closing connection. 
+[2016-12-01 21:52:29 -0500] [11773] [DEBUG] Closing connection. 
+[2016-12-01 21:52:29 -0500] [11760] [DEBUG] GET /ad
+[2016-12-01 21:52:30 -0500] [11768] [DEBUG] GET /consent
+[2016-12-01 21:52:30 -0500] [11772] [DEBUG] GET /static/js/utils.js
+[2016-12-01 21:52:30 -0500] [11764] [DEBUG] GET /static/css/general.css
+[2016-12-01 21:52:31 -0500] [11762] [DEBUG] GET /exp
+2016-12-01 21:52:31,226 Accessing /exp: debugJO021H debugVK30F9 debugZZ4XAW 
+2016-12-01 21:52:31,232 given Counter({(0, 0): 10}) chose (0, 0)
+[2016-12-01 21:52:31 -0500] [11773] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-01 21:52:31 -0500] [11762] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-01 21:52:31 -0500] [11764] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-01 21:52:31 -0500] [11772] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-01 21:52:31 -0500] [11775] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-01 21:52:31 -0500] [11766] [DEBUG] GET /static/lib/mustache.js
+[2016-12-01 21:52:31 -0500] [11772] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-01 21:52:31 -0500] [11764] [DEBUG] GET /static/js/config.js
+[2016-12-01 21:52:31 -0500] [11764] [DEBUG] GET /static/js/psiturk.js
+[2016-12-01 21:52:31 -0500] [11772] [DEBUG] GET /static/js/task.js
+[2016-12-01 21:52:31 -0500] [11760] [DEBUG] GET /static/json/games.json
+[2016-12-01 21:52:31 -0500] [11763] [DEBUG] GET /sync/debugZZ4XAW%3AdebugVK30F9
+2016-12-01 21:52:31,378 GET /sync route with id: debugZZ4XAW:debugVK30F9
+[2016-12-01 21:52:31 -0500] [11775] [DEBUG] GET /trial.html
+[2016-12-01 21:52:31 -0500] [11776] [DEBUG] GET /submit.html
+[2016-12-01 21:52:31 -0500] [11764] [DEBUG] GET /static/images/crown.png
+[2016-12-01 21:52:31 -0500] [11772] [DEBUG] GET /static/images/nocrown.png
+[2016-12-01 21:52:31 -0500] [11775] [DEBUG] GET /static/images/commentator.png
+[2016-12-01 21:54:12 -0500] [11772] [DEBUG] Closing connection. 
+[2016-12-01 21:54:13 -0500] [11773] [DEBUG] Closing connection. 
+[2016-12-01 21:54:13 -0500] [11772] [DEBUG] Closing connection. 
+[2016-12-01 21:54:13 -0500] [11772] [DEBUG] GET /ppid
+[2016-12-01 21:54:13 -0500] [11764] [INFO] Parent changed, shutting down: <Worker 11764>
+[2016-12-01 21:54:13 -0500] [11776] [INFO] Parent changed, shutting down: <Worker 11776>
+[2016-12-01 21:54:13 -0500] [11774] [INFO] Parent changed, shutting down: <Worker 11774>
+[2016-12-01 21:54:13 -0500] [11765] [INFO] Parent changed, shutting down: <Worker 11765>
+[2016-12-01 21:54:13 -0500] [11772] [INFO] Parent changed, shutting down: <Worker 11772>
+[2016-12-01 21:54:13 -0500] [11771] [INFO] Parent changed, shutting down: <Worker 11771>
+[2016-12-01 21:54:13 -0500] [11766] [DEBUG] Closing connection. 
+[2016-12-01 21:54:13 -0500] [11770] [INFO] Parent changed, shutting down: <Worker 11770>
+[2016-12-01 21:54:13 -0500] [11774] [INFO] Worker exiting (pid: 11774)
+[2016-12-01 21:54:13 -0500] [11772] [INFO] Worker exiting (pid: 11772)
+[2016-12-01 21:54:13 -0500] [11764] [INFO] Worker exiting (pid: 11764)
+[2016-12-01 21:54:13 -0500] [11776] [INFO] Worker exiting (pid: 11776)
+[2016-12-01 21:54:13 -0500] [11765] [INFO] Worker exiting (pid: 11765)
+[2016-12-01 21:54:13 -0500] [11771] [INFO] Worker exiting (pid: 11771)
+[2016-12-01 21:54:13 -0500] [11766] [INFO] Parent changed, shutting down: <Worker 11766>
+[2016-12-01 21:54:13 -0500] [11770] [INFO] Worker exiting (pid: 11770)
+[2016-12-01 21:54:13 -0500] [11766] [INFO] Worker exiting (pid: 11766)
+[2016-12-01 21:54:14 -0500] [11773] [INFO] Parent changed, shutting down: <Worker 11773>
+[2016-12-01 21:54:14 -0500] [11775] [INFO] Parent changed, shutting down: <Worker 11775>
+[2016-12-01 21:54:14 -0500] [11762] [INFO] Parent changed, shutting down: <Worker 11762>
+[2016-12-01 21:54:14 -0500] [11759] [INFO] Parent changed, shutting down: <Worker 11759>
+[2016-12-01 21:54:14 -0500] [11760] [INFO] Parent changed, shutting down: <Worker 11760>
+[2016-12-01 21:54:14 -0500] [11769] [INFO] Parent changed, shutting down: <Worker 11769>
+[2016-12-01 21:54:14 -0500] [11768] [DEBUG] Closing connection. 
+[2016-12-01 21:54:14 -0500] [11773] [INFO] Worker exiting (pid: 11773)
+[2016-12-01 21:54:14 -0500] [11775] [INFO] Worker exiting (pid: 11775)
+[2016-12-01 21:54:14 -0500] [11760] [INFO] Worker exiting (pid: 11760)
+[2016-12-01 21:54:14 -0500] [11762] [INFO] Worker exiting (pid: 11762)
+[2016-12-01 21:54:14 -0500] [11769] [INFO] Worker exiting (pid: 11769)
+[2016-12-01 21:54:14 -0500] [11759] [INFO] Worker exiting (pid: 11759)
+[2016-12-01 21:54:14 -0500] [11768] [INFO] Parent changed, shutting down: <Worker 11768>
+[2016-12-01 21:54:14 -0500] [11768] [INFO] Worker exiting (pid: 11768)
+[2016-12-01 21:54:14 -0500] [11763] [INFO] Parent changed, shutting down: <Worker 11763>
+[2016-12-01 21:54:14 -0500] [11767] [DEBUG] Closing connection. 
+[2016-12-01 21:54:14 -0500] [11763] [INFO] Worker exiting (pid: 11763)
+[2016-12-01 21:54:14 -0500] [11767] [INFO] Parent changed, shutting down: <Worker 11767>
+[2016-12-01 21:54:14 -0500] [11767] [INFO] Worker exiting (pid: 11767)

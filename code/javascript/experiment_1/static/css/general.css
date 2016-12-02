@@ -74,13 +74,13 @@ div.slide {
 }
 
 
-#table_container{
+.table_container{
     width: 100%;
     margin: 0 auto;
     /*display: inline-block;*/
 }
 
-#left_table{
+.left_table{
    /*text-align: center;*/
    float:left;
    margin-left: auto;
@@ -91,7 +91,7 @@ div.slide {
 }
 
 
-#right_table{
+.right_table{
     /*text-align: center;*/
     float:right;
     margin-left: auto;

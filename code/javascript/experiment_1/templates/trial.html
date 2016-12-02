@@ -9,8 +9,8 @@
 		<p>You will be asked to answer questions about players' strength and laziness. Strength can be thought of as a number. If the sum of the strengths of Team Blue are greater than the sum of the strengths of Team Red, then Team Blue wins. A player's strength remains the same throughout each scenario (but not necessarily across scenarios).</p>
 		<p>If a player is lazy in a certain game, then he or she only tries half as hard and therefore his or her strength is decreased by half. However, a player can be lazy in one game and then try hard in the next.</p>
 		<hr />
-		<div id = "table_container">
-			 <div id = "left_table"> 
+		<div class = "table_container">
+			 <div class = "left_table"> 
 				<h2>Games</h2>
 				<div><ul class='game' style='text-align:center'>
 					<li><img src='static/images/crown.png' alt='crown'/></li>
@@ -24,7 +24,7 @@
 					<li><img src='static/images/nocrown.png' alt='crown'/></li>
 				</ul></div>
 			</div>
-			<div id = "right_table">
+			<div class = "right_table">
 				<div id="top-row" style="display:inline-block; width:100%">
 					<h2 style="display: table-cell; float:left">Commentary</h2>
 					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>
@@ -38,30 +38,12 @@
 			</div>
 		</div>
 		<div class="spacer"></div>
-		<p style="font-size:18px; text-align: center; margin-top:1em;"><b>Outcome</b>: The policy was <b> passed</b>.</p><p style="font-size:17px; text-align: center;"> 3 out of 4 committee members voted in favor of the policy and at least 2 votes were required for the policy to pass.</p>
-		<hr />
-		<p>In this example, the vote was about policy #123187 which was supported by the Republican party. 4 politicians were in the committee. In order for the policy to be passed, at least 2 committee members were required to vote for it.</p>
-
-		<p><b>John</b>, a Republican, voted for the policy. So did <b>Bill</b>, also a Republican. <b>Steve</b>, a Democrat, didn't vote for the policy. <b>Robert</b>, another Democrat, voted in favor of the policy.</p>
-
-		<p>Since 3 out of 4 committee members voted for the policy and 2 votes were required for the policy to pass, the policy was accepted.</p> 
-
-		<p>Each of the committee members knows the following information before they make a decision whether to vote for the policy:</p>
-
-		<ol type="a">
-			<li>the number of people in the committee</li>
-			<li>the minimum number of votes required for the policy to pass</li>
-			<li>each politician's political affiliation</li>
-			<li>whether the policy is supported by the Democratic or Republican party</li>
-		</ol>
-
-		<p>In the experiment, you will judge to what extent different committee members are responsible for whether or not a given policy was passed.</p>
-
-		<p align = "center"> Press <b>Start</b> to begin with the experiment. </p>
-	</div>
+		<p>In the above example, Mary and Patrick are on a team which beat Jim and Alice's team. The commentator provides additional information about the match.</p>
+		<p>Continue to the next set of questions to test your understanding of the rules.</p>
 	<div class="continue">
 		<button type="button" class="next">Start</button>
 	</div>
+	
 </div>
 
 <!-- TASK -->
@@ -79,12 +61,12 @@
 	<div id="stim">
 		<div id ="prompt-text"></div>
 		<hr />
-		<div id = "table_container">
-			 <div id = "left_table"> 
+		<div class = "table_container">
+			 <div class= "left_table"> 
 				<h2>Games</h2>
 				<div id="games"></div>
 			</div>
-			<div id = "right_table">
+			<div class= "right_table">
 				<div id="top-row" style="display:inline-block; width:100%">
 					<h2 style="display: table-cell; float:left">Commentary</h2>
 					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>

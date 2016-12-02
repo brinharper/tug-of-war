@@ -34,6 +34,8 @@ var STATE;
 	slide.find('.next').click(function () {
 		CURRENTVIEW = new TestPhase();
 	});
+
+
 };
 
 
@@ -64,12 +66,18 @@ var TestPhase = function() {
 			return false;
 		}
 
-		
-		// Load the new trialinfo
-		this.scenario = $c.scenarios[STATE.index];
+		if (STATE.index < 0) {
+			this.scenario = $c.tests[STATE.index + $c.tests.length];
+		} else {
 
-		// Update progress bar
-		update_progress(STATE.index, $c.scenarios.length);
+			// Load the new trialinfo
+			this.scenario = $c.scenarios[STATE.index];
+
+			// Update progress bar
+			update_progress(STATE.index, $c.scenarios.length);
+
+		}
+
 
 		return true;
 	}; 
@@ -136,52 +144,87 @@ var TestPhase = function() {
 			$('#commentary').html(html);
 
 			if (comments.length > 0) {
-				$("#right_table").show();
-				$("#left_table").css("width", "60%");
+				$(".right_table").show();
+				$(".left_table").css("width", "60%");
 			} else {
-				$("#right_table").hide();
-				$("#left_table").css("width", "100%");
+				$(".right_table").hide();
+				$(".left_table").css("width", "100%");
 			}
 			
+			if (STATE.index >= 0) {
 
-			html = "<h4>Please rate how strongly you agree with each of the following statements:</h4>";
-			var scenarioQuestions = that.scenario.questions
-			var scenarioSubjects = that.scenario.subjects;
-			for (var i = 0; i < scenarioQuestions.length; i++) {
-				var view = scenarioSubjects[i];
-				var q = (Mustache.render($c.questions[scenarioQuestions[i]], view));
-				html += '<p class="question">' + nameify(q) +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
-			}
+				html = "<h4>Please rate how strongly you agree with each of the following statements:</h4>";
+				var scenarioQuestions = that.scenario.questions
+				var scenarioSubjects = that.scenario.subjects;
+				for (var i = 0; i < scenarioQuestions.length; i++) {
+					var view = scenarioSubjects[i];
+					var q = (Mustache.render($c.questions[scenarioQuestions[i]], view));
+					html += '<p class="question">' + nameify(q) +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
+				}
 
-			$('#questions').html(html);
 
-			// Build the sliders for each question
-			for (var i=0; i<scenarioQuestions.length; i++) {
-				// Create the sliders
-				$('.s-'+i).slider().on("slidestart", function( event, ui ) {
-					// Show the handle
-					$(this).find('.ui-slider-handle').show() ;
+				$('#questions').html(html);
 
-					// Sum is the number of sliders that have been clicked
-					var sum = 0 ;
-					for (var j=0; j<scenarioQuestions.length; j++) {
-						if ($('.s-'+j).find('.ui-slider-handle').is(":visible")) {
-							sum++ ;
+				// Build the sliders for each question
+				for (var i=0; i<scenarioQuestions.length; i++) {
+					// Create the sliders
+					$('.s-'+i).slider().on("slidestart", function( event, ui ) {
+						// Show the handle
+						$(this).find('.ui-slider-handle').show() ;
+
+						// Sum is the number of sliders that have been clicked
+						var sum = 0 ;
+						for (var j=0; j<scenarioQuestions.length; j++) {
+							if ($('.s-'+j).find('.ui-slider-handle').is(":visible")) {
+								sum++ ;
+							}
 						}
-					}
-					// If the number of sliders clicked is equal to the number of sliders
-					// the user can continue. 
-					if (sum == scenarioQuestions.length) {
-						$('#trial_next').prop('disabled', false) ;
-					}
-				});
+						// If the number of sliders clicked is equal to the number of sliders
+						// the user can continue. 
+						if (sum == scenarioQuestions.length) {
+							$('#trial_next').prop('disabled', false) ;
+						}
+					});
 
-				// Put labels on the sliders
-				$('.l-'+i).append("<label style='width: 33%'><i>Disagree Completely</i></label>") ; 
-				$('.l-'+i).append("<label style='width: 33%'></label>") ; 
-				$('.l-'+i).append("<label style='width: 33%'><i>Agree Completely</i></label>");
-									   
-			}
+					// Put labels on the sliders
+					$('.l-'+i).append("<label style='width: 33%'><i>Disagree Completely</i></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'><i>Agree Completely</i></label>");
+										   
+				}
+
+			} else {
+
+				html = "<h4>Please answer the following question based on the above match:</h4>";
+				if (STATE.index == -2) {
+					html += '<p class="question">Who won the above game?</p>';
+					html += '<ul><li><button class="next test" id="t_buttonPatrick">Patrick</button></li><li><button class="next test" id="t_buttonAlice">Alice</button></li></ul>';
+					$("#t_buttonPatrick").click(function() {
+						alert("Incorrect response. Please read the instructions again.");
+						STATE.set_index(-$c.tests.length);
+						CURRENTVIEW = new Instructions();
+					});
+					$("#t_buttonAlice").click(function() {
+						STATE.set_index(STATE.index + 1);
+						this.display_stim(this);
+					});
+				} else if (STATE.index == -1) {
+					html += '<p class="question">Which of the following must be true about this game?</p>';
+					html += '<ul><li><button class="next test" id="t_buttonWeak">Mary is a weaker player than Jim</button></li><li><button class="next test" id="t_buttonLazy">Mary was lazy during the match</button></li><li><button class="next test" id="t_buttonSick">Mary was sick during the match</button></li></ul>';
+					$("#t_buttonSick, #t_buttonWeak").click(function() {
+						alert("Incorrect response. Please read the instructions again.");
+						STATE.set_index(-$c.tests.length);
+						CURRENTVIEW = new Instructions();
+					});
+					$("#t_buttonLazy").click(function() {
+						STATE.set_index(STATE.index + 1);
+						this.display_stim(this);
+					});
+				}
+
+				$('#questions').html(html);
+
+			}	
 
 
 
@@ -294,7 +337,7 @@ var TestPhase = function() {
 	// Initialize the current trial
 	if (this.init_trial()) {
 		// Start the test
-		this.display_stim(this) ;
+		//this.display_stim(this) ;
 	};
 };
 
@@ -394,6 +437,7 @@ $(document).ready(function() {
 
 	// Start the experiment
 	STATE = new State();
+	//STATE.set_index(-$c.tests.length);
 	// Begin the experiment phase
 	if (STATE.instructions) {
 		CURRENTVIEW = new Instructions();

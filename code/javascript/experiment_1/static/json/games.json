@@ -1,4 +1,33 @@
 {
+	"tests": [
+		{
+			"id": 0,
+			"games": [
+				{
+					"team1": ["Patrick"],
+					"team2": ["Alice"],
+					"winner": 2
+				}
+			],
+			"comments": [],
+			"questions": [],
+			"subjects": []
+		},
+		{
+			"id": 1,
+			"games": [
+				{
+					"team1": ["Jim"],
+					"team2": ["Mary"],
+					"winner": 1
+				}
+			],
+			"comments": ["Mary is a stronger player than Jim."],
+			"questions": [],
+			"subjects": []
+		}
+	],
+
 	"scenarios": [
 		{
 			"id": 0,
