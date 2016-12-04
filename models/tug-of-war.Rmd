@@ -53,7 +53,7 @@ var matchInfo = datafromR["matchInfo"][0]
 var tugOfWarModel = function(){
 
     var strength = mem(function(person) {
-      return gaussian(50, 3)
+      return gaussian(50, 6)
     })
     
     var lazy = mem(function(person, match) {
@@ -104,7 +104,7 @@ Define match information (the only information that's used in the model above is
 Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
 ```{r runTowModel}
-runModel <- function(scenario) {
+runModel <- function(scenario, shouldPlot) {
 
   jsonFile = "stim.json"
   stim <- fromJSON("stim.json")
@@ -148,13 +148,37 @@ runModel <- function(scenario) {
   
   rs.tidy$val <- as.double(rs.tidy$val)
   
-  print(mean(rs$strength1))
-  
-  ggplot(rs.tidy, aes( x = val ))+
+  if (shouldPlot) {
+    
+    print(mean(rs$strength1))
+    
+    ggplot(rs.tidy, aes( x = val ))+
     geom_histogram() +
     facet_wrap(~key, scales = 'free')
+    
+  } else {
+    return(mean(rs$strength1))
+  }
+  
   
 }
 
-runModel(2)
+df <- data.frame(strength=integer())
+
+getMeans = function(n) {
+  for (i in 1:n) {
+    m = runModel(i, FALSE)
+    df[i,] <- c(m) 
+  }
+  
+  df <- transform(df, strength.rank=ave(strength, FUN=function(x) {rank(x)}))
+  
+  ggplot(df, aes(x = strength.rank, y = strength))+
+    geom_bar(stat='identity')+
+    geom_text(data=df, aes(label=rownames(df)))+
+    coord_cartesian(ylim=c(45, 55))
+}
+
+#runModel(1, TRUE)
+getMeans(10)
 ```
