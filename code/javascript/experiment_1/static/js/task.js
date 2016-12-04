@@ -69,14 +69,19 @@ var TestPhase = function() {
 
 		if (counter < 0) {
 			this.scenario = $c.tests[counter + $c.tests.length];
+			$("#progress").hide();
 
 		} else {
 
 			// Load the new trialinfo
 			this.scenario = $c.scenarios[counter];
 
+			$("#progress").show();
+
 			// Update progress bar
 			update_progress(counter, $c.scenarios.length);
+
+
 
 		}
 
@@ -97,7 +102,31 @@ var TestPhase = function() {
 
 			//show games 
 			var games = that.scenario.games;
-			var colors = $c.colors;
+			var colorsList = $c.colors;
+			var playersList = [];
+
+			for (var i = 0; i < games.length; i++) {
+				for (var j = 0; j < games[i].team1.length; j++) {
+					if (playersList.indexOf(games[i].team1[j]) < 0) {
+						playersList.push(games[i].team1[j]);
+					}
+				}
+
+				for (var j = 0; j < games[i].team2.length; j++) {
+					if (playersList.indexOf(games[i].team2[j]) < 0) {
+						playersList.push(games[i].team2[j]);
+					}
+				}
+			}
+
+
+
+			var colors = {};
+			for (var i = 0; i < playersList.length; i++) {
+				colors[playersList[i]] = colorsList[i];
+			}
+
+
 			var html = "";
 			for (var i = 0; i < games.length; i++) {
 				var team1 = games[i].team1;
@@ -161,7 +190,7 @@ var TestPhase = function() {
 			
 			if (counter >= 0) {
 
-				html = "<h4>Please rate how strongly you agree with each of the following statements:</h4>";
+				html = "<h4>Please answer the following question:</h4>";
 				var scenarioQuestions = that.scenario.questions
 				var scenarioSubjects = that.scenario.subjects;
 				for (var i = 0; i < scenarioQuestions.length; i++) {
@@ -195,9 +224,9 @@ var TestPhase = function() {
 					});
 
 					// Put labels on the sliders
-					$('.l-'+i).append("<label style='width: 33%'><i>Disagree Completely</i></label>") ; 
-					$('.l-'+i).append("<label style='width: 33%'></label>") ; 
-					$('.l-'+i).append("<label style='width: 33%'><i>Agree Completely</i></label>");
+					$('.l-'+i).append("<label style='width: 33%'><i>Very Weak</i></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'><i>Average Strength</i></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'><i>Very Strong</i></label>");
 										   
 				}
 
@@ -206,10 +235,10 @@ var TestPhase = function() {
 				html = "<h4>Please answer the following question based on the above match:</h4>";
 				if (counter == -2) {
 					html += '<p class="question">Who won the above game?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonPatrick">Patrick</button></li><li><button id="t_buttonAlice">Alice</button></li></ul>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonPatrick">AA</button></li><li><button id="t_buttonAlice">BB</button></li></ul>';
 				} else if (counter == -1) {
 					html += '<p class="question">Which of the following must be true about this game?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonWeak">Mary is a weaker player than Jim</button></li><li><button id="t_buttonLazy">Mary was lazy during the match</button></li><li><button id="t_buttonSick">Mary was sick during the match</button></li></ul>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonWeak">DD is a weaker player than CC</button></li><li><button id="t_buttonLazy">DD was lazy during the match</button></li><li><button id="t_buttonSick">DD was sick during the match</button></li></ul>';
 				}
 
 				$('#questions').html(html);

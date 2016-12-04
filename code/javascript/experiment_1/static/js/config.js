@@ -9,6 +9,9 @@
 // whether the trials are counterbalanced.
 var Config = function (condition, counterbalance) {
 
+    var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var usedNames = [];
+
     // These are the condition and counterbalancing ids
 
     // condition is which one is first
@@ -45,6 +48,7 @@ var Config = function (condition, counterbalance) {
         this.scenarios = shuffle(data["scenarios"]); //shuffles the array 
         this.questions = data["questions"] ;
         this.colors = data["colors"];
+        this.makeNames();
     };
 
     // Load the experiment configuration from the server
@@ -63,6 +67,60 @@ var Config = function (condition, counterbalance) {
             }
         });
     };
+
+    this.makeNames = function() {
+        for (var i = 0; i < this.scenarios.length; i++) {
+            var sceneNames = {};
+            for (var j = 0; j < this.scenarios[i].games.length; j++) {
+                for (var k = 0; k < this.scenarios[i].games[j].team1.length; k++) {
+                    if (!sceneNames.hasOwnProperty(this.scenarios[i].games[j].team1[k].toString())) {
+                        while (true) {
+                            var x = Math.floor((Math.random() * 26));
+                            var y = Math.floor((Math.random() * 26));
+                            var n = letters[x] + letters[y];
+                            if (usedNames.indexOf(n) < 0) {
+                                usedNames.push(n);
+                                sceneNames[this.scenarios[i].games[j].team1[k].toString()] = n;
+                                this.scenarios[i].games[j].team1[k] = n;
+                                break;
+                            }
+                        }
+                    } else {
+                        var num = this.scenarios[i].games[j].team1[k];
+                        this.scenarios[i].games[j].team1[k] = sceneNames[num.toString()];
+                    }
+                }
+                for (var k = 0; k < this.scenarios[i].games[j].team2.length; k++) {
+                    if (!sceneNames.hasOwnProperty(this.scenarios[i].games[j].team2[k].toString())) {
+                        while (true) {
+                            var x = Math.floor((Math.random() * 26));
+                            var y = Math.floor((Math.random() * 26));
+                            var n = letters[x] + letters[y];
+                            if (usedNames.indexOf(n) < 0) {
+                                usedNames.push(n);
+                                sceneNames[this.scenarios[i].games[j].team2[k].toString()] = n;
+                                this.scenarios[i].games[j].team2[k] = n;
+                                break;
+                            }
+                        }
+                    } else {
+                        var num = this.scenarios[i].games[j].team2[k];
+                        this.scenarios[i].games[j].team2[k] = sceneNames[num.toString()];
+                    }
+                }
+            }
+            for (var j = 0; j < this.scenarios[i].comments.length; j++) {
+                this.scenarios[i].comments[j] = Mustache.render(this.scenarios[i].comments[j], sceneNames);
+            }
+            for (var j = 0; j < this.scenarios[i].questions.length; j++) {
+                if (this.scenarios[i].questions[j] == 0) {
+                    this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
+                } else if (this.scenarios[i].questions[j] == 1) {
+                    this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
+                }
+            }
+        }
+    }
 
     // Request from the server configuration information for this run
     // of the experiment

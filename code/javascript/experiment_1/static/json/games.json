@@ -4,8 +4,8 @@
 			"id": 0,
 			"games": [
 				{
-					"team1": ["Patrick"],
-					"team2": ["Alice"],
+					"team1": ["AA"],
+					"team2": ["BB"],
 					"winner": 2
 				}
 			],
@@ -17,12 +17,12 @@
 			"id": 1,
 			"games": [
 				{
-					"team1": ["Jim"],
-					"team2": ["Mary"],
+					"team1": ["CC"],
+					"team2": ["DD"],
 					"winner": 1
 				}
 			],
-			"comments": ["Mary is a stronger player than Jim."],
+			"comments": ["DD is a stronger player than CC."],
 			"questions": [],
 			"subjects": []
 		}
@@ -33,247 +33,248 @@
 			"id": 0,
 			"games": [
 				{
-					"team1": ["Jim"],
-					"team2": ["Patrick"],
+					"team1": [1],
+					"team2": [2],
 					"winner": 2
 				},
 				{
-					"team1": ["Jim"],
-					"team2": ["Patrick"],
+					"team1": [1],
+					"team2": [2],
 					"winner": 2
 				},
 				{
-					"team1": ["Patrick"],
-					"team2": ["Jim"],
+					"team1": [2],
+					"team2": [1],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 1,
 			"games": [
 				{
-					"team1": ["Patrick"],
-					"team2": ["Mary"],
+					"team1": [1],
+					"team2": [2],
 					"winner": 1
 				},
 				{
-					"team1": ["Mary"],
-					"team2": ["Jim"],
+					"team1": [2],
+					"team2": [3],
 					"winner": 1
 				},
 				{
-					"team1": ["Mary"],
-					"team2": ["Alice"],
+					"team1": [2],
+					"team2": [4],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 2,
 			"games": [
 				{
-					"team1": ["Patrick"],
-					"team2": ["Mary"],
+					"team1": [1],
+					"team2": [2],
 					"winner": 1
 				},
 				{
-					"team1": ["Mary"],
-					"team2": ["Jim"],
+					"team1": [2],
+					"team2": [3],
 					"winner": 2
 				},
 				{
-					"team1": ["Mary"],
-					"team2": ["Alice"],
+					"team1": [2],
+					"team2": [4],
 					"winner": 2
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 3,
 			"games": [
 				{
-					"team1": ["Patrick"],
-					"team2": ["Mary"],
+					"team1": [1],
+					"team2": [2],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick"],
-					"team2": ["Jim"],
+					"team1": [1],
+					"team2": [3],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick"],
-					"team2": ["Alice"],
+					"team1": [1],
+					"team2": [4],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 4,
 			"games": [
 				{
-					"team1": ["Patrick", "Mary"],
-					"team2": ["Jim", "Alice"],
+					"team1": [1, 2],
+					"team2": [3, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "Mary"],
-					"team2": ["David", "Curtis"],
+					"team1": [1, 2],
+					"team2": [5, 6],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "Mary"],
-					"team2": ["Grace", "Collin"],
+					"team1": [1, 2],
+					"team2": [7, 8],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 5,
 			"games": [
 				{
-					"team1": ["Patrick", "Mary"],
-					"team2": ["Jim", "Alice"],
+					"team1": [1, 2],
+					"team2": [3, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "Curtis"],
-					"team2": ["Jim", "Grace"],
+					"team1": [1, 5],
+					"team2": [3, 6],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "David"],
-					"team2": ["Jim", "Collin"],
+					"team1": [1, 7],
+					"team2": [3, 8],
 					"winner": 1
 				}
 			],
 			"comments": [],
-			"questions": [0, 1],
-			"subjects": [{"player": "Patrick"}, {"player": "Jim", "match": 2}]
+			"questions": [0],
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 6,
 			"games": [
 				{
-					"team1": ["Patrick", "Jim"],
-					"team2": ["Mary", "Grace"],
+					"team1": [1, 2],
+					"team2": [3, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Mary", "Grace"],
-					"team2": ["Jim", "Collin"],
+					"team1": [3, 4],
+					"team2": [2, 5],
 					"winner": 1
 				},
 				{
-					"team1": ["Mary", "Grace"],
-					"team2": ["Jim", "Rose"],
+					"team1": [3, 4],
+					"team2": [2, 6],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 7,
 			"games": [
 				{
-					"team1": ["Patrick", "Jim"],
-					"team2": ["Mary", "Grace"],
+					"team1": [1, 2],
+					"team2": [3, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Mary", "Grace"],
-					"team2": ["Jim", "Collin"],
+					"team1": [3, 4],
+					"team2": [2, 5],
 					"winner": 2
 				},
 				{
-					"team1": ["Mary", "Grace"],
-					"team2": ["Jim", "Rose"],
+					"team1": [3, 4],
+					"team2": [2, 6],
 					"winner": 2
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 8,
 			"games": [
 				{
-					"team1": ["Patrick", "Mary"],
-					"team2": ["Collin", "Grace"],
+					"team1": [1, 2],
+					"team2": [3, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "David"],
-					"team2": ["Jim", "Alice"],
+					"team1": [1, 5],
+					"team2": [6, 7],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "Curtis"],
-					"team2": ["Brandon", "Rose"],
+					"team1": [1, 8],
+					"team2": [9, 10],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		},
 		{
 			"id": 9,
 			"games": [
 				{
-					"team1": ["Patrick", "Mary"],
-					"team2": ["David", "Curtis"],
+					"team1": [1, 2],
+					"team2": [3, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "David"],
-					"team2": ["Mary", "Curtis"],
+					"team1": [1, 3],
+					"team2": [2, 4],
 					"winner": 1
 				},
 				{
-					"team1": ["Patrick", "Curtis"],
-					"team2": ["Mary", "David"],
+					"team1": [1, 4],
+					"team2": [2, 3],
 					"winner": 1
 				}
 			],
 			"comments": [],
 			"questions": [0],
-			"subjects": [{"player": "Patrick"}]
+			"subjects": [{"player": 1}]
 		}
 	],
 	"questions": [
-		"{{player}} is a skilled player.",
+		"How strong of a player is {{player}}?",
 		"{{player}} was lazy in Game {{match}}."
 	],
-	"colors": {
-		"Patrick": "#00FF7F",
-		"Mary": "#00FFFF",
-		"David": "#7FFFD4",
-		"Curtis": "#FFC0CB",
-		"Collin": "#D8BFD8",
-		"Grace": "#FFCCB5",
-		"Alice": "#DDFFDD",
-		"Jim": "#BBB4EE",
-		"Brandon": "#CFFFEC",
-		"Rose": "#BDEBFF"
-	}
+	"colors": [
+		"#00FF7F",
+		"#00FFFF",
+		"#7FFFD4",
+		"#FFC0CB",
+		"#D8BFD8",
+		"#FFCCB5",
+		"#DDFFDD",
+		"#BBB4EE",
+		"#CFFFEC",
+		"#BDEBFF",
+		"#EFCCE2"
+	]
 }

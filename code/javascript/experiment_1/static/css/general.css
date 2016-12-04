@@ -154,6 +154,8 @@ div.slide {
 .team li {
     display: block;
     padding: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
     border-radius: 5px;
     border: 2px solid white;
     margin-top: 3px;
@@ -165,6 +167,8 @@ div.slide {
     border: 2px solid white;
     margin-top: 3px;
     margin-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .stim_text {

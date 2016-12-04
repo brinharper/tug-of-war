@@ -255,7 +255,7 @@
 		}
 	],
 	"questions": [
-		"{{player}} is a skilled player.",
+		"How strong do you think {{player}} is?",
 		"{{player}} was lazy in match {{match}}."
 	],
 	"colors": {
