@@ -2,16 +2,17 @@
 <div class="slide" id="instructions-training-1">
 	<h1>Instructions</h1>
 	<div class="blue">
-		<p>Your task in this experiment is to infer, based on the information given to you, information about players in hypothetical tug-of-war games.</p>
-		<p>In each scenario, you will see the outcomes of a number of such games. The initials of the members of each team in a game will be shown in boxes. A crown will appear next to the team that
-		won each game. You can hover over a player to highlight his or her appearances in the scenario, and you can click on the player to display the games in which he or she participated.</p>
-		<p>You may receive additional information about the matches from a commentator, which will appear on the side of the screen. Always take this information to be true.</p>
-		<p>You will be asked to answer questions about players' strength and laziness. Strength can be thought of as a number. If the sum of the strengths of Team Blue are greater than the sum of the strengths of Team Red, then Team Blue wins. A player's strength remains the same throughout each scenario (but not necessarily across scenarios).</p>
-		<p>If a player is lazy in a certain game, then he or she only tries half as hard and therefore his or her strength is decreased by half. However, a player can be lazy in one game and then try hard in the next.</p>
+		<p>In this experiment, you task is to judge how strong you think different players are, based on their performance in a tug-of-war tournament.</p>
+
+		<p>In each game, a player either competes as part of a team, or individually. For example, in the Tournament shown below, PW and MM competed against JP and AW in Game 1. The crown indicates which team won the game. Here, PW and MM won against JP and AW.</p>
+
+		<p>In Game 2, PW lost the game against JP.</p>
+
 		<hr />
 		<div class = "table_container">
 			 <div class = "left_table2"> 
-				<h2>Games</h2>
+				<h2>Tournament</h2>
+				<h3 style='text-align:center'>Game 1</h3>
 				<div><ul class='game' style='text-align:center'>
 					<li><img src='static/images/crown.png' alt='crown'/></li>
 					<li><ul class='team' style='border-color:blue'>
@@ -23,8 +24,18 @@
 					</ul></li>
 					<li><img src='static/images/nocrown.png' alt='crown'/></li>
 				</ul></div>
+				<h3 style='text-align:center'>Game 2</h3>
+				<div><ul class='game' style='text-align:center'>
+					<li><img src='static/images/nocrown.png' alt='crown'/></li>
+					<li><ul class='team' style='border-color:blue'>
+						<li style='background-color:lightblue'>PW</li>
+					</ul></li><li> VS. </li><li><ul class='team' style='border-color:red'>
+						<li style='background-color:lightpink'>JP</li>
+					</ul></li>
+					<li><img src='static/images/crown.png' alt='crown'/></li>
+				</ul></div>
 			</div>
-			<div class = "right_table2">
+			<!-- <div class = "right_table2">
 				<div id="top-row" style="display:inline-block; width:100%">
 					<h2 style="display: table-cell; float:left">Commentary</h2>
 					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>
@@ -36,11 +47,17 @@
 					<p>JP is a strong player.</p>
 				</div>
 			</div>
-		</div>
+ -->		</div>
 		<div class="spacer"></div>
 		<hr/>
-		<p>In the above example, PW and MM are on a team which beat JP and AW's team. The commentator provides additional information about the match.</p>
-		<p>Continue to the next set of questions to test your understanding of the rules.</p>
+
+		<p>Note that a player's strength remains constant throughout a tournament. For example, PW was equally strong in Game 1 and in Game 2. A player neither gets stronger nor weaker between games.</p>
+
+		<p>However, each player has a certain chance of being lazy in any given game. If a player decides to be lazy, then that player only pulls with half their strength. For example, it's possible that PW pulled with all his strength in Game 1 but decided to be lazy in Game 2.</p>
+
+		<p>A team's strength is determined by the sum of the strengths of its players. The team with the greater overall strength wins the game.</p>
+
+		<p>Please press 'Start' to proceed. We will ask you a few test questions to check that you've understood how everything works.</p>
 	<div class="continue">
 		<button type="button" class="next">Start</button>
 	</div>

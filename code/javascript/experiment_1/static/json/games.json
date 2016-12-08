@@ -20,9 +20,19 @@
 					"team1": ["CC"],
 					"team2": ["DD"],
 					"winner": 1
+				},
+				{
+					"team1": ["CC"],
+					"team2": ["EE"],
+					"winner": 1
+				},
+				{
+					"team1": ["DD"],
+					"team2": ["EE"],
+					"winner": 2
 				}
 			],
-			"comments": ["DD is a stronger player than CC."],
+			"comments": [],
 			"questions": [],
 			"subjects": []
 		}
@@ -691,9 +701,10 @@
 		}
 	],
 	"questions": [
-		"How strong of a player is {{player}}?",
+		"Based on the results above, how strong do you think player {{player}} is?",
 		"{{player}} was lazy in Game {{match}}."
 	],
+	"prompt": "<p>Below you see the outcomes of games in a tug of war tournament. Remember that the crown indicates which team won each game. You can move the mouse over a player to see which games the player participated in. Please try to figure out, based on the information you see, how strong player {{player}} is.</p>",
 	"colors": [
 		"#00FF7F",
 		"#00FFFF",

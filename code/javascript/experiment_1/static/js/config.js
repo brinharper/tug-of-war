@@ -48,6 +48,7 @@ var Config = function (condition, counterbalance) {
         this.scenarios = shuffle(data["scenarios"]); //shuffles the array 
         this.questions = data["questions"] ;
         this.colors = data["colors"];
+        this.prompt = data["prompt"];
         this.makeNames();
     };
 

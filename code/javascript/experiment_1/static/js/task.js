@@ -58,7 +58,7 @@ var TestPhase = function() {
 	// Initialize a new trial. This is called either at the beginning
 	// of a new trial, or if the page is reloaded between trials.
 	this.init_trial = function () {
-		debug("Initializing trial " + STATE.index);
+		// debug("Initializing trial " + STATE.index);
 
 		// If there are no more trials left, then we are at the end of
 		// this phase
@@ -94,12 +94,6 @@ var TestPhase = function() {
 			debug("Show STIMULUS");
 			// Show stimuli
 
-			if (counter < 0) {
-				$("#prompt-text").text("TEST QUESTIONS");
-			} else {
-				$("#prompt-text").text("");
-			}
-
 			//show games 
 			var games = that.scenario.games;
 			var colorsList = $c.colors;
@@ -119,14 +113,40 @@ var TestPhase = function() {
 				}
 			}
 
-
-
 			var colors = {};
 			for (var i = 0; i < playersList.length; i++) {
 				colors[playersList[i]] = colorsList[i];
 			}
 
+			//function to assign names and colors
+			var nameify = function(str) {
+				var newstr = str;
+				for (var key in colors) {
+					newstr = newstr.replace(key, "<span style='background-color:" + colors[key] + "' class='name-in-text'>" + key + "</span>");
+				}
+				return newstr;
+			};
 
+			//show prompt 
+			if (counter < 0) {
+				$("#prompt-text").text("TEST QUESTIONS");
+			} else {
+				var scenarioSubjects = that.scenario.subjects;
+				var view = scenarioSubjects[0];
+				var q = (Mustache.render($c.prompt, view));
+				$("#prompt-text").html(nameify(q));
+			}
+
+				
+				// for (var i = 0; i < scenarioQuestions.length; i++) {
+				// 	var view = scenarioSubjects[i];
+					
+				// 	html += '<p class="question">' + nameify(q) +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
+				// }
+
+
+
+	
 			var html = "";
 			for (var i = 0; i < games.length; i++) {
 				var team1 = games[i].team1;
@@ -162,14 +182,6 @@ var TestPhase = function() {
 			}
 
 			$('#games').html(html);
-
-			var nameify = function(str) {
-				var newstr = str;
-				for (var key in colors) {
-					newstr = newstr.replace(key, "<span style='background-color:" + colors[key] + "' class='name-in-text'>" + key + "</span>");
-				}
-				return newstr;
-			};
 
 			//show comments
 			html = "";
@@ -224,21 +236,22 @@ var TestPhase = function() {
 					});
 
 					// Put labels on the sliders
-					$('.l-'+i).append("<label style='width: 33%'><i>Very Weak</i></label>") ; 
-					$('.l-'+i).append("<label style='width: 33%'><i>Average Strength</i></label>") ; 
-					$('.l-'+i).append("<label style='width: 33%'><i>Very Strong</i></label>");
+					$('.l-'+i).append("<label style='width: 33%'><i>very weak</i></label>") ; 
+					// $('.l-'+i).append("<label style='width: 33%'><i>Average Strength</i></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'><i></i></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'><i>very strong</i></label>");
 										   
 				}
 
 			} else {
 
-				html = "<h4>Please answer the following question based on the above match:</h4>";
+				html = "<h4>Please answer the following question about the tournament shown above:</h4>";
 				if (counter == -2) {
 					html += '<p class="question">Who won the above game?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonPatrick">AA</button></li><li><button id="t_buttonAlice">BB</button></li></ul>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonAA">AA</button></li><li><button id="t_buttonBB">BB</button></li></ul>';
 				} else if (counter == -1) {
-					html += '<p class="question">Which of the following must be true about this game?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonWeak">DD is a weaker player than CC</button></li><li><button id="t_buttonLazy">DD was lazy during the match</button></li><li><button id="t_buttonSick">DD was sick during the match</button></li></ul>';
+					html += '<p class="question">Which of the following scenarios is the only one possible?</p>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_stronger">EE was stronger in Game 3 than in Game 2.</button></li><li><button id="t_lazy">EE was lazy in Game 2 but not in Game 3.</button></li><li><button id="t_lazy_strong">DD is stronger than CC and was not lazy in Game 1.</button></li></ul>';
 				}
 
 				$('#questions').html(html);
@@ -247,22 +260,22 @@ var TestPhase = function() {
 			}	
 
 
-			$("#t_buttonPatrick").click(function() {
+			$("#t_buttonAA").click(function() {
 				$("#dialog").dialog("open");
 				counter = -$c.tests.length;
 				CURRENTVIEW = new Instructions();
 			});
-			$("#t_buttonAlice").click(function() {
+			$("#t_buttonBB").click(function() {
 				counter = counter + 1;
 				CURRENTVIEW = new TestPhase();
 			});
 
-			$("#t_buttonSick, #t_buttonWeak").click(function() {
+			$("#t_lazy_strong, #t_stronger").click(function() {
 				$("#dialog").dialog("open");
 				counter = -$c.tests.length;
 				CURRENTVIEW = new Instructions();
 			});
-			$("#t_buttonLazy").click(function() {
+			$("#t_lazy").click(function() {
 				$("#dialog").text("You have passed the test questions. The experiment will now begin.");
 				$("#dialog").dialog("open");
 				counter = 0;
@@ -338,15 +351,12 @@ var TestPhase = function() {
 			$('#trial_next').prop('disabled', true);
 
 			$(document).scrollTop(0);
-
-			debug(that.trialinfo);
 		}        
 	};
 
 
 	//records response 
 	this.record_response = function() {        
-		
 		var response = [];
 		saveid = this.scenario.id;
 		   
@@ -354,8 +364,7 @@ var TestPhase = function() {
 			response.push($('.s-'+i).slider('value'));  
 		}
 		debug(response)
-		psiTurk.recordTrialData(["trial_".concat(saveid), "judgments", response]);
-
+		psiTurk.recordTrialData(["trial", saveid, "judgments", response]);
 		counter += 1;
 		
 		// Update the page with the current phase/trial
