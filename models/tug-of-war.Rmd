@@ -166,7 +166,7 @@ runModel <- function(scenario, shouldPlot) {
 df <- data.frame(strength=integer())
 
 getMeans = function(n) {
-  for (i in 1:n) {
+  for (i in n) {
     m = runModel(i, FALSE)
     df[i,] <- c(m) 
   }
@@ -179,6 +179,6 @@ getMeans = function(n) {
     coord_cartesian(ylim=c(45, 55))
 }
 
-#runModel(1, TRUE)
-getMeans(10)
+#runModel(25, TRUE)
+getMeans(21:30)
 ```
