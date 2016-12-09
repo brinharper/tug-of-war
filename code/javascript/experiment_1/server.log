@@ -182,3 +182,288 @@
 [2016-12-08 14:22:33 -0500] [68726] [INFO] Worker exiting (pid: 68726)
 [2016-12-08 14:22:33 -0500] [68723] [INFO] Parent changed, shutting down: <Worker 68723>
 [2016-12-08 14:22:33 -0500] [68723] [INFO] Worker exiting (pid: 68723)
+[2016-12-08 23:50:17 -0500] [8242] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x1026420c8>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10263bd70>
+  pre_fork: <function pre_fork at 0x10263bed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 17
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10263bc08>
+  pre_exec: <function pre_exec at 0x102642668>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x102642230>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x10269ab18>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1026427d0>
+  post_request: <function post_request at 0x1026428c0>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x102642398>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x102642a28>
+  chdir: /Users/patrick/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x10263baa0>
+  worker_abort: <function worker_abort at 0x102642500>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x102642b90>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-12-08 23:50:17 -0500] [8242] [INFO] Starting gunicorn 19.4.5
+[2016-12-08 23:50:17 -0500] [8242] [DEBUG] Arbiter booted
+[2016-12-08 23:50:17 -0500] [8242] [INFO] Listening at: http://0.0.0.0:22362 (8242)
+[2016-12-08 23:50:17 -0500] [8242] [INFO] Using worker: sync
+[2016-12-08 23:50:17 -0500] [8246] [INFO] Booting worker with pid: 8246
+[2016-12-08 23:50:17 -0500] [8249] [INFO] Booting worker with pid: 8249
+[2016-12-08 23:50:17 -0500] [8250] [INFO] Booting worker with pid: 8250
+[2016-12-08 23:50:17 -0500] [8251] [INFO] Booting worker with pid: 8251
+[2016-12-08 23:50:17 -0500] [8252] [INFO] Booting worker with pid: 8252
+[2016-12-08 23:50:17 -0500] [8253] [INFO] Booting worker with pid: 8253
+2016-12-08 23:50:17,607 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,608 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,614 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-08 23:50:17,662 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,662 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,664 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:17 -0500] [8254] [INFO] Booting worker with pid: 8254
+2016-12-08 23:50:17,709 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,709 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,711 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:17 -0500] [8255] [INFO] Booting worker with pid: 8255
+2016-12-08 23:50:17,811 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,811 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,813 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,813 Hmm... it seems no custom code (custom.py) associated                         with this project.
+[2016-12-08 23:50:17 -0500] [8256] [INFO] Booting worker with pid: 8256
+2016-12-08 23:50:17,814 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-08 23:50:17,814 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-08 23:50:17,858 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,858 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,860 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:17 -0500] [8257] [INFO] Booting worker with pid: 8257
+2016-12-08 23:50:17,902 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,902 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,904 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-08 23:50:17,957 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:17,957 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:17,959 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:17 -0500] [8258] [INFO] Booting worker with pid: 8258
+2016-12-08 23:50:18,021 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,021 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,023 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8259] [INFO] Booting worker with pid: 8259
+2016-12-08 23:50:18,075 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,076 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,077 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8260] [INFO] Booting worker with pid: 8260
+2016-12-08 23:50:18,165 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,165 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,167 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8261] [INFO] Booting worker with pid: 8261
+2016-12-08 23:50:18,270 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,271 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,273 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8262] [INFO] Booting worker with pid: 8262
+2016-12-08 23:50:18,340 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,341 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,342 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8263] [INFO] Booting worker with pid: 8263
+2016-12-08 23:50:18,429 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,430 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,431 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8264] [INFO] Booting worker with pid: 8264
+[2016-12-08 23:50:18 -0500] [8242] [DEBUG] 17 workers
+2016-12-08 23:50:18,527 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,527 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,529 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-08 23:50:18,560 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,560 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,562 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-08 23:50:18,676 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-08 23:50:18,677 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-08 23:50:18,679 /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-08 23:50:18 -0500] [8263] [DEBUG] Closing connection. 
+[2016-12-08 23:50:20 -0500] [8246] [DEBUG] Closing connection. 
+[2016-12-08 23:50:20 -0500] [8246] [DEBUG] Closing connection. 
+[2016-12-08 23:50:20 -0500] [8246] [DEBUG] Closing connection. 
+[2016-12-08 23:50:20 -0500] [8250] [DEBUG] GET /ad
+[2016-12-08 23:50:20 -0500] [8251] [DEBUG] GET /favicon.ico
+[2016-12-08 23:50:21 -0500] [8252] [DEBUG] GET /consent
+[2016-12-08 23:50:21 -0500] [8263] [DEBUG] GET /static/js/utils.js
+[2016-12-08 23:50:21 -0500] [8258] [DEBUG] GET /static/css/general.css
+[2016-12-08 23:50:22 -0500] [8246] [DEBUG] GET /exp
+2016-12-08 23:50:22,980 Accessing /exp: debug9FBQVV debugQU6IP0 debugL8H81T 
+2016-12-08 23:50:22,987 given Counter({(0, 0): 1}) chose (0, 0)
+[2016-12-08 23:50:23 -0500] [8246] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-08 23:50:23 -0500] [8252] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-08 23:50:23 -0500] [8258] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-08 23:50:23 -0500] [8259] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-08 23:50:23 -0500] [8263] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-08 23:50:23 -0500] [8258] [DEBUG] GET /static/lib/mustache.js
+[2016-12-08 23:50:23 -0500] [8263] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-08 23:50:23 -0500] [8258] [DEBUG] GET /static/js/config.js
+[2016-12-08 23:50:23 -0500] [8252] [DEBUG] GET /static/js/psiturk.js
+[2016-12-08 23:50:23 -0500] [8246] [DEBUG] GET /static/js/task.js
+[2016-12-08 23:50:23 -0500] [8246] [DEBUG] GET /static/json/games.json
+[2016-12-08 23:50:23 -0500] [8246] [DEBUG] GET /sync/debugL8H81T%3AdebugQU6IP0
+2016-12-08 23:50:23,189 GET /sync route with id: debugL8H81T:debugQU6IP0
+[2016-12-08 23:50:23 -0500] [8246] [DEBUG] GET /trial.html
+[2016-12-08 23:50:23 -0500] [8249] [DEBUG] GET /submit.html
+[2016-12-08 23:50:23 -0500] [8249] [DEBUG] GET /static/images/crown.png
+[2016-12-08 23:50:23 -0500] [8246] [DEBUG] GET /static/images/nocrown.png
+[2016-12-08 23:50:23 -0500] [8250] [DEBUG] GET /static/images/commentator.png
+[2016-12-08 23:50:29 -0500] [8263] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-08 23:50:32 -0500] [8260] [DEBUG] GET /static/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+[2016-12-08 23:50:32 -0500] [8253] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-08 23:50:32 -0500] [8251] [DEBUG] GET /static/css/images/ui-icons_ef8c08_256x240.png
+[2016-12-08 23:50:54 -0500] [8255] [DEBUG] GET /static/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
+[2016-12-08 23:50:54 -0500] [8263] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-12-08 23:50:55 -0500] [8258] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-12-08 23:52:53 -0500] [8257] [DEBUG] GET /consent
+[2016-12-08 23:52:53 -0500] [8246] [DEBUG] GET /static/js/utils.js
+[2016-12-08 23:52:53 -0500] [8258] [DEBUG] GET /static/css/general.css
+[2016-12-08 23:52:54 -0500] [8261] [DEBUG] GET /exp
+2016-12-08 23:52:54,134 Accessing /exp: debug9FBQVV debugQU6IP0 debugL8H81T 
+[2016-12-08 23:52:54 -0500] [8251] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-08 23:52:54 -0500] [8257] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-08 23:52:54 -0500] [8263] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-08 23:52:54 -0500] [8260] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-08 23:52:54 -0500] [8255] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-08 23:52:54 -0500] [8254] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-08 23:52:54 -0500] [8263] [DEBUG] GET /static/lib/mustache.js
+[2016-12-08 23:52:54 -0500] [8255] [DEBUG] GET /static/js/config.js
+[2016-12-08 23:52:54 -0500] [8263] [DEBUG] GET /static/js/psiturk.js
+[2016-12-08 23:52:54 -0500] [8264] [DEBUG] GET /static/js/task.js
+[2016-12-08 23:52:54 -0500] [8263] [DEBUG] GET /static/json/games.json
+[2016-12-08 23:52:54 -0500] [8255] [DEBUG] GET /sync/debugL8H81T%3AdebugQU6IP0
+2016-12-08 23:52:54,331 GET /sync route with id: debugL8H81T:debugQU6IP0
+[2016-12-08 23:52:54 -0500] [8261] [DEBUG] GET /trial.html
+[2016-12-08 23:52:54 -0500] [8253] [DEBUG] GET /submit.html
+[2016-12-08 23:52:54 -0500] [8252] [DEBUG] GET /static/images/crown.png
+[2016-12-08 23:52:54 -0500] [8261] [DEBUG] GET /static/images/nocrown.png
+[2016-12-08 23:52:54 -0500] [8249] [DEBUG] GET /static/images/commentator.png
+[2016-12-08 23:53:08 -0500] [8249] [DEBUG] GET /ad
+[2016-12-08 23:53:08 -0500] [8256] [DEBUG] GET /favicon.ico
+[2016-12-08 23:53:13 -0500] [8253] [DEBUG] Closing connection. 
+[2016-12-08 23:53:13 -0500] [8261] [DEBUG] Closing connection. 
+[2016-12-08 23:53:13 -0500] [8261] [DEBUG] Closing connection. 
+[2016-12-08 23:53:13 -0500] [8258] [DEBUG] GET /ad
+[2016-12-08 23:53:15 -0500] [8259] [DEBUG] GET /consent
+[2016-12-08 23:53:15 -0500] [8255] [DEBUG] GET /static/js/utils.js
+[2016-12-08 23:53:15 -0500] [8251] [DEBUG] GET /static/css/general.css
+[2016-12-08 23:53:16 -0500] [8260] [DEBUG] GET /exp
+2016-12-08 23:53:16,024 Accessing /exp: debugR89BHT debug9POBWB debugLEHVAL 
+2016-12-08 23:53:16,030 given Counter({(0, 0): 2}) chose (0, 0)
+[2016-12-08 23:53:16 -0500] [8264] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-08 23:53:16 -0500] [8251] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-08 23:53:16 -0500] [8255] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-08 23:53:16 -0500] [8259] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-08 23:53:16 -0500] [8260] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-08 23:53:16 -0500] [8254] [DEBUG] GET /static/lib/mustache.js
+[2016-12-08 23:53:16 -0500] [8259] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-08 23:53:16 -0500] [8258] [DEBUG] GET /static/js/config.js
+[2016-12-08 23:53:16 -0500] [8253] [DEBUG] GET /static/js/psiturk.js
+[2016-12-08 23:53:16 -0500] [8256] [DEBUG] GET /static/js/task.js
+[2016-12-08 23:53:16 -0500] [8253] [DEBUG] GET /static/json/games.json
+[2016-12-08 23:53:16 -0500] [8257] [DEBUG] GET /sync/debugLEHVAL%3Adebug9POBWB
+2016-12-08 23:53:16,235 GET /sync route with id: debugLEHVAL:debug9POBWB
+[2016-12-08 23:53:16 -0500] [8259] [DEBUG] GET /trial.html
+[2016-12-08 23:53:16 -0500] [8253] [DEBUG] GET /submit.html
+[2016-12-08 23:53:16 -0500] [8260] [DEBUG] GET /static/images/crown.png
+[2016-12-08 23:53:16 -0500] [8262] [DEBUG] GET /static/images/nocrown.png
+[2016-12-08 23:53:16 -0500] [8254] [DEBUG] GET /static/images/commentator.png
+[2016-12-08 23:53:18 -0500] [8252] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-08 23:53:19 -0500] [8263] [DEBUG] GET /static/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+[2016-12-08 23:53:19 -0500] [8261] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-08 23:53:19 -0500] [8251] [DEBUG] GET /static/css/images/ui-icons_ef8c08_256x240.png
+[2016-12-08 23:53:26 -0500] [8260] [DEBUG] GET /static/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
+[2016-12-08 23:53:26 -0500] [8250] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-12-08 23:53:28 -0500] [8261] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-12-09 00:05:44 -0500] [8261] [DEBUG] Closing connection. 
+[2016-12-09 00:05:45 -0500] [8264] [DEBUG] Closing connection. 
+[2016-12-09 00:05:45 -0500] [8256] [DEBUG] Closing connection. 
+[2016-12-09 00:05:45 -0500] [8256] [DEBUG] GET /ppid
+[2016-12-09 00:05:45 -0500] [8262] [INFO] Parent changed, shutting down: <Worker 8262>
+[2016-12-09 00:05:45 -0500] [8257] [INFO] Parent changed, shutting down: <Worker 8257>
+[2016-12-09 00:05:45 -0500] [8263] [INFO] Parent changed, shutting down: <Worker 8263>
+[2016-12-09 00:05:45 -0500] [8252] [INFO] Parent changed, shutting down: <Worker 8252>
+[2016-12-09 00:05:45 -0500] [8264] [INFO] Parent changed, shutting down: <Worker 8264>
+[2016-12-09 00:05:45 -0500] [8246] [INFO] Parent changed, shutting down: <Worker 8246>
+[2016-12-09 00:05:45 -0500] [8256] [INFO] Parent changed, shutting down: <Worker 8256>
+[2016-12-09 00:05:45 -0500] [8250] [DEBUG] Closing connection. 
+[2016-12-09 00:05:45 -0500] [8252] [INFO] Worker exiting (pid: 8252)
+[2016-12-09 00:05:45 -0500] [8264] [INFO] Worker exiting (pid: 8264)
+[2016-12-09 00:05:45 -0500] [8246] [INFO] Worker exiting (pid: 8246)
+[2016-12-09 00:05:45 -0500] [8257] [INFO] Worker exiting (pid: 8257)
+[2016-12-09 00:05:45 -0500] [8263] [INFO] Worker exiting (pid: 8263)
+[2016-12-09 00:05:45 -0500] [8256] [INFO] Worker exiting (pid: 8256)
+[2016-12-09 00:05:45 -0500] [8262] [INFO] Worker exiting (pid: 8262)
+[2016-12-09 00:05:45 -0500] [8250] [INFO] Parent changed, shutting down: <Worker 8250>
+[2016-12-09 00:05:45 -0500] [8250] [INFO] Worker exiting (pid: 8250)
+[2016-12-09 00:05:46 -0500] [8258] [INFO] Parent changed, shutting down: <Worker 8258>
+[2016-12-09 00:05:46 -0500] [8249] [INFO] Parent changed, shutting down: <Worker 8249>
+[2016-12-09 00:05:46 -0500] [8253] [INFO] Parent changed, shutting down: <Worker 8253>
+[2016-12-09 00:05:46 -0500] [8255] [INFO] Parent changed, shutting down: <Worker 8255>
+[2016-12-09 00:05:46 -0500] [8261] [INFO] Parent changed, shutting down: <Worker 8261>
+[2016-12-09 00:05:46 -0500] [8254] [INFO] Parent changed, shutting down: <Worker 8254>
+[2016-12-09 00:05:46 -0500] [8260] [DEBUG] Closing connection. 
+[2016-12-09 00:05:46 -0500] [8258] [INFO] Worker exiting (pid: 8258)
+[2016-12-09 00:05:46 -0500] [8249] [INFO] Worker exiting (pid: 8249)
+[2016-12-09 00:05:46 -0500] [8254] [INFO] Worker exiting (pid: 8254)
+[2016-12-09 00:05:46 -0500] [8261] [INFO] Worker exiting (pid: 8261)
+[2016-12-09 00:05:46 -0500] [8255] [INFO] Worker exiting (pid: 8255)
+[2016-12-09 00:05:46 -0500] [8253] [INFO] Worker exiting (pid: 8253)
+[2016-12-09 00:05:46 -0500] [8260] [INFO] Parent changed, shutting down: <Worker 8260>
+[2016-12-09 00:05:46 -0500] [8260] [INFO] Worker exiting (pid: 8260)
+[2016-12-09 00:05:46 -0500] [8259] [INFO] Parent changed, shutting down: <Worker 8259>
+[2016-12-09 00:05:46 -0500] [8251] [DEBUG] Closing connection. 
+[2016-12-09 00:05:46 -0500] [8259] [INFO] Worker exiting (pid: 8259)
+[2016-12-09 00:05:46 -0500] [8251] [INFO] Parent changed, shutting down: <Worker 8251>
+[2016-12-09 00:05:46 -0500] [8251] [INFO] Worker exiting (pid: 8251)

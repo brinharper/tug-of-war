@@ -104,13 +104,15 @@ Define match information (the only information that's used in the model above is
 Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
 ```{r runTowModel}
-runModel <- function(scenario, shouldPlot) {
-
+runModel <- function(scenarioID, shouldPlot) {
+  
   jsonFile = "stim.json"
   stim <- fromJSON("stim.json")
-  scene = stim$scenarios[scenario,]
+  scene = stim$scenarios[(scenarioID+1),]
   
   retObject = 'return { '
+  
+  
   
   for (i in 1:length(scene$questions[[1]])) {
     elementToAdd = ""
@@ -179,6 +181,6 @@ getMeans = function(n) {
     coord_cartesian(ylim=c(45, 55))
 }
 
-#runModel(25, TRUE)
-getMeans(21:30)
+runModel(23, TRUE)
+#getMeans(21:30)
 ```
