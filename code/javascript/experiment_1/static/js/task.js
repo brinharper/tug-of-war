@@ -122,7 +122,7 @@ var TestPhase = function() {
 			var nameify = function(str) {
 				var newstr = str;
 				for (var key in colors) {
-					newstr = newstr.replace(key, "<span style='background-color:" + colors[key] + "' class='name-in-text'>" + key + "</span>");
+					newstr = newstr.replace(' ' + key + ' ', " <span style='background-color:" + colors[key] + "' class='name-in-text'>" + key + "</span> ");
 				}
 				return newstr;
 			};
