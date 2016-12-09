@@ -131,21 +131,13 @@ var TestPhase = function() {
 			if (counter < 0) {
 				$("#prompt-text").text("TEST QUESTIONS");
 			} else {
+				console.log('test')
 				var scenarioSubjects = that.scenario.subjects;
 				var view = scenarioSubjects[0];
-				var q = (Mustache.render($c.prompt, view));
-				$("#prompt-text").html(nameify(q));
+				var p = (Mustache.render($c.prompt, view));
+				$("#prompt-text").html(nameify(p));
+				console.log('nameify(p)', nameify(p));
 			}
-
-				
-				// for (var i = 0; i < scenarioQuestions.length; i++) {
-				// 	var view = scenarioSubjects[i];
-					
-				// 	html += '<p class="question">' + nameify(q) +'</p><div class="s-'+i+'"></div><div class="l-'+i+'"></div><br />' ;
-				// }
-
-
-
 	
 			var html = "";
 			for (var i = 0; i < games.length; i++) {
