@@ -181,6 +181,8 @@ getMeans = function(n) {
     coord_cartesian(ylim=c(45, 55))
 }
 
-runModel(23, TRUE)
+#You can run the model on just one scenario in stim by calling runModel(id, TRUE)
+  
+runModel(29, TRUE)
 #getMeans(21:30)
 ```
