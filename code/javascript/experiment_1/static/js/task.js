@@ -97,6 +97,7 @@ var TestPhase = function() {
 			//show games 
 			var games = that.scenario.games;
 			var colorsList = $c.colors;
+			var choices = $c.choices;
 			var playersList = [];
 
 			for (var i = 0; i < games.length; i++) {
@@ -228,10 +229,10 @@ var TestPhase = function() {
 					});
 
 					// Put labels on the sliders
-					$('.l-'+i).append("<label style='width: 33%'><i>very weak</i></label>") ; 
+					$('.l-'+i).append("<label style='width: 33%'><i>" + choices[scenarioQuestions[i]].low + "</i></label>") ; 
 					// $('.l-'+i).append("<label style='width: 33%'><i>Average Strength</i></label>") ; 
 					$('.l-'+i).append("<label style='width: 33%'><i></i></label>") ; 
-					$('.l-'+i).append("<label style='width: 33%'><i>very strong</i></label>");
+					$('.l-'+i).append("<label style='width: 33%'><i>" + choices[scenarioQuestions[i]].high + "</i></label>");
 										   
 				}
 

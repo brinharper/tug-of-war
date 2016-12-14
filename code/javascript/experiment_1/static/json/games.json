@@ -658,11 +658,49 @@
 			"comments": [],
 			"questions": [0],
 			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 30,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				}
+			],
+			"comments": [],
+			"questions": [2],
+			"subjects": [{"player1": 1, "player2": 2}]
 		}
 	],
 	"questions": [
 		"Based on the results above, how strong do you think player {{player}} is?",
-		"{{player}} was lazy in Game {{match}}."
+		"How likely is it that {{player}} was lazy in Game {{match}}?",
+		"How likely is it that {{player1}} would beat {{player2}} in a match?"
+	],
+	"choices": [
+		{
+			"low": "very weak",
+			"high": "very strong"
+		},
+		{
+			"low": "very unlikely",
+			"high": "very likely"
+		},
+		{
+			"low": "very unlikely",
+			"high": "very likely"
+		}
 	],
 	"prompt": "<p>Below you see the outcomes of games in a tug of war tournament. Remember that the crown indicates which team won each game. You can move the mouse over a player to see which games the player participated in. Please try to figure out, based on the information you see, how strong player {{player}} is.</p>",
 	"colors": [
