@@ -658,29 +658,6 @@
 			"comments": [],
 			"questions": [0],
 			"subjects": [{"player": 1}]
-		},
-		{
-			"id": 30,
-			"games": [
-				{
-					"team1": [1],
-					"team2": [2],
-					"winner": 1
-				},
-				{
-					"team1": [1],
-					"team2": [2],
-					"winner": 1
-				},
-				{
-					"team1": [1],
-					"team2": [2],
-					"winner": 1
-				}
-			],
-			"comments": [],
-			"questions": [2],
-			"subjects": [{"player1": 1, "player2": 2}]
 		}
 	],
 	"questions": [

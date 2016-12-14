@@ -263,6 +263,15 @@ INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ../../figures/screenshots/exp1_screenshot1.png
+INPUT ../../figures/screenshots/exp1_screenshot1.png
+INPUT ../../figures/screenshots/exp1_screenshot1.png
+INPUT ../../figures/screenshots/exp1_screenshot2.png
+INPUT ../../figures/screenshots/exp1_screenshot2.png
+INPUT ../../figures/screenshots/exp1_screenshot2.png
+INPUT ../../figures/screenshots/exp1_screenshot3.png
+INPUT ../../figures/screenshots/exp1_screenshot3.png
+INPUT ../../figures/screenshots/exp1_screenshot3.png
 INPUT tow_summary.bbl
 INPUT tow_summary.bbl
 INPUT tow_summary.aux

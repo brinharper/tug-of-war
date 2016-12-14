@@ -10988,3 +10988,179 @@
 [2016-12-14 16:44:18 -0500] [8291] [INFO] Worker exiting (pid: 8291)
 [2016-12-14 16:44:18 -0500] [8295] [INFO] Worker exiting (pid: 8295)
 [2016-12-14 16:44:18 -0500] [8297] [INFO] Worker exiting (pid: 8297)
+[2016-12-14 16:54:43 -0500] [13918] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x102fda6e0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x102fda410>
+  pre_fork: <function pre_fork at 0x102fda578>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 9
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x102fda2a8>
+  pre_exec: <function pre_exec at 0x102fdac80>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x102fda848>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x103043230>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x102fdade8>
+  post_request: <function post_request at 0x102fdaed8>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x102fda9b0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x102fde0c8>
+  chdir: /Users/tobi/Documents/work/projects_git/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x102fda140>
+  worker_abort: <function worker_abort at 0x102fdab18>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x102fde230>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-12-14 16:54:43 -0500] [13918] [INFO] Starting gunicorn 19.4.5
+[2016-12-14 16:54:43 -0500] [13918] [DEBUG] Arbiter booted
+[2016-12-14 16:54:43 -0500] [13918] [INFO] Listening at: http://0.0.0.0:22362 (13918)
+[2016-12-14 16:54:43 -0500] [13918] [INFO] Using worker: sync
+[2016-12-14 16:54:43 -0500] [13922] [INFO] Booting worker with pid: 13922
+[2016-12-14 16:54:43 -0500] [13925] [INFO] Booting worker with pid: 13925
+[2016-12-14 16:54:43 -0500] [13926] [INFO] Booting worker with pid: 13926
+[2016-12-14 16:54:43 -0500] [13927] [INFO] Booting worker with pid: 13927
+[2016-12-14 16:54:43 -0500] [13928] [INFO] Booting worker with pid: 13928
+[2016-12-14 16:54:43 -0500] [13929] [INFO] Booting worker with pid: 13929
+[2016-12-14 16:54:43 -0500] [13930] [INFO] Booting worker with pid: 13930
+[2016-12-14 16:54:43 -0500] [13931] [INFO] Booting worker with pid: 13931
+[2016-12-14 16:54:43 -0500] [13932] [INFO] Booting worker with pid: 13932
+[2016-12-14 16:54:43 -0500] [13918] [DEBUG] 9 workers
+2016-12-14 16:54:44,104 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,104 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,111 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,111 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,111 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,115 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,159 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,160 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,163 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-14 16:54:44 -0500] [13922] [DEBUG] Closing connection. 
+2016-12-14 16:54:44,377 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,392 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,403 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,419 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,419 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,423 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,436 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,437 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,441 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,483 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,484 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,486 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,513 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,514 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,517 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-14 16:54:44,525 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-14 16:54:44,525 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-14 16:54:44,527 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-14 16:54:46 -0500] [13929] [DEBUG] Closing connection. 
+[2016-12-14 16:54:46 -0500] [13932] [DEBUG] Closing connection. 
+[2016-12-14 16:54:47 -0500] [13930] [DEBUG] Closing connection. 
+[2016-12-14 16:54:47 -0500] [13932] [DEBUG] GET /ad
+[2016-12-14 16:54:49 -0500] [13929] [DEBUG] GET /consent
+[2016-12-14 16:54:49 -0500] [13931] [DEBUG] GET /static/js/utils.js
+[2016-12-14 16:54:49 -0500] [13922] [DEBUG] GET /static/css/general.css
+[2016-12-14 16:54:50 -0500] [13927] [DEBUG] GET /exp
+2016-12-14 16:54:50,808 Accessing /exp: debugLW53UR debug4XYF4V debug7FAQT2 
+2016-12-14 16:54:50,814 given Counter({(0, 0): 4}) chose (0, 0)
+[2016-12-14 16:54:50 -0500] [13926] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-14 16:54:50 -0500] [13928] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-14 16:54:50 -0500] [13927] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-14 16:54:50 -0500] [13931] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-14 16:54:50 -0500] [13925] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-14 16:54:50 -0500] [13922] [DEBUG] GET /static/lib/mustache.js
+[2016-12-14 16:54:51 -0500] [13930] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-14 16:54:51 -0500] [13928] [DEBUG] GET /static/js/psiturk.js
+[2016-12-14 16:54:51 -0500] [13922] [DEBUG] GET /static/js/task.js
+[2016-12-14 16:54:51 -0500] [13931] [DEBUG] GET /static/js/config.js
+[2016-12-14 16:54:51 -0500] [13928] [DEBUG] GET /static/json/games.json
+[2016-12-14 16:54:51 -0500] [13922] [DEBUG] GET /sync/debug7FAQT2%3Adebug4XYF4V
+2016-12-14 16:54:51,367 GET /sync route with id: debug7FAQT2:debug4XYF4V
+[2016-12-14 16:54:51 -0500] [13922] [DEBUG] GET /trial.html
+[2016-12-14 16:54:51 -0500] [13932] [DEBUG] GET /submit.html
+[2016-12-14 16:54:51 -0500] [13931] [DEBUG] GET /static/images/crown.png
+[2016-12-14 16:54:51 -0500] [13929] [DEBUG] GET /static/images/nocrown.png
+[2016-12-14 16:54:51 -0500] [13928] [DEBUG] GET /static/images/commentator.png
+[2016-12-14 16:55:00 -0500] [13929] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-14 16:55:09 -0500] [13931] [DEBUG] GET /static/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+[2016-12-14 16:55:09 -0500] [13929] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-14 16:55:09 -0500] [13922] [DEBUG] GET /static/css/images/ui-icons_ef8c08_256x240.png
+[2016-12-14 16:55:11 -0500] [13922] [DEBUG] GET /static/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
+[2016-12-14 16:55:11 -0500] [13927] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-12-14 16:55:12 -0500] [13931] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-12-14 16:57:59 -0500] [13929] [DEBUG] Closing connection. 
+[2016-12-14 16:58:00 -0500] [13929] [DEBUG] Closing connection. 
+[2016-12-14 16:58:00 -0500] [13930] [DEBUG] Closing connection. 
+[2016-12-14 16:58:00 -0500] [13930] [DEBUG] GET /ppid
+[2016-12-14 16:58:00 -0500] [13930] [INFO] Parent changed, shutting down: <Worker 13930>
+[2016-12-14 16:58:00 -0500] [13931] [INFO] Parent changed, shutting down: <Worker 13931>
+[2016-12-14 16:58:00 -0500] [13922] [INFO] Parent changed, shutting down: <Worker 13922>
+[2016-12-14 16:58:00 -0500] [13927] [DEBUG] Closing connection. 
+[2016-12-14 16:58:00 -0500] [13931] [INFO] Worker exiting (pid: 13931)
+[2016-12-14 16:58:00 -0500] [13930] [INFO] Worker exiting (pid: 13930)
+[2016-12-14 16:58:00 -0500] [13922] [INFO] Worker exiting (pid: 13922)
+[2016-12-14 16:58:00 -0500] [13927] [INFO] Parent changed, shutting down: <Worker 13927>
+[2016-12-14 16:58:00 -0500] [13927] [INFO] Worker exiting (pid: 13927)
+[2016-12-14 16:58:00 -0500] [13932] [INFO] Parent changed, shutting down: <Worker 13932>
+[2016-12-14 16:58:00 -0500] [13925] [INFO] Parent changed, shutting down: <Worker 13925>
+[2016-12-14 16:58:00 -0500] [13929] [INFO] Parent changed, shutting down: <Worker 13929>
+[2016-12-14 16:58:00 -0500] [13928] [DEBUG] Closing connection. 
+[2016-12-14 16:58:00 -0500] [13925] [INFO] Worker exiting (pid: 13925)
+[2016-12-14 16:58:00 -0500] [13929] [INFO] Worker exiting (pid: 13929)
+[2016-12-14 16:58:00 -0500] [13928] [INFO] Parent changed, shutting down: <Worker 13928>
+[2016-12-14 16:58:00 -0500] [13932] [INFO] Worker exiting (pid: 13932)
+[2016-12-14 16:58:00 -0500] [13928] [INFO] Worker exiting (pid: 13928)
+[2016-12-14 16:58:01 -0500] [13926] [DEBUG] Closing connection. 
+[2016-12-14 16:58:01 -0500] [13926] [INFO] Parent changed, shutting down: <Worker 13926>
+[2016-12-14 16:58:01 -0500] [13926] [INFO] Worker exiting (pid: 13926)

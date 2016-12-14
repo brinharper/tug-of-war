@@ -1,13 +1,16 @@
 # Fdb version 3
-["bibtex tow_summary"] 1481745343 "tow_summary.aux" "tow_summary.bbl" "tow_summary" 1481745345
+["bibtex tow_summary"] 1481752651 "tow_summary.aux" "tow_summary.bbl" "tow_summary" 1481752654
   "/usr/local/texlive/2014/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
   "references.bib" 1481731581 718843 925df7b70cd15ed3e76778e46172ada4 ""
-  "tow_summary.aux" 1481745345 2616 aa2b692fef11c2455c8e20e085575943 ""
+  "tow_summary.aux" 1481752653 3259 fa31b105253653105e1294a136b88d0b ""
   "tow_summary.bcf" 0 -1 0 ""
   (generated)
   "tow_summary.bbl"
   "tow_summary.blg"
-["pdflatex"] 1481745344 "tow_summary.tex" "tow_summary.pdf" "tow_summary" 1481745345
+["pdflatex"] 1481752652 "tow_summary.tex" "tow_summary.pdf" "tow_summary" 1481752654
+  "../../figures/screenshots/exp1_screenshot1.png" 1481752499 183498 aade2dcf88b306302f9eb6a8abd55308 ""
+  "../../figures/screenshots/exp1_screenshot2.png" 1481752508 43170 324de5f769b75741beb6c64381fdfa56 ""
+  "../../figures/screenshots/exp1_screenshot3.png" 1481752526 117422 6fe57009af56e9d75f061ee6f4ee0070 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -166,14 +169,14 @@
   "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1423787482 592 907a741793b1d372f230eff7ff0170e2 ""
-  "tow_summary.aux" 1481745345 2616 aa2b692fef11c2455c8e20e085575943 ""
-  "tow_summary.bbl" 1481745344 49 0eba253fc001332e731e8aba3f23127b "bibtex tow_summary"
-  "tow_summary.out" 1481745345 511 31256c8f0d92ebf639f865cf4d0c36c3 ""
-  "tow_summary.tex" 1481745342 6624 41567ddf83cd03e410a68bc2a038b9c2 ""
-  "tow_summary.toc" 1481745345 659 303f487777cca7617146fefdc8f8ae52 ""
+  "tow_summary.aux" 1481752653 3259 fa31b105253653105e1294a136b88d0b ""
+  "tow_summary.bbl" 1481752652 49 0eba253fc001332e731e8aba3f23127b "bibtex tow_summary"
+  "tow_summary.out" 1481752653 511 31256c8f0d92ebf639f865cf4d0c36c3 ""
+  "tow_summary.tex" 1481752649 7086 122103e804dacd6cb36ad12d621250a8 ""
+  "tow_summary.toc" 1481752653 659 33bb0ff6cfc5989b29fc504edc3de795 ""
   (generated)
-  "tow_summary.pdf"
-  "tow_summary.aux"
-  "tow_summary.log"
   "tow_summary.out"
+  "tow_summary.aux"
+  "tow_summary.pdf"
   "tow_summary.toc"
+  "tow_summary.log"
