@@ -689,12 +689,12 @@
 				}
 			],
 			"comments": [],
-			"questions": [1, 2, 0],
-			"subjects": [{"player": 1, "match": 2}, {"player1": 2, "player2": 1}, {"player": 2}]
+			"questions": [2],
+			"subjects": [{"player1": 1, "player2": 2}]
 		}
 	],
 	"questions": [
-		"How strong do you think {{player}} is?",
+		"Based on the results above, how strong do you think player {{player}} is?",
 		"How likely is it that {{player}} was lazy in Game {{match}}?",
 		"How likely is it that {{player1}} would beat {{player2}} in a match?"
 	],
@@ -712,7 +712,7 @@
 			"high": "very likely"
 		}
 	],
-	"prompt": "<p>Below you see the outcomes of games in a tug of war tournament. Remember that the crown indicates which team won each game. You can move the mouse over a player to see which games the player participated in. Please try to answer the questions based on the information given.</p>",
+	"prompt": "<p>Below you see the outcomes of games in a tug of war tournament. Remember that the crown indicates which team won each game. You can move the mouse over a player to see which games the player participated in. Please try to figure out, based on the information you see, how strong player {{player}} is.</p>",
 	"colors": [
 		"#00FF7F",
 		"#00FFFF",
