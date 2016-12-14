@@ -1,5 +1,6 @@
 # Read packages  ------------------------------------------------------------------------------
 library(Hmisc)
+library(xtable)
 library(lsr)
 library(RSQLite)
 library(dplyr)
@@ -8,7 +9,7 @@ library(tidyr)
 library(ggplot2)
 library(stringr)
 
-# Read in data  -------------------------------------------------------------------------------
+# EXP1: Read in data  -------------------------------------------------------------------------------
 rm(list = ls())
 
 con = dbConnect(SQLite(),dbname = "../../javascript/Experiment_1/participants.db");
@@ -69,6 +70,33 @@ df.long = df.wide %>%
 
 attr(df.long,"reshapeLong") = NULL
 
+#add game information
+list.info = fromJSON(file = "../../javascript/experiment_1/static/json/games.json")
+list.games = list()
+df.games = data.frame()
+
+for (k in 1:(list.info[['scenarios']] %>% length())){
+  tmp = list.info[['scenarios']][[k]][['games']]
+  df.tmp = matrix(NA,ncol=4,nrow = length(tmp)) %>% 
+    as.data.frame() %>% 
+    setNames(c('id','team1','team2','winner')) %>% 
+    mutate_each(funs(. %>% as.character()))
+  
+  for (i in 1:nrow(df.tmp)){
+    df.tmp[i,] = c(id = k,
+                   team1 = tmp[[i]]$team1 %>% str_c(collapse=","),
+                   team2 = tmp[[i]]$team2 %>% str_c(collapse=","),
+                   winner = tmp[[i]]$winner %>% as.character())
+  }
+  list.games[[k]] = df.tmp
+  df.games = rbind(df.games,df.tmp)
+}
+
+df.tmp = df.games %>% 
+  select(id,team1,winner,team2) %>% 
+  mutate(winner = ifelse(winner == 1, ">", "<"))
+
+xtable(df.tmp) %>% print(include.rownames=F)
 
 
 
