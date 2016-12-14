@@ -46,7 +46,8 @@ var Config = function (condition, counterbalance) {
     this.parse_config = function (data) {
         this.tests = data["tests"];
         this.scenarios = shuffle(data["scenarios"]); //shuffles the array 
-        this.questions = data["questions"] ;
+        this.questions = data["questions"];
+        this.choices = data["choices"];
         this.colors = data["colors"];
         this.prompt = data["prompt"];
         this.makeNames();
@@ -118,6 +119,9 @@ var Config = function (condition, counterbalance) {
                     this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
                 } else if (this.scenarios[i].questions[j] == 1) {
                     this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
+                } else if (this.scenarios[i].questions[j] == 2) {
+                    this.scenarios[i].subjects[j].player1 = sceneNames[this.scenarios[i].subjects[j].player1.toString()];
+                    this.scenarios[i].subjects[j].player2 = sceneNames[this.scenarios[i].subjects[j].player2.toString()];
                 }
             }
         }
