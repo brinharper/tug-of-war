@@ -1,13 +1,14 @@
 # Fdb version 3
-["bibtex tow_summary"] 1481752651 "tow_summary.aux" "tow_summary.bbl" "tow_summary" 1481752654
+["bibtex tow_summary"] 1481836702 "tow_summary.aux" "tow_summary.bbl" "tow_summary" 1481838042
   "/usr/local/texlive/2014/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
   "references.bib" 1481731581 718843 925df7b70cd15ed3e76778e46172ada4 ""
-  "tow_summary.aux" 1481752653 3259 fa31b105253653105e1294a136b88d0b ""
+  "tow_summary.aux" 1481838041 3832 cbbbc09a5937bacf5be59fe36c865f61 ""
   "tow_summary.bcf" 0 -1 0 ""
   (generated)
   "tow_summary.bbl"
   "tow_summary.blg"
-["pdflatex"] 1481752652 "tow_summary.tex" "tow_summary.pdf" "tow_summary" 1481752654
+["pdflatex"] 1481838040 "tow_summary.tex" "tow_summary.pdf" "tow_summary" 1481838042
+  "../../figures/plots/exp1_bars.pdf" 1481836590 5717 c40e67fb4f1ea2221d3812b9b51ca26d ""
   "../../figures/screenshots/exp1_screenshot1.png" 1481752499 183498 aade2dcf88b306302f9eb6a8abd55308 ""
   "../../figures/screenshots/exp1_screenshot2.png" 1481752508 43170 324de5f769b75741beb6c64381fdfa56 ""
   "../../figures/screenshots/exp1_screenshot3.png" 1481752526 117422 6fe57009af56e9d75f061ee6f4ee0070 ""
@@ -169,14 +170,14 @@
   "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1423787482 592 907a741793b1d372f230eff7ff0170e2 ""
-  "tow_summary.aux" 1481752653 3259 fa31b105253653105e1294a136b88d0b ""
-  "tow_summary.bbl" 1481752652 49 0eba253fc001332e731e8aba3f23127b "bibtex tow_summary"
-  "tow_summary.out" 1481752653 511 31256c8f0d92ebf639f865cf4d0c36c3 ""
-  "tow_summary.tex" 1481752649 7086 122103e804dacd6cb36ad12d621250a8 ""
-  "tow_summary.toc" 1481752653 659 33bb0ff6cfc5989b29fc504edc3de795 ""
+  "tow_summary.aux" 1481838041 3832 cbbbc09a5937bacf5be59fe36c865f61 ""
+  "tow_summary.bbl" 1481836702 49 0eba253fc001332e731e8aba3f23127b "bibtex tow_summary"
+  "tow_summary.out" 1481838041 578 fdf7a034df9a4b0c646541d7aa35fa9d ""
+  "tow_summary.tex" 1481838039 7409 404ce015d7bb5f719e7bae69ccad01fa ""
+  "tow_summary.toc" 1481838041 740 c29fdd001df69a9fa15acf3de49b90ef ""
   (generated)
+  "tow_summary.log"
   "tow_summary.out"
+  "tow_summary.toc"
   "tow_summary.aux"
   "tow_summary.pdf"
-  "tow_summary.toc"
-  "tow_summary.log"

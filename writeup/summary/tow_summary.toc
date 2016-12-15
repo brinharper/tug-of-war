@@ -3,6 +3,7 @@
 \contentsline {subsection}{\numberline {2.1}Methods}{4}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Design}{4}{subsubsection.2.1.1}
 \contentsline {subsubsection}{\numberline {2.1.2}Procedure}{4}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Results (N = 39)}{5}{subsection.2.2}
 \contentsline {section}{\numberline {3}Experiment 2: Asking many questions}{6}{section.3}
 \contentsline {section}{\numberline {4}Experiment 3: The omniscient commentator}{6}{section.4}
 \contentsline {section}{\numberline {5}Experiment 4: How much effort?}{6}{section.5}

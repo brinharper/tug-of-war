@@ -272,6 +272,9 @@ INPUT ../../figures/screenshots/exp1_screenshot2.png
 INPUT ../../figures/screenshots/exp1_screenshot3.png
 INPUT ../../figures/screenshots/exp1_screenshot3.png
 INPUT ../../figures/screenshots/exp1_screenshot3.png
+INPUT ../../figures/plots/exp1_bars.pdf
+INPUT ../../figures/plots/exp1_bars.pdf
+INPUT ../../figures/plots/exp1_bars.pdf
 INPUT tow_summary.bbl
 INPUT tow_summary.bbl
 INPUT tow_summary.aux

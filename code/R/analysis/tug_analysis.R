@@ -9,10 +9,11 @@ library(tidyr)
 library(ggplot2)
 library(stringr)
 
-# EXP1: Read in data  -------------------------------------------------------------------------------
+# EXP1: Read in data (no need to run) -------------------------------------------------------------------------------
 rm(list = ls())
 
-con = dbConnect(SQLite(),dbname = "../../javascript/Experiment_1/participants.db");
+# con = dbConnect(SQLite(),dbname = "../../javascript/Experiment_1/participants.db");
+con = dbConnect(SQLite(),dbname = "../../javascript/participants.db");
 df.complete = dbReadTable(con,"tow")
 dbDisconnect(con)
 
@@ -92,11 +93,69 @@ for (k in 1:(list.info[['scenarios']] %>% length())){
   df.games = rbind(df.games,df.tmp)
 }
 
-df.tmp = df.games %>% 
-  select(id,team1,winner,team2) %>% 
-  mutate(winner = ifelse(winner == 1, ">", "<"))
-
+# df.tmp = df.games %>% 
+#   select(id,team1,winner,team2) %>% 
+#   mutate(winner = ifelse(winner == 1, ">", "<"))
+# 
 # xtable(df.tmp) %>% print(include.rownames=F)
 
+labels = c(rep(c('confounded evidence',
+                 'strong indirect evidence',
+                 'weak indirect evidence',
+                 'diverse evidence',
+                 'confounded with partner',
+                 'confounded with opponent',
+                 'strong indirect evidence',
+                 'weak indirect evidence',
+                 'diverse evidence',
+                 'round robin'
+),2),
+rep(c('2 v 1',
+      '1 v 2',
+      '2 v 3',
+      '2 v 3 repeated',
+      'no difference'),2))
 
+df.info = df.games %>% 
+  mutate(players = ifelse((str_count(team1,",") == 0 & str_count(team2,",") == 0),'single','multiple'),
+         teamsize = ifelse(str_count(team1,",") == str_count(team2,","),'same','different')) %>% 
+  group_by(id) %>% 
+  arrange(teamsize) %>% 
+  filter(row_number()==1) %>% 
+  ungroup %>%
+  mutate(id = as.numeric(id),
+         labels = labels) %>% 
+  arrange(id)
+
+# save data 
+
+df.wide = df.wide %>% 
+  select(-workerid)
+
+save(df.wide,df.long,df.info,df.games,file='../../../data/exp1_data.RData')
+
+# EXP1: Load data -------------------------------------------------------------------------------
+rm(list = ls())
+load(file='../../../data/exp1_data.RData')
+
+# EXP1: Plot ----------------------------------------------------------------------------------
+
+df.plot = df.long %>% 
+  mutate(rating = rating-50,
+         id = id +1) %>% 
+  left_join(df.info) %>% 
+  mutate(id = as.factor(id),
+         winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
+         rating = ifelse(winner == "Loss", rating*-1, rating))
+
+ggplot(df.plot,aes(x = id, y = rating))+
+  stat_summary(fun.y = 'mean',geom='bar',color = 'black',fill = 'gray80')+
+  stat_summary(fun.data = 'mean_cl_boot',geom='linerange',size = 1)+
+  facet_wrap(~winner,scales = "free_x",ncol=1)+
+  labs(y = 'weakness/strength judgment', x = 'tournament number')+
+  theme_bw()+
+  theme(text = element_text(size = 20),
+        panel.grid = element_blank())
+
+ggsave('../../../figures/plots/exp1_bars.pdf',width=10,height=6)
 
