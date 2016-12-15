@@ -96,7 +96,7 @@ df.tmp = df.games %>%
   select(id,team1,winner,team2) %>% 
   mutate(winner = ifelse(winner == 1, ">", "<"))
 
-xtable(df.tmp) %>% print(include.rownames=F)
+# xtable(df.tmp) %>% print(include.rownames=F)
 
 
 

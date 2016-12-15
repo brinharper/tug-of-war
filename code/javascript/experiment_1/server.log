@@ -11164,3 +11164,405 @@
 [2016-12-14 16:58:01 -0500] [13926] [DEBUG] Closing connection. 
 [2016-12-14 16:58:01 -0500] [13926] [INFO] Parent changed, shutting down: <Worker 13926>
 [2016-12-14 16:58:01 -0500] [13926] [INFO] Worker exiting (pid: 13926)
+[2016-12-15 11:24:51 -0500] [21558] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x10fe416e0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10fe41410>
+  pre_fork: <function pre_fork at 0x10fe41578>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 20
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 9
+  proc_name: psiturk_experiment_server
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x10fe412a8>
+  pre_exec: <function pre_exec at 0x10fe41c80>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x10fe41848>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x10feaa230>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10fe41de8>
+  post_request: <function post_request at 0x10fe41ed8>
+  user: 501
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10fe419b0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 0
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x10fe450c8>
+  chdir: /Users/tobi/Documents/work/projects_git/tug-of-war/code/javascript/experiment_1
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: server.log
+  loglevel: debug
+  logconfig: None
+  syslog_addr: unix:///var/run/syslog
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x10fe41140>
+  worker_abort: <function worker_abort at 0x10fe41b18>
+  bind: ['0.0.0.0:22362']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10fe45230>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2016-12-15 11:24:51 -0500] [21558] [INFO] Starting gunicorn 19.4.5
+[2016-12-15 11:24:51 -0500] [21558] [DEBUG] Arbiter booted
+[2016-12-15 11:24:51 -0500] [21558] [INFO] Listening at: http://0.0.0.0:22362 (21558)
+[2016-12-15 11:24:51 -0500] [21558] [INFO] Using worker: sync
+[2016-12-15 11:24:51 -0500] [21562] [INFO] Booting worker with pid: 21562
+[2016-12-15 11:24:51 -0500] [21565] [INFO] Booting worker with pid: 21565
+[2016-12-15 11:24:51 -0500] [21566] [INFO] Booting worker with pid: 21566
+[2016-12-15 11:24:51 -0500] [21567] [INFO] Booting worker with pid: 21567
+[2016-12-15 11:24:51 -0500] [21568] [INFO] Booting worker with pid: 21568
+[2016-12-15 11:24:51 -0500] [21569] [INFO] Booting worker with pid: 21569
+[2016-12-15 11:24:51 -0500] [21570] [INFO] Booting worker with pid: 21570
+[2016-12-15 11:24:51 -0500] [21571] [INFO] Booting worker with pid: 21571
+[2016-12-15 11:24:51 -0500] [21572] [INFO] Booting worker with pid: 21572
+[2016-12-15 11:24:52 -0500] [21558] [DEBUG] 9 workers
+2016-12-15 11:24:52,477 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,478 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,492 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-15 11:24:52 -0500] [21562] [DEBUG] Closing connection. 
+2016-12-15 11:24:52,587 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,588 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,592 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,614 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,615 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,618 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,653 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,654 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,658 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,670 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,671 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,674 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,694 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,696 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,709 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,711 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,711 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,714 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,752 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,753 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,756 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+2016-12-15 11:24:52,761 Secret key: 'this is my secret key which is hard to guess, i should change this'
+2016-12-15 11:24:52,761 Hmm... it seems no custom code (custom.py) associated                         with this project.
+2016-12-15 11:24:52,763 /usr/local/lib/python2.7/site-packages/psiturk/psiturk_js/psiturk.js
+[2016-12-15 11:24:54 -0500] [21572] [DEBUG] Closing connection. 
+[2016-12-15 11:24:54 -0500] [21571] [DEBUG] Closing connection. 
+[2016-12-15 11:24:54 -0500] [21572] [DEBUG] Closing connection. 
+[2016-12-15 11:24:54 -0500] [21568] [DEBUG] GET /ad
+[2016-12-15 11:24:56 -0500] [21569] [DEBUG] GET /consent
+[2016-12-15 11:24:56 -0500] [21571] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:24:56 -0500] [21567] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:24:58 -0500] [21570] [DEBUG] GET /exp
+2016-12-15 11:24:58,296 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+2016-12-15 11:24:58,301 given Counter({(0, 0): 1}) chose (0, 0)
+[2016-12-15 11:24:58 -0500] [21562] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:24:58 -0500] [21569] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:24:58 -0500] [21565] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:24:58 -0500] [21568] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:24:58 -0500] [21571] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:24:58 -0500] [21567] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:24:58 -0500] [21566] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:24:58 -0500] [21562] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:24:58 -0500] [21562] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:24:58 -0500] [21566] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:24:58 -0500] [21565] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:24:58 -0500] [21568] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:24:58,751 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:24:58 -0500] [21568] [DEBUG] GET /trial.html
+[2016-12-15 11:24:58 -0500] [21567] [DEBUG] GET /submit.html
+[2016-12-15 11:24:58 -0500] [21567] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:24:58 -0500] [21568] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:24:58 -0500] [21566] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /exp
+2016-12-15 11:26:22,093 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:26:22 -0500] [21570] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:26:22 -0500] [21569] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:26:22 -0500] [21565] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:26:22 -0500] [21566] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:26:22 -0500] [21567] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:26:22 -0500] [21562] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:26:22 -0500] [21567] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:26:22 -0500] [21562] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:26:22 -0500] [21565] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:26:22 -0500] [21562] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:26:22 -0500] [21570] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:26:22,731 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /trial.html
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /submit.html
+[2016-12-15 11:26:22 -0500] [21567] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:26:22 -0500] [21568] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:26:22 -0500] [21571] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:26:23 -0500] [21567] [DEBUG] GET /favicon.ico
+[2016-12-15 11:26:42 -0500] [21562] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-15 11:26:48 -0500] [21569] [DEBUG] GET /static/css/images/ui-icons_ef8c08_256x240.png
+[2016-12-15 11:26:48 -0500] [21562] [DEBUG] GET /static/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+[2016-12-15 11:26:48 -0500] [21571] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-15 11:27:30 -0500] [21570] [DEBUG] GET /static/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
+[2016-12-15 11:27:30 -0500] [21565] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-12-15 11:27:32 -0500] [21572] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-12-15 11:29:18 -0500] [21569] [DEBUG] GET /exp
+2016-12-15 11:29:18,763 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:29:18 -0500] [21567] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:29:18 -0500] [21571] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:29:18 -0500] [21570] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:29:18 -0500] [21568] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:29:18 -0500] [21562] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:29:18 -0500] [21569] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:29:18 -0500] [21569] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:29:18 -0500] [21565] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:29:18 -0500] [21567] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:29:18 -0500] [21566] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:29:18 -0500] [21572] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:29:18 -0500] [21569] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:29:19 -0500] [21569] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:29:19 -0500] [21570] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:29:19,436 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:29:19 -0500] [21570] [DEBUG] GET /trial.html
+[2016-12-15 11:29:19 -0500] [21569] [DEBUG] GET /submit.html
+[2016-12-15 11:29:19 -0500] [21569] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:29:19 -0500] [21571] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:29:19 -0500] [21568] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:29:19 -0500] [21571] [DEBUG] GET /favicon.ico
+[2016-12-15 11:29:27 -0500] [21566] [DEBUG] GET /exp
+2016-12-15 11:29:27,471 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:29:27 -0500] [21569] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:29:27 -0500] [21571] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:29:27,715 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:29:27 -0500] [21567] [DEBUG] GET /trial.html
+[2016-12-15 11:29:27 -0500] [21570] [DEBUG] GET /submit.html
+[2016-12-15 11:29:27 -0500] [21572] [DEBUG] GET /favicon.ico
+[2016-12-15 11:30:55 -0500] [21567] [DEBUG] GET /exp
+2016-12-15 11:30:55,773 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:30:55 -0500] [21565] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:30:55 -0500] [21568] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:30:55 -0500] [21562] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:30:55 -0500] [21572] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:30:55 -0500] [21570] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:30:55 -0500] [21562] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:30:55 -0500] [21571] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:30:55 -0500] [21566] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:30:55 -0500] [21569] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:30:55 -0500] [21562] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:30:55 -0500] [21570] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:30:55 -0500] [21566] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:30:56 -0500] [21570] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:30:56 -0500] [21571] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:30:56,420 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:30:56 -0500] [21566] [DEBUG] GET /trial.html
+[2016-12-15 11:30:56 -0500] [21570] [DEBUG] GET /submit.html
+[2016-12-15 11:30:56 -0500] [21570] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:30:56 -0500] [21567] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:30:56 -0500] [21565] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:30:56 -0500] [21565] [DEBUG] GET /favicon.ico
+[2016-12-15 11:31:18 -0500] [21565] [DEBUG] GET /exp
+2016-12-15 11:31:18,959 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:31:19 -0500] [21566] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:31:19 -0500] [21567] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:31:19 -0500] [21568] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:31:19 -0500] [21562] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:31:19 -0500] [21569] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:31:19 -0500] [21566] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:31:19 -0500] [21562] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:31:19 -0500] [21569] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:31:19 -0500] [21566] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:31:19 -0500] [21562] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:31:19 -0500] [21568] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:31:19 -0500] [21569] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:31:19 -0500] [21568] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:31:19 -0500] [21571] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:31:19,684 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:31:19 -0500] [21566] [DEBUG] GET /trial.html
+[2016-12-15 11:31:19 -0500] [21572] [DEBUG] GET /submit.html
+[2016-12-15 11:31:19 -0500] [21562] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:31:19 -0500] [21566] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:31:19 -0500] [21568] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:31:20 -0500] [21568] [DEBUG] GET /favicon.ico
+[2016-12-15 11:31:29 -0500] [21571] [DEBUG] GET /exp
+2016-12-15 11:31:29,794 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:31:29 -0500] [21568] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:31:29 -0500] [21569] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:31:29 -0500] [21565] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:31:29 -0500] [21568] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:31:29 -0500] [21565] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:31:29 -0500] [21566] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:31:29 -0500] [21569] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:31:29 -0500] [21572] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:31:29 -0500] [21567] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:31:29 -0500] [21565] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:31:29 -0500] [21565] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:31:29 -0500] [21570] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:31:30 -0500] [21562] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:31:30 -0500] [21571] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:31:30,122 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:31:30 -0500] [21570] [DEBUG] GET /trial.html
+[2016-12-15 11:31:30 -0500] [21565] [DEBUG] GET /submit.html
+[2016-12-15 11:31:30 -0500] [21569] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:31:30 -0500] [21570] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:31:30 -0500] [21562] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:31:30 -0500] [21570] [DEBUG] GET /favicon.ico
+[2016-12-15 11:32:52 -0500] [21570] [DEBUG] GET /exp
+2016-12-15 11:32:52,809 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:32:52 -0500] [21568] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:32:52 -0500] [21566] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:32:52 -0500] [21571] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:32:52 -0500] [21569] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:32:52 -0500] [21567] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:32:52 -0500] [21566] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:32:52 -0500] [21569] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:32:52 -0500] [21566] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:32:52 -0500] [21571] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:32:52 -0500] [21571] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:32:52 -0500] [21562] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:32:52 -0500] [21567] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:32:53 -0500] [21572] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:32:53 -0500] [21569] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:32:53,508 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:32:53 -0500] [21562] [DEBUG] GET /trial.html
+[2016-12-15 11:32:53 -0500] [21565] [DEBUG] GET /submit.html
+[2016-12-15 11:32:53 -0500] [21572] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:32:53 -0500] [21562] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:32:53 -0500] [21570] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:32:54 -0500] [21562] [DEBUG] GET /favicon.ico
+[2016-12-15 11:33:16 -0500] [21572] [DEBUG] GET /exp
+2016-12-15 11:33:16,351 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:33:16 -0500] [21566] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:33:16 -0500] [21567] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:33:16 -0500] [21568] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:33:16 -0500] [21570] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:33:16 -0500] [21569] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:33:16 -0500] [21567] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:33:16 -0500] [21569] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:33:16 -0500] [21565] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:33:16 -0500] [21570] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:33:16 -0500] [21567] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:33:16 -0500] [21568] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:33:16 -0500] [21570] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:33:17 -0500] [21567] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:33:17 -0500] [21562] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:33:17,079 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:33:17 -0500] [21567] [DEBUG] GET /trial.html
+[2016-12-15 11:33:17 -0500] [21567] [DEBUG] GET /submit.html
+[2016-12-15 11:33:17 -0500] [21570] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:33:17 -0500] [21568] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:33:17 -0500] [21572] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:33:17 -0500] [21570] [DEBUG] GET /favicon.ico
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /exp
+2016-12-15 11:33:48,044 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:33:48 -0500] [21572] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:33:48 -0500] [21565] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:33:48 -0500] [21572] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:33:48 -0500] [21570] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:33:48 -0500] [21566] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:33:48 -0500] [21567] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:33:48 -0500] [21567] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:33:48 -0500] [21568] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:33:48 -0500] [21568] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:33:48 -0500] [21562] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:33:48,674 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:33:48 -0500] [21572] [DEBUG] GET /trial.html
+[2016-12-15 11:33:48 -0500] [21568] [DEBUG] GET /submit.html
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:33:48 -0500] [21571] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:33:48 -0500] [21572] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:33:49 -0500] [21570] [DEBUG] GET /favicon.ico
+[2016-12-15 11:34:00 -0500] [21568] [DEBUG] GET /static/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+[2016-12-15 11:34:06 -0500] [21572] [DEBUG] GET /static/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+[2016-12-15 11:34:06 -0500] [21562] [DEBUG] GET /static/css/images/ui-bg_glass_100_f6f6f6_1x400.png
+[2016-12-15 11:34:06 -0500] [21571] [DEBUG] GET /static/css/images/ui-icons_ef8c08_256x240.png
+[2016-12-15 11:34:08 -0500] [21571] [DEBUG] GET /static/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
+[2016-12-15 11:34:08 -0500] [21567] [DEBUG] GET /static/css/images/ui-bg_glass_100_fdf5ce_1x400.png
+[2016-12-15 11:34:09 -0500] [21571] [DEBUG] GET /static/css/images/ui-bg_glass_65_ffffff_1x400.png
+[2016-12-15 11:34:51 -0500] [21572] [DEBUG] GET /exp
+2016-12-15 11:34:51,787 Accessing /exp: debug3AQW78 debugKXZ55S debug79CXVA 
+[2016-12-15 11:34:51 -0500] [21572] [DEBUG] GET /static/lib/seedrandom.js
+[2016-12-15 11:34:51 -0500] [21569] [DEBUG] GET /static/lib/jquery.min.js
+[2016-12-15 11:34:51 -0500] [21565] [DEBUG] GET /static/lib/underscore-min.js
+[2016-12-15 11:34:51 -0500] [21570] [DEBUG] GET /static/lib/backbone-min.js
+[2016-12-15 11:34:51 -0500] [21566] [DEBUG] GET /static/lib/jquery-ui.min.js
+[2016-12-15 11:34:51 -0500] [21567] [DEBUG] GET /static/lib/mustache.js
+[2016-12-15 11:34:51 -0500] [21571] [DEBUG] GET /static/css/jquery-ui.min.css
+[2016-12-15 11:34:51 -0500] [21569] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:34:51 -0500] [21562] [DEBUG] GET /static/js/config.js
+[2016-12-15 11:34:51 -0500] [21562] [DEBUG] GET /static/js/utils.js
+[2016-12-15 11:34:51 -0500] [21565] [DEBUG] GET /static/js/psiturk.js
+[2016-12-15 11:34:51 -0500] [21569] [DEBUG] GET /static/js/task.js
+[2016-12-15 11:34:52 -0500] [21572] [DEBUG] GET /static/json/games.json
+[2016-12-15 11:34:52 -0500] [21566] [DEBUG] GET /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:34:52,451 GET /sync route with id: debug79CXVA:debugKXZ55S
+[2016-12-15 11:34:52 -0500] [21566] [DEBUG] GET /trial.html
+[2016-12-15 11:34:52 -0500] [21572] [DEBUG] GET /submit.html
+[2016-12-15 11:34:52 -0500] [21566] [DEBUG] GET /static/images/nocrown.png
+[2016-12-15 11:34:52 -0500] [21569] [DEBUG] GET /static/images/crown.png
+[2016-12-15 11:34:52 -0500] [21572] [DEBUG] GET /static/images/commentator.png
+[2016-12-15 11:34:53 -0500] [21566] [DEBUG] GET /favicon.ico
+[2016-12-15 11:41:40 -0500] [21566] [DEBUG] PUT /sync/debug79CXVA%3AdebugKXZ55S
+2016-12-15 11:41:40,342 PUT /sync route with id: debug79CXVA:debugKXZ55S
+2016-12-15 11:41:40,350 saved data for debug79CXVA:debugKXZ55S (current trial: 30)
+[2016-12-15 11:41:40 -0500] [21565] [DEBUG] GET /complete
+[2016-12-15 11:41:40 -0500] [21565] [DEBUG] GET /static/css/general.css
+[2016-12-15 11:43:46 -0500] [21565] [DEBUG] Closing connection. 
+[2016-12-15 11:43:47 -0500] [21565] [DEBUG] Closing connection. 
+[2016-12-15 11:43:47 -0500] [21566] [DEBUG] Closing connection. 
+[2016-12-15 11:43:47 -0500] [21566] [DEBUG] GET /ppid
+[2016-12-15 11:43:47 -0500] [21568] [INFO] Parent changed, shutting down: <Worker 21568>
+[2016-12-15 11:43:47 -0500] [21567] [INFO] Parent changed, shutting down: <Worker 21567>
+[2016-12-15 11:43:47 -0500] [21566] [DEBUG] Closing connection. 
+[2016-12-15 11:43:47 -0500] [21565] [INFO] Parent changed, shutting down: <Worker 21565>
+[2016-12-15 11:43:47 -0500] [21567] [INFO] Worker exiting (pid: 21567)
+[2016-12-15 11:43:47 -0500] [21565] [INFO] Worker exiting (pid: 21565)
+[2016-12-15 11:43:47 -0500] [21566] [INFO] Parent changed, shutting down: <Worker 21566>
+[2016-12-15 11:43:47 -0500] [21568] [INFO] Worker exiting (pid: 21568)
+[2016-12-15 11:43:47 -0500] [21566] [INFO] Worker exiting (pid: 21566)
+[2016-12-15 11:43:47 -0500] [21562] [INFO] Parent changed, shutting down: <Worker 21562>
+[2016-12-15 11:43:47 -0500] [21571] [INFO] Parent changed, shutting down: <Worker 21571>
+[2016-12-15 11:43:47 -0500] [21569] [INFO] Parent changed, shutting down: <Worker 21569>
+[2016-12-15 11:43:47 -0500] [21572] [DEBUG] Closing connection. 
+[2016-12-15 11:43:47 -0500] [21562] [INFO] Worker exiting (pid: 21562)
+[2016-12-15 11:43:47 -0500] [21571] [INFO] Worker exiting (pid: 21571)
+[2016-12-15 11:43:47 -0500] [21569] [INFO] Worker exiting (pid: 21569)
+[2016-12-15 11:43:47 -0500] [21570] [INFO] Parent changed, shutting down: <Worker 21570>
+[2016-12-15 11:43:47 -0500] [21572] [INFO] Parent changed, shutting down: <Worker 21572>
+[2016-12-15 11:43:47 -0500] [21570] [INFO] Worker exiting (pid: 21570)
+[2016-12-15 11:43:47 -0500] [21572] [INFO] Worker exiting (pid: 21572)

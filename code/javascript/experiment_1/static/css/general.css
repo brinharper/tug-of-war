@@ -5,7 +5,8 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Verdana', sans-serif;
     font-size: 1em;
     line-height: 1.25em;
 }
@@ -291,7 +292,7 @@ span.consent {
 .question {
     /*font-size: 1.2em;*/
     text-align: center;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .player-popup {

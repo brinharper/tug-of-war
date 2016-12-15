@@ -679,7 +679,7 @@
 			"high": "very likely"
 		}
 	],
-	"prompt": "<p>Below you see the outcomes of games in a tug of war tournament. Remember that the crown indicates which team won each game. You can move the mouse over a player to see which games the player participated in. Please try to figure out, based on the information you see, how strong player {{player}} is.</p>",
+	"prompt": "<p>Below you see the outcomes of games in a tug of war tournament. Remember that the crown indicates which team won each game. You can move the mouse over a player to see which games the player participated in. Please try to figure out, based on the information you see, how strong player {{player}} is.</p><p>You can <b>hover</b> the mouse over a player to see that player highlighted. You can <b>click</b> on a player to see what games the player participated in.</p>",
 	"colors": [
 		"#00FF7F",
 		"#00FFFF",
