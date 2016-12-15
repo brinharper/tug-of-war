@@ -4,3 +4,4 @@
 .Rproj.user
 models/*.html
 participants.db
+server.log
