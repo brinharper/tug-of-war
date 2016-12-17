@@ -138,7 +138,7 @@ save(df.wide,df.long,df.info,df.games,file='../../../data/exp1_data.RData')
 rm(list = ls())
 load(file='../../../data/exp1_data.RData')
 
-# EXP1: Plot ----------------------------------------------------------------------------------
+# EXP1: Plot (just data) ----------------------------------------------------------------------------------
 
 df.plot = df.long %>% 
   mutate(rating = rating-50,
@@ -158,4 +158,58 @@ ggplot(df.plot,aes(x = id, y = rating))+
         panel.grid = element_blank())
 
 ggsave('../../../figures/plots/exp1_bars.pdf',width=10,height=6)
+
+
+# EXP1: Model predictions and regression ------------------------------------------------------
+
+# create means and add "predictions"
+df.regression = df.long %>% 
+  mutate(id = id+1) %>% 
+  group_by(id) %>% 
+  summarise(mean = mean(rating),
+            ci.low = smean.cl.boot(rating)[2], #bootstrapped confidence intervals 
+            ci.high = smean.cl.boot(rating)[3]
+  ) %>% 
+  left_join(df.info) %>% 
+  mutate(predictions = rnorm(nrow(.))) #just randomly drawn numbers 
+
+df.regression$predictions = lm(mean~predictions,data=df.regression)$fitted.values
+
+# EXP1: Plot (bars with model predictions) -----------------------------------------------------
+df.plot = df.regression %>% 
+  gather(index,value,c(mean,predictions)) %>% 
+  mutate_each(funs(ifelse(index != "mean", NA, .)),contains("ci")) %>% 
+  mutate(id = as.factor(id),
+         winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")))
+
+ggplot(df.plot,aes(x = id, y = value, group = index, fill = index))+
+  geom_bar(stat= "identity", color="black", position = position_dodge(0.9), width = 0.9)+
+  geom_linerange(aes(min = ci.low, max = ci.high), size = 1, position = position_dodge(0.9))+
+  facet_wrap(~winner,scales = "free_x",ncol=1)+
+  scale_fill_grey(start = 1, end = 0.6)+
+  labs(y = 'weakness/strength judgment', x = 'tournament number', fill = "")+
+  theme_bw()+
+  theme(text = element_text(size = 20),
+        panel.grid = element_blank(),
+        legend.position = "bottom")
+
+
+# EXP1: Plot (scatterplot)  -------------------------------------------------------------------
+
+df.plot = df.regression 
+
+ggplot(df.plot,aes(x = predictions, y = mean))+
+  geom_point()+
+  geom_errorbar(aes(min = ci.low,max = ci.high),width=0)+
+  geom_text(aes(label=id),size=5,hjust=1.2,vjust=0)+
+  theme_bw()+
+  labs(x = 'model', y = 'data')+
+  theme(text = element_text(size = 20),
+        panel.grid = element_blank(),
+        legend.position = "bottom")
+
+
+
+
+
 
