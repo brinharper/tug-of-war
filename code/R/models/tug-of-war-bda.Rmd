@@ -44,13 +44,18 @@ We try to foresee some of the issues and spell out our tentative approach at thi
 First, we'll load the raw tug of war data, analyzed in `tug_analysis.R`.
 
 ```{r}
-source("../analysis/tug_analysis.R")
+#source("../analysis/tug_analysis.R")
+load("../../../data/exp1_data.RData")
+# df.games has the detailed match info
+# df.info has more high level info
 ```
 
 What will the data look like in WebPPL?
 
 ```{r echo=T}
-toJSON(head(df.long, 3), pretty = T)
+toJSON(head(df.info, 2), pretty = T)
+toJSON(head(df.games, 2), pretty = T)
+toJSON(head(df.long, 2), pretty = T)
 ```
 
 Here, we see that the data frame will be converted into an array of objects. 
@@ -61,58 +66,58 @@ We write the tug-of-war cognitive model and the Bayesian data analysis model in 
 
 
 In the behavioral data, we have codes for different tournament configurations.
-This will decode them (still needs to be flesh out).
+This is coming from `df.games`, which we repackage insid webppl into `tournamentInfo`
+
 
 ```{r tournamentInfo, echo = F}
 tournamentInfo <-' 
-var tournamentInfo = {
-  1: {
-    winners: ["A","A","A"],
-    losers: ["B","C","D"],
-    outcome: "win",
-    pattern: "diverse evidence",
-    tournament: "single"
-  },
-  2: {
-    winners: ["A","A","A"],
-    losers: ["B","B","B"],
-    outcome: "win",
-    pattern: "confounded evidence",
-    tournament: "single"
-  }, ...
-}
+var dfGames = towData.dfGames;
+var dfLong = towData.dfLong;
+
+var tournamentInfo = _.object(map(function(game_id){
+  var games = filter(function(game){ game.id == game_id }, dfGames);
+  return [game_id, games];
+}, _.uniq(_.pluck(dfGames, "id"))))
+
+// display(tournamentInfo)
+// tournamentInfo
 '
+
+# rs <- webppl(tournamentInfo, data = df.games, data_var = "dfGames")
 ```
 
 ```{r helpers2}
 helpers <- '
 var levels = function(a, lvl){ return _.uniq(_.pluck(a, lvl)) }
 
-var outcomes = levels(towData, "outcome");
-var tournaments = levels(towData, "tournament");
-var patterns = {
-  single: levels(_.where(towData, {tournament: "single"}), "pattern"),
-  double: levels(_.where(towData, {tournament: "double"}), "pattern")
-};
+// var outcomes = levels(towData, "outcome");
+
+var tournaments = levels(dfGames, "id");
+
+// bins = [0.05, 0.15,  ... , 0.95];
+var bins = map(function(k){return Math.round(k*20)/20}, _.range(0.05, 0.951, 0.1));
 
 var round = function(x){
-  return Math.round(x*10)/10
-}
-
-var bins = map(round, _.range(-2.2, 2.2, 0.1))
+  return bins[Math.floor(x*10)];
+};
 
 // add a tiny bit of noise, and make sure every bin has at least epsilon probability
-var smoothToBins = function(dist, sigma, bins){
-  Infer({method: "enumerate"}, function(){
-    var x = sample(dist);
-    var smoothedProbs = map(function(b){
-            return Number.EPSILON+
-          Math.exp(Gaussian({mu: x, sigma: sigma}).score(b)) 
-  }, bins)
-    return categorical(smoothedProbs, bins)
-  })
+var smoothToBins = function(dist){
+  Infer({model: function(){
+    var b = uniformDraw(bins);
+    var scr = dist.score(b) == -Infinity ? Math.log(1/250) : dist.score(b)  // -11 = Math.log(1/50000);
+    factor(scr);
+    return b
+  }})
 }
+var discretizedBeta = Infer({method: "forward", samples: 50000, model: function(){
+  var x = beta(1,1);
+  return round(x);
+}})
+
+// discretizedBeta
 '
+#table(webppl(helpers))
 ```
 
 #### Tug of war Model
@@ -137,14 +142,21 @@ It says that the total strength of team1 was greater than that of team2 by `k`, 
 This formulation might be easier for variational inference (or, MCMC / HMC).
 
 ```{r towCogModel}
-towModel <- '
-var tugOfWarOpts = {method: "rejection", samples: 500}
+towModel <- "
+var tugOfWarOpts = {method: 'rejection', samples: 250};
 
-var tugOfWarModel = function(lazyPulling, lazinessPrior, matchInfo){
+// var tournamentInfo =  [ 
+//  { id: '8', team1: ['1','2'], team2: ['3','4'], winner: '1' },
+//  { id: '8', team1: ['1','3'], team2: ['2','5'], winner: '1' },
+//  { id: '8', team1: ['1','4'], team2: ['3','6'], winner: '1' } 
+// ];
+
+var tugOfWarModel = function(lazyPulling, lazinessPrior, tournamentInfo){
   Infer(tugOfWarOpts, function(){
 
     var strength = mem(function(person){
-      return gaussian(0, 1)
+      //return beta(5, 5)
+      return sample(discretizedBeta);
     })
 
     var lazy = function(person){
@@ -160,18 +172,24 @@ var tugOfWarModel = function(lazyPulling, lazinessPrior, matchInfo){
     var winner = function(team1, team2){
       totalPulling(team1) > totalPulling(team2) ? team1 : team2
     }
-    var beat = function(team1,team2){winner(team1,team2) == team1}
+    var beat = function(team1, team2){winner(team1,team2) == team1}
 
-    condition(beat(matchInfo.winner1, matchInfo.loser1))
-    condition(beat(matchInfo.winner2, matchInfo.loser2))
-    condition(beat(matchInfo.winner3, matchInfo.loser3))
+    map(function(matchInfo){
+      var winner = matchInfo.winner;
+      condition(winner == 1 ? 
+                beat(matchInfo.team1, matchInfo.team2) :  
+                beat(matchInfo.team2, matchInfo.team1) )
+    }, tournamentInfo)
 
-    return round(strength("A"))
+    return round(strength('1'))
 
   })
 }
-'
 
+// tugOfWarModel(0.3, 0.2, tournamentInfo);
+"
+
+#qplot(webppl(paste(helpers, towModel, sep = "\n")))
 ```
 
 #### Bayesian data analysis model
@@ -180,40 +198,39 @@ var tugOfWarModel = function(lazyPulling, lazinessPrior, matchInfo){
 bdaTow <- '
 var dataAnalysisModel = function(){
 
-   var lazinessPrior = uniformDraw(_.range(0.01,0.51, 0.05));
-   var lazyPulling = uniformDraw(_.range(0.01,1, 0.1));
-   var noise = uniformDraw(_.range(0.01,0.5, 0.1));
+   // var lazinessPrior = uniformDraw(_.range(0.1,0.51, 0.1));
+   var lazinessPrior = uniformDrift({a:0, b: 0.5, width:0.1});
+   // var lazyPulling = uniformDraw(_.range(0.1,1, 0.2));
+   var lazyPulling = uniformDrift({a:0, b: 1, width:0.2});
+   // var noise = uniformDraw(_.range(0.01,0.5, 0.2));
+   display({lazyPulling, lazinessPrior});
   
-  var predictions = map(function(tournament){
-      return map(function(outcome){
-        return map(function(pattern){
+  var predictions = map(function(tournament_id){
+     // display(tournament_id);
+      // participants ratings (towData ids offset by 1)
+      var itemData = _.where(dfLong, {id: tournament_id - 1})
+
+      // information about the winners and losers
+      var matchInformation = tournamentInfo[tournament_id];
+
+      var modelPosterior = tugOfWarModel(lazyPulling, lazinessPrior, matchInformation);
+      var smoothedPredictions = smoothToBins(modelPosterior)
+
+      var obsFn = function(d){ 
+       //   display(smoothedPredictions.score(d.roundedRating) + " " + d.roundedRating);
+          observe(smoothedPredictions, d.roundedRating);
+      }
+
+      mapData({data : itemData}, obsFn);
+
+      return _.object([[tournament_id, expectation(modelPosterior)]])
   
-          var itemInfo = {pattern: pattern,  
-                    tournament: tournament, 
-                    outcome: outcome}
-  
-          // participants ratings
-          var itemData = _.where(towData, itemInfo)
-  
-          // information about the winners and losers
-          var matchInformation = _.where(matchConfigurations, itemInfo)[0]
-  
-          var modelPosterior = tugOfWarModel(lazyPulling, lazinessPrior, matchInformation)
-          var smoothedPredictions = smoothToBins(modelPosterior, noise, bins)
-  
-          map(function(d){ observe(smoothedPredictions, d.roundedRating) }, itemData)
-  
-          return _.object([[pattern + "_" + tournament + "_" + outcome, expectation(modelPosterior)]])
-  
-        }, patterns[tournament]) // singles tournaments dont have all patterns
-      }, outcomes)
     }, tournaments)
 
   return {
     parameters: {
         lazinessPrior: lazinessPrior, 
-        lazyPulling: lazyPulling,
-        gaussianNoise: noise
+        lazyPulling: lazyPulling
     },
     predictives: _.object(_.flatten(map(function(i){ _.pairs(i) }, _.flatten(predictions)), true))
   }
@@ -221,15 +238,33 @@ var dataAnalysisModel = function(){
 '
 ```
 
+Round data to bins
+
+```{r}
+bins <- seq(0.05, 0.95, 0.1);
+df.long <- df.long %>%
+  rowwise() %>%
+  mutate(roundedSlot = ceiling(rating/10)) %>%
+  mutate(roundedSlot = ifelse(roundedSlot == 0, 1, roundedSlot)) %>%
+  mutate(roundedRating = bins[roundedSlot])
+```
+
 Run the model
+
+
 ```{r, eval = F}
-fullModel <- paste(matchConfigData, 
-                   helpers, towModel, bdaTow, sep = '\n')
+df.tow <- list(dfGames = df.games, dfLong = df.long)
+
+fullModel <- paste(tournamentInfo, 
+                   helpers, 
+                   towModel, 
+                   bdaTow, sep = '\n')
 
 posterior <- webppl(fullModel,
        data = df.tow,
        data_var = "towData",
-       inference_opts = list(method = "enumerate"),
+       #inference_opts = list(method = "enumerate"),
+       inference_opts = list(method = "MCMC", samples = 10, burn = 0, verbose = T),
        chains = 1,
        cores = 1,
        model_var = "dataAnalysisModel",
@@ -250,8 +285,7 @@ params.tidy <- posterior %>%
 
 ggplot(params.tidy, aes(x = lazinessPrior, y = lazyPulling, fill = prob))+
   geom_tile()+
-  facet_wrap(~gaussianNoise)+
-  ggtitle("Parameter space: Facets are gaussianNoise")
+  ggtitle("Posterior on parameters")
 ```
 
 ### Examine posterior predictive
@@ -260,12 +294,10 @@ ggplot(params.tidy, aes(x = lazinessPrior, y = lazyPulling, fill = prob))+
 predictive.tidy <- posterior %>%
   select(starts_with("predictives"), prob) %>%
   gather(key, val, -prob) %>%
-  mutate(key = gsub("predictives.", "", key)) %>%
-  separate(key, into=c("pattern", "tournament", "outcome"), sep = "_") %>%
-  mutate(pattern = gsub("[.]", " ", pattern))
+  mutate(key = gsub("predictives.", "", key))
 
 predictive.summary <- predictive.tidy %>%
-  group_by(pattern, tournament, outcome) %>%
+  group_by(key) %>%
   summarize(expval = sum(prob*val))
 ```
 
@@ -274,22 +306,23 @@ Summarize TOW Data
 ```{r}
 library(langcog) # github.com/langcog/langcog
 df.summary <- df.long %>%
-  group_by(pattern, tournament, outcome) %>%
-  multi_boot_standard(column = "ratingZ")
+  group_by(id) %>%
+  multi_boot_standard(column = "rating")
 ```
 
 Model-data comparison
 
 ```{r}
-md.summary <- left_join(predictive.summary, df.summary)
+md.summary <- left_join(predictive.summary %>% mutate(id = as.numeric(key) - 1), 
+                        df.summary)
 
 ggplot(md.summary, aes(x = expval,
                        y = mean, ymin = ci_lower, ymax = ci_upper))+
   geom_point()+
   geom_abline(intercept = 0, slope = 1, linetype = 3)+
-  xlim(-1.5, 1.5)+
-  ylim(-1.5, 1.5)+
-  coord_fixed()+
+  xlim(0, 1)+
+  ylim(0, 100)+
+#  coord_fixed()+
   ylab("Human data (means)")+
   xlab("Model posterior predictive (expectation)")
 
