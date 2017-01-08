@@ -53,7 +53,7 @@ var matchInfo = datafromR["matchInfo"][0]
 var tugOfWarModel = function(){
 
     var strength = mem(function(person) {
-      return gaussian(50, 25)
+      return gaussian(50, 30)
     })
     
     var lazy = mem(function(person, match) {
@@ -61,8 +61,7 @@ var tugOfWarModel = function(){
     })
     
     var pulling = function(person, match) {
-      //return lazy(person, match) ? strength(person) - 13 : strength(person)
-      return strength(person)
+      return lazy(person, match) ? strength(person) - 15 : strength(person)
     }
     
     var totalPulling = function(team, match) {
