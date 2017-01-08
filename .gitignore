@@ -5,3 +5,6 @@
 models/*.html
 participants.db
 server.log
+.Rhistory
+code/R/.DS_Store
+code/R/analysis/.Rhistory
