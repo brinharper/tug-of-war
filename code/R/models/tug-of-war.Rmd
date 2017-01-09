@@ -270,21 +270,6 @@ ggsave('../../../figures/plots/model1_bars.pdf',width=10,height=6)
 
 ```{r saveResults}
 
-df.results %>% 
-  mutate(rating = rating-50) %>%
-  mutate(id = as.factor(id),
-        winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
-         rating = ifelse(winner == "Loss", rating*-1, rating))
-
-ggplot(df.plot,aes(x = id, y = rating))+
-  stat_summary(fun.y = 'identity',geom='bar',color = 'black',fill = 'gray80')+
-  stat_summary(fun.data = 'mean_cl_boot',geom='linerange',size = 1)+
-  facet_wrap(~winner,scales = "free_x",ncol=1)+
-  labs(y = 'weakness/strength judgment', x = 'tournament number')+
-  theme_bw()+
-  theme(text = element_text(size = 20),
-        panel.grid = element_blank())
-
-ggsave('../../../figures/plots/model1_bars.pdf',width=10,height=6)
+save(list = c("df.results"),file = 'exp1_predictions.RData')
 
 ```
