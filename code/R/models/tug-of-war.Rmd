@@ -17,6 +17,7 @@ library(tidyr)
 library(ggplot2)
 library(coda)
 library(jsonlite)
+rm(list=ls())
 
 # # to get the maximum a posteriori value [MAP] (from samples)
 # estimate_mode <- function(s) {
@@ -104,7 +105,7 @@ Define match information (the only information that's used in the model above is
 Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
 ```{r runTowModel}
-scenarioID = 30
+scenarioID = 29
 shouldPlot = TRUE
 #runModel <- function(scenarioID, shouldPlot) {
   
@@ -264,5 +265,11 @@ ggplot(df.plot,aes(x = id, y = rating))+
         panel.grid = element_blank())
 
 ggsave('../../../figures/plots/model1_bars.pdf',width=10,height=6)
+
+```
+
+```{r saveResults}
+
+save(list = c("df.results"),file = 'exp1_predictions.RData')
 
 ```

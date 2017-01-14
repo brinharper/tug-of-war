@@ -9,6 +9,11 @@ library(tidyr)
 library(ggplot2)
 library(stringr)
 
+# Misc functions  -----------------------------------------------------------------------------
+
+rmse = function(x,y){
+  return(sqrt(mean((x-y)^2)))
+}
 # EXP1: Read in data (no need to run) -------------------------------------------------------------------------------
 rm(list = ls())
 
@@ -137,12 +142,17 @@ save(df.wide,df.long,df.info,df.games,file='../../../data/exp1_data.RData')
 # EXP1: Load data -------------------------------------------------------------------------------
 rm(list = ls())
 load(file='../../../data/exp1_data.RData')
+df.long = df.long %>% 
+  mutate(id = id+1)
 
+# EXP1: Load model predictions -------------------------------------------------------------------------------
+load(file='../models/exp1_predictions.RData')
+df.long = df.long %>% 
+  left_join(df.results %>% select(-winner) %>% rename(prediction = rating))
 # EXP1: Plot (just data) ----------------------------------------------------------------------------------
 
 df.plot = df.long %>% 
-  mutate(rating = rating-50,
-         id = id +1) %>% 
+  mutate(rating = rating-50) %>% 
   left_join(df.info) %>% 
   mutate(id = as.factor(id),
          winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
@@ -159,19 +169,20 @@ ggplot(df.plot,aes(x = id, y = rating))+
 
 ggsave('../../../figures/plots/exp1_bars.pdf',width=10,height=6)
 
-
 # EXP1: Model predictions and regression ------------------------------------------------------
 
 # create means and add "predictions"
 df.regression = df.long %>% 
-  mutate(id = id+1) %>% 
+  left_join(df.info) %>% 
   group_by(id) %>% 
+  mutate(rating = rating -50,
+         prediction = prediction - 50) %>% 
   summarise(mean = mean(rating),
             ci.low = smean.cl.boot(rating)[2], #bootstrapped confidence intervals 
-            ci.high = smean.cl.boot(rating)[3]
+            ci.high = smean.cl.boot(rating)[3],
+            predictions = mean(prediction)
   ) %>% 
-  left_join(df.info) %>% 
-  mutate(predictions = rnorm(nrow(.))) #just randomly drawn numbers 
+  left_join(df.info)
 
 df.regression$predictions = lm(mean~predictions,data=df.regression)$fitted.values
 
@@ -180,7 +191,11 @@ df.plot = df.regression %>%
   gather(index,value,c(mean,predictions)) %>% 
   mutate_each(funs(ifelse(index != "mean", NA, .)),contains("ci")) %>% 
   mutate(id = as.factor(id),
-         winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")))
+         winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
+         value = ifelse(winner == "Loss", value*-1, value),
+         ci.low = ifelse(winner == "Loss", ci.low*-1, ci.low),
+         ci.high = ifelse(winner == "Loss", ci.high*-1, ci.high)
+         )
 
 ggplot(df.plot,aes(x = id, y = value, group = index, fill = index))+
   geom_bar(stat= "identity", color="black", position = position_dodge(0.9), width = 0.9)+
@@ -192,24 +207,23 @@ ggplot(df.plot,aes(x = id, y = value, group = index, fill = index))+
   theme(text = element_text(size = 20),
         panel.grid = element_blank(),
         legend.position = "bottom")
-
+ggsave('../../../figures/plots/exp1_data_model_bars.pdf',width=10,height=6)
 
 # EXP1: Plot (scatterplot)  -------------------------------------------------------------------
 
 df.plot = df.regression 
 
 ggplot(df.plot,aes(x = predictions, y = mean))+
+  geom_smooth(method = lm,color = "black")+
   geom_point()+
   geom_errorbar(aes(min = ci.low,max = ci.high),width=0)+
   geom_text(aes(label=id),size=5,hjust=1.2,vjust=0)+
-  theme_bw()+
   labs(x = 'model', y = 'data')+
+  annotate(geom = "text", x= -Inf, y = Inf, label = paste0("r = ", cor(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 1.5)+
+  annotate(geom = "text", x= -Inf, y = Inf, label = paste0("RMSE = ", rmse(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 3)+
+  theme_bw()+
   theme(text = element_text(size = 20),
         panel.grid = element_blank(),
         legend.position = "bottom")
-
-
-
-
-
+ggsave('../../../figures/plots/exp1_scatter.pdf',width=8,height=6)
 
