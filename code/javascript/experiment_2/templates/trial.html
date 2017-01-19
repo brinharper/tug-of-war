@@ -1,0 +1,143 @@
+<!-- INSTRUCTIONS -->
+<div class="slide" id="instructions-training-1">
+	<h1>Instructions</h1>
+	<div class="blue">
+		<p>In this experiment, you task is to judge how strong you think different players are, based on their performance in a tug of war tournament.</p>
+
+		<p>In each game, a player either competes as part of a team, or individually. For example, in the Tournament shown below, PW and MM competed against JP and AW in Game 1. The crown indicates which team won the game. Here, PW and MM won against JP and AW.</p>
+
+		<p>In Game 2, PW lost the game against JP.</p>
+
+		<hr />
+		<div class = "table_container">
+			 <div class = "left_table2"> 
+				<h2>Tournament</h2>
+				<h3 style='text-align:center'>Game 1</h3>
+				<div><ul class='game' style='text-align:center'>
+					<li><img src='static/images/crown.png' alt='crown'/></li>
+					<li><ul class='team' style='border-color:blue'>
+						<li style='background-color:lightblue'>PW</li>
+						<li style='background-color:lightgreen'>MM</li>
+					</ul></li><li> VS. </li><li><ul class='team' style='border-color:red'>
+						<li style='background-color:lightpink'>JP</li>
+						<li style='background-color:lightyellow'>AW</li>
+					</ul></li>
+					<li><img src='static/images/nocrown.png' alt='crown'/></li>
+				</ul></div>
+				<h3 style='text-align:center'>Game 2</h3>
+				<div><ul class='game' style='text-align:center'>
+					<li><img src='static/images/nocrown.png' alt='crown'/></li>
+					<li><ul class='team' style='border-color:blue'>
+						<li style='background-color:lightblue'>PW</li>
+					</ul></li><li> VS. </li><li><ul class='team' style='border-color:red'>
+						<li style='background-color:lightpink'>JP</li>
+					</ul></li>
+					<li><img src='static/images/crown.png' alt='crown'/></li>
+				</ul></div>
+			</div>
+			<!-- <div class = "right_table2">
+				<div id="top-row" style="display:inline-block; width:100%">
+					<h2 style="display: table-cell; float:left">Commentary</h2>
+					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>
+				</div>
+				<hr/>
+				<div>
+					<p>MM is a strong player.</p>
+					<p>MM was lazy during the match.</p>
+					<p>JP is a strong player.</p>
+				</div>
+			</div>
+ -->		</div>
+		<div class="spacer"></div>
+		<hr/>
+
+		<p>Note that <b>a player's strength remains constant</b> throughout a tournament. For example, PW was equally strong in Game 1 and in Game 2. A player neither gets stronger nor weaker between games.</p>
+
+		<p>However, <b>each player has a certain chance of being lazy in any given game</b>. If a player decides to be lazy, then that player doesn't pull with all their strength. For example, it's possible that PW pulled with all his strength in Game 1 but decided to be lazy in Game 2.</p>
+
+		<p>A team's strength is determined by the sum of the strengths of its players. The team with the greater overall strength wins the game.</p>
+
+		<p>Please press 'Start' to proceed. We will ask you a few test questions to check that you've understood how everything works.</p>
+	<div class="continue">
+		<button type="button" class="next">Start</button>
+	</div>
+	
+</div>
+
+</div>
+
+<!-- TASK -->
+<div class="slide" id="trial">
+	<div id="progress">
+		<div id="progress-text">Progress</div>
+		<div id="indicator-container">
+			<div id="indicator-outer">
+				<div id="indicator-stage"></div>
+			</div>
+		</div>
+		<div class="spacer"></div>
+	</div>
+	<hr />
+	<div id="stim">
+		<div id ="prompt-text"></div>
+		<hr />
+		<div class = "table_container">
+			 <div class= "left_table"> 
+				<h2>Games</h2>
+				<div id="games"></div>
+			</div>
+			<div class= "right_table">
+				<div id="top-row" style="display:inline-block; width:100%">
+					<h2 style="display: table-cell; float:left">Commentary</h2>
+					<img src="static/images/commentator.png" style="display:table-cell; float:right; border:3px ridge; border-radius: 7px" height="75px" alt="comm"/>
+				</div>
+				<hr/>
+				<div id="commentary"></div>
+			</div>
+		</div>
+		<div class="spacer"></div>
+		<hr /> 
+	</div>
+	<div id="questions"></div>
+	<div class="continue">
+		<button type="button" id="trial_next" class="next">Continue</button>
+	</div>
+	<div class='player-popup'></div>
+	<div id="dialog">
+		Incorrect response. Please read the instructions again.
+	</div>
+</div>
+
+<!-- DEMOGRAPHICS -->
+<div class="slide" id="demographics">
+	<h1>Demographic information</h1>
+	<div class="blue">
+		<p>What factors influenced your judgments? Do you have any comments regarding the experiment? </p>
+
+		<textarea name="feedback" style="width:760px; height:100px;"  ></textarea> 
+
+		<p><b>Please answer the following questions about yourself to complete the experiment</b>:</p>
+
+		<p><b>1.</b> Age:
+			<input class = "demoQ numberQ" type="number" maxlength = "3" name="age" min="18" max="100" step = "1"> years
+		</p>
+
+		<p><b>2.</b> Gender:
+			<input class = "demoQ" type="radio" name="sex" value="female">Female
+			<input class = "demoQ" type="radio" name="sex" value="male" >Male
+		</p>
+		<br/>
+
+		<br/>
+
+		<p>Please press finish to complete the experiment.</p>
+
+	</div> 
+	
+	<div class="continue">
+		<button type="button" class="next" id="trial_finish">Finish</button>
+	</div>
+</div>
+
+
+

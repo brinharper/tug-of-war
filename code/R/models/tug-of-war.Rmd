@@ -60,6 +60,10 @@ var tugOfWarModel = function(){
     var lazy = mem(function(person, match) {
       return flip(lazinessPrior)
     })
+
+    var lazyRandom = function() {
+      return flip(lazinessPrior)
+    }
     
     var pulling = function(person, match) {
       return lazy(person, match) ? strength(person) * 0.5 : strength(person)
@@ -77,6 +81,13 @@ var tugOfWarModel = function(){
     
     var beat = function(team1,team2, match){
       return winner(team1,team2, match) == team1
+    }
+
+    var wouldBeat = function(player1, player2) {
+      var p1 = lazyRandom() ? strength(player1) * 0.5 : strength(player1)
+      var p2 = lazyRandom() ? strength(player2) * 0.5 : strength(player2)
+      
+      return p1 > p2
     }
     
     var conditions = function(i, len) {
@@ -105,12 +116,11 @@ Define match information (the only information that's used in the model above is
 Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
 ```{r runTowModel}
-scenarioID = 29
+scenarioID = 0
 shouldPlot = TRUE
 #runModel <- function(scenarioID, shouldPlot) {
   
-  jsonFile = "stim.json"
-  stim <- fromJSON("stim.json")
+  stim <- fromJSON("exp2_stim.json")
   scene = stim$scenarios[(scenarioID+1),]
   
   retObject = 'return { '
@@ -124,7 +134,7 @@ shouldPlot = TRUE
     } else if (scene$questions[[1]][i] == 1) {
       elementToAdd = paste0("'laziness", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': lazy(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
     } else if (scene$questions[[1]][i] == 2) {
-      elementToAdd = paste0("'beat", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': beat(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
+      elementToAdd = paste0("'beat", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': wouldBeat(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ", 100)")
     }
   
     if (i < length(scene$questions[[1]])) {
@@ -135,13 +145,13 @@ shouldPlot = TRUE
   
   retObject = paste0(retObject, "}}")
   
-  towModel = paste0(towModel, retObject)
+  newModel = paste0(towModel, retObject)
   
   dataToWebPPL = list(lazinessPrior = 0.3, 
                       lazyPulling = 0.5,
                       matchInfo = scene)
   
-  rs <- webppl(program_code = towModel, 
+  rs <- webppl(program_code = newModel, 
                model_var = "tugOfWarModel",
     inference_opts = list(method = 'rejection', samples = 1000),
     data = dataToWebPPL,
@@ -163,7 +173,7 @@ shouldPlot = TRUE
     
     ggplot(rs.tidy, aes( x = val ))+
     geom_histogram() +
-    facet_wrap(~key, scales = 'free')
+    facet_wrap(~key, scales = 'free') 
     
   } else {
     #return(mean(rs$strength1))
@@ -173,20 +183,6 @@ shouldPlot = TRUE
 #}
 
 df <- data.frame(strength=integer())
-
-getMeans = function(n) {
-  for (i in n) {
-    m = runModel(i, FALSE)
-    df[i,] <- c(m) 
-  }
-  
-  df <- transform(df, strength.rank=ave(strength, FUN=function(x) {rank(x)}))
-  
-  ggplot(df, aes(x = strength.rank, y = strength))+
-    geom_bar(stat='identity')+
-    geom_text(data=df, aes(label=rownames(df)))+
-    coord_cartesian(ylim=c(45, 55))
-}
 
 #You can run the model on just one scenario in stim by calling runModel(id, TRUE)
   

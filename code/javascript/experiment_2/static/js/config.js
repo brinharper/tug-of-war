@@ -56,7 +56,7 @@ var Config = function (condition, counterbalance) {
     // Load the experiment configuration from the server
     this.load_config = function () {
         var that = this;
-        var jsonpath = "/static/json/games.json";
+        var jsonpath = "/static/json/exp2_stim.json";
         $.ajax({
             dataType: "json",
             url: jsonpath,
