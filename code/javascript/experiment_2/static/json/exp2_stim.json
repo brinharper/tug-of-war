@@ -105,7 +105,7 @@
 				}
 			],
 			"comments": [],
-			"questions": [2, 2],
+			"questions": [2],
 			"subjects": [{"player1": 1, "player2": 3}]
 		},
 		{
@@ -266,8 +266,8 @@
 				}
 			],
 			"comments": [],
-			"questions": [1, 1],
-			"subjects": [{"player": 1, "player2": 1}, {"player": 3, "player2": 1}]
+			"questions": [2, 2],
+			"subjects": [{"player1": 1, "player2": 1}, {"player1": 3, "player2": 1}]
 		}
 	],
 
