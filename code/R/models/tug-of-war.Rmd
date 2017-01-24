@@ -79,7 +79,7 @@ var tugOfWarModel = function(){
       return totalPulling(team1, match) > totalPulling(team2, match) ? team1 : team2
     }
     
-    var beat = function(team1,team2, match){
+    var beat = function(team1,team2, match) {
       return winner(team1,team2, match) == team1
     }
 
