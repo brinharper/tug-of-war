@@ -120,7 +120,7 @@ scenarioID = 0
 shouldPlot = TRUE
 #runModel <- function(scenarioID, shouldPlot) {
   
-  stim <- fromJSON("exp2_stim.json")
+  stim <- fromJSON("../javascript/experiment_2/static/json/exp2_stim.json")
   scene = stim$scenarios[(scenarioID+1),]
   
   retObject = 'return { '
