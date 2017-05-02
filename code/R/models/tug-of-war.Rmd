@@ -120,7 +120,7 @@ scenarioID = 0
 shouldPlot = TRUE
 #runModel <- function(scenarioID, shouldPlot) {
   
-  stim <- fromJSON("../javascript/experiment_2/static/json/exp2_stim.json")
+  stim <- fromJSON("../../javascript/experiment_2/static/json/exp2_stim.json")
   scene = stim$scenarios[(scenarioID+1),]
   
   retObject = 'return { '
@@ -191,76 +191,133 @@ df <- data.frame(strength=integer())
 ```
 
 ```{r getModelPredictions}
-jsonFile = "stim.json"
-stim <- fromJSON("stim.json")
+stim <- fromJSON("../../javascript/experiment_2/static/json/exp2_stim.json")
 
-df.results <- data.frame(id=integer(), winner=integer(), rating=integer())
-winners <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 21, 23, 24, 25, 27)
+firstGame = 0
+lastGame = 1
 
-for (x in 1:30) {
+df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
+df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
+df.wouldwin <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
+
+sIndex = 0
+lIndex = 0
+wIndex = 0
+
+for (x in (firstGame + 1):(lastGame + 1)) {
   scene = stim$scenarios[x,]
   
-  retObject = 'return { '
-  
-  
-  
   for (i in 1:length(scene$questions[[1]])) {
+    retObject = 'return { '
     elementToAdd = ""
+    ide = "0"
     if (scene$questions[[1]][i] == 0) {
+      sIndex = sIndex + 1
       elementToAdd = paste0("'strength", scene$subjects[[1]][i, 1], "': strength(", scene$subjects[[1]][i, 1], ")")
+      ide = paste0(x-1, "-", scene$subjects[[1]][i, 1])
     } else if (scene$questions[[1]][i] == 1) {
+      lIndex = lIndex + 1
       elementToAdd = paste0("'laziness", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': lazy(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
+      ide = paste0(x-1, '\n')
+      for (game in 1:length(scene$games[[1]]$winner)) {
+        for (player in 1:length(scene$games[[1]]$team1[[game]])) {
+          ide = paste0(ide, scene$games[[1]]$team1[[game]][player])
+          if (scene$games[[1]]$team1[[game]][player] == scene$subjects[[1]][i, 1] && game == scene$subjects[[1]][i, 2]) {
+            ide = paste0(ide, '? ')
+          } else {
+            ide = paste0(ide, ' ')
+          }
+        }
+        if (scene$games[[1]]$winner[[game]] == 1) {
+          ide = paste0(ide, '>')
+        } else {
+          ide = paste0(ide, '<')
+        }
+        for (player in 1:length(scene$games[[1]]$team2[[game]])) {
+          ide = paste0(ide, ' ', scene$games[[1]]$team2[[game]][player])
+          if (scene$games[[1]]$team2[[game]][player] == scene$subjects[[1]][i, 1] && game == scene$subjects[[1]][i, 2]) {
+            ide = paste0(ide, '?')
+          } else {
+            ide = paste0(ide)
+          }
+        }
+        ide = paste0(ide, '\n')
+      }
     } else if (scene$questions[[1]][i] == 2) {
-      elementToAdd = paste0("'beat", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': beat(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
+      wIndex = wIndex + 1
+      elementToAdd = paste0("'beat", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': wouldBeat(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
+      ide = paste0(x-1, "-", scene$subjects[[1]][i, 1],",", scene$subjects[[1]][i, 2])
     }
   
     if (i < length(scene$questions[[1]])) {
       elementToAdd = paste0(elementToAdd, ", ")
     }
     retObject = paste0(retObject, elementToAdd)
+  
+    retObject = paste0(retObject, "}}")
+  
+    newModel = paste0(towModel, retObject)
+  
+    dataToWebPPL = list(lazinessPrior = 0.3, 
+                        lazyPulling = 0.5,
+                        matchInfo = scene)
+  
+    rs <- webppl(program_code = newModel, 
+                 model_var = "tugOfWarModel",
+      inference_opts = list(method = 'rejection', samples = 1000),
+      data = dataToWebPPL,
+      data_var = "datafromR",
+      output_format = "samples"
+    )
+    
+    rs.tidy <- rs %>%
+    gather(key, val)
+  
+    rs.tidy$val <- as.double(rs.tidy$val)
+    
+    if (scene$questions[[1]][i] == 0) {
+      df.strength[sIndex,] <- c(ide, mean(rs.tidy$val))
+    } else if (scene$questions[[1]][i] == 1) {
+      df.lazy[lIndex,] <- c(ide, mean(rs.tidy$val))
+    } else if (scene$questions[[1]][i] == 2) {
+      df.wouldwin[wIndex,] <- c(ide, mean(rs.tidy$val))
+    }
   }
-  
-  retObject = paste0(retObject, "}}")
-  
-  newModel = paste0(towModel, retObject)
-  
-  dataToWebPPL = list(lazinessPrior = 0.3, 
-                      lazyPulling = 0.5,
-                      matchInfo = scene)
-  
-  rs <- webppl(program_code = newModel, 
-               model_var = "tugOfWarModel",
-    inference_opts = list(method = 'rejection', samples = 1000),
-    data = dataToWebPPL,
-    data_var = "datafromR",
-    output_format = "samples"
-  )
-  
-  w = ifelse(x %in% winners, 1, 2)
-  df.results[x,] <- c(x, w, mean(rs$strength1))
-  
 }
 
 ```
 
 ```{r plotResults}
 
-df.plot = df.results %>% 
-  mutate(rating = rating-50) %>%
-  mutate(id = as.factor(id),
-        winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
-         rating = ifelse(winner == "Loss", rating*-1, rating))
+#df.plot = df.results %>% 
+#  mutate(rating = rating-50) %>%
+#  mutate(id = as.factor(id),
+#        winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
+#         rating = ifelse(winner == "Loss", rating*-1, rating))
 
-ggplot(df.plot,aes(x = id, y = rating))+
+ggplot(df.strength,aes(x = id, y = as.numeric(rating)))+
   stat_summary(fun.y = 'identity',geom='bar',color = 'black',fill = 'gray80')+
-  stat_summary(fun.data = 'mean_cl_boot',geom='linerange',size = 1)+
-  facet_wrap(~winner,scales = "free_x",ncol=1)+
-  labs(y = 'weakness/strength judgment', x = 'tournament number')+
+  labs(y = 'strength', x = 'tournament-player')+
   theme_bw()+
-  theme(text = element_text(size = 20),
+  scale_y_continuous(limits = c(0,100))+
+  theme(text = element_text(size = 10),
         panel.grid = element_blank())
 
-ggsave('../../../figures/plots/model1_bars.pdf',width=10,height=6)
+ggplot(df.lazy,aes(x = id, y = rating))+
+  stat_summary(fun.y = 'identity',geom='bar',color = 'black',fill = 'gray80')+
+  labs(y = 'probability of laziness', x = 'tournament-player,match')+
+  theme_bw()+
+  theme(text = element_text(size = 10),
+        panel.grid = element_blank())
+
+ggplot(df.wouldwin,aes(x = id, y = rating))+
+  stat_summary(fun.y = 'identity',geom='bar',color = 'black',fill = 'gray80')+
+  labs(y = 'probability of player 1 win', x = 'tournament-player1,player2')+
+  theme_bw()+
+  theme(text = element_text(size = 10),
+        panel.grid = element_blank())
+
+#ggsave('../../../figures/plots/model1_bars.pdf',width=10,height=6)
 
 ```
 

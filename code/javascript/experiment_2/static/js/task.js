@@ -132,12 +132,7 @@ var TestPhase = function() {
 			if (counter < 0) {
 				$("#prompt-text").text("TEST QUESTIONS");
 			} else {
-				console.log('test')
-				var scenarioSubjects = that.scenario.subjects;
-				var view = scenarioSubjects[0];
-				var p = (Mustache.render($c.prompt, view));
-				$("#prompt-text").html(nameify(p));
-				console.log('nameify(p)', nameify(p));
+				$("#prompt-text").html($c.prompt);
 			}
 	
 			var html = "";
