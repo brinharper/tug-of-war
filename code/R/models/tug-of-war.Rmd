@@ -116,7 +116,7 @@ Define match information (the only information that's used in the model above is
 Also, define the lazinessPrior and lazyPulling variables, package them up into `dataToWebPPL`, and pass it to the WebPPL model using the `data` and `data_var` options. (?webppl for more details)
 
 ```{r runTowModel}
-scenarioID = 0
+scenarioID = 1
 shouldPlot = TRUE
 #runModel <- function(scenarioID, shouldPlot) {
   
