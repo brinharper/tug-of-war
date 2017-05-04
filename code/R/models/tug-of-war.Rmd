@@ -66,7 +66,7 @@ var tugOfWarModel = function(){
     }
     
     var pulling = function(person, match) {
-      return lazy(person, match) ? strength(person) * 0.5 : strength(person)
+      return lazy(person, match) ? strength(person) * 0.2 : strength(person)
     }
     
     var totalPulling = function(team, match) {
@@ -194,7 +194,7 @@ df <- data.frame(strength=integer())
 stim <- fromJSON("../../javascript/experiment_2/static/json/exp2_stim.json")
 
 firstGame = 0
-lastGame = 1
+lastGame = 32
 
 df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
 df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
@@ -303,12 +303,14 @@ ggplot(df.strength,aes(x = id, y = as.numeric(rating)))+
   theme(text = element_text(size = 10),
         panel.grid = element_blank())
 
-ggplot(df.lazy,aes(x = id, y = rating))+
+ggplot(df.lazy, aes(x = reorder(id, as.double(rating)), y = rating))+
   stat_summary(fun.y = 'identity',geom='bar',color = 'black',fill = 'gray80')+
   labs(y = 'probability of laziness', x = 'tournament-player,match')+
   theme_bw()+
   theme(text = element_text(size = 10),
         panel.grid = element_blank())
+
+ggsave('model2_bars.pdf',width=25,height=6)
 
 ggplot(df.wouldwin,aes(x = id, y = rating))+
   stat_summary(fun.y = 'identity',geom='bar',color = 'black',fill = 'gray80')+
@@ -317,7 +319,7 @@ ggplot(df.wouldwin,aes(x = id, y = rating))+
   theme(text = element_text(size = 10),
         panel.grid = element_blank())
 
-#ggsave('../../../figures/plots/model1_bars.pdf',width=10,height=6)
+
 
 ```
 
