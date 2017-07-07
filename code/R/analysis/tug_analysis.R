@@ -1,13 +1,21 @@
+# To do list ----------------------------------------------------------------------------------
+# explore how well different version of the tow model perform 
+# - no laziness 
+# - more laziness 
+# - what happens when lazy ... 
+
+
 # Read packages  ------------------------------------------------------------------------------
 library(Hmisc)
 library(xtable)
 library(lsr)
 library(RSQLite)
-library(dplyr)
 library(rjson)
 library(tidyr)
 library(ggplot2)
 library(stringr)
+library(magrittr)
+library(dplyr)
 
 # Misc functions  -----------------------------------------------------------------------------
 
@@ -140,7 +148,7 @@ df.wide = df.wide %>%
 save(df.wide,df.long,df.info,df.games,file='../../../data/exp1_data.RData')
 
 # EXP1: Load data -------------------------------------------------------------------------------
-rm(list = ls())
+# rm(list = ls())
 load(file='../../../data/exp1_data.RData')
 df.long = df.long %>% 
   mutate(id = id+1)
@@ -167,7 +175,7 @@ ggplot(df.plot,aes(x = id, y = rating))+
   theme(text = element_text(size = 20),
         panel.grid = element_blank())
 
-ggsave('../../../figures/plots/exp1_bars.pdf',width=10,height=6)
+# ggsave('../../../figures/plots/exp1_bars.pdf',width=10,height=6)
 
 # EXP1: Model predictions and regression ------------------------------------------------------
 
@@ -207,23 +215,42 @@ ggplot(df.plot,aes(x = id, y = value, group = index, fill = index))+
   theme(text = element_text(size = 20),
         panel.grid = element_blank(),
         legend.position = "bottom")
-ggsave('../../../figures/plots/exp1_data_model_bars.pdf',width=10,height=6)
+# ggsave('../../../figures/plots/exp1_data_model_bars.pdf',width=10,height=6)
 
 # EXP1: Plot (scatterplot)  -------------------------------------------------------------------
 
-df.plot = df.regression 
+df.plot = df.regression
 
 ggplot(df.plot,aes(x = predictions, y = mean))+
+  
+  geom_hline(yintercept = 0, linetype = 2, size = 1, alpha = 0.5)+
   geom_smooth(method = lm,color = "black")+
-  geom_point()+
-  geom_errorbar(aes(min = ci.low,max = ci.high),width=0)+
-  geom_text(aes(label=id),size=5,hjust=1.2,vjust=0)+
-  labs(x = 'model', y = 'data')+
-  annotate(geom = "text", x= -Inf, y = Inf, label = paste0("r = ", cor(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 1.5)+
-  annotate(geom = "text", x= -Inf, y = Inf, label = paste0("RMSE = ", rmse(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 3)+
+  # geom_errorbar(aes(min = ci.low,max = ci.high),width=0, alpha = 0.5, size = 1.5)+
+  geom_errorbar(aes(min = ci.low,max = ci.high),width=0, alpha = 0.5, size = 1)+
+  geom_point(size = 3)+
+  # geom_text(aes(label=id),size=5,hjust=1.2,vjust=0)+
+  labs(x = 'model predictions', y = 'mean judgments')+
+  annotate(geom = "text", x= -50, y = Inf, label = paste0("r = ", cor(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 1.5)+
+  annotate(geom = "text", x= -50, y = Inf, label = paste0("RMSE = ", rmse(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 3)+
+  scale_x_continuous(limits = c(-50,50),breaks = seq(-50,50,25),labels = seq(-50,50,25))+
+  scale_y_continuous(limits = c(-50,50),breaks = seq(-50,50,25),labels = seq(-50,50,25))+
   theme_bw()+
   theme(text = element_text(size = 20),
         panel.grid = element_blank(),
         legend.position = "bottom")
 ggsave('../../../figures/plots/exp1_scatter.pdf',width=8,height=6)
 
+# EX: Gaussian with mean 50 and SD 10  --------------------------------------------------------
+
+df.plot = data.frame(x = seq(25,75,0.1)) %>% 
+  mutate(y = dnorm(x, mean = 50, sd = 10))
+
+ggplot(df.plot,aes(x = x, y = y)) +
+  # geom_hline(yintercept = 0, linetype = 2)+
+  geom_line(size = 2)+
+  labs(x = 'strength', y = 'p(strength)')+
+  theme_bw()+
+  theme(text = element_text(size = 20),
+        panel.grid = element_blank(),
+        legend.position = "bottom")
+ggsave('../../../figures/plots/exp1_strength_prior.pdf',width=8,height=6)
