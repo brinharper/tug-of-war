@@ -155,8 +155,9 @@ shouldPlot = TRUE
                model_var = "tugOfWarModel",
     inference_opts = list(method = 'rejection', samples = 1000),
     data = dataToWebPPL,
-    data_var = "datafromR",
-    output_format = "samples"
+    data_var = "datafromR"
+    # ,
+    # output_format = "samples"
   )
   
   # Plotting the results
