@@ -4,8 +4,8 @@
 			"id": 0,
 			"games": [
 				{
-					"team1": ["AA"],
-					"team2": ["BB"],
+					"team1": ["Rick"],
+					"team2": ["Andy"],
 					"winner": 2
 				}
 			],
@@ -17,18 +17,18 @@
 			"id": 1,
 			"games": [
 				{
-					"team1": ["CC"],
-					"team2": ["DD"],
+					"team1": ["George"],
+					"team2": ["David"],
 					"winner": 1
 				},
 				{
-					"team1": ["CC"],
-					"team2": ["EE"],
+					"team1": ["George"],
+					"team2": ["Hubert"],
 					"winner": 1
 				},
 				{
-					"team1": ["DD"],
-					"team2": ["EE"],
+					"team1": ["David"],
+					"team2": ["Hubert"],
 					"winner": 2
 				}
 			],

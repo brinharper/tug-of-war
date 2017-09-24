@@ -236,10 +236,10 @@ var TestPhase = function() {
 				html = "<h4>Please answer the following question about the tournament shown above:</h4>";
 				if (counter == -2) {
 					html += '<p class="question">Who won the above game?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonAA">AA</button></li><li><button id="t_buttonBB">BB</button></li></ul>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonRick">Rick</button></li><li><button id="t_buttonAndy">Andy</button></li></ul>';
 				} else if (counter == -1) {
 					html += '<p class="question">Which of the following scenarios is the only one possible?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_stronger">EE was stronger in Game 3 than in Game 2.</button></li><li><button id="t_lazy">EE was lazy in Game 2 but not in Game 3.</button></li><li><button id="t_lazy_strong">DD is stronger than CC and was not lazy in Game 1.</button></li></ul>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_stronger">Hubert was stronger in Game 3 than in Game 2.</button></li><li><button id="t_lazy">Hubert was lazy in Game 2 but not in Game 3.</button></li><li><button id="t_lazy_strong">David is stronger than George and was not lazy in Game 1.</button></li></ul>';
 				}
 
 				$('#questions').html(html);
@@ -248,12 +248,12 @@ var TestPhase = function() {
 			}	
 
 
-			$("#t_buttonAA").click(function() {
+			$("#t_buttonRick").click(function() {
 				$("#dialog").dialog("open");
 				counter = -$c.tests.length;
 				CURRENTVIEW = new Instructions();
 			});
-			$("#t_buttonBB").click(function() {
+			$("#t_buttonAndy").click(function() {
 				counter = counter + 1;
 				CURRENTVIEW = new TestPhase();
 			});
