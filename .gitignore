@@ -8,3 +8,11 @@ server.log
 .Rhistory
 code/R/.DS_Store
 code/R/analysis/.Rhistory
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
