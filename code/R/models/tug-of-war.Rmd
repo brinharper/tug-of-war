@@ -66,7 +66,7 @@ var tugOfWarModel = function(){
     }
     
     var pulling = function(person, match) {
-      return lazy(person, match) ? strength(person) * 0.2 : strength(person)
+      return lazy(person, match) ? strength(person) * lazyPulling : strength(person)
     }
     
     var totalPulling = function(team, match) {

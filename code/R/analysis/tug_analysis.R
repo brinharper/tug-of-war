@@ -313,13 +313,14 @@ ggplot(df.plot,aes(x = reorder(trial,response), y = response))+
   stat_summary(fun.y = 'mean', geom = 'point', size = 3)+
   stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width=0)+
   geom_point(position = position_jitter(height = 0, width = 0.2), alpha = 0.3)+
-  geom_point(data = df.regression, aes(x = reorder(trial,mean), y = prediction), color = 'red')+
+  # geom_point(data = df.regression, aes(x = reorder(trial,mean), y = prediction), color = 'red',size=2)+
+  geom_point(data = df.regression, aes(x = reorder(trial,mean), y = model), color = 'red',size=2)+
   labs(x = "trial", y = "rating")+
   theme_bw()+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
-ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
+# ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
   
 
 # EXP2: Scatter  ------------------------------------------------------------------------------
@@ -327,6 +328,7 @@ ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
 df.plot = df.regression
 
 ggplot(df.plot,aes(x = prediction, y = mean))+
+# ggplot(df.plot,aes(x = model, y = mean))+
   geom_smooth(method = 'lm', color = 'black')+
   geom_point(size=2)+
   geom_text_repel(aes(label = trial))+
@@ -335,7 +337,7 @@ ggplot(df.plot,aes(x = prediction, y = mean))+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
-ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
+# ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
 
 cor(df.regression$model,df.regression$mean)
 

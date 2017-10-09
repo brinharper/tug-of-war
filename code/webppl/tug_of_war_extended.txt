@@ -1,0 +1,267 @@
+// helper function
+var exp = function(x){return Math.exp(x)}
+
+// for discretization
+var binParam = 5; 
+
+var gaussianParams = {mu: 50, sigma: 10};
+
+// calculate the range in pre-defined steps;
+// these values correspond to possible heights
+var stateVals = _.range(gaussianParams.mu - 3 * gaussianParams.sigma,
+                        gaussianParams.mu + 3 * gaussianParams.sigma,
+                        gaussianParams.sigma/binParam)
+
+// for each possible height, calculate its probability of occurrence
+var stateProbs = cache(function(stateParams){
+  return map(function(s){
+    exp(Gaussian(stateParams).score(s))
+  }, stateVals)
+});
+///
+
+var DiscreteGaussian = cache(function(stateParams) {
+  return Infer({
+    model: function(){ return categorical({vs: stateVals, ps: stateProbs(stateParams)}) }
+  })
+});
+
+// generate the uniform threshold prior
+var thresholdBins = cache(function(utt, stateSupport){
+  return map(function(x){
+    return utt == "strong" ? x - (1/(binParam*2)) : x + (1/(binParam*2));
+  }, sort(stateSupport))
+})
+
+var thresholdPrior = cache(function(utt, stateSupport){
+  return Infer({
+    model: function() { return uniformDraw(thresholdBins(utt, stateSupport)) }
+  });
+});
+
+var somethingCost = 5
+var cost = {
+  "strong": somethingCost,
+  "weak": somethingCost,
+  "": 0
+};
+
+var UtterancePrior = cache(function(utt) {
+  var utterances =  [utt].concat([""])
+  var uttProbs = map(function(u) {return exp(-cost[u]) }, utterances);
+  return Categorical({ps: uttProbs, vs: utterances})
+});
+
+
+// meaning function for utterances
+var meaning = function(utterance, state, threshold) {
+  utterance == "strong" ? state > threshold ? flip(0.9999) : flip(0.0001) :
+  utterance == "weak" ? state < threshold ? flip(0.9999) : flip(0.0001) :
+  true
+}
+
+// set sepeaker optimality
+var alpha = 10;
+var statePrior = DiscreteGaussian(gaussianParams)
+
+var literalListener = cache(
+  function(utterance, threshold) {
+    Infer({model: function(){
+      var state = sample(statePrior);
+      var m = meaning(utterance, state, threshold);
+      condition(m);
+      return state;
+    }})
+  }, 10000 // limit cache size
+)
+
+var speaker1 = cache(
+  function(state, threshold, actualUtt) {
+    Infer({model: function(){
+      var utterance = sample(UtterancePrior(actualUtt));
+      var L0 = literalListener(utterance, threshold);
+      factor( alpha * L0.score(state) );
+      return utterance;
+    }})
+  }, 10000 // limit cache size
+)
+
+var pragmaticListener = cache(function(utterance) {
+  Infer({model: function(){
+    var state = sample(statePrior);
+    var threshold = sample(thresholdPrior(utterance, statePrior.support()))
+
+    var S1 = speaker1(state, threshold, utterance);
+    observe(S1, utterance);
+    return state 
+  }})
+}, 10000)
+
+
+
+
+
+// unpack data from R
+var lazinessPrior = 0.3
+var lazyPulling = 0.5
+var closeThreshold = 20
+
+var findMax = function(vals){
+  var maxVal = reduce(function(a, b){ 
+    return  Math.max(a, b)
+  }, 0,  vals)
+  return vals.indexOf(maxVal)
+}
+
+var uuid = function() {
+  var s4 = function() {
+    return (Math.floor((1 + Math.random()) * 0x100)
+            .toString(16)
+            .substring(1));
+  }
+  return '-' + s4()
+}
+
+var generateGame = function(player, winnerTeamIndex){
+  var team1size = uniformDraw([1,2,3])
+  var team2size = flip(0.7) ? team1size : uniformDraw([1,2,3])
+  return {
+    "team1": [player].concat(repeat(team1size - 1, uuid)),
+    "team2": repeat(team2size, uuid),
+    "winner": winnerTeamIndex
+  }
+}
+
+var wonNPreviousGames = function(player, nWon, nTotal){
+  return repeat(nWon, function(){ generateGame(player, 1) }).concat(
+    repeat(nTotal - nWon, function(){ generateGame(player, 2) })
+  )
+}
+
+
+
+var strengthDistribution = {
+  strong:  pragmaticListener("strong"),
+  weak: pragmaticListener("weak"),
+  normal: Gaussian({mu: 50, sigma: 10})
+}
+
+var whoIsWhat = {
+  //1: "strong",
+  // 2: "weak"
+}
+
+var model = function(){
+
+  var strength = mem(function(person) {
+    var isSpecial = whoIsWhat[person]
+    return sample(strengthDistribution[isSpecial ? isSpecial : "normal"])
+  })
+
+  var strongest = mem(function(team){
+    var teamStrengths = map(strength, team)
+    return team[findMax(teamStrengths)]
+  })
+
+  var lazy = mem(function(person, match) {
+    return flip(lazinessPrior)
+  })
+
+  var lazyRandom = function() {
+    return flip(lazinessPrior)
+  }
+
+  var pulling = function(person, match) {
+    return lazy(person, match) ? strength(person) * lazyPulling : strength(person)
+  }
+
+  var totalPulling = function(team, match) {
+    return sum(map(function(person) {
+      return pulling(person, match)
+    }, team))
+  }
+
+  var deltaTeamStrength = function(team1, team2, match){
+    return totalPulling(team1, match) - totalPulling(team2, match)
+  }
+
+  var isClose = function(team1, team2, match){
+    return Math.abs(deltaTeamStrength(team1, team2, match)) < closeThreshold
+  }  
+
+  var winner = function(team1, team2, match) {
+    return deltaTeamStrength(team1, team2, match) > 0 ? team1 : team2
+  }
+
+  var beat = function(team1,team2, match) {
+    return winner(team1,team2, match) == team1
+  }
+
+  var wouldBeat = function(player1, player2) {
+    var p1 = lazyRandom() ? strength(player1) * lazyPulling : strength(player1)
+    var p2 = lazyRandom() ? strength(player2) * lazyPulling : strength(player2)
+
+    return p1 > p2
+  }
+
+  var conditions = function(i, listOfGames) {
+    var len = listOfGames.length;
+    if (i < len) {
+      if (listOfGames[i].winner == 1) {
+        condition(beat(listOfGames[i].team1,
+                       listOfGames[i].team2,
+                       i + 1));
+      } else if (listOfGames[i].winner == 2) {
+        condition(beat(listOfGames[i].team2,
+                       listOfGames[i].team1,
+                       i + 1));
+      }
+      conditions(i + 1, listOfGames);
+    }
+  }
+
+  conditions(0, matchInfo.games);
+
+  //   conditions(0, wonNPreviousGames(1, 4, 4));
+
+  //   condition(strongest(matchInfo.games[0].team2) == 3)
+
+  //   var j = 0
+  return lazy(1, 1)
+  //   return isClose(matchInfo.games[j].team1,
+  //                  matchInfo.games[j].team2,
+  //                  j + 1)
+  //   return {p3: strength(3), p2: strength(2)}
+  //   return strongest(matchInfo.games[0].team2)
+  //   return strength(1)
+  //   return strength(1) > strength(2)
+}
+var matchInfo = {
+  "games": [
+    {
+      "team1": [1],
+      "team2": [2],
+      "winner": 2
+    },
+    //         {
+    //           "team1": [1],
+    //           "team2": [2],
+    //           "winner": 1
+    //         }
+    //         {
+    //           "team1": [2],
+    //           "team2": [1],
+    //           "winner": 2
+    //         }
+  ]
+}
+
+var posterior = Infer({model, method: "rejection", samples: 1000})
+display(expectation(posterior))
+viz(posterior)
+
+// wonNPreviousGames(1, 10, 10)
+// display(expectation(posterior, function(s){ s.p3 }))
+// viz(marginalize(posterior, "p3"))
+// display(expectation(posterior, function(s){ s.p2 }))
+// viz(marginalize(posterior, "p2"))
