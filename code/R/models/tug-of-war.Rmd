@@ -126,7 +126,6 @@ shouldPlot = TRUE
   retObject = 'return { '
   
   
-  
   for (i in 1:length(scene$questions[[1]])) {
     elementToAdd = ""
     if (scene$questions[[1]][i] == 0) {
@@ -265,26 +264,34 @@ for (x in (firstGame + 1):(lastGame + 1)) {
   
     rs <- webppl(program_code = newModel, 
                  model_var = "tugOfWarModel",
+      # inference_opts = list(method = 'rejection', samples = 1000),
       inference_opts = list(method = 'rejection', samples = 1000),
       data = dataToWebPPL,
-      data_var = "datafromR",
-      output_format = "samples"
+      data_var = "datafromR"
     )
     
-    rs.tidy <- rs %>%
-    gather(key, val)
+    # rs.tidy <- rs %>%
+    # gather(key, val, -c(Iteration,Chain))
   
-    rs.tidy$val <- as.double(rs.tidy$val)
+    rs$value <- as.double(rs$value)
     
     if (scene$questions[[1]][i] == 0) {
-      df.strength[sIndex,] <- c(ide, mean(rs.tidy$val))
+      df.strength[sIndex,] <- c(ide, mean(rs$value))
     } else if (scene$questions[[1]][i] == 1) {
-      df.lazy[lIndex,] <- c(ide, mean(rs.tidy$val))
+      df.lazy[lIndex,] <- c(ide, mean(rs$value))
     } else if (scene$questions[[1]][i] == 2) {
-      df.wouldwin[wIndex,] <- c(ide, mean(rs.tidy$val))
+      df.wouldwin[wIndex,] <- c(ide, mean(rs$value))
     }
   }
 }
+
+df.lazy = df.lazy %>% 
+  mutate(rating = as.numeric(rating),
+         rating = 1-rating,
+         trial = 1:nrow(.)) %>% 
+  select(trial,id,rating)
+
+save(df.lazy,file = 'tow_exp2_prediction.RData')
 
 ```
 

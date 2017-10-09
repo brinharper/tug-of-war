@@ -21,6 +21,7 @@ psiTurk.preloadPages($c.pages);
 var CURRENTVIEW;
 var STATE;
 var counter = 0;
+// var counter = 32;
 
 /*************************
  * INSTRUCTIONS         
@@ -239,7 +240,7 @@ var TestPhase = function() {
 					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_buttonRick">Rick</button></li><li><button id="t_buttonAndy">Andy</button></li></ul>';
 				} else if (counter == -1) {
 					html += '<p class="question">Which of the following scenarios is the only one possible?</p>';
-					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_stronger">Hubert was stronger in Game 3 than in Game 2.</button></li><li><button id="t_lazy">Hubert was lazy in Game 2 but not in Game 3.</button></li><li><button id="t_lazy_strong">David is stronger than George and was not lazy in Game 1.</button></li></ul>';
+					html += '<ul style="list-style-type:none; padding:0"><li><button id="t_stronger">Hubert was stronger in Game 3 than in Game 2.</button></li><li><button id="t_lazy">Hubert did not try hard in Game 2, but he did try hard in Game 3.</button></li><li><button id="t_lazy_strong">David is stronger than George and David tried hard in Game 1.</button></li></ul>';
 				}
 
 				$('#questions').html(html);
@@ -345,14 +346,18 @@ var TestPhase = function() {
 
 	//records response 
 	this.record_response = function() {        
-		var response = [];
-		saveid = this.scenario.id;
-		   
-		for (var i=0; i<this.scenario.questions.length; i++) {
-			response.push($('.s-'+i).slider('value'));  
+		// for (var i=0; i<this.scenario.questions.length; i++) {
+		// 	response.push($('.s-'+i).slider('value'));  
+		// }
+
+		var response = $('.s-0').slider('value');
+		var trial = this.scenario.id;
+		var data = {
+			response: response,
+			trial: trial
 		}
-		debug(response)
-		psiTurk.recordTrialData(["trial", saveid, "judgments", response]);
+		
+		psiTurk.recordTrialData(data)
 		counter += 1;
 		
 		// Update the page with the current phase/trial
@@ -377,16 +382,16 @@ var TestPhase = function() {
 	$(function() {
 		$( "#dialog" ).dialog({
 		  autoOpen : false,
-	      resizable: false,
-	      height: "auto",
-	      width: 400,
-	      modal: true,
-	      buttons: {
-	        "OK": function() {
-	          $( this ).dialog( "close" );
-	        }
-	      }
-	    });
+		  resizable: false,
+		  height: "auto",
+		  width: 400,
+		  modal: true,
+		  buttons: {
+			"OK": function() {
+			  $( this ).dialog( "close" );
+			}
+		  }
+		});
 	})
 
 

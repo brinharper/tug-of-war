@@ -48,6 +48,7 @@ var Config = function (condition, counterbalance) {
     this.parse_config = function (data) {
         this.tests = data["tests"];
         this.scenarios = shuffle(data["scenarios"]); //shuffles the array 
+        // this.scenarios = data["scenarios"]; 
         this.questions = data["questions"];
         this.choices = data["choices"];
         this.colors = data["colors"];

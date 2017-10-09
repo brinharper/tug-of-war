@@ -11,17 +11,18 @@ library(xtable)
 library(lsr)
 library(RSQLite)
 library(rjson)
-library(tidyr)
-library(ggplot2)
 library(stringr)
 library(magrittr)
-library(dplyr)
+library(tidyjson)
+library(ggrepel)
+library(tidyverse)
 
 # Misc functions  -----------------------------------------------------------------------------
 
 rmse = function(x,y){
   return(sqrt(mean((x-y)^2)))
 }
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --------------------------------------------------------------
 # EXP1: Read in data (no need to run) -------------------------------------------------------------------------------
 rm(list = ls())
 
@@ -240,6 +241,104 @@ ggplot(df.plot,aes(x = predictions, y = mean))+
         legend.position = "bottom")
 ggsave('../../../figures/plots/exp1_scatter.pdf',width=8,height=6)
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --------------------------------------------------------------
+
+
+
+# EXP2: Read in data  -------------------------------------------------------------------------
+
+con = dbConnect(SQLite(),dbname = "../../javascript/experiment_2/participants.db");
+# con = dbConnect(SQLite(),dbname = "../../data/experiment1.db");
+df.data = dbReadTable(con,"tow")
+dbDisconnect(con)
+
+#filter out incompletes 
+df.data = df.data %>% 
+  filter(status %in% 3:5) %>%
+  filter(!str_detect(uniqueid,'debug')) %>%
+  filter(codeversion == 'experiment_2')
+
+# demographic data 
+df.demographics = df.data$datastring %>% 
+  spread_values(condition = jnumber('condition'),
+                age = jnumber('questiondata','age'),
+                gender = jstring('questiondata','sex'),
+                feedback = jstring('questiondata','feedback')
+  ) %>% 
+  rename(participant = document.id) %>% 
+  mutate(time = difftime(df.data$endhit,df.data$beginhit,units = 'mins'))
+
+# trial data 
+df.long = df.data$datastring %>% 
+  as.tbl_json() %>% 
+  spread_values(workerid = jstring('workerId')) %>%
+  enter_object('data') %>%
+  gather_array('order') %>% 
+  enter_object('trialdata') %>% 
+  gather_keys('index') %>% 
+  append_values_string('values') %>% 
+  as.data.frame() %>% 
+  spread(index,values) %>% 
+  mutate_at(vars(trial,response),funs(as.numeric)) %>% 
+  mutate(trial = trial + 1) %>% 
+  rename(participant = document.id) %>% 
+  select(participant,-workerid,order,trial,response) %>% 
+  arrange(participant,trial)
+
+
+# EXP2: Model predictions  --------------------------------------------------------------------
+
+load('../models/tow_exp2_prediction.RData')
+
+df.lazy = df.lazy %>% 
+  # select(trial,rating) %>% 
+  mutate(rating = rating*100) %>% 
+  rename(model = rating)
+
+df.regression = df.lazy %>% 
+  select(trial,model) %>% 
+  left_join(df.long %>% 
+              group_by(trial) %>% 
+              summarise(mean = mean(response))) %>% 
+  mutate(prediction = lm(mean~model,data=.)$fitted.values)
+
+xtable(df.lazy %>% select(id) %>% mutate(id = str_replace_all(id,"\n","; ")))
+
+# EXP2: Plot results  -------------------------------------------------------------------------
+
+df.plot = df.long %>% 
+  mutate(trial = factor(trial))
+
+ggplot(df.plot,aes(x = reorder(trial,response), y = response))+
+  stat_summary(fun.y = 'mean', geom = 'point', size = 3)+
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width=0)+
+  geom_point(position = position_jitter(height = 0, width = 0.2), alpha = 0.3)+
+  geom_point(data = df.regression, aes(x = reorder(trial,mean), y = prediction), color = 'red')+
+  labs(x = "trial", y = "rating")+
+  theme_bw()+
+  theme(panel.grid = element_blank(),
+        text = element_text(size = 20))
+
+ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
+  
+
+# EXP2: Scatter  ------------------------------------------------------------------------------
+
+df.plot = df.regression
+
+ggplot(df.plot,aes(x = prediction, y = mean))+
+  geom_smooth(method = 'lm', color = 'black')+
+  geom_point(size=2)+
+  geom_text_repel(aes(label = trial))+
+  labs(x = "model", y = "data")+
+  theme_bw()+
+  theme(panel.grid = element_blank(),
+        text = element_text(size = 20))
+
+ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
+
+cor(df.regression$model,df.regression$mean)
+
 # EX: Gaussian with mean 50 and SD 10  --------------------------------------------------------
 
 df.plot = data.frame(x = seq(25,75,0.1)) %>% 
@@ -253,4 +352,4 @@ ggplot(df.plot,aes(x = x, y = y)) +
   theme(text = element_text(size = 20),
         panel.grid = element_blank(),
         legend.position = "bottom")
-ggsave('../../../figures/plots/exp1_strength_prior.pdf',width=8,height=6)
+# ggsave('../../../figures/plots/exp1_strength_prior.pdf',width=8,height=6)
