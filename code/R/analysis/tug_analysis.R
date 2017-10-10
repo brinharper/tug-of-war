@@ -158,26 +158,6 @@ df.long = df.long %>%
 load(file='../models/exp1_predictions.RData')
 df.long = df.long %>% 
   left_join(df.results %>% select(-winner) %>% rename(prediction = rating))
-# EXP1: Plot (just data) ----------------------------------------------------------------------------------
-
-df.plot = df.long %>% 
-  mutate(rating = rating-50) %>% 
-  left_join(df.info) %>% 
-  mutate(id = as.factor(id),
-         winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
-         rating = ifelse(winner == "Loss", rating*-1, rating))
-
-ggplot(df.plot,aes(x = id, y = rating))+
-  stat_summary(fun.y = 'mean',geom='bar',color = 'black',fill = 'gray80')+
-  stat_summary(fun.data = 'mean_cl_boot',geom='linerange',size = 1)+
-  facet_wrap(~winner,scales = "free_x",ncol=1)+
-  labs(y = 'weakness/strength judgment', x = 'tournament number')+
-  theme_bw()+
-  theme(text = element_text(size = 20),
-        panel.grid = element_blank())
-
-# ggsave('../../../figures/plots/exp1_bars.pdf',width=10,height=6)
-
 # EXP1: Model predictions and regression ------------------------------------------------------
 
 # create means and add "predictions"
@@ -186,60 +166,66 @@ df.regression = df.long %>%
   group_by(id) %>% 
   mutate(rating = rating -50,
          prediction = prediction - 50) %>% 
-  summarise(mean = mean(rating),
+  summarise(response = mean(rating),
             ci.low = smean.cl.boot(rating)[2], #bootstrapped confidence intervals 
             ci.high = smean.cl.boot(rating)[3],
-            predictions = mean(prediction)
+            prediction = mean(prediction)
   ) %>% 
   left_join(df.info)
 
-df.regression$predictions = lm(mean~predictions,data=df.regression)$fitted.values
+df.regression$prediction = lm(response~prediction,data=df.regression)$fitted.values
 
-# EXP1: Plot (bars with model predictions) -----------------------------------------------------
+# EXP1: Plot (points)  -------------------------------------------------------------------------
+
+df.plot = df.long %>% 
+  mutate(id = factor(id)) %>% 
+  mutate(rating = rating - 50)
+
+ggplot(df.plot,aes(x = reorder(id,rating), y = rating))+
+  geom_hline(yintercept = 0,linetype = 2, color = "gray")+
+  stat_summary(fun.y = 'mean', geom = 'point', size = 3)+
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width=0)+
+  geom_point(position = position_jitter(height = 0, width = 0.1), alpha = 0.1)+
+  # geom_point(data = df.regression, aes(x = reorder(trial,mean), y = prediction), color = 'red',size=2)+
+  geom_point(data = df.regression, aes(x = reorder(id,response), y = prediction), color = 'red',size=2)+
+  labs(x = "trial", y = "rating")+
+  theme_bw()+
+  theme(panel.grid = element_blank(),
+        text = element_text(size = 20))
+
+ggsave('../../../figures/plots/exp1_means.pdf',width=12,height=6)
+
+
+# EXP1: Plot (scatter)  ------------------------------------------------------------------------------
+
 df.plot = df.regression %>% 
-  gather(index,value,c(mean,predictions)) %>% 
-  mutate_at(contains("ci"),funs(ifelse(index != "mean", NA, .))) %>% 
-  mutate(id = as.factor(id),
-         winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
-         value = ifelse(winner == "Loss", value*-1, value),
-         ci.low = ifelse(winner == "Loss", ci.low*-1, ci.low),
-         ci.high = ifelse(winner == "Loss", ci.high*-1, ci.high)
-         )
+  rename(trial = id) %>% 
+  left_join(df.long %>% 
+              mutate(response = rating-50) %>% 
+              rename(trial = id) %>% 
+              group_by(trial) %>% 
+              summarise(low = smean.cl.boot(response)[2],
+                        high = smean.cl.boot(response)[3]
+              ))
 
-ggplot(df.plot,aes(x = id, y = value, group = index, fill = index))+
-  geom_bar(stat= "identity", color="black", position = position_dodge(0.9), width = 0.9)+
-  geom_linerange(aes(min = ci.low, max = ci.high), size = 1, position = position_dodge(0.9))+
-  facet_wrap(~winner,scales = "free_x",ncol=1)+
-  scale_fill_grey(start = 1, end = 0.6)+
-  labs(y = 'weakness/strength judgment', x = 'tournament number', fill = "")+
+ggplot(df.plot,aes(x = prediction, y = response))+
+  # ggplot(df.plot,aes(x = model, y = mean))+
+  geom_hline(yintercept = 0, linetype = 2, color = "gray")+
+  geom_vline(xintercept = 0, linetype = 2, color = "gray")+
+  geom_smooth(method = 'lm', color = 'black')+
+  geom_errorbar(aes(ymin = low, ymax = high), alpha = 0.5)+
+  geom_point(size=2)+
+  geom_text_repel(aes(label = trial),size=6)+
+  scale_x_continuous(breaks = seq(-50,50,10), labels = seq(-50,50,10))+
+  scale_y_continuous(breaks = seq(-50,50,10), labels = seq(-50,50,10))+
+  labs(x = "model", y = "data")+
   theme_bw()+
-  theme(text = element_text(size = 20),
-        panel.grid = element_blank(),
-        legend.position = "bottom")
-# ggsave('../../../figures/plots/exp1_data_model_bars.pdf',width=10,height=6)
+  theme(panel.grid = element_blank(),
+        text = element_text(size = 20))
 
-# EXP1: Plot (scatterplot)  -------------------------------------------------------------------
-
-df.plot = df.regression
-
-ggplot(df.plot,aes(x = predictions, y = mean))+
-  
-  geom_hline(yintercept = 0, linetype = 2, size = 1, alpha = 0.5)+
-  geom_smooth(method = lm,color = "black")+
-  # geom_errorbar(aes(min = ci.low,max = ci.high),width=0, alpha = 0.5, size = 1.5)+
-  geom_errorbar(aes(min = ci.low,max = ci.high),width=0, alpha = 0.5, size = 1)+
-  geom_point(size = 3)+
-  # geom_text(aes(label=id),size=5,hjust=1.2,vjust=0)+
-  labs(x = 'model predictions', y = 'mean judgments')+
-  annotate(geom = "text", x= -50, y = Inf, label = paste0("r = ", cor(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 1.5)+
-  annotate(geom = "text", x= -50, y = Inf, label = paste0("RMSE = ", rmse(df.plot$mean,df.plot$predictions) %>% round(2)), size = 8, hjust=0, vjust = 3)+
-  scale_x_continuous(limits = c(-50,50),breaks = seq(-50,50,25),labels = seq(-50,50,25))+
-  scale_y_continuous(limits = c(-50,50),breaks = seq(-50,50,25),labels = seq(-50,50,25))+
-  theme_bw()+
-  theme(text = element_text(size = 20),
-        panel.grid = element_blank(),
-        legend.position = "bottom")
 ggsave('../../../figures/plots/exp1_scatter.pdf',width=8,height=6)
+
+# cor(df.regression$model,df.regression$mean)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --------------------------------------------------------------
 
@@ -318,7 +304,7 @@ tmp = df.lazy %>%
   print(include.rownames = F)
   
 
-# EXP2: Plot results  -------------------------------------------------------------------------
+# EXP2: Plot (points)  -------------------------------------------------------------------------
 
 df.plot = df.long %>% 
   mutate(trial = factor(trial))
@@ -337,7 +323,7 @@ ggplot(df.plot,aes(x = reorder(trial,response), y = response))+
 ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
   
 
-# EXP2: Scatter  ------------------------------------------------------------------------------
+# EXP2: Plot (scatter)  ------------------------------------------------------------------------------
 
 df.plot = df.regression %>% 
   left_join(df.long %>% 
@@ -347,7 +333,8 @@ df.plot = df.regression %>%
                         ))
 
 ggplot(df.plot,aes(x = prediction, y = mean))+
-# ggplot(df.plot,aes(x = model, y = mean))+
+  geom_hline(yintercept = 50, linetype = 2, color = "gray")+
+  geom_vline(xintercept = 50, linetype = 2, color = "gray")+
   geom_smooth(method = 'lm', color = 'black')+
   geom_errorbar(aes(ymin = low, ymax = high), alpha = 0.5)+
   geom_point(size=2)+
