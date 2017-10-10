@@ -95,7 +95,7 @@ for (k in 1:(list.info[['scenarios']] %>% length())){
   df.tmp = matrix(NA,ncol=4,nrow = length(tmp)) %>% 
     as.data.frame() %>% 
     setNames(c('id','team1','team2','winner')) %>% 
-    mutate_each(funs(. %>% as.character()))
+    mutate_all(funs(. %>% as.character()))
   
   for (i in 1:nrow(df.tmp)){
     df.tmp[i,] = c(id = k,
@@ -198,7 +198,7 @@ df.regression$predictions = lm(mean~predictions,data=df.regression)$fitted.value
 # EXP1: Plot (bars with model predictions) -----------------------------------------------------
 df.plot = df.regression %>% 
   gather(index,value,c(mean,predictions)) %>% 
-  mutate_each(funs(ifelse(index != "mean", NA, .)),contains("ci")) %>% 
+  mutate_at(contains("ci"),funs(ifelse(index != "mean", NA, .))) %>% 
   mutate(id = as.factor(id),
          winner = factor(winner,levels = c("1","2"),labels = c('Win', "Loss")),
          value = ifelse(winner == "Loss", value*-1, value),
@@ -302,7 +302,21 @@ df.regression = df.lazy %>%
               summarise(mean = mean(response))) %>% 
   mutate(prediction = lm(mean~model,data=.)$fitted.values)
 
-xtable(df.lazy %>% select(id) %>% mutate(id = str_replace_all(id,"\n","; ")))
+tmp = df.lazy %>% 
+  separate(id,c('y1','y2','y3','y4'),"\n",extra="merge") %>% 
+  replace_na(list(y1 = "",
+                  y2 = "",
+                  y3 = "",
+                  y4 = ""
+                  )) %>% 
+  select(trial,y2,y3,y4) %>% 
+  gather(game,outcome,-trial) %>% 
+  filter(outcome != "") %>% 
+  select(trial,outcome) %>% 
+  arrange(trial) %>% 
+  xtable() %>% 
+  print(include.rownames = F)
+  
 
 # EXP2: Plot results  -------------------------------------------------------------------------
 
@@ -312,32 +326,40 @@ df.plot = df.long %>%
 ggplot(df.plot,aes(x = reorder(trial,response), y = response))+
   stat_summary(fun.y = 'mean', geom = 'point', size = 3)+
   stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width=0)+
-  geom_point(position = position_jitter(height = 0, width = 0.2), alpha = 0.3)+
+  geom_point(position = position_jitter(height = 0, width = 0.1), alpha = 0.1)+
   # geom_point(data = df.regression, aes(x = reorder(trial,mean), y = prediction), color = 'red',size=2)+
-  geom_point(data = df.regression, aes(x = reorder(trial,mean), y = model), color = 'red',size=2)+
+  geom_point(data = df.regression, aes(x = reorder(trial,mean), y = prediction), color = 'red',size=2)+
   labs(x = "trial", y = "rating")+
   theme_bw()+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
-# ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
+ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
   
 
 # EXP2: Scatter  ------------------------------------------------------------------------------
 
-df.plot = df.regression
+df.plot = df.regression %>% 
+  left_join(df.long %>% 
+              group_by(trial) %>% 
+              summarise(low = smean.cl.boot(response)[2],
+                        high = smean.cl.boot(response)[3]
+                        ))
 
 ggplot(df.plot,aes(x = prediction, y = mean))+
 # ggplot(df.plot,aes(x = model, y = mean))+
   geom_smooth(method = 'lm', color = 'black')+
+  geom_errorbar(aes(ymin = low, ymax = high), alpha = 0.5)+
   geom_point(size=2)+
-  geom_text_repel(aes(label = trial))+
+  geom_text_repel(aes(label = trial),size=6)+
+  scale_x_continuous(breaks = seq(0,100,10), labels = seq(0,100,10))+
+  scale_y_continuous(breaks = seq(0,100,10), labels = seq(0,100,10))+
   labs(x = "model", y = "data")+
   theme_bw()+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
-# ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
+ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
 
 cor(df.regression$model,df.regression$mean)
 
