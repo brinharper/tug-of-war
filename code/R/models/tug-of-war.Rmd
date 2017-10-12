@@ -84,8 +84,8 @@ var tugOfWarModel = function(){
     }
 
     var wouldBeat = function(player1, player2) {
-      var p1 = lazyRandom() ? strength(player1) * 0.5 : strength(player1)
-      var p2 = lazyRandom() ? strength(player2) * 0.5 : strength(player2)
+      var p1 = lazyRandom() ? strength(player1) * lazyPulling : strength(player1)
+      var p2 = lazyRandom() ? strength(player2) * lazyPulling : strength(player2)
       
       return p1 > p2
     }
@@ -155,8 +155,6 @@ shouldPlot = TRUE
     inference_opts = list(method = 'rejection', samples = 1000),
     data = dataToWebPPL,
     data_var = "datafromR"
-    # ,
-    # output_format = "samples"
   )
   
   # Plotting the results
@@ -291,7 +289,7 @@ df.lazy = df.lazy %>%
          trial = 1:nrow(.)) %>% 
   select(trial,id,rating)
 
-save(df.lazy,file = 'tow_exp2_prediction.RData')
+# save(df.lazy,file = 'tow_exp2_prediction.RData')
 
 ```
 
