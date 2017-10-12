@@ -332,23 +332,29 @@ df.plot = df.regression %>%
                         high = smean.cl.boot(response)[3]
                         ))
 
+tmp.r = cor(df.regression$model,df.regression$mean) %>% round(2)
+tmp.rmse = rmse(df.regression$model,df.regression$mean) %>% round(2)
+
 ggplot(df.plot,aes(x = prediction, y = mean))+
   geom_hline(yintercept = 50, linetype = 2, color = "gray")+
   geom_vline(xintercept = 50, linetype = 2, color = "gray")+
   geom_smooth(method = 'lm', color = 'black')+
   geom_errorbar(aes(ymin = low, ymax = high), alpha = 0.5)+
-  geom_point(size=2)+
+  geom_point(size=3)+
+  annotate(geom = 'text', label = paste0('r = ', tmp.r,'\nRMSE = ', tmp.rmse), x = 20, y = Inf, size= 8,
+           vjust = 1.1, hjust = 0)+
   geom_text_repel(aes(label = trial),size=6)+
   scale_x_continuous(breaks = seq(0,100,10), labels = seq(0,100,10))+
   scale_y_continuous(breaks = seq(0,100,10), labels = seq(0,100,10))+
-  labs(x = "model", y = "data")+
+  # coord_cartesian(xlim = c(0,100), ylim = c(0,100))+
+  labs(x = "model predictions", y = "Did the player try hard?")+
   theme_bw()+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
 ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
 
-cor(df.regression$model,df.regression$mean)
+
 
 # EX: Gaussian with mean 50 and SD 10  --------------------------------------------------------
 
