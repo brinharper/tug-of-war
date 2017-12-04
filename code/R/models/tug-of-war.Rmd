@@ -46,12 +46,39 @@ Possible questions:
 
 ```{r towModel}
 towModel <- '
+
 // unpack data from R
 var lazinessPrior = datafromR["lazinessPrior"][0]
 var lazyPulling = datafromR["lazyPulling"][0]
 var matchInfo = datafromR["matchInfo"][0]
 
 var tugOfWarModel = function(){
+
+
+    var uuid = function() {
+      var s4 = function() {
+        return (Math.floor((1 + Math.random()) * 0x100)
+                .toString(16)
+                .substring(1));
+      }
+      return s4()
+    }
+    
+    var generateGame = function(player, winnerTeamIndex){
+      var team1size = uniformDraw([1,2,3])
+      var team2size = flip(0.7) ? team1size : uniformDraw([1,2,3])
+      return {
+        "team1": [player].concat(repeat(team1size - 1, uuid)),
+        "team2": repeat(team2size, uuid),
+        "winner": winnerTeamIndex
+      }
+    }
+    
+    var wonNPreviousGames = function(player, nWon, nTotal){
+      return repeat(nWon, function(){ generateGame(player, 1) }).concat(
+        repeat(nTotal - nWon, function(){ generateGame(player, 2) })
+      )
+    }
 
     var strength = mem(function(person) {
       return gaussian(50, 10)
@@ -96,17 +123,22 @@ var tugOfWarModel = function(){
           condition(beat(matchInfo.games[i].team1,
                         matchInfo.games[i].team2,
                         i + 1));
-        } else if (matchInfo.games[i].winner == 2) {
+        } else if (matchInfo.games[i].winner == 2){
           condition(beat(matchInfo.games[i].team2,
                         matchInfo.games[i].team1,
                         i + 1));
         }
+        
+        
         conditions(i + 1, len);
       }
     }
-
     conditions(0, matchInfo.games.length);
-
+    if (matchInfo.wonngames.length > 0) {
+        condition(wonNPreviousGames(matchInfo.wonngames[0].player,
+                        matchInfo.wonngames[0].nWon,
+                        matchInfo.wonngames[0].total));
+    }
 
 '
 ```
@@ -120,7 +152,7 @@ scenarioID = 1
 shouldPlot = TRUE
 #runModel <- function(scenarioID, shouldPlot) {
   
-  stim <- fromJSON("../../javascript/experiment_2/static/json/exp2_stim.json")
+  stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
   scene = stim$scenarios[(scenarioID+1),]
   
   retObject = 'return { '
@@ -152,7 +184,7 @@ shouldPlot = TRUE
   
   rs <- webppl(program_code = newModel, 
                model_var = "tugOfWarModel",
-    inference_opts = list(method = 'rejection', samples = 1000),
+    inference_opts = list(method = 'rejection', samples = 100),
     data = dataToWebPPL,
     data_var = "datafromR"
   )
@@ -189,10 +221,10 @@ df <- data.frame(strength=integer())
 ```
 
 ```{r getModelPredictions}
-stim <- fromJSON("../../javascript/experiment_2/static/json/exp2_stim.json")
+stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
 
 firstGame = 0
-lastGame = 32
+lastGame = 3
 
 df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
 df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
@@ -283,11 +315,11 @@ for (x in (firstGame + 1):(lastGame + 1)) {
   }
 }
 
-df.lazy = df.lazy %>% 
-  mutate(rating = as.numeric(rating),
-         rating = 1-rating,
-         trial = 1:nrow(.)) %>% 
-  select(trial,id,rating)
+#df.lazy = df.lazy %>% 
+#  mutate(rating = as.numeric(rating),
+#         rating = 1-rating,
+#         trial = 1:nrow(.)) %>% 
+#  select(trial,id,rating)
 
 # save(df.lazy,file = 'tow_exp2_prediction.RData')
 

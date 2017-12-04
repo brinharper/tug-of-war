@@ -53,13 +53,14 @@ var Config = function (condition, counterbalance) {
         this.choices = data["choices"];
         this.colors = data["colors"];
         this.prompt = data["prompt"];
+        this.comments = data["comments"];
         this.makeNames();
     };
 
     // Load the experiment configuration from the server
     this.load_config = function () {
         var that = this;
-        var jsonpath = "/static/json/exp3_stim.json";
+        var jsonpath = "/static/json/n_exp3_stim.json";
         $.ajax({
             dataType: "json",
             url: jsonpath,
@@ -100,8 +101,14 @@ var Config = function (condition, counterbalance) {
                     }
                 }
             }
-            for (var j = 0; j < this.scenarios[i].comments.length; j++) {
-                this.scenarios[i].comments[j] = Mustache.render(this.scenarios[i].comments[j], sceneNames);
+            for (var j = 0; j < this.scenarios[i].wonngames.length; j++) {
+                console.log("SCENE NAMES" ,sceneNames)
+                console.log("scenarios comments: ", i, j, this.scenarios[i].wonngames[0], this.comments[0])
+                var wonngames_info = this.scenarios[i].wonngames[j];
+                console.log("datum before: ", wonngames_info.player, sceneNames);
+                wonngames_info.player = sceneNames[wonngames_info.player]; //.[wonngames_info.player];
+                console.log("datum: ", wonngames_info, sceneNames);
+                this.scenarios[i].comments[j] = Mustache.render(this.comments[0], wonngames_info);
             }
             for (var j = 0; j < this.scenarios[i].questions.length; j++) {
                 if (this.scenarios[i].questions[j] == 0) {

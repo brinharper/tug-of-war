@@ -83,7 +83,7 @@ div.slide {
 
 .left_table{
    /*text-align: center;*/
-   float:left;
+   float:right;
    margin-left: auto;
     margin-right: auto;
     width: 60%;
@@ -101,7 +101,7 @@ div.slide {
 
 .right_table{
     /*text-align: center;*/
-    float:right;
+    float:left;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
