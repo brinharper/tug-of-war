@@ -117,27 +117,27 @@ var tugOfWarModel = function(){
       return p1 > p2
     }
     
-    var conditions = function(i, len) {
-      if (i < len) {
-        if (matchInfo.games[i].winner == 1) {
-          condition(beat(matchInfo.games[i].team1,
-                        matchInfo.games[i].team2,
-                        i + 1));
-        } else if (matchInfo.games[i].winner == 2){
-          condition(beat(matchInfo.games[i].team2,
-                        matchInfo.games[i].team1,
-                        i + 1));
-        }
-        
-        
-        conditions(i + 1, len);
+     var conditions = function(i, listOfGames) {
+    var len = listOfGames.length;
+    if (i < len) {
+      if (listOfGames[i].winner == 1) {
+        condition(beat(listOfGames[i].team1,
+                       listOfGames[i].team2,
+                       i + 1));
+      } else if (listOfGames[i].winner == 2) {
+        condition(beat(listOfGames[i].team2,
+                       listOfGames[i].team1,
+                       i + 1));
       }
+      conditions(i + 1, listOfGames);
     }
-    conditions(0, matchInfo.games.length);
+     }
+
+    conditions(0, matchInfo.games);
     if (matchInfo.wonngames.length > 0) {
-        condition(wonNPreviousGames(matchInfo.wonngames[0].player,
-                        matchInfo.wonngames[0].nWon,
-                        matchInfo.wonngames[0].total));
+        conditions(0, wonNPreviousGames(matchInfo.wonngames[0].player, 
+                                  matchInfo.wonngames[0].nWon, 
+                                  matchInfo.wonngames[0].total));
     }
 
 '
@@ -224,7 +224,8 @@ df <- data.frame(strength=integer())
 stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
 
 firstGame = 0
-lastGame = 3
+# lastGame = 3
+lastGame = 0
 
 df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
 df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
@@ -315,6 +316,7 @@ for (x in (firstGame + 1):(lastGame + 1)) {
   }
 }
 
+print(df.strength)
 #df.lazy = df.lazy %>% 
 #  mutate(rating = as.numeric(rating),
 #         rating = 1-rating,

@@ -49,7 +49,7 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"wonngames": [],
+			"wonngames": [{"player": 1, "nWon": 5, "total": 5}],
 			"subjects": [{"player": 1, "match": 1}]
 		},
 		{
