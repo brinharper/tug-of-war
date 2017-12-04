@@ -51,6 +51,7 @@ towModel <- '
 var lazinessPrior = datafromR["lazinessPrior"][0]
 var lazyPulling = datafromR["lazyPulling"][0]
 var matchInfo = datafromR["matchInfo"][0]
+var closeThreshold = datafromR["closeThreshold"][0]
 
 var tugOfWarModel = function(){
 
@@ -102,8 +103,16 @@ var tugOfWarModel = function(){
       }, team))
     }
     
+    var deltaTeamStrength = function(team1, team2, match){
+    return totalPulling(team1, match) - totalPulling(team2, match)
+    }
+
+    var isClose = function(team1, team2, match){
+    return Math.abs(deltaTeamStrength(team1, team2, match)) < closeThreshold
+    }  
+
     var winner = function(team1, team2, match) {
-      return totalPulling(team1, match) > totalPulling(team2, match) ? team1 : team2
+    return deltaTeamStrength(team1, team2, match) > 0 ? team1 : team2
     }
     
     var beat = function(team1,team2, match) {
@@ -139,6 +148,12 @@ var tugOfWarModel = function(){
                                   matchInfo.wonngames[0].nWon, 
                                   matchInfo.wonngames[0].total));
     }
+    
+if (matchInfo.closegames.length > 0) {
+    condition(isClose(matchInfo.games[matchInfo.closegames[0]-1].team1,
+                    matchInfo.games[matchInfo.closegames[0]-1].team2,
+                    matchInfo.closegames[0]))
+}
 
 '
 ```
@@ -180,6 +195,7 @@ shouldPlot = TRUE
   
   dataToWebPPL = list(lazinessPrior = 0.3, 
                       lazyPulling = 0.5,
+                      closeThreshold = 10,
                       matchInfo = scene)
   
   rs <- webppl(program_code = newModel, 
@@ -291,6 +307,7 @@ for (x in (firstGame + 1):(lastGame + 1)) {
   
     dataToWebPPL = list(lazinessPrior = 0.3, 
                         lazyPulling = 0.5,
+                        closeThreshold = 10,
                         matchInfo = scene)
   
     rs <- webppl(program_code = newModel, 

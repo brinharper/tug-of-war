@@ -50,7 +50,11 @@
 			"comments": [],
 			"questions": [0],
 			"wonngames": [{"player": 1, "nWon": 5, "total": 5}],
-			"subjects": [{"player": 1, "match": 1}]
+			"strongest": [{"player": 1, "group": [2,3]}],
+			"isstrong": [1],
+			"isweak": [2],
+			"closegames": [1],
+			"subjects": [{"player": 2, "match": 1}]
 		},
 		{
 			"id": 1,
@@ -64,6 +68,7 @@
 			"comments": [],
 			"questions": [0],
 			"wonngames": [],
+			"closegames": [],
 			"subjects": [{"player": 1, "match": 1}]
 		},
 		{
@@ -88,6 +93,7 @@
 			"comments": ["None"],
 			"questions": [0],
 			"wonngames": [{"player": 1, "nWon": 1, "total": 1}],
+			"closegames": [],
 			"subjects": [{"player": 1, "match": 1}]
 		},
 		{
@@ -112,6 +118,7 @@
 			"comments": ["None"],
 			"questions": [0],
 			"wonngames": [{"player": 1, "nWon": 4, "total": 4}],
+			"closegames": [],
 			"subjects": [{"player": 2, "match": 1}]
 		}
 	],
