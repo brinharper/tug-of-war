@@ -129,7 +129,8 @@
 
 	"comments": [
 		"Prior to this, player {{player}} won {{nWon}} games out of {{total}}.",
-		"Game {{match}} was a close game."
+		"Game {{match}} was a close game.",
+		"Player {{player}} is {{is}}."
 	],
 
 	"questions": [

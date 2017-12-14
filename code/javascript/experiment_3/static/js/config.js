@@ -119,6 +119,13 @@ var Config = function (condition, counterbalance) {
                 this.scenarios[i].comments[offset + j] = Mustache.render(this.comments[1], closegame_info);
             }
 
+            offset = this.scenarios[i].comments.length;
+
+            for (var j = 0; j < this.scenarios[i].whoiswhat.length; j++) {
+                var whoiswhat_info = this.scenarios[i].whoiswhat[j];
+                this.scenarios[i].comments[offset + j] = Mustache.render(this.comments[2], whoiswhat_info);
+            }
+
             for (var j = 0; j < this.scenarios[i].questions.length; j++) {
                 if (this.scenarios[i].questions[j] == 0) {
                     this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
