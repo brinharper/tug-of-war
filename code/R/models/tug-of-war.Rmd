@@ -52,9 +52,23 @@ var lazinessPrior = datafromR["lazinessPrior"][0]
 var lazyPulling = datafromR["lazyPulling"][0]
 var matchInfo = datafromR["matchInfo"][0]
 var closeThreshold = datafromR["closeThreshold"][0]
+var whoIs = datafromR["whodata"][0]
 
 var tugOfWarModel = function(){
 
+    var whoIsWhat = {};
+
+  var populate_whoIsWhat(i, whois, whoiswhat) {
+    var len = whois.length;
+    if (i <= len && len != 0) {
+      whoiswhat[i] = whois[i-1]["is"];
+      populate_whoIsWhat(i+1, whois, whoiswhat);
+    } else {
+      return whoiswhat
+    }
+  }
+
+    whoiswhat = populate_whoIsWhat(1, whoIs, whoIsWhat);
 
     var uuid = function() {
       var s4 = function() {
@@ -143,17 +157,31 @@ var tugOfWarModel = function(){
      }
 
     conditions(0, matchInfo.games);
-    if (matchInfo.wonngames.length > 0) {
-        conditions(0, wonNPreviousGames(matchInfo.wonngames[0].player, 
-                                  matchInfo.wonngames[0].nWon, 
-                                  matchInfo.wonngames[0].total));
+
+    var condition_wonNPrev = function(i, listOfPrevs) {
+      var len = listOfPrevs.length;
+        if (i < len) {
+          conditions(0, wonNPreviousGames(listOfPrevs[i].player, 
+                                  listOfPrevs[i].nWon, 
+                                  listOfPrevs[i].total));
+          condition_wonNPrev(i + 1, listOfPrevs);
+        }
     }
     
-if (matchInfo.closegames.length > 0) {
-    condition(isClose(matchInfo.games[matchInfo.closegames[0]-1].team1,
-                    matchInfo.games[matchInfo.closegames[0]-1].team2,
-                    matchInfo.closegames[0]))
-}
+    condition_wonNPrev(0, matchInfo.wonngames);
+
+    
+  var conditions_wasClose = function(i, listOfClose, listOfGames) {
+    var len = listOfClose.length;
+    if (i < len) {
+      condition(isClose(listOfGames[listOfClose[i]-1].team1,
+                       listOfGames[listOfClose[i]-1].team2,
+                       listOfClose[i]));
+      conditions_wasClose(i + 1, listOfClose, listOfGames);
+    }
+  }
+
+  conditions_wasClose(0, matchInfo.closegames, matchInfo.games)
 
 '
 ```
@@ -169,6 +197,7 @@ shouldPlot = TRUE
   
   stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
   scene = stim$scenarios[(scenarioID+1),]
+  whoiswhat = stim$scenarios[(scenarioID+1),]$whoiswhat
   
   retObject = 'return { '
   
@@ -196,6 +225,7 @@ shouldPlot = TRUE
   dataToWebPPL = list(lazinessPrior = 0.3, 
                       lazyPulling = 0.5,
                       closeThreshold = 10,
+                      whodata = whoiswhat,
                       matchInfo = scene)
   
   rs <- webppl(program_code = newModel, 
@@ -239,9 +269,9 @@ df <- data.frame(strength=integer())
 ```{r getModelPredictions}
 stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
 
-firstGame = 0
+firstGame = 2
 # lastGame = 3
-lastGame = 0
+lastGame = 2
 
 df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
 df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
@@ -308,6 +338,7 @@ for (x in (firstGame + 1):(lastGame + 1)) {
     dataToWebPPL = list(lazinessPrior = 0.3, 
                         lazyPulling = 0.5,
                         closeThreshold = 10,
+                        whodata = whoiswhat,
                         matchInfo = scene)
   
     rs <- webppl(program_code = newModel, 

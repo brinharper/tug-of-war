@@ -101,6 +101,8 @@ var Config = function (condition, counterbalance) {
                     }
                 }
             }
+            console.log("pre comments: ", this.scenarios[i].comments);
+
             for (var j = 0; j < this.scenarios[i].wonngames.length; j++) {
                 console.log("SCENE NAMES" ,sceneNames)
                 console.log("scenarios comments: ", i, j, this.scenarios[i].wonngames[0], this.comments[0])
@@ -110,6 +112,13 @@ var Config = function (condition, counterbalance) {
                 console.log("datum: ", wonngames_info, sceneNames);
                 this.scenarios[i].comments[j] = Mustache.render(this.comments[0], wonngames_info);
             }
+            var offset = this.scenarios[i].comments.length;
+
+            for (var j = 0; j < this.scenarios[i].closegames.length; j++) {
+                var closegame_info = {"match" : this.scenarios[i].closegames[j]};
+                this.scenarios[i].comments[offset + j] = Mustache.render(this.comments[1], closegame_info);
+            }
+
             for (var j = 0; j < this.scenarios[i].questions.length; j++) {
                 if (this.scenarios[i].questions[j] == 0) {
                     this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];

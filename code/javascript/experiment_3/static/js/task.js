@@ -113,7 +113,7 @@ var TestPhase = function() {
 						playersList.push(games[i].team2[j]);
 					}
 				}
-			}
+			} 
 
 			var colors = {};
 			for (var i = 0; i < playersList.length; i++) {
@@ -175,13 +175,16 @@ var TestPhase = function() {
 			//show comments
 			html = "";
 			var comments = that.scenario.comments;
+			if (comments.length == 0) {
+				html += "<p> There are no comments for this game </p>";
+			}
 			for (var i = 0; i < comments.length; i++) {
 				html += "<p>" + nameify(comments[i]) + "</p>";
 			}
 
 			$('#commentary').html(html);
 
-			if (comments.length > 0) {
+			if (comments.length >= 0) {
 				$(".right_table").show();
 				$(".left_table").css("width", "60%");
 			} else {

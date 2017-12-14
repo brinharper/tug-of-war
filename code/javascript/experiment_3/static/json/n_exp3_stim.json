@@ -49,11 +49,12 @@
 			],
 			"comments": [],
 			"questions": [0],
-			"wonngames": [{"player": 1, "nWon": 5, "total": 5}],
+			"wonngames": [{"player": 1, "nWon": 2, "total": 2}, {"player": 2, "nWon": 1, "total": 2}],
 			"strongest": [{"player": 1, "group": [2,3]}],
 			"isstrong": [1],
 			"isweak": [2],
 			"closegames": [1],
+			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],
 			"subjects": [{"player": 2, "match": 1}]
 		},
 		{
@@ -69,6 +70,7 @@
 			"questions": [0],
 			"wonngames": [],
 			"closegames": [],
+			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],
 			"subjects": [{"player": 1, "match": 1}]
 		},
 		{
@@ -93,7 +95,8 @@
 			"comments": ["None"],
 			"questions": [0],
 			"wonngames": [{"player": 1, "nWon": 1, "total": 1}],
-			"closegames": [],
+			"closegames": [1,2],
+			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],			
 			"subjects": [{"player": 1, "match": 1}]
 		},
 		{
@@ -119,18 +122,21 @@
 			"questions": [0],
 			"wonngames": [{"player": 1, "nWon": 4, "total": 4}],
 			"closegames": [],
+			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],
 			"subjects": [{"player": 2, "match": 1}]
 		}
 	],
 
 	"comments": [
-		"Prior to this, player {{player}} won {{nWon}} games out of {{total}}"
+		"Prior to this, player {{player}} won {{nWon}} games out of {{total}}.",
+		"Game {{match}} was a close game."
 	],
 
 	"questions": [
 		"Based on the results above, how strong do you think player {{player}} is?",
 		"How likely is it that {{player}} tried hard in Game {{match}}?",
-		"In another 1-on-1 match, how likely is it that {{player1}} would beat {{player2}} ?"
+		"In another 1-on-1 match, how likely is it that {{player1}} would beat {{player2}} ?",
+		"Based on the results above, how close was Game {{match}}?"
 	],
 	"choices": [
 		{
