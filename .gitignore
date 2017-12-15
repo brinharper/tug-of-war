@@ -16,3 +16,4 @@ code/R/analysis/.Rhistory
 *.out
 *.synctex.gz
 *.toc
+.DS_Store
