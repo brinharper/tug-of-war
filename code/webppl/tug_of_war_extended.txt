@@ -175,6 +175,7 @@ var model = function(){
     return lazy(person, match) ? strength(person) * lazyPulling : strength(person)
   }
 
+
   var totalPulling = function(team, match) {
     return sum(map(function(person) {
       return pulling(person, match)

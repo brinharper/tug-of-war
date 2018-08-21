@@ -101,19 +101,19 @@ var Config = function (condition, counterbalance) {
                     }
                 }
             }
-            console.log("pre comments: ", this.scenarios[i].comments);
-
+            // this is how we populate comments
             for (var j = 0; j < this.scenarios[i].wonngames.length; j++) {
-                console.log("SCENE NAMES" ,sceneNames)
-                console.log("scenarios comments: ", i, j, this.scenarios[i].wonngames[0], this.comments[0])
+                // console.log("SCENE NAMES" ,sceneNames)
+                // console.log("scenarios comments: ", i, j, this.scenarios[i].wonngames[0], this.comments[0])
                 var wonngames_info = this.scenarios[i].wonngames[j];
-                console.log("datum before: ", wonngames_info.player, sceneNames);
+                // console.log("datum before: ", wonngames_info.player, sceneNames);
                 wonngames_info.player = sceneNames[wonngames_info.player]; //.[wonngames_info.player];
-                console.log("datum: ", wonngames_info, sceneNames);
+                // console.log("datum for wonngames: ", wonngames_info, sceneNames);
                 this.scenarios[i].comments[j] = Mustache.render(this.comments[0], wonngames_info);
             }
             var offset = this.scenarios[i].comments.length;
 
+            // this is how we populate information on close games
             for (var j = 0; j < this.scenarios[i].closegames.length; j++) {
                 var closegame_info = {"match" : this.scenarios[i].closegames[j]};
                 this.scenarios[i].comments[offset + j] = Mustache.render(this.comments[1], closegame_info);
@@ -121,17 +121,25 @@ var Config = function (condition, counterbalance) {
 
             offset = this.scenarios[i].comments.length;
 
+            // this is how we populate information on player specific comments i.e. who is what
             for (var j = 0; j < this.scenarios[i].whoiswhat.length; j++) {
                 var whoiswhat_info = this.scenarios[i].whoiswhat[j];
+                whoiswhat_info.player = sceneNames[whoiswhat_info.player]
+                console.log("datum for whoiswhat: ", whoiswhat_info, sceneNames);
                 this.scenarios[i].comments[offset + j] = Mustache.render(this.comments[2], whoiswhat_info);
             }
 
+            // this is how we populate the specific questions
             for (var j = 0; j < this.scenarios[i].questions.length; j++) {
                 if (this.scenarios[i].questions[j] == 0) {
                     this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
                 } else if (this.scenarios[i].questions[j] == 1) {
                     this.scenarios[i].subjects[j].player = sceneNames[this.scenarios[i].subjects[j].player.toString()];
                 } else if (this.scenarios[i].questions[j] == 2) {
+                    // console.log(this.scenarios[i].subjects[j]);
+                    this.scenarios[i].subjects[j].player1 = sceneNames[this.scenarios[i].subjects[j].player1.toString()];
+                    this.scenarios[i].subjects[j].player2 = sceneNames[this.scenarios[i].subjects[j].player2.toString()];
+                } else if (this.scenarios[i].questions[j] == 3) {
                     this.scenarios[i].subjects[j].player1 = sceneNames[this.scenarios[i].subjects[j].player1.toString()];
                     this.scenarios[i].subjects[j].player2 = sceneNames[this.scenarios[i].subjects[j].player2.toString()];
                 }

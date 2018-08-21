@@ -48,7 +48,7 @@
 				}
 			],
 			"comments": [],
-			"questions": [0],
+			"questions": [1],
 			"wonngames": [{"player": 1, "nWon": 2, "total": 2}, {"player": 2, "nWon": 1, "total": 2}],
 			"strongest": [{"player": 1, "group": [2,3]}],
 			"isstrong": [1],
@@ -119,18 +119,254 @@
 				}
 			],
 			"comments": ["None"],
-			"questions": [0],
+			"questions": [1],
 			"wonngames": [{"player": 1, "nWon": 4, "total": 4}],
 			"closegames": [],
 			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],
 			"subjects": [{"player": 2, "match": 1}]
+		},
+		{
+			"id": 4,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [2],
+					"team2": [3],
+					"winner": 2
+				},
+				{
+					"team1": [2],
+					"team2": [3],
+					"winner": 2
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [],
+			"closegames": [1],
+			"whoiswhat": [{"player": 2, "is": "strong"}],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 5,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [2],
+					"team2": [3],
+					"winner": 2
+				},
+				{
+					"team1": [2],
+					"team2": [3],
+					"winner": 2
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [],
+			"closegames": [1],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 6,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [2],
+					"team2": [3],
+					"winner": 3
+				},
+				{
+					"team1": [2],
+					"team2": [3],
+					"winner": 3
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [],
+			"closegames": [1],
+			"whoiswhat": [{"player": 2, "is": "strong"}],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 7,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [],
+			"closegames": [1, 2, 3],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 8,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [],
+			"closegames": [],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 9,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 2
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [],
+			"closegames": [1, 2, 3],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 10,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [3],
+					"winner": 3
+				},
+				{
+					"team1": [1],
+					"team2": [3],
+					"winner": 1
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [{"player": 1, "nWon": 4, "total": 4}],
+			"closegames": [],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 11,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [3],
+					"winner": 3
+				},
+				{
+					"team1": [1],
+					"team2": [3],
+					"winner": 1
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [{"player": 1, "nWon": 1, "total": 5}],
+			"closegames": [],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
+		},
+		{
+			"id": 12,
+			"games": [
+				{
+					"team1": [1],
+					"team2": [2],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [3],
+					"winner": 1
+				},
+				{
+					"team1": [1],
+					"team2": [3],
+					"winner": 1
+				}
+			],
+			"comments": ["None"],
+			"questions": [0],
+			"wonngames": [{"player": 1, "nWon": 5, "total": 5}],
+			"closegames": [],
+			"whoiswhat": [],			
+			"subjects": [{"player": 1}]
 		}
+
 	],
 
 	"comments": [
 		"Prior to this, player {{player}} won {{nWon}} games out of {{total}}.",
 		"Game {{match}} was a close game.",
-		"Player {{player}} is {{is}}."
+		"Player {{player}} is {{is}}.",
+		"Player {{player}} is the strongest from the group {{group}}."
 	],
 
 	"questions": [

@@ -176,7 +176,7 @@ var TestPhase = function() {
 			html = "";
 			var comments = that.scenario.comments;
 			if (comments.length == 0) {
-				html += "<p> There are no comments for this game </p>";
+				html += "<p> There are no additional comments for this game </p>";
 			}
 			for (var i = 0; i < comments.length; i++) {
 				html += "<p>" + nameify(comments[i]) + "</p>";
@@ -197,6 +197,8 @@ var TestPhase = function() {
 				html = "<h4>Please answer the following question:</h4>";
 				var scenarioQuestions = that.scenario.questions
 				var scenarioSubjects = that.scenario.subjects;
+				console.log("Scene q's: ", scenarioQuestions)
+				console.log("Scene subjects:", scenarioSubjects)
 				for (var i = 0; i < scenarioQuestions.length; i++) {
 					var view = scenarioSubjects[i];
 					var q = (Mustache.render($c.questions[scenarioQuestions[i]], view));

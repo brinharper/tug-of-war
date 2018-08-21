@@ -111,7 +111,7 @@ var model = function() {
 
   var strength = mem(function(person){
     return gaussian(0, 1)
-  })
+  }) 
   var lazy = function(person){
     return flip(lazinessPrior)
   }

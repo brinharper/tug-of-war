@@ -54,21 +54,133 @@ var matchInfo = datafromR["matchInfo"][0]
 var closeThreshold = datafromR["closeThreshold"][0]
 var whoIs = datafromR["whodata"][0]
 
+
+
+
+
+// helper function
+var exp = function(x){return Math.exp(x)}
+
+// for discretization
+var binParam = 5; 
+
+var gaussianParams = {mu: 50, sigma: 10};
+
+// calculate the range in pre-defined steps;
+// these values correspond to possible heights
+var stateVals = _.range(gaussianParams.mu - 3 * gaussianParams.sigma,
+                        gaussianParams.mu + 3 * gaussianParams.sigma,
+                        gaussianParams.sigma/binParam)
+
+// for each possible height, calculate its probability of occurrence
+var stateProbs = cache(function(stateParams){
+  return map(function(s){
+    exp(Gaussian(stateParams).score(s))
+  }, stateVals)
+});
+///
+
+var DiscreteGaussian = cache(function(stateParams) {
+  return Infer({
+    model: function(){ return categorical({vs: stateVals, ps: stateProbs(stateParams)}) }
+  })
+});
+
+// generate the uniform threshold prior
+var thresholdBins = cache(function(utt, stateSupport){
+  return map(function(x){
+    return utt == "strong" ? x - (1/(binParam*2)) : x + (1/(binParam*2));
+  }, sort(stateSupport))
+})
+
+var thresholdPrior = cache(function(utt, stateSupport){
+  return Infer({
+    model: function() { return uniformDraw(thresholdBins(utt, stateSupport)) }
+  });
+});
+
+var somethingCost = 5
+var cost = {
+  "strong": somethingCost,
+  "weak": somethingCost,
+  "": 0
+};
+
+var UtterancePrior = cache(function(utt) {
+  var utterances =  [utt].concat([""])
+  var uttProbs = map(function(u) {return exp(-cost[u]) }, utterances);
+  return Categorical({ps: uttProbs, vs: utterances})
+});
+
+
+// meaning function for utterances
+var meaning = function(utterance, state, threshold) {
+  utterance == "strong" ? state > threshold ? flip(0.9999) : flip(0.0001) :
+  utterance == "weak" ? state < threshold ? flip(0.9999) : flip(0.0001) :
+  true
+}
+
+// set sepeaker optimality
+var alpha = 10;
+var statePrior = DiscreteGaussian(gaussianParams)
+
+var literalListener = cache(
+  function(utterance, threshold) {
+    Infer({model: function(){
+      var state = sample(statePrior);
+      var m = meaning(utterance, state, threshold);
+      condition(m);
+      return state;
+    }})
+  }, 10000 // limit cache size
+)
+
+var speaker1 = cache(
+  function(state, threshold, actualUtt) {
+    Infer({model: function(){
+      var utterance = sample(UtterancePrior(actualUtt));
+      var L0 = literalListener(utterance, threshold);
+      factor( alpha * L0.score(state) );
+      return utterance;
+    }})
+  }, 10000 // limit cache size
+)
+
+var pragmaticListener = cache(function(utterance) {
+  Infer({model: function(){
+    var state = sample(statePrior);
+    var threshold = sample(thresholdPrior(utterance, statePrior.support()))
+
+    var S1 = speaker1(state, threshold, utterance);
+    observe(S1, utterance);
+    return state 
+  }})
+}, 10000)
+
+var strengthDistribution = {
+  strong:  pragmaticListener("strong"),
+  weak: pragmaticListener("weak"),
+  normal: Gaussian({mu: 50, sigma: 10})
+}
+
+
+
 var tugOfWarModel = function(){
 
-    var whoIsWhat = {};
-
-  var populate_whoIsWhat(i, whois, whoiswhat) {
-    var len = whois.length;
-    if (i <= len && len != 0) {
-      whoiswhat[i] = whois[i-1]["is"];
-      populate_whoIsWhat(i+1, whois, whoiswhat);
-    } else {
-      return whoiswhat
-    }
+  var getWhoIsWhat = function(i, whoIsWhat) {
+    return whoIsWhat[i-1]["is"];
   }
 
-    whoiswhat = populate_whoIsWhat(1, whoIs, whoIsWhat);
+  var whoIsWhat = {
+    1: getWhoIsWhat(1, whoIs),
+    2: getWhoIsWhat(2, whoIs)
+  }
+
+  var strength = mem(function(person) {
+    var isSpecial = whoIsWhat[person]
+    return sample(strengthDistribution[isSpecial ? isSpecial : "normal"])
+  })
+
 
     var uuid = function() {
       var s4 = function() {
@@ -94,10 +206,6 @@ var tugOfWarModel = function(){
         repeat(nTotal - nWon, function(){ generateGame(player, 2) })
       )
     }
-
-    var strength = mem(function(person) {
-      return gaussian(50, 10)
-    })
     
     var lazy = mem(function(person, match) {
       return flip(lazinessPrior)
@@ -140,7 +248,7 @@ var tugOfWarModel = function(){
       return p1 > p2
     }
     
-     var conditions = function(i, listOfGames) {
+  var conditions = function(i, listOfGames) {
     var len = listOfGames.length;
     if (i < len) {
       if (listOfGames[i].winner == 1) {
@@ -269,9 +377,9 @@ df <- data.frame(strength=integer())
 ```{r getModelPredictions}
 stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
 
-firstGame = 2
+firstGame = 4
 # lastGame = 3
-lastGame = 2
+lastGame = 12
 
 df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
 df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
@@ -280,6 +388,7 @@ df.wouldwin <- data.frame(id=character(), rating=double(), stringsAsFactors = FA
 sIndex = 0
 lIndex = 0
 wIndex = 0
+cIndex = 0
 
 for (x in (firstGame + 1):(lastGame + 1)) {
   scene = stim$scenarios[x,]
@@ -325,10 +434,20 @@ for (x in (firstGame + 1):(lastGame + 1)) {
       elementToAdd = paste0("'beat", scene$subjects[[1]][i, 1], scene$subjects[[1]][i, 2], "': wouldBeat(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
       ide = paste0(x-1, "-", scene$subjects[[1]][i, 1],",", scene$subjects[[1]][i, 2])
     }
+    
+    #1	2-1,1	0.231
+     else if (scene$questions[[1]][i] == 3) {
+      cIndex = cIndex + 1
+      elementToAdd = paste0("'close", scene$subjects[[1]][i, 2], "': isClose(", scene$subjects[[1]][i, 1], ", ", scene$subjects[[1]][i, 2], ")")
+      ide = paste0(x-1, "-", scene$subjects[[1]][i, 1],",", scene$subjects[[1]][i, 2])
+    }
   
     if (i < length(scene$questions[[1]])) {
       elementToAdd = paste0(elementToAdd, ", ")
     }
+    print(towModel)
+    print(retObject)
+    print(elementToAdd)
     retObject = paste0(retObject, elementToAdd)
   
     retObject = paste0(retObject, "}}")
@@ -344,14 +463,14 @@ for (x in (firstGame + 1):(lastGame + 1)) {
     rs <- webppl(program_code = newModel, 
                  model_var = "tugOfWarModel",
       # inference_opts = list(method = 'rejection', samples = 1000),
-      inference_opts = list(method = 'rejection', samples = 1000),
+      inference_opts = list(method = 'rejection', samples = 100),
       data = dataToWebPPL,
       data_var = "datafromR"
     )
     
     # rs.tidy <- rs %>%
     # gather(key, val, -c(Iteration,Chain))
-  
+    # value  of obs
     rs$value <- as.double(rs$value)
     
     if (scene$questions[[1]][i] == 0) {
@@ -365,6 +484,8 @@ for (x in (firstGame + 1):(lastGame + 1)) {
 }
 
 print(df.strength)
+print(df.lazy)
+print(df.wouldwin)
 #df.lazy = df.lazy %>% 
 #  mutate(rating = as.numeric(rating),
 #         rating = 1-rating,
