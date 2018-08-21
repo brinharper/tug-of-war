@@ -36,26 +36,26 @@
 
 ## To do for this project:
 
-1. Generate a template for easily modeling games.
+### 1. Generate a template for easily modeling games.
 
 The template should be a list with the following columns:
 
 row index | game index  (G1B1, G1'B1...)| game info (match list) | background info | question | mean | std dev 
 
-1. Use this template to generate 45 games
+### 2. Use this template to generate 45 games
 
 G stands for game
 B stands for stimuli
 
-A game will have an outcome G1, and the reverse G1'
-A game will have a set of stimuli B1, and a complementary set of stimuli B1'
+a game will have an outcome G1, and the reverse G1'
+a game will have a set of stimuli B1, and a complementary set of stimuli B1'
 
 The 3 games that should be generated from this are:
 
 G1B1, G1B1', G1'B1
 
 The idea is to leave one variable, G or B unchanged and to toggle the opposite variable
-
+```
 G1:
 	A > B
 	B > C 
@@ -115,14 +115,15 @@ B3':
 	strong: []
 	close: []
 	wonngames: [{player: A, nWon: 1, total: 5}]
-
+```
 -----------
+ Example remaining games:
  
-* Game 4, 5, 6 = G1B1, G1 B1', G1' B1
+  Game 4, 5, 6 = G1B1, G1 B1', G1' B1
 
-* Game 7, 8, 9 = G2B2, G2B2', G2'B2
+  Game 7, 8, 9 = G2B2, G2B2', G2'B2
 
-* Game 10, 11, 12 = G3B3, G3B3', G3'B3
+  Game 10, 11, 12 = G3B3, G3B3', G3'B3
 
 
 * see n_exp3_stim.json for the above mentioned games
@@ -131,14 +132,14 @@ B3':
 
 * n_exp3_stim.json contains the experimental games with the new stimuli that has been created for exp3
 
-1. Plot results of the various games
+### 3. Plot results of the various games
 
 * gg plot code for plotting scheme is found in our R files
 
 * ideally get the table from part 2 into an R dataframe 
 
-notes:
-use xtable() 
-Look at tug analysis.R to see how to generate the tables based on the dataframes 
+### notes:
+* use xtable() 
+* Look at tug analysis.R to see how to generate the tables based on the dataframes 
 
 
