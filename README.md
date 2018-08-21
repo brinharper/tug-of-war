@@ -8,11 +8,11 @@
 
 * JavaScript:
 
-** see config.js to see how we can modify the front end to accomodate different questions and comments
+ see config.js to see how we can modify the front end to accomodate different questions and comments
 
 * json:
-** the stimuli are encoded here
-`
+ the stimuli are encoded here
+```
 {
 		  	"id": 0, // the id of the game
 			"games": [ // the actual results of the games we see on the screen
@@ -32,18 +32,17 @@
 			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],// new structure for whoiswhat; TODO: refactor the rest of the games to use this format to make it scalable
 			"subjects": [{"player": 2, "match": 1}] // which player we are interested in ... subject of the question.
 }
-`
+```
 
 ## To do for this project:
 
-* 1. Generate a template for easily modeling games.
+1. Generate a template for easily modeling games.
 
 The template should be a list with the following columns:
 
 row index | game index  (G1B1, G1'B1...)| game info (match list) | background info | question | mean | std dev 
 
-!-----------------------------------------------
-* 2. Use this template to generate 45 games
+1. Use this template to generate 45 games
 
 G stands for game
 B stands for stimuli
@@ -132,13 +131,11 @@ B3':
 
 * n_exp3_stim.json contains the experimental games with the new stimuli that has been created for exp3
 
-!-------------
+1. Plot results of the various games
 
-3. Plot results of the various games
+* gg plot code for plotting scheme is found in our R files
 
-- gg plot code for plotting scheme is found in our R files
-
-- ideally get the table from part 2 into an R dataframe 
+* ideally get the table from part 2 into an R dataframe 
 
 notes:
 use xtable() 
