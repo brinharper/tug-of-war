@@ -8,7 +8,7 @@
 
 * JavaScript:
 
- see config.js to see how we can modify the front end to accomodate different questions and comments
+ see config.js to see how we can modify the front end to accomodate different questions and comments. there are some comments to guide you through how that section works.
 
 * json:
  the stimuli are encoded here
