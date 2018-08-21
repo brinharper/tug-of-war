@@ -1,18 +1,18 @@
 # tug-of-war
 
-Experiment 3 README:
+# Experiment 3 README:
+ 
+## What has been done in experiment 3:
 
-What has been done in experiment 3:
+* R code has the stimuli from our webppl code
 
-R code has the stimuli from our webppl code
+* JavaScript:
 
-JavaScript:
+** see config.js to see how we can modify the front end to accomodate different questions and comments
 
-see config.js to see how we can modify the front end to accomodate different questions and comments
-
-json:
-the stimuli are encoded here
-
+* json:
+** the stimuli are encoded here
+`
 {
 		  	"id": 0, // the id of the game
 			"games": [ // the actual results of the games we see on the screen
@@ -31,19 +31,19 @@ the stimuli are encoded here
 			"closegames": [1], // which games were close 
 			"whoiswhat": [{"player": 1, "is": "strong"}, {"player": 2, "is": "weak"}],// new structure for whoiswhat; TODO: refactor the rest of the games to use this format to make it scalable
 			"subjects": [{"player": 2, "match": 1}] // which player we are interested in ... subject of the question.
-		}
+}
+`
 
+## To do for this project:
 
-To do for this project:
-
-1. Generate a template for easily modeling games.
+* 1. Generate a template for easily modeling games.
 
 The template should be a list with the following columns:
 
 row index | game index  (G1B1, G1'B1...)| game info (match list) | background info | question | mean | std dev 
 
 !-----------------------------------------------
-2. Use this template to generate 45 games
+* 2. Use this template to generate 45 games
 
 G stands for game
 B stands for stimuli
@@ -118,19 +118,19 @@ B3':
 	wonngames: [{player: A, nWon: 1, total: 5}]
 
 -----------
-## 
-Game 4, 5, 6 = G1B1, G1 B1', G1' B1
+ 
+* Game 4, 5, 6 = G1B1, G1 B1', G1' B1
 
-Game 7, 8, 9 = G2B2, G2B2', G2'B2
+* Game 7, 8, 9 = G2B2, G2B2', G2'B2
 
-Game 10, 11, 12 = G3B3, G3B3', G3'B3
-###
+* Game 10, 11, 12 = G3B3, G3B3', G3'B3
 
-see n_exp3_stim.json for the above mentioned games
 
-exp3_stim.json is largely unmodified and copied from exp2
+* see n_exp3_stim.json for the above mentioned games
 
-n_exp3_stim.json contains the experimental games with the new stimuli that has been created for exp3
+* exp3_stim.json is largely unmodified and copied from exp2
+
+* n_exp3_stim.json contains the experimental games with the new stimuli that has been created for exp3
 
 !-------------
 
