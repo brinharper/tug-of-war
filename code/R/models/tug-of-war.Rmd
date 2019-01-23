@@ -339,6 +339,7 @@ shouldPlot = TRUE
   rs <- webppl(program_code = newModel, 
                model_var = "tugOfWarModel",
     inference_opts = list(method = 'rejection', samples = 100),
+    # inference_opts = list(method = 'rejection', samples = 10),
     data = dataToWebPPL,
     data_var = "datafromR"
   )
@@ -355,7 +356,8 @@ shouldPlot = TRUE
       print(mean(rs[[i]]))
     }
     
-    ggplot(rs.tidy, aes( x = val ))+
+    # ggplot(rs.tidy, aes( x = val ))+
+    ggplot(rs, aes( x = val ))+
     geom_histogram() +
     facet_wrap(~key, scales = 'free') 
     

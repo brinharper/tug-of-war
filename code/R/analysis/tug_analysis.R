@@ -320,7 +320,7 @@ ggplot(df.plot,aes(x = reorder(trial,response), y = response))+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
-ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
+# ggsave('../../../figures/plots/exp2_means.pdf',width=12,height=6)
   
 
 # EXP2: Plot (scatter)  ------------------------------------------------------------------------------
@@ -352,7 +352,7 @@ ggplot(df.plot,aes(x = prediction, y = mean))+
   theme(panel.grid = element_blank(),
         text = element_text(size = 20))
 
-ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
+# ggsave('../../../figures/plots/exp2_scatter.pdf',width=8,height=6)
 
 
 

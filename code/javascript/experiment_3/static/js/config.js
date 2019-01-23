@@ -101,6 +101,7 @@ var Config = function (condition, counterbalance) {
                     }
                 }
             }
+            
             // this is how we populate comments
             for (var j = 0; j < this.scenarios[i].wonngames.length; j++) {
                 // console.log("SCENE NAMES" ,sceneNames)

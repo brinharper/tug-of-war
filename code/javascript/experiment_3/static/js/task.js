@@ -36,10 +36,7 @@ var counter = 0;
 	slide.find('.next').click(function () {
 		CURRENTVIEW = new TestPhase();
 	});
-
-
 };
-
 
 
 /*****************
