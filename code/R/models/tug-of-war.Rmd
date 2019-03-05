@@ -17,6 +17,10 @@ library(tidyr)
 library(ggplot2)
 library(coda)
 library(jsonlite)
+library(tables)
+library(xtable)
+options(xtable.floating = FALSE)
+options(xtable.timestamp = "")
 rm(list=ls())
 
 # # to get the maximum a posteriori value [MAP] (from samples)
@@ -168,7 +172,8 @@ var strengthDistribution = {
 var tugOfWarModel = function(){
 
   var getWhoIsWhat = function(i, whoIsWhat) {
-    return whoIsWhat[i-1]["is"];
+    var personIs = whoIsWhat[i-1]
+    return personIs ? personIs["is"] : false
   }
 
   var whoIsWhat = {
@@ -301,12 +306,12 @@ Also, define the lazinessPrior and lazyPulling variables, package them up into `
 ```{r runTowModel}
 scenarioID = 1
 shouldPlot = TRUE
-#runModel <- function(scenarioID, shouldPlot) {
+runModel <- function(scenarioID, shouldPlot) {
   
   stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
   scene = stim$scenarios[(scenarioID+1),]
   whoiswhat = stim$scenarios[(scenarioID+1),]$whoiswhat
-  
+
   retObject = 'return { '
   
   
@@ -345,34 +350,33 @@ shouldPlot = TRUE
   )
   
   # Plotting the results
-  rs.tidy <- rs %>%
-    gather(key, val)
+  rs.tidy <- rs
   
-  rs.tidy$val <- as.double(rs.tidy$val)
+  rs.tidy$val <- as.double(rs.tidy$value)
   
   if (shouldPlot) {
-    
-    for (i in names(rs)) {
-      print(mean(rs[[i]]))
-    }
+
+    #for (i in names(rs)) {
+    #  print(mean(rs[[i]]))
+    #}
     
     # ggplot(rs.tidy, aes( x = val ))+
-    ggplot(rs, aes( x = val ))+
+    ggplot(rs, aes( x = value ))+
     geom_histogram() +
-    facet_wrap(~key, scales = 'free') 
+    facet_wrap(~Parameter, scales = 'free') 
     
   } else {
     #return(mean(rs$strength1))
   }
   
   
-#}
+}
 
 df <- data.frame(strength=integer())
 
 #You can run the model on just one scenario in stim by calling runModel(id, TRUE)
-  
-#runModel(30, TRUE)
+
+runModel(1, TRUE)
 #getMeans(21:30)
 ```
 
@@ -381,7 +385,8 @@ stim <- fromJSON("../../javascript/experiment_3/static/json/n_exp3_stim.json")
 
 firstGame = 4
 # lastGame = 3
-lastGame = 12
+lastGame = 8
+#lastGame = 12
 
 df.strength <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
 df.lazy <- data.frame(id=character(), rating=double(), stringsAsFactors = FALSE)
@@ -455,6 +460,8 @@ for (x in (firstGame + 1):(lastGame + 1)) {
     retObject = paste0(retObject, "}}")
   
     newModel = paste0(towModel, retObject)
+    
+      whoiswhat = stim$scenarios[(scenarioID+1),]$whoiswhat
   
     dataToWebPPL = list(lazinessPrior = 0.3, 
                         lazyPulling = 0.5,
@@ -496,6 +503,128 @@ print(df.wouldwin)
 
 # save(df.lazy,file = 'tow_exp2_prediction.RData')
 
+```
+
+```{r generateTable}
+#Entries:
+#Trial ID
+#Any info/context given to the participant
+#Subject of predictions (i.e. player and/or match of interest)
+#For the category we're predicting on:
+  # Participant prediction
+  # Model prediction
+  # Maybe % error?
+
+# firstGame and lastGame should be set in chunk above to contain trials of interest
+# We're assuming all trials for a given table are predicting on the same category
+
+# Step 1: Building data columns
+
+# Which value were we asking participants to predict? Get corresponding model predictions
+question = stim$scenarios[(firstGame+1),]$question
+if (question == 0) {
+  model_predictions <- matrix(c(df.strength$rating),ncol=1)
+} else if (question == 1) {
+  model_predictions <- matrix(c(df.lazy$rating),ncol=1)
+} else if (question == 2) {
+  model_predictions <- matrix(c(df.wouldwin$rating),ncol=1)
+} else {
+  #close -- not yet implemented in model?
+}
+
+#note: changed trial 3 question in n_exp3_stim.json from 1 to 0 (strength) for testing -- change back later!
+
+# Get participant's avg. predictions
+# TODO: fill this in with actual participant data (using model's strength data as placeholder)
+participant_predictions <- matrix(c(df.strength$rating),ncol=1)
+
+# What player/match do the predictions pertain to?
+subjects_list <- c()
+for (scenarioID in firstGame:lastGame) {
+  player = stim$scenarios[(scenarioID+1),]$subjects[[1]]$player[1]
+  match = stim$scenarios[(scenarioID+1),]$subjects[[1]]$match[1]
+  subject = ""
+  if (!is.null(match)) {
+    subject = paste("Player ", player, "; Match ", match)
+  } else {
+    subject = paste("Player ", player)
+  }
+  newelem <- subject
+  subjects_list <- c(subjects_list, newelem)
+}
+subjects <-matrix(subjects_list,ncol=1)
+
+# What background information did we give to participants?
+context_list <- c()
+for (scenarioID in firstGame:lastGame) {
+  
+  # won games
+  knowns = ""
+  known_players = stim$scenarios[(scenarioID+1),]$wonngames[[1]]$player
+  known_counts = stim$scenarios[(scenarioID+1),]$wonngames[[1]]$nWon
+  known_wins = stim$scenarios[(scenarioID+1),]$wonngames[[1]]$total
+  if (!is.null(known_players)) {
+    for (i in 1:length(known_players)) {
+      known = paste("Prior to this, player ", known_players[i], " won ", known_counts[i], " games out of ", known_wins[i])
+      if (knowns == "") {
+        knowns = known
+      } else {
+      knowns = paste(knowns, ";", known)      
+      }
+    }
+  }
+  
+  # close games
+  known_close_matches = stim$scenarios[(scenarioID+1),]$closegames[[1]]
+  if (length(known_close_matches) > 0) {
+    for (match in known_close_matches) {
+      known = paste("Game ", match, " was a close game")
+      if (knowns == "") {
+        knowns = known
+      } else {
+      knowns = paste(knowns, ";", known)
+      }
+    }
+  }
+  
+  # who is what
+  known_players = stim$scenarios[(scenarioID+1),]$whoiswhat[[1]]$player
+  known_traits = stim$scenarios[(scenarioID+1),]$whoiswhat[[1]]$is
+  if (!is.null(known_players)) {
+    for (i in 1:length(known_players)) {
+      known = paste("Player ", known_players[i], " is ", known_traits[i])
+      if (knowns == "") {
+        knowns = known
+      } else {
+      knowns = paste(knowns, ";", known)
+      }
+    }
+  }
+  
+  if (knowns == "") {
+    newelem <- "No info given"
+  } else {
+    newelem <- knowns
+  }
+  context_list <- c(context_list, newelem)
+}
+
+contexts <- matrix(context_list, ncol=1)
+
+# Step 2: Construct table from data columns
+
+# Concatenate all data columns; build table
+prediction_table <- cbind(contexts, subjects, model_predictions, participant_predictions)
+rownames(prediction_table) <- c(firstGame:lastGame)
+colnames(prediction_table) <- c("Background info", "Subject", "Model prediction", "Participant prediction")
+
+# Generate simple table in console
+prediction_table <- as.table(prediction_table)
+print(prediction_table)
+
+# Generate LaTeX table (copy and paste output into LaTeX doc to make it look pretty)
+prediction_table <- as.data.frame(prediction_table)
+print(xtable(prediction_table))
 ```
 
 ```{r plotResults}
